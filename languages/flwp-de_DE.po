@@ -1,0 +1,3744 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: FLWP 1.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: Junie\n"
+"Language-Team: German\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-09-15 11:57+0000\n"
+"PO-Revision-Date: 2026-10-07T19:02:36+00:00\n"
+"Language: de_DE\n"
+"X-Generator: Poedit 3.9\n"
+"X-Domain: flwp\n"
+
+#. Plugin Name of the plugin
+#: flwp.php:5
+msgid "FLWP – User Feedback & Surveys"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: flwp.php:7
+msgid "https://flwp.de"
+msgstr "https://flwp.de"
+
+#. Description of the plugin
+#: flwp.php:9
+msgid "Collect and analyze user feedback directly in WordPress with a visual form builder, flexible display options, smart triggers, and targeting."
+msgstr ""
+
+#. Author of the plugin
+#: flwp.php:17
+msgid "Kai Steudten"
+msgstr ""
+
+#: includes/Admin.php:62
+#: includes/Admin.php:63
+msgid "admin.menu.dashboard"
+msgstr "Dashboard"
+
+#: includes/Admin.php:71
+#: includes/Admin.php:72
+msgid "admin.menu.all_forms"
+msgstr "Alle Formulare"
+
+#: includes/Admin.php:80
+#: includes/Admin.php:81
+msgid "admin.menu.add_form"
+msgstr "Formular hinzufügen"
+
+#: includes/Admin.php:89
+#: includes/Admin.php:90
+msgid "admin.menu.feedback_list"
+msgstr "Feedback-Liste"
+
+#: includes/Admin.php:98
+#: includes/Admin.php:99
+msgid "admin.menu.export"
+msgstr "Export"
+
+#: includes/Admin.php:107
+#: includes/Admin.php:108
+msgid "admin.menu.about"
+msgstr "Über FLWP"
+
+#: includes/Admin.php:229
+#: includes/Admin.php:279
+#: includes/Admin.php:307
+#: includes/Admin.php:331
+#: includes/Admin.php:347
+#: includes/Admin.php:386
+#: includes/Admin.php:409
+#: includes/Admin.php:490
+#: includes/Export/Csv.php:18
+msgid "Permission denied"
+msgstr ""
+
+#: includes/Admin.php:237
+#: includes/Admin.php:286
+#: includes/Admin.php:314
+msgid "Missing data"
+msgstr ""
+
+#: includes/Admin.php:242
+msgid "Invalid data"
+msgstr ""
+
+#: includes/Admin.php:245
+#: includes/Database/Form.php:109
+msgid "admin.db.default_new_form_name"
+msgstr "Neues Formular"
+
+#: includes/Admin.php:254
+msgid "admin.error.limit_3_forms_reached"
+msgstr "Limit von 3 Formularen für die kostenlose Version erreicht."
+
+#: includes/Admin.php:265
+msgid "Form data saved successfully"
+msgstr ""
+
+#: includes/Admin.php:271
+msgid "Failed to save form data"
+msgstr ""
+
+#: includes/Admin.php:297
+msgid "Status updated successfully"
+msgstr ""
+
+#: includes/Admin.php:299
+msgid "Failed to update status"
+msgstr ""
+
+#: includes/Admin.php:321
+msgid "Feedback status updated successfully"
+msgstr ""
+
+#: includes/Admin.php:323
+msgid "Failed to update feedback status"
+msgstr ""
+
+#: includes/Admin.php:414
+msgid "ID missing"
+msgstr ""
+
+#: includes/Admin.php:420
+msgid "Feedback not found"
+msgstr ""
+
+#: includes/Admin.php:504
+msgid "Wrong import-type."
+msgstr ""
+
+#: includes/Admin.php:513
+msgid "Error during importing the file or wrong file format."
+msgstr ""
+
+#: includes/Admin.php:535
+msgid "admin.notice.thank_you"
+msgstr "Vielen Dank, dass Du %s verwendest."
+
+#: includes/Database/Form.php:18
+#: includes/FormFrontend.php:178
+#: includes/Helper/ConfigHelper.php:127
+msgid "admin.db.default_form_name"
+msgstr "Feedbackformular"
+
+#: includes/Database/Form.php:241
+#: includes/Database/Form.php:247
+msgid "admin.form.duplicate_suffix"
+msgstr "Kopie"
+
+#: includes/EnvironmentChecks.php:97
+#: includes/EnvironmentChecks.php:125
+msgid "admin.env_check.error.title"
+msgstr "Achtung: Leider gibt es ein Problem!"
+
+#: includes/EnvironmentChecks.php:100
+msgid "admin.env_check.wp.too_old"
+msgstr "Die installierte WordPress-Version ist zu alt für das FLWP-Plugin! FLWP erfordert eine aktuelle Version!"
+
+#: includes/EnvironmentChecks.php:106
+msgid "admin.env_check.wp.update_core"
+msgstr "Bitte <a href=\"%1$s\">aktualisiere deine WordPress-Installation</a> auf mindestens Version %2$s!"
+
+#: includes/EnvironmentChecks.php:108
+msgid "admin.env_check.wp.ask_admin"
+msgstr "Bitte deinen Website-Administrator, WordPress auf mindestens Version %1$s zu aktualisieren!"
+
+#: includes/EnvironmentChecks.php:128
+msgid "admin.env_check.php.too_old"
+msgstr "Dein Server verwendet eine PHP-Version, die zu alt ist, damit das FLWP-Plugin funktioniert. FLWP erfordert PHP %s oder neuer, wobei neuere Versionen empfohlen werden."
+
+#: includes/EnvironmentChecks.php:131
+msgid "admin.env_check.php.update_link"
+msgstr "<a href=\"%s\">Erfahre mehr über die Aktualisierung von PHP</a> oder kontaktiere deinen Serveradministrator."
+
+#: includes/Export/Csv.php:66
+msgid "admin.export.csv.no_data_found"
+msgstr "Keine Daten gefunden"
+
+#: includes/Export/Csv.php:73
+msgid "admin.export.csv.id"
+msgstr "ID"
+
+#: includes/Export/Csv.php:74
+msgid "admin.export.csv.timestamp"
+msgstr "Zeitstempel"
+
+#: includes/Export/Csv.php:75
+msgid "admin.export.csv.form_id"
+msgstr "Formular-ID"
+
+#: includes/Export/Csv.php:76
+msgid "admin.export.csv.type"
+msgstr "Typ"
+
+#: includes/Export/Csv.php:77
+msgid "admin.export.csv.status"
+msgstr "Status"
+
+#: includes/Export/Csv.php:82
+msgid "admin.export.csv.tracking_url"
+msgstr "Seiten-URL"
+
+#: includes/Export/Csv.php:83
+msgid "admin.export.csv.tracking_language"
+msgstr "Sprache"
+
+#: includes/Export/Csv.php:84
+msgid "admin.export.csv.tracking_screen_res_w"
+msgstr "Bildschirmbreite"
+
+#: includes/Export/Csv.php:85
+msgid "admin.export.csv.tracking_screen_res_h"
+msgstr "Bildschirmhöhe"
+
+#: includes/Export/Csv.php:86
+msgid "admin.export.csv.tracking_viewport_w"
+msgstr "Viewport-Breite"
+
+#: includes/Export/Csv.php:87
+msgid "admin.export.csv.tracking_viewport_h"
+msgstr "Viewport-Höhe"
+
+#: includes/Export/Csv.php:88
+msgid "admin.export.csv.tracking_timezone"
+msgstr "Zeitzone"
+
+#: includes/Export/Csv.php:89
+msgid "admin.export.csv.tracking_device_type"
+msgstr "Gerät"
+
+#: includes/Export/Csv.php:90
+msgid "admin.export.csv.tracking_time_on_page"
+msgstr "Zeit auf der Seite (s)"
+
+#: includes/Export/Json.php:220
+msgid "admin.export.json.import_results"
+msgstr "%d Formulare importiert (%d neu, %d aktualisiert). %d Fehler."
+
+#: includes/Export/Json.php:295
+msgid "admin.export.json.import_feedbacks_results"
+msgstr "%d Feedbacks importiert (%d neu, %d aktualisiert, %d ignoriert). %d Fehler."
+
+#: includes/FormFrontend.php:211
+#: includes/Helper/ConfigHelper.php:191
+#: includes/Helper/ConfigHelper.php:227
+#: includes/Helper/ConfigHelper.php:261
+#: templates/frontend/flwp-form-footer.php:39
+#: assets/js/dist/flwp-form-builder.js:4108
+#: assets/js/dist/flwp-form-builder.js:4125
+#: assets/js/dist/flwp-form-frontend.js:2073
+#: assets/js/dist/flwp-form-frontend.js:2146
+msgid "admin.frontend.default_footer_text"
+msgstr "Wir schätzen dein ehrliches Feedback!"
+
+#: includes/FormFrontend.php:531
+msgid "admin.notification.feedback_saved"
+msgstr "Feedback gespeichert"
+
+#: includes/FormFrontend.php:533
+msgid "admin.notification.database_error"
+msgstr "Datenbankfehler"
+
+#: includes/FormFrontend.php:552
+msgid "admin.notification.subject"
+msgstr "Neuer Formulareintrag"
+
+#: includes/FormFrontend.php:566
+msgid "admin.notification.email_body"
+msgstr "<p>Hier sind die übermittelten Formulardaten:</p><p>{feedback_values}</p><p>Gesendet am: {date} um {time}</p><p>Über die Seite: {page_url}</p>"
+
+#: includes/FormFrontend.php:585
+msgid "admin.notification.default_form_name"
+msgstr "Feedback-Formular"
+
+#: includes/FormFrontend.php:589
+msgid "admin.notification.time_suffix"
+msgstr "Uhr"
+
+#: includes/Helper/ConfigHelper.php:12
+msgid "fields.headline.name"
+msgstr "Überschrift"
+
+#: includes/Helper/ConfigHelper.php:14
+msgid "fields.headline.default_label"
+msgstr "Deine Meinung zählt!"
+
+#: includes/Helper/ConfigHelper.php:21
+msgid "fields.description.name"
+msgstr "Beschreibung"
+
+#: includes/Helper/ConfigHelper.php:23
+msgid "fields.description.default_label"
+msgstr "Bitte nimm dir eine Minute Zeit, um dieses kurze Feedback auszufüllen."
+
+#: includes/Helper/ConfigHelper.php:30
+msgid "fields.button.name"
+msgstr "Button"
+
+#: includes/Helper/ConfigHelper.php:32
+msgid "fields.button.default_label"
+msgstr "Feedback senden"
+
+#: includes/Helper/ConfigHelper.php:39
+msgid "fields.textarea.name"
+msgstr "Textabsatz (Mehrzeilig)"
+
+#: includes/Helper/ConfigHelper.php:41
+msgid "fields.textarea.default_label"
+msgstr "Deine Nachricht"
+
+#: includes/Helper/ConfigHelper.php:48
+msgid "fields.rating.name"
+msgstr "Sternebewertung"
+
+#: includes/Helper/ConfigHelper.php:50
+msgid "fields.rating.default_label"
+msgstr "Wie bewertest du unsere Seite?"
+
+#: includes/Helper/ConfigHelper.php:58
+msgid "fields.thumbs.name"
+msgstr "Daumen-Feedback"
+
+#: includes/Helper/ConfigHelper.php:60
+msgid "fields.thumbs.default_label"
+msgstr "Würdest du uns weiterempfehlen?"
+
+#: includes/Helper/ConfigHelper.php:69
+msgid "fields.smileys.name"
+msgstr "Smiley-Bewertung"
+
+#: includes/Helper/ConfigHelper.php:71
+msgid "fields.smileys.default_label"
+msgstr "Wie zufrieden bist du mit uns?"
+
+#: includes/Helper/ConfigHelper.php:81
+msgid "fields.nps.name"
+msgstr "Empfehlung (NPS)"
+
+#: includes/Helper/ConfigHelper.php:83
+msgid "fields.nps.default_label"
+msgstr "Wie wahrscheinlich ist es, dass du uns weiterempfiehlst?"
+
+#: includes/Helper/ConfigHelper.php:118
+msgid "admin.config.default_email"
+msgstr "E-Mail Addresse"
+
+#: includes/Helper/ConfigHelper.php:286
+#: assets/js/dist/flwp-form-frontend.js:2565
+#: assets/js/dist/flwp-form-frontend.js:2700
+#: assets/js/dist/flwp-form-frontend.js:2716
+msgid "confirmation.message.default"
+msgstr "<p>Danke für dein Feedback! Es hilft dabei, uns stetig zu verbessern.</p>"
+
+#: includes/Helper/ConfigHelper.php:292
+msgid "notification.subject.default"
+msgstr "Neues Feedback erhalten"
+
+#: includes/Helper/ConfigHelper.php:386
+msgid "admin.form_template.bug.title"
+msgstr "Fehler melden"
+
+#: includes/Helper/ConfigHelper.php:390
+msgid "admin.form_template.website.title"
+msgstr "Artikel-Zufriedenheit (mit Schritt 2)"
+
+#: includes/Helper/ConfigHelper.php:394
+msgid "admin.form_template.template-4.title"
+msgstr "Artikel-Zufriedenheit (ohne Schritt 2)"
+
+#: includes/Helper/ConfigHelper.php:398
+msgid "admin.form_template.nps.title"
+msgstr "Net Promoter Score (NPS)"
+
+#: includes/Helper/ConfigHelper.php:402
+#: includes/Helper/FormHelper.php:142
+msgid "admin.initial_form.in_content.title"
+msgstr "Inhaltsfeedback"
+
+#: includes/Helper/ConfigHelper.php:406
+#: includes/Helper/FormHelper.php:154
+msgid "admin.initial_form.feedback_button.title"
+msgstr "Feedback-Button Formular"
+
+#: includes/Helper/ConfigHelper.php:410
+#: includes/Helper/FormHelper.php:175
+msgid "admin.initial_form.exit_intent.title"
+msgstr "Exit-Intent Formular"
+
+#: includes/Helper/ConfigHelper.php:414
+msgid "admin.form_template.blank.title"
+msgstr "Leeres Formular"
+
+#: includes/Helper/ConfigHelper.php:432
+#: includes/Helper/ConfigHelper.php:556
+msgid "admin.default.rating.label"
+msgstr "Wie zufrieden bist du mit unserem Service?"
+
+#: includes/Helper/ConfigHelper.php:439
+msgid "admin.default.step1.headline.label"
+msgstr "Wie zufrieden bist du mit dem Inhalt?"
+
+#: includes/Helper/ConfigHelper.php:440
+msgid "admin.default.step1.description.label"
+msgstr "Hilf uns dabei, besser zu werden."
+
+#: includes/Helper/ConfigHelper.php:445
+msgid "admin.default.step2.headline.label"
+msgstr "Verrate uns mehr?"
+
+#: includes/Helper/ConfigHelper.php:446
+msgid "admin.default.step2.description.label"
+msgstr "Was hat dir besonders gefallen oder was können wir optimieren?"
+
+#: includes/Helper/ConfigHelper.php:447
+msgid "admin.default.step2.textarea.label"
+msgstr "Was können wir besser machen?"
+
+#: includes/Helper/ConfigHelper.php:447
+msgid "admin.default.step2.textarea.placeholder"
+msgstr "Schreibe hier dein Feedback..."
+
+#: includes/Helper/ConfigHelper.php:448
+msgid "admin.default.step2.button.back.label"
+msgstr "Zurück"
+
+#: includes/Helper/ConfigHelper.php:449
+msgid "admin.default.step2.button.submit.label"
+msgstr "Absenden"
+
+#: includes/Helper/ConfigHelper.php:459
+msgid "admin.feedback_button.btn_improve.label"
+msgstr "Bewerte deine Erfahrungen"
+
+#: includes/Helper/ConfigHelper.php:476
+msgid "admin.feedback_button.btn_missing.label"
+msgstr "Was fehlt dir auf der Seite?"
+
+#: includes/Helper/ConfigHelper.php:493
+msgid "admin.feedback_button.btn_idea.label"
+msgstr "Hast du eine Idee?"
+
+#: includes/Helper/ConfigHelper.php:510
+msgid "admin.feedback_button.btn_problem.label"
+msgstr "Melde ein Problem"
+
+#: includes/Helper/ConfigHelper.php:527
+msgid "admin.feedback_button.btn_other.label"
+msgstr "Sonstiges Feedback"
+
+#: includes/Helper/ConfigHelper.php:546
+msgid "admin.feedback_button.step1.headline.label"
+msgstr "Wie können wir uns verbessern?"
+
+#: includes/Helper/ConfigHelper.php:555
+msgid "admin.feedback_button.step2.improve.headline.label"
+msgstr "Wie zufrieden bist du mit uns?"
+
+#: includes/Helper/ConfigHelper.php:559
+msgid "admin.feedback_button.step2.missing.headline.label"
+msgstr "Welches Feature fehlt dir?"
+
+#: includes/Helper/ConfigHelper.php:560
+msgid "admin.feedback_button.step2.missing.description.label"
+msgstr "Teile uns mit, welches Feature oder welche Funktion du auf unserer Seite vermisst."
+
+#: includes/Helper/ConfigHelper.php:561
+msgid "admin.feedback_button.step2.missing.textarea.label"
+msgstr "Was können wir besser machen?"
+
+#: includes/Helper/ConfigHelper.php:561
+msgid "admin.feedback_button.step2.missing.textarea.placeholder"
+msgstr "z.B. eine spezielle Tabelle oder Benachrichtigungen.."
+
+#: includes/Helper/ConfigHelper.php:562
+msgid "admin.feedback_button.step2.missing.button.label"
+msgstr "Absenden"
+
+#: includes/Helper/ConfigHelper.php:565
+msgid "admin.feedback_button.step2.idea.headline.label"
+msgstr "Welche Funktion würdest du dir wünschen?"
+
+#: includes/Helper/ConfigHelper.php:566
+msgid "admin.feedback_button.step2.idea.description.label"
+msgstr "Beschreibe uns deine Idee so genau wie möglich."
+
+#: includes/Helper/ConfigHelper.php:567
+msgid "admin.feedback_button.step2.idea.textarea.label"
+msgstr "Was können wir besser machen?"
+
+#: includes/Helper/ConfigHelper.php:567
+msgid "admin.feedback_button.step2.idea.textarea.placeholder"
+msgstr "Ich würde mir wünschen, dass..."
+
+#: includes/Helper/ConfigHelper.php:568
+msgid "admin.feedback_button.step2.idea.button.label"
+msgstr "Absenden"
+
+#: includes/Helper/ConfigHelper.php:571
+msgid "admin.feedback_button.step2.problem.headline.label"
+msgstr "Was ist das Problem?"
+
+#: includes/Helper/ConfigHelper.php:572
+msgid "admin.feedback_button.step2.problem.description.label"
+msgstr "Gib uns bitte möglichst viele Details zum Problem."
+
+#: includes/Helper/ConfigHelper.php:573
+msgid "admin.feedback_button.step2.problem.textarea.label"
+msgstr "Was können wir besser machen?"
+
+#: includes/Helper/ConfigHelper.php:573
+msgid "admin.feedback_button.step2.problem.textarea.placeholder"
+msgstr "Ich habe versucht... und dann ist das passiert..."
+
+#: includes/Helper/ConfigHelper.php:574
+msgid "admin.feedback_button.step2.problem.button.label"
+msgstr "Absenden"
+
+#: includes/Helper/ConfigHelper.php:577
+msgid "admin.feedback_button.step2.other.headline.label"
+msgstr "Was möchtest du uns mitteilen?"
+
+#: includes/Helper/ConfigHelper.php:578
+msgid "admin.feedback_button.step2.other.description.label"
+msgstr "Wir freuen uns über jedes Feedback, das du uns gibst."
+
+#: includes/Helper/ConfigHelper.php:579
+msgid "admin.feedback_button.step2.other.textarea.label"
+msgstr "Was können wir besser machen?"
+
+#: includes/Helper/ConfigHelper.php:579
+msgid "admin.feedback_button.step2.other.textarea.placeholder"
+msgstr "Teile uns hier deine Gedanken mit..."
+
+#: includes/Helper/ConfigHelper.php:580
+msgid "admin.feedback_button.step2.other.button.label"
+msgstr "Absenden"
+
+#: includes/Helper/ConfigHelper.php:589
+msgid "admin.exit_intent.rating.label"
+msgstr "Wie zufrieden bist du mit unserem Service?"
+
+#: includes/Helper/ConfigHelper.php:604
+msgid "admin.exit_intent.headline.label"
+msgstr "Warte! Bevor du gehst..."
+
+#: includes/Helper/ConfigHelper.php:611
+msgid "admin.exit_intent.description.label"
+msgstr "Wie zufrieden warst du mit dem Inhalt unserer Seite?"
+
+#: includes/Helper/ConfigHelper.php:622
+msgid "admin.exit_intent.step2.headline.label"
+msgstr "Erzähle uns mehr"
+
+#: includes/Helper/ConfigHelper.php:628
+msgid "admin.exit_intent.step2.textarea.label"
+msgstr "Was können wir besser machen? (Optional)"
+
+#: includes/Helper/ConfigHelper.php:630
+msgid "admin.exit_intent.step2.textarea.placeholder"
+msgstr "Dein Feedback hilft uns sehr..."
+
+#: includes/Helper/ConfigHelper.php:636
+msgid "admin.exit_intent.step2.button.label"
+msgstr "Feedback absenden"
+
+#: includes/Helper/ConfigHelper.php:654
+msgid "admin.template1.nps.label"
+msgstr "Bewertung abgeben:"
+
+#: includes/Helper/ConfigHelper.php:669
+msgid "admin.template1.headline.label"
+msgstr "Wie wahrscheinlich ist es auf einer Skala von 0 bis 10, dass du unser Unternehmen einem Freund oder Kollegen empfiehlst?"
+
+#: includes/Helper/ConfigHelper.php:674
+msgid "admin.template1.step2.headline.label"
+msgstr "Vielen Dank!"
+
+#: includes/Helper/ConfigHelper.php:675
+msgid "admin.template1.step2.textarea.label"
+msgstr "Was ist der Hauptgrund für deine Bewertung?"
+
+#: includes/Helper/ConfigHelper.php:675
+msgid "admin.template1.step2.textarea.placeholder"
+msgstr "Hilf uns zu verstehen, was wir verbessern können..."
+
+#: includes/Helper/ConfigHelper.php:676
+msgid "admin.template1.step2.button.label"
+msgstr "Feedback Absenden"
+
+#: includes/Helper/ConfigHelper.php:688
+msgid "admin.template2.headline.label"
+msgstr "Fehler melden"
+
+#: includes/Helper/ConfigHelper.php:689
+msgid "admin.template2.description.label"
+msgstr "Bitte beschreibe das Problem so detailliert wie möglich."
+
+#: includes/Helper/ConfigHelper.php:690
+msgid "admin.template2.textarea.label"
+msgstr "Fehlerbeschreibung:"
+
+#: includes/Helper/ConfigHelper.php:690
+msgid "admin.template2.textarea.placeholder"
+msgstr "Welcher Fehler ist aufgetreten und auf welcher Seite?"
+
+#: includes/Helper/ConfigHelper.php:691
+msgid "admin.template2.button.label"
+msgstr "Fehlerbericht senden"
+
+#: includes/Helper/ConfigHelper.php:700
+msgid "admin.template3.rating.label"
+msgstr "Wie bewertest du den Artikel?"
+
+#: includes/Helper/ConfigHelper.php:715
+msgid "admin.template3.step1.headline.label"
+msgstr "Artikelbewertung"
+
+#: includes/Helper/ConfigHelper.php:720
+msgid "admin.template3.step2.headline.label"
+msgstr "Welche Informationen haben dir gefehlt?"
+
+#: includes/Helper/ConfigHelper.php:721
+msgid "admin.template3.step2.textarea.label"
+msgstr "Welche Informationen suchst du?"
+
+#: includes/Helper/ConfigHelper.php:721
+msgid "admin.template3.step2.textarea.placeholder"
+msgstr "Welche Informationen suchst du?"
+
+#: includes/Helper/ConfigHelper.php:722
+msgid "admin.template3.step2.button.label"
+msgstr "Senden"
+
+#: includes/Helper/ConfigHelper.php:732
+msgid "admin.template4.rating.label"
+msgstr "Wie bewertest du den Artikel?"
+
+#: includes/Helper/ConfigHelper.php:747
+msgid "admin.template4.step1.headline.label"
+msgstr "Artikelbewertung"
+
+#: includes/Helper/FormHelper.php:267
+msgid "admin.form_type.modal.name"
+msgstr "Overlay"
+
+#: includes/Helper/FormHelper.php:268
+msgid "admin.form_type.slide-in.name"
+msgstr "Slide-In"
+
+#: includes/Helper/FormHelper.php:269
+msgid "admin.form_type.feedback-button.name"
+msgstr "Feedback-Button"
+
+#: includes/Helper/FormHelper.php:270
+msgid "admin.form_type.shortcode.name"
+msgstr "Shortcode"
+
+#: includes/Helper/FormHelper.php:271
+msgid "admin.form_type.pre-content.name"
+msgstr "Pre-Content"
+
+#: includes/Helper/FormHelper.php:272
+msgid "admin.form_type.post-content.name"
+msgstr "Post-Content"
+
+#: includes/Lists/FormFeedbackListTable.php:33
+#: includes/Lists/FormListTable.php:39
+msgid "admin.form_list.id"
+msgstr "ID"
+
+#: includes/Lists/FormFeedbackListTable.php:34
+msgid "admin.form_list.form_id"
+msgstr "Formular-ID"
+
+#: includes/Lists/FormFeedbackListTable.php:35
+#: includes/Lists/FormFeedbackListTable.php:153
+msgid "admin.form_list.display_type"
+msgstr "Anzeigetyp"
+
+#: includes/Lists/FormFeedbackListTable.php:36
+msgid "admin.form_list.form_name"
+msgstr "Formularname"
+
+#: includes/Lists/FormFeedbackListTable.php:37
+msgid "admin.form_list.page_url"
+msgstr "Seiten-URL"
+
+#: includes/Lists/FormFeedbackListTable.php:38
+#: includes/Lists/FormListTable.php:41
+msgid "admin.form_list.status"
+msgstr "Status"
+
+#: includes/Lists/FormFeedbackListTable.php:39
+msgid "admin.form_list.created"
+msgstr "Erstellt"
+
+#: includes/Lists/FormFeedbackListTable.php:40
+#: includes/Lists/FormListTable.php:43
+msgid "admin.form_list.updated"
+msgstr "Aktualisiert"
+
+#: includes/Lists/FormFeedbackListTable.php:79
+#: includes/Lists/FormFeedbackListTable.php:163
+msgid "admin.form_list.filter.status.read"
+msgstr "Gelesen"
+
+#: includes/Lists/FormFeedbackListTable.php:82
+#: includes/Lists/FormFeedbackListTable.php:164
+msgid "admin.form_list.filter.status.archived"
+msgstr "Archiviert"
+
+#: includes/Lists/FormFeedbackListTable.php:86
+#: includes/Lists/FormFeedbackListTable.php:162
+msgid "admin.form_list.filter.status.unread"
+msgstr "Ungelesen"
+
+#: includes/Lists/FormFeedbackListTable.php:105
+msgid "admin.form_list.action.view"
+msgstr "Anzeigen"
+
+#: includes/Lists/FormFeedbackListTable.php:110
+msgid "admin.form_list.action.delete"
+msgstr "Löschen"
+
+#: includes/Lists/FormFeedbackListTable.php:122
+msgid "admin.form_list.no_items"
+msgstr "Keine Formular-Feedbacks gefunden."
+
+#: includes/Lists/FormFeedbackListTable.php:135
+msgid "admin.form_list.filter.form"
+msgstr "Formular"
+
+#: includes/Lists/FormFeedbackListTable.php:161
+msgid "admin.form_list.filter.status.placeholder"
+msgstr "Status"
+
+#: includes/Lists/FormFeedbackListTable.php:168
+msgid "admin.form_list.filter.range.placeholder"
+msgstr "Zeitraum"
+
+#: includes/Lists/FormFeedbackListTable.php:169
+msgid "admin.form_list.filter.range.today"
+msgstr "Heute"
+
+#: includes/Lists/FormFeedbackListTable.php:170
+msgid "admin.form_list.filter.range.yesterday"
+msgstr "Gestern"
+
+#: includes/Lists/FormFeedbackListTable.php:171
+msgid "admin.form_list.filter.range.last_7_days"
+msgstr "Letzte 7 Tage"
+
+#: includes/Lists/FormFeedbackListTable.php:172
+msgid "admin.form_list.filter.range.last_30_days"
+msgstr "Letzte 30 Tage"
+
+#: includes/Lists/FormFeedbackListTable.php:173
+msgid "admin.form_list.filter.range.this_month"
+msgstr "Diesen Monat"
+
+#: includes/Lists/FormFeedbackListTable.php:174
+msgid "admin.form_list.filter.range.last_month"
+msgstr "Letzten Monat"
+
+#: includes/Lists/FormFeedbackListTable.php:175
+msgid "admin.form_list.filter.range.this_year"
+msgstr "Dieses Jahr"
+
+#: includes/Lists/FormFeedbackListTable.php:176
+msgid "admin.form_list.filter.range.last_year"
+msgstr "Letztes Jahr"
+
+#: includes/Lists/FormFeedbackListTable.php:177
+msgid "admin.form_list.filter.range.custom"
+msgstr "Benutzerdefiniert"
+
+#: includes/Lists/FormFeedbackListTable.php:181
+msgid "admin.form_list.filter.date.start"
+msgstr "Startdatum"
+
+#: includes/Lists/FormFeedbackListTable.php:182
+msgid "admin.form_list.filter.date.end"
+msgstr "Enddatum"
+
+#: includes/Lists/FormFeedbackListTable.php:185
+msgid "admin.form_list.filter.button"
+msgstr "Filtern"
+
+#: includes/Lists/FormListTable.php:40
+msgid "admin.form_list.name"
+msgstr "Name"
+
+#: includes/Lists/FormListTable.php:42
+msgid "admin.form_list.shortcode"
+msgstr "Shortcode"
+
+#: includes/Lists/FormListTable.php:64
+msgid "admin.form_list.status.paused"
+msgstr "Pausiert"
+
+#: includes/Lists/FormListTable.php:69
+msgid "admin.form_list.status.live"
+msgstr "Live"
+
+#: includes/Lists/FormListTable.php:73
+msgid "admin.form_list.status.admin_only"
+msgstr "Admin-Only"
+
+#: includes/Lists/FormListTable.php:103
+msgid "admin.form_list.actions.edit"
+msgstr "Bearbeiten"
+
+#: includes/Lists/FormListTable.php:112
+msgid "admin.form_list.actions.duplicate"
+msgstr "Duplizieren"
+
+#: includes/Lists/FormListTable.php:121
+msgid "admin.form_list.actions.delete"
+msgstr "Löschen"
+
+#: includes/Lists/FormListTable.php:144
+msgid "admin.form_list.no_forms"
+msgstr "Keine Formulare gefunden."
+
+#: includes/Page/About.php:21
+msgid "admin.page.about.box.about"
+msgstr "Über FLWP"
+
+#: includes/Page/About.php:22
+msgid "admin.page.about.box.usage"
+msgstr "Verwendung"
+
+#: includes/Page/About.php:23
+msgid "admin.page.about.box.more_info"
+msgstr "Weitere Informationen und Dokumentation"
+
+#: includes/Page/About.php:24
+msgid "admin.page.about.box.support"
+msgstr "Hilfe und Support"
+
+#: includes/Page/About.php:25
+msgid "admin.page.about.box.affiliate"
+msgstr "Affiliate-Programm"
+
+#: includes/Page/About.php:26
+msgid "admin.page.about.box.author"
+msgstr "Autor"
+
+#: includes/Page/About.php:27
+msgid "admin.page.about.box.debug"
+msgstr "Debug- und Versionsinformationen"
+
+#: includes/Page/About.php:36
+msgid "admin.page.about.about_text"
+msgstr "FLWP ist ein leistungsstarkes Feedback-Plugin für WordPress."
+
+#: includes/Page/About.php:39
+msgid "admin.page.about.usage_text"
+msgstr "Es ermöglicht Ihnen, Feedback Ihrer Nutzer auf einfache und effiziente Weise zu sammeln."
+
+#: includes/Page/About.php:50
+msgid "admin.page.about.usage.step1"
+msgstr "Um zu beginnen, kannst du ein neues Feedback-Formular mit dem Formular-Builder erstellen."
+
+#: includes/Page/About.php:51
+msgid "admin.page.about.usage.step2"
+msgstr "Sobald dein Formular erstellt ist, kannst du die Targeting-Einstellungen konfigurieren, um zu entscheiden, wo und wann das Formular auf deiner Website erscheinen soll."
+
+#: includes/Page/About.php:54
+msgid "admin.page.about.usage.step3"
+msgstr "Nachdem das Formular aktiv ist, kannst du das gesammelte Feedback in der Feedback-Liste einsehen oder für eine weitere Analyse exportieren."
+
+#: includes/Page/About.php:66
+msgid "admin.page.about.more_info.link"
+msgstr "Für weitere Informationen und eine detaillierte Dokumentation besuch bitte unsere %s."
+
+#: includes/Page/About.php:67
+msgid "admin.page.about.more_info.official_website"
+msgstr "offizielle Website"
+
+#: includes/Page/About.php:80
+msgid "admin.page.about.support.link"
+msgstr "Wenn du Hilfe benötigst oder Fragen hast, schau dir bitte unsere %s an oder eröffne ein Support-Ticket im %s."
+
+#: includes/Page/About.php:81
+msgid "admin.page.about.documentation.title"
+msgstr "Dokumentation"
+
+#: includes/Page/About.php:95
+msgid "admin.page.about.affiliate.link"
+msgstr "Gefällt dir FLWP und möchtest du Geld durch Empfehlungen verdienen? Nutze unser %s."
+
+#: includes/Page/About.php:96
+msgid "admin.page.about.affiliate"
+msgstr "Affiliate-Programm"
+
+#: includes/Page/About.php:100
+msgid "admin.page.about.affiliate.text"
+msgstr "Verdiene bis zu 15% Provision für jeden Verkauf, den du uns vermittelst."
+
+#: includes/Page/About.php:112
+msgid "admin.page.about.author.text"
+msgstr "FLWP wurde von %s entwickelt."
+
+#: includes/Page/About.php:126
+msgid "admin.page.about.debug.hint"
+msgstr "Bitte gib diese Informationen bei Fehlerberichten und Support-Anfragen an."
+
+#: includes/Page/Page.php:26
+msgid "FLWP"
+msgstr "FLWP"
+
+#: templates/admin/flwp-admin-page.php:24
+msgid "admin.horizontal_navigation.brand"
+msgstr "FLWP"
+
+#: templates/admin/flwp-admin-page.php:29
+msgid "admin.horizontal_navigation.dashboard"
+msgstr "Dashboard"
+
+#: templates/admin/flwp-admin-page.php:34
+msgid "admin.horizontal_navigation.all_forms"
+msgstr "Formulare"
+
+#: templates/admin/flwp-admin-page.php:39
+msgid "admin.horizontal_navigation.add_form"
+msgstr "Formular anlegen"
+
+#: templates/admin/flwp-admin-page.php:44
+msgid "admin.horizontal_navigation.feedback_list"
+msgstr "Feedback-Liste"
+
+#: templates/admin/flwp-admin-page.php:49
+msgid "admin.horizontal_navigation.export"
+msgstr "Export"
+
+#: templates/admin/flwp-admin-page.php:54
+msgid "admin.horizontal_navigation.about"
+msgstr "Über FLWP"
+
+#: templates/admin/flwp-dashboard.php:13
+msgid "admin.page.dashboard.welcome"
+msgstr "Willkommen zurück!"
+
+#: templates/admin/flwp-dashboard.php:14
+msgid "admin.page.dashboard.overview"
+msgstr "Hier ist ein Überblick über dein Feedback-Widget."
+
+#: templates/admin/flwp-dashboard.php:19
+msgid "admin.page.dashboard.summary"
+msgstr "Zusammenfassung"
+
+#: templates/admin/flwp-dashboard.php:22
+msgid "admin.page.dashboard.total"
+msgstr "Gesamt"
+
+#: templates/admin/flwp-dashboard.php:26
+msgid "admin.page.dashboard.today"
+msgstr "Heute"
+
+#: templates/admin/flwp-dashboard.php:34
+msgid "admin.page.dashboard.distribution_by_type"
+msgstr "Verteilung nach Typ"
+
+#: templates/admin/flwp-dashboard.php:38
+msgid "admin.page.dashboard.type.shortcode"
+msgstr "Shortcode:"
+
+#: templates/admin/flwp-dashboard.php:42
+msgid "admin.page.dashboard.type.pre_content"
+msgstr "Pre-Content:"
+
+#: templates/admin/flwp-dashboard.php:46
+msgid "admin.page.dashboard.type.post_content"
+msgstr "Post-Content:"
+
+#: templates/admin/flwp-dashboard.php:50
+msgid "admin.page.dashboard.type.overlay"
+msgstr "Overlay:"
+
+#: templates/admin/flwp-dashboard.php:54
+msgid "admin.page.dashboard.type.slide_in"
+msgstr "Slide-In:"
+
+#: templates/admin/flwp-dashboard.php:58
+msgid "admin.page.dashboard.type.feedback_button"
+msgstr "Feedback-Button:"
+
+#: templates/admin/flwp-dashboard.php:66
+msgid "admin.page.dashboard.recent_activities"
+msgstr "Letzte Aktivitäten"
+
+#: templates/admin/flwp-dashboard.php:73
+msgid "admin.page.dashboard.no_activities"
+msgstr "Keine Aktivitäten verfügbar."
+
+#: templates/admin/flwp-dashboard.php:98
+msgid "admin.page.dashboard.feedback_trend"
+msgstr "Feedback-Trend (letzte 30 Tage)"
+
+#: templates/admin/flwp-export.php:8
+msgid "admin.page.export.pro_notice.headline"
+msgstr "Exportiere oder Importiere deine Feedbacks und Formulare in Wordpress"
+
+#: templates/admin/flwp-export.php:10
+msgid "admin.page.export.pro_notice.intro"
+msgstr "Nach dem Upgrade auf <strong>FLWP Pro</strong> hast du hier die Möglichkeit, alle Feedbackeinträge und Formulare unkompliziert in deinem Wordpress-Dashboard als CSV oder JSON zu exportieren oder zu importieren"
+
+#: templates/admin/flwp-export.php:12
+msgid "admin.page.export.pro_notice.advantage.1"
+msgstr "Exportiere alle Feedbackeinträge unkompliziert als CSV oder JSON"
+
+#: templates/admin/flwp-export.php:13
+msgid "admin.page.export.pro_notice.advantage.2"
+msgstr "Importiere und Exportiere deine Formular-Konfigurationen für einfache Backups"
+
+#: templates/admin/flwp-export.php:14
+msgid "admin.page.export.pro_notice.advantage.3"
+msgstr "Nutze erweiterte Filteroptionen für gezielte Daten-Exporte"
+
+#: templates/admin/flwp-export.php:15
+msgid "admin.page.export.pro_notice.advantage.4"
+msgstr "Exportiere detaillierte Tracking-Daten zu jedem Feedback-Eintrag"
+
+#: templates/admin/flwp-form-builder.php:13
+#: templates/admin/flwp-form-builder.php:80
+msgid "admin.page.builder.status.paused"
+msgstr "Pausiert"
+
+#: templates/admin/flwp-form-builder.php:18
+#: templates/admin/flwp-form-builder.php:85
+msgid "admin.page.builder.status.live"
+msgstr "Live"
+
+#: templates/admin/flwp-form-builder.php:22
+#: templates/admin/flwp-form-builder.php:90
+msgid "admin.page.builder.status.admin_only"
+msgstr "Admin-Only"
+
+#: templates/admin/flwp-form-builder.php:46
+msgid "admin.page.builder.form_title.default"
+msgstr "Feedback-Formular"
+
+#: templates/admin/flwp-form-builder.php:46
+msgid "admin.page.builder.form_title.edit_title"
+msgstr "Formulartitel bearbeiten"
+
+#: templates/admin/flwp-form-builder.php:49
+msgid "admin.page.builder.form_id"
+msgstr "Formular-ID"
+
+#: templates/admin/flwp-form-builder.php:50
+msgid "admin.page.builder.last_saved"
+msgstr "Letzte Speicherung"
+
+#: templates/admin/flwp-form-builder.php:51
+msgid "admin.page.builder.last_published"
+msgstr "Letzte Veröffentlichung"
+
+#: templates/admin/flwp-form-builder.php:60
+msgid "admin.page.builder.undo"
+msgstr "Letzte Aktion rückgängig machen (Strg + Z)"
+
+#: templates/admin/flwp-form-builder.php:63
+msgid "admin.page.builder.redo"
+msgstr "Aktion wiederholen (Strg + Y)"
+
+#: templates/admin/flwp-form-builder.php:70
+msgid "admin.page.builder.change_status"
+msgstr "Formularstatus ändern"
+
+#: templates/admin/flwp-form-builder.php:98
+msgid "admin.page.builder.load_templates"
+msgstr "Vorlage laden"
+
+#: templates/admin/flwp-form-builder.php:99
+msgid "admin.page.builder.templates"
+msgstr "Vorlagen"
+
+#: templates/admin/flwp-form-builder.php:101
+msgid "admin.page.builder.json_export_import"
+msgstr "JSON Definition exportieren/importieren"
+
+#: templates/admin/flwp-form-builder.php:102
+msgid "admin.page.builder.json_label"
+msgstr "JSON"
+
+#: templates/admin/flwp-form-builder.php:108
+msgid "admin.page.builder.save_draft"
+msgstr "Entwurf speichern"
+
+#: templates/admin/flwp-form-builder.php:109
+msgid "admin.page.builder.save"
+msgstr "Speichern"
+
+#: templates/admin/flwp-form-builder.php:111
+msgid "admin.page.builder.publish"
+msgstr "Formular veröffentlichen"
+
+#: templates/admin/flwp-form-builder.php:112
+msgid "admin.page.builder.publish_btn"
+msgstr "Veröffentlichen"
+
+#: templates/admin/flwp-form-builder.php:118
+msgid "admin.page.builder.split_view_title"
+msgstr "Split-View (Nebeneinander)"
+
+#: templates/admin/flwp-form-builder.php:119
+msgid "admin.page.builder.split_view"
+msgstr "Split-View"
+
+#: templates/admin/flwp-form-builder.php:121
+msgid "admin.page.builder.preview_modal_title"
+msgstr "Vollbild-Vorschau öffnen"
+
+#: templates/admin/flwp-form-builder.php:122
+msgid "admin.page.builder.preview"
+msgstr "Vorschau"
+
+#: templates/admin/flwp-form-builder.php:127
+msgid "admin.page.builder.close_editor"
+msgstr "Editor schließen"
+
+#: templates/admin/flwp-form-builder.php:133
+msgid "admin.page.builder.nav_steps"
+msgstr "Editor Navigationsschritte"
+
+#: templates/admin/flwp-form-builder.php:135
+msgid "admin.page.builder.nav.fields"
+msgstr "Felder"
+
+#: templates/admin/flwp-form-builder.php:138
+msgid "admin.page.builder.nav.general"
+msgstr "Allgemein"
+
+#: templates/admin/flwp-form-builder.php:141
+msgid "admin.page.builder.nav.styles"
+msgstr "Styles"
+
+#: templates/admin/flwp-form-builder.php:144
+msgid "admin.page.builder.nav.display"
+msgstr "Anzeige"
+
+#: templates/admin/flwp-form-builder.php:147
+msgid "admin.page.builder.nav.targeting"
+msgstr "Ausspielung"
+
+#: templates/admin/flwp-form-builder.php:150
+msgid "admin.page.builder.nav.confirmation"
+msgstr "Bestätigung"
+
+#: templates/admin/flwp-form-builder.php:153
+msgid "admin.page.builder.nav.notification"
+msgstr "Benachrichtigung"
+
+#: templates/admin/flwp-form-builder.php:156
+msgid "admin.page.builder.nav.tracking"
+msgstr "Tracking"
+
+#: templates/admin/flwp-form-builder.php:187
+msgid "admin.page.builder.json_modal.title"
+msgstr "Formular-Speicherdefinition (JSON)"
+
+#: templates/admin/flwp-form-builder.php:188
+#: templates/admin/flwp-form-builder.php:207
+msgid "admin.page.builder.close"
+msgstr "Schließen"
+
+#: templates/admin/flwp-form-builder.php:192
+msgid "admin.page.builder.json_modal.description"
+msgstr "Dies ist die serialisierte Definition des aktuellen Formulars. Du kannst das JSON kopieren, um es abzuspeichern, oder eine zuvor gespeicherte Definition einfügen, um das Formular direkt wiederherzustellen."
+
+#: templates/admin/flwp-form-builder.php:196
+msgid "admin.page.builder.json_modal.label"
+msgstr "JSON-Definition"
+
+#: templates/admin/flwp-form-builder.php:197
+msgid "admin.page.builder.json_modal.placeholder"
+msgstr "Füge hier eine JSON-Definition ein..."
+
+#: templates/admin/flwp-form-builder.php:202
+msgid "admin.page.builder.json_modal.import_btn"
+msgstr "JSON laden / Importieren"
+
+#: templates/admin/flwp-form-builder.php:205
+msgid "admin.page.builder.json_modal.copy_btn"
+msgstr "In die Zwischenablage kopieren"
+
+#: templates/admin/flwp-form-builder.php:225
+msgid "admin.page.builder.modal_tmpl_title"
+msgstr "Feedback-Vorlage laden"
+
+#: templates/admin/flwp-form-builder.php:230
+msgid "admin.page.builder.modal_tmpl_desc"
+msgstr "Wähle eine professionell gestaltete Vorlage als Startpunkt für dein Feedback-Formular. Bitte beachte, dass dies dein aktuelles Formular im Editor überschreibt."
+
+#: templates/admin/flwp-form-builder.php:238
+msgid "admin.page.builder.modal_tmpl_cancel"
+msgstr "Abbrechen"
+
+#: templates/admin/flwp-form-builder.php:249
+msgid "admin.page.builder.pro.title"
+msgstr "FLWP Pro freischalten"
+
+#: templates/admin/flwp-form-builder.php:258
+msgid "admin.page.builder.pro.subtitle"
+msgstr "Bringe dein Feedback auf das nächste Level!"
+
+#: templates/admin/flwp-form-builder.php:260
+msgid "admin.page.builder.pro.description"
+msgstr "Diese Funktion ist exklusiv in der PRO-Version von FLWP verfügbar. Optimiere deine Conversion-Rate und erhalte tiefere Einblicke."
+
+#: templates/admin/flwp-form-builder.php:265
+msgid "admin.page.builder.pro.benefits_title"
+msgstr "Deine Pro Vorteile:"
+
+#: templates/admin/flwp-form-builder.php:269
+msgid "admin.page.builder.pro.benefit.1"
+msgstr "Premium Bewertungselemente: Nutze Thumbs-up/down, interaktive Smileys und den Industriestandard NPS."
+
+#: templates/admin/flwp-form-builder.php:273
+msgid "admin.page.builder.pro.benefit.2"
+msgstr "Fortgeschrittene URL-Filter: Zeige Formulare nur auf bestimmten Seiten, Pfaden oder schließe diese gezielt aus."
+
+#: templates/admin/flwp-form-builder.php:277
+msgid "admin.page.builder.pro.benefit.3"
+msgstr "Erweitertes Nutzer-Tracking: Erfasse automatisch Bildschirmauflösung, Verweildauer, Sprache, Gerätetyp und mehr."
+
+#: templates/admin/flwp-form-builder.php:283
+msgid "admin.page.builder.pro.cancel_btn"
+msgstr "Abbrechen"
+
+#: templates/admin/flwp-form-builder.php:285
+msgid "admin.page.builder.pro.upgrade_btn"
+msgstr "Jetzt upgraden & freischalten"
+
+#: templates/admin/flwp-form-builder.php:321
+msgid "admin.builder.overlay_template.back"
+msgstr "Zurück"
+
+#: templates/admin/flwp-form-builder.php:333
+msgid "admin.builder.overlay_template.feedback"
+msgstr "Feedback"
+
+#: templates/admin/flwp-form-builder.php:340
+msgid "admin.builder.overlay_template.close"
+msgstr "Schließen"
+
+#: templates/admin/flwp-form-builder.php:352
+msgid "admin.builder.overlay_template.footer_text"
+msgstr "Wir schätzen dein ehrliches Feedback!"
+
+#: templates/admin/flwp-form-feedback-list.php:8
+msgid "admin.page.feedback_list.pro_notice.headline"
+msgstr "Zeige deine Feedbackeinträge in Wordpress an und verwalte sie"
+
+#: templates/admin/flwp-form-feedback-list.php:9
+msgid "admin.page.feedback_list.pro_notice.intro"
+msgstr "Nach dem Upgrade auf <strong>FLWP Pro</strong> werden alle zukünftigen Feedbackeinträge in deiner Wordpress-Datenbank gespeichert und hier aufgelistet"
+
+#: templates/admin/flwp-form-feedback-list.php:11
+msgid "admin.page.feedback_list.pro_notice.advantage.1"
+msgstr "Verwalte alle Feedbacks unkompliziert in deinem Wordpress-Dashboard"
+
+#: templates/admin/flwp-form-feedback-list.php:12
+msgid "admin.page.feedback_list.pro_notice.advantage.2"
+msgstr "Schaue dir Details zu jedem Feedback wie Trackingdaten oder Userwerte an"
+
+#: templates/admin/flwp-form-feedback-list.php:13
+msgid "admin.page.feedback_list.pro_notice.advantage.3"
+msgstr "Markiere ein Feedback als gelesen/ungelesen"
+
+#: templates/admin/flwp-form-feedback-list.php:14
+msgid "admin.page.feedback_list.pro_notice.advantage.4"
+msgstr "Filtere alle Feedbackeinträge für genauere Analysen"
+
+#: templates/admin/flwp-form-feedback-list.php:23
+#: templates/admin/premium/flwp-form-feedback-list.php:9
+msgid "admin.page.feedback_list.title"
+msgstr "Formular-Feedbacks"
+
+#: templates/admin/flwp-form-list.php:9
+msgid "admin.page.form_list.title"
+msgstr "Alle Formulare"
+
+#: templates/admin/flwp-form-list.php:10
+msgid "admin.page.form_list.add_new"
+msgstr "Neu hinzufügen"
+
+#: templates/admin/flwp-form-list.php:15
+msgid "admin.page.form_list.notice.duplicate_success"
+msgstr "Formular wurde erfolgreich dupliziert."
+
+#: templates/admin/flwp-form-list.php:21
+msgid "admin.page.form_list.notice.delete_success"
+msgstr "Formular und alle dazugehörigen Feedbacks wurden erfolgreich gelöscht."
+
+#: templates/admin/flwp-form-list.php:27
+msgid "admin.page.form_list.notice.form_not_found"
+msgstr "Das angeforderte Formular existiert nicht."
+
+#: templates/admin/form-builder/confirmation.php:7
+msgid "admin.builder.confirmation.aria_label"
+msgstr "Einsendung-Bestätigungen"
+
+#: templates/admin/form-builder/confirmation.php:12
+msgid "admin.builder.confirmation.title"
+msgstr "Bestätigungen"
+
+#: templates/admin/form-builder/confirmation.php:17
+msgid "admin.builder.confirmation.description"
+msgstr "Definiere hier, was passiert, nachdem der Benutzer das Feedback erfolgreich abgesendet hat."
+
+#: templates/admin/form-builder/confirmation.php:21
+msgid "admin.builder.confirmation.confirm_type.label"
+msgstr "Art der Bestätigung"
+
+#: templates/admin/form-builder/confirmation.php:23
+msgid "admin.builder.confirmation.confirm_type.message"
+msgstr "Nachricht (Direkt im Overlay anzeigen)"
+
+#: templates/admin/form-builder/confirmation.php:24
+msgid "admin.builder.confirmation.confirm_type.url"
+msgstr "Beliebige Web-URL laden (Ext. Weiterleitung)"
+
+#: templates/admin/form-builder/confirmation.php:30
+msgid "admin.builder.confirmation.confirm_color.label"
+msgstr "Bestätigungsfarbe (Text & Icon)"
+
+#: templates/admin/form-builder/confirmation.php:38
+msgid "admin.builder.confirmation.confirm_message.label"
+msgstr "Bestätigungs-Nachricht"
+
+#: templates/admin/form-builder/confirmation.php:42
+msgid "admin.builder.confirmation.confirm_message.default"
+msgstr "Danke für dein Feedback! Es hilft dabei, uns stetig zu verbessern."
+
+#: templates/admin/form-builder/confirmation.php:59
+msgid "admin.builder.confirmation.redirect_url.label"
+msgstr "Weiterleitungs-URL"
+
+#: templates/admin/form-builder/confirmation.php:60
+msgid "admin.builder.confirmation.redirect_url.default_value"
+msgstr "https://meine-website.de/danke"
+
+#: templates/admin/form-builder/confirmation.php:60
+msgid "admin.builder.confirmation.redirect_url.placeholder"
+msgstr "https://beispiel-url.de/seite"
+
+#: templates/admin/form-builder/display.php:17
+msgid "admin.builder.display.header.title"
+msgstr "Anzeigetyp & Globale Einstellungen"
+
+#: templates/admin/form-builder/display.php:28
+msgid "admin.builder.display.section1.title"
+msgstr "1. Hauptanzeigetyp wählen"
+
+#: templates/admin/form-builder/display.php:30
+msgid "admin.builder.display.step1"
+msgstr "Schritt 1"
+
+#: templates/admin/form-builder/display.php:33
+msgid "admin.builder.display.section1.description"
+msgstr "Bestimme, wie und an welcher Stelle das Formular auf deiner WordPress-Website gerendert wird."
+
+#: templates/admin/form-builder/display.php:43
+msgid "admin.builder.display.card1.title"
+msgstr "In-Content (Shortcode)"
+
+#: templates/admin/form-builder/display.php:44
+msgid "admin.builder.display.card1.description"
+msgstr "Direkt im Beitragstext oder per Shortcode eingebettet."
+
+#: templates/admin/form-builder/display.php:57
+msgid "admin.builder.display.card2.title"
+msgstr "Overlay Modal (Pop-up)"
+
+#: templates/admin/form-builder/display.php:58
+msgid "admin.builder.display.card2.description"
+msgstr "Zentriertes Dialogfenster über der Seite mit abgedunkeltem Hintergrund."
+
+#: templates/admin/form-builder/display.php:71
+msgid "admin.builder.display.card3.title"
+msgstr "Slide-In Widget"
+
+#: templates/admin/form-builder/display.php:72
+msgid "admin.builder.display.card3.description"
+msgstr "Dezentes Widget, das aus einer Ecke (z. B. unten rechts) aufsteigt."
+
+#: templates/admin/form-builder/display.php:85
+msgid "admin.builder.display.card4.title"
+msgstr "Schwebender Feedback-Button"
+
+#: templates/admin/form-builder/display.php:86
+msgid "admin.builder.display.card4.description"
+msgstr "Fester Button am Seitenrand, der bei Klick das Formular aufklappt."
+
+#: templates/admin/form-builder/display.php:98
+msgid "admin.builder.display.in_content.auto_insert"
+msgstr "Automatisches Einfügen ohne Shortcode aktivieren"
+
+#: templates/admin/form-builder/display.php:106
+msgid "admin.builder.display.in_content.position.label"
+msgstr "Einfüge-Position im Beitrag"
+
+#: templates/admin/form-builder/display.php:108
+msgid "admin.builder.display.in_content.position.bottom"
+msgstr "Am Ende des Inhalts (Empfohlen)"
+
+#: templates/admin/form-builder/display.php:109
+msgid "admin.builder.display.in_content.position.top"
+msgstr "Am Anfang des Inhalts"
+
+#: templates/admin/form-builder/display.php:119
+msgid "admin.builder.display.section2.title"
+msgstr "2. Auslöser & Timing (Triggers)"
+
+#: templates/admin/form-builder/display.php:121
+msgid "admin.builder.display.step2"
+msgstr "Schritt 2"
+
+#: templates/admin/form-builder/display.php:124
+msgid "admin.builder.display.section2.description"
+msgstr "Wann soll das Formular angezeigt oder der Auslöser aktiviert werden?"
+
+#: templates/admin/form-builder/display.php:138
+msgid "admin.builder.display.trigger.click"
+msgstr "Klick-Event"
+
+#: templates/admin/form-builder/display.php:141
+msgid "admin.builder.display.trigger.exit_intent"
+msgstr "Exit-Intent"
+
+#: templates/admin/form-builder/display.php:144
+msgid "admin.builder.display.trigger.delay"
+msgstr "Zeitverzögerung"
+
+#: templates/admin/form-builder/display.php:147
+msgid "admin.builder.display.trigger.scroll"
+msgstr "Scrolltiefe"
+
+#: templates/admin/form-builder/display.php:157
+msgid "admin.builder.display.trigger.click.selector.label"
+msgstr "Klick-Auslöser CSS-Selektor"
+
+#: templates/admin/form-builder/display.php:159
+msgid "admin.builder.display.trigger.click.hint"
+msgstr "Das Overlay oder Panel öffnet sich, wenn ein Besucher ein Element mit diesem CSS-Selektor anklickt."
+
+#: templates/admin/form-builder/display.php:163
+msgid "admin.builder.display.trigger.click.standard_button.label"
+msgstr "Standard-Feedback-Button erzeugen"
+
+#: templates/admin/form-builder/display.php:174
+msgid "admin.builder.display.trigger.exit_intent.hint"
+msgstr "Reagiert automatisch, wenn der Nutzer mit der Maus den oberen Bildschirmrand verlässt."
+
+#: templates/admin/form-builder/display.php:177
+msgid "admin.builder.display.trigger.exit_intent.sensitivity.label"
+msgstr "Exit-Intent Sensitivität / Verweildauer"
+
+#: templates/admin/form-builder/display.php:179
+msgid "admin.builder.display.trigger.exit_intent.sensitivity.immediate"
+msgstr "Sofort bei Maus-Austritt (Standard)"
+
+#: templates/admin/form-builder/display.php:180
+msgid "admin.builder.display.trigger.exit_intent.sensitivity.5s"
+msgstr "Maus-Austritt erst nach mind. 5 Sek. Verweildauer"
+
+#: templates/admin/form-builder/display.php:181
+msgid "admin.builder.display.trigger.exit_intent.sensitivity.10s"
+msgstr "Maus-Austritt erst nach mind. 10 Sek. Verweildauer"
+
+#: templates/admin/form-builder/display.php:182
+msgid "admin.builder.display.trigger.exit_intent.sensitivity.60s"
+msgstr "Maus-Austritt erst nach mind. 60 Sek. Verweildauer"
+
+#: templates/admin/form-builder/display.php:190
+msgid "admin.builder.display.trigger.delay.hint"
+msgstr "Blendet das Formular nach einer festgelegten Zeitspanne auf der Seite ein."
+
+#: templates/admin/form-builder/display.php:193
+msgid "admin.builder.display.trigger.delay.label"
+msgstr "Verzögerung nach Seitenaufruf (Sekunden)"
+
+#: templates/admin/form-builder/display.php:201
+msgid "admin.builder.display.trigger.scroll.hint"
+msgstr "Blendet das Formular ein, sobald der Leser eine bestimmte Scrolltiefe erreicht hat."
+
+#: templates/admin/form-builder/display.php:204
+msgid "admin.builder.display.trigger.scroll.condition.label"
+msgstr "Scroll-Bedingung"
+
+#: templates/admin/form-builder/display.php:206
+msgid "admin.builder.display.trigger.scroll.condition.end"
+msgstr "Ende der Seite (Scrollen ans Seitenende)"
+
+#: templates/admin/form-builder/display.php:207
+msgid "admin.builder.display.trigger.scroll.condition.percent"
+msgstr "Prozentwert der Scrolltiefe"
+
+#: templates/admin/form-builder/display.php:211
+msgid "admin.builder.display.trigger.scroll.percent.label"
+msgstr "Scrolltiefe (%)"
+
+#: templates/admin/form-builder/display.php:223
+msgid "admin.builder.display.feedback_button.title"
+msgstr "Feedback-Button Einstellungen"
+
+#: templates/admin/form-builder/display.php:225
+msgid "admin.builder.display.step.2"
+msgstr "Schritt 2"
+
+#: templates/admin/form-builder/display.php:228
+msgid "admin.builder.display.feedback_button.description"
+msgstr "Konfiguriere das Aussehen, die Beschriftung und die Positionierung des schwebenden Feedback-Buttons."
+
+#: templates/admin/form-builder/display.php:233
+msgid "admin.builder.display.feedback_button.label.text"
+msgstr "Button-Beschriftung"
+
+#: templates/admin/form-builder/display.php:234
+msgid "admin.builder.display.feedback_button.label.default"
+msgstr "Feedback"
+
+#: templates/admin/form-builder/display.php:237
+msgid "admin.builder.display.feedback_button.position.label"
+msgstr "Button-Position"
+
+#: templates/admin/form-builder/display.php:239
+msgid "admin.builder.display.feedback_button.position.right_middle"
+msgstr "Mitte Rechts schwebend"
+
+#: templates/admin/form-builder/display.php:240
+msgid "admin.builder.display.feedback_button.position.left_middle"
+msgstr "Mitte Links schwebend"
+
+#: templates/admin/form-builder/display.php:241
+msgid "admin.builder.display.feedback_button.position.bottom_right"
+msgstr "Unten Rechts schwebend"
+
+#: templates/admin/form-builder/display.php:242
+msgid "admin.builder.display.feedback_button.position.bottom_middle"
+msgstr "Unten Mitte schwebend"
+
+#: templates/admin/form-builder/display.php:243
+msgid "admin.builder.display.feedback_button.position.bottom_left"
+msgstr "Unten Links schwebend"
+
+#: templates/admin/form-builder/display.php:247
+msgid "admin.builder.display.feedback_button.hide_option.label"
+msgstr "Link „Feedback-Button vorübergehend ausblenden“ anzeigen, wenn Footer-Text deaktiviert"
+
+#: templates/admin/form-builder/display.php:257
+msgid "admin.builder.display.feedback_button.custom_design.title"
+msgstr "Eigenes Design &amp; Farben für Feedback-Button"
+
+#: templates/admin/form-builder/display.php:258
+msgid "admin.builder.display.feedback_button.custom_design.description"
+msgstr "Farben und Schriftgröße individuell anpassen"
+
+#: templates/admin/form-builder/display.php:271
+msgid "admin.builder.display.feedback_button.font_size.label"
+msgstr "Schriftgröße"
+
+#: templates/admin/form-builder/display.php:281
+msgid "admin.builder.display.feedback_button.background.label"
+msgstr "Hintergrund"
+
+#: templates/admin/form-builder/display.php:289
+msgid "admin.builder.display.feedback_button.text_color.label"
+msgstr "Textfarbe"
+
+#: templates/admin/form-builder/display.php:297
+msgid "admin.builder.display.feedback_button.border.label"
+msgstr "Rahmen / Rand"
+
+#: templates/admin/form-builder/display.php:305
+msgid "admin.builder.display.feedback_button.hover.background.label"
+msgstr "Hover Hintergrund"
+
+#: templates/admin/form-builder/display.php:313
+msgid "admin.builder.display.feedback_button.hover.text_color.label"
+msgstr "Hover Textfarbe"
+
+#: templates/admin/form-builder/display.php:321
+msgid "admin.builder.display.feedback_button.hover.border.label"
+msgstr "Hover Rahmen"
+
+#: templates/admin/form-builder/display.php:337
+msgid "admin.builder.display.global.title"
+msgstr "3. Globale Einstellungen"
+
+#: templates/admin/form-builder/display.php:339
+msgid "admin.builder.display.step.3"
+msgstr "Schritt 3"
+
+#: templates/admin/form-builder/display.php:342
+msgid "admin.builder.display.global.description"
+msgstr "Feinjustierung von Abständen, Frequenz, Schließverhalten und Design-Anpassungen."
+
+#: templates/admin/form-builder/display.php:348
+msgid "admin.builder.display.tab.behavior"
+msgstr "Verhalten & Frequenz"
+
+#: templates/admin/form-builder/display.php:351
+msgid "admin.builder.display.tab.box_model"
+msgstr "Abstände & Maße"
+
+#: templates/admin/form-builder/display.php:354
+msgid "admin.builder.display.tab.styling"
+msgstr "Design & Farben"
+
+#: templates/admin/form-builder/display.php:362
+msgid "admin.builder.display.group.frequency.title"
+msgstr "Frequenz & Wiederanzeige"
+
+#: templates/admin/form-builder/display.php:367
+msgid "admin.builder.display.frequency.close_days.label"
+msgstr "Nach Schließen ausblenden"
+
+#: templates/admin/form-builder/display.php:371
+#: templates/admin/form-builder/display.php:382
+msgid "admin.builder.display.days"
+msgstr "Tage"
+
+#: templates/admin/form-builder/display.php:373
+msgid "admin.builder.display.frequency.close_days.hint"
+msgstr "0 = Bei jedem Aufruf anzeigen"
+
+#: templates/admin/form-builder/display.php:378
+msgid "admin.builder.display.frequency.submit_days.label"
+msgstr "Nach Absenden ausblenden"
+
+#: templates/admin/form-builder/display.php:384
+msgid "admin.builder.display.frequency.submit_days.hint"
+msgstr "Dauerhafte Ausblendung nach Feedback"
+
+#: templates/admin/form-builder/display.php:389
+msgid "admin.builder.display.cookie_scope.label"
+msgstr "Cookie-Geltungsbereich"
+
+#: templates/admin/form-builder/display.php:391
+msgid "admin.builder.display.cookie_scope.domain"
+msgstr "🌐 Gesamte Website / Domain (Standard)"
+
+#: templates/admin/form-builder/display.php:392
+msgid "admin.builder.display.cookie_scope.page"
+msgstr "📄 Nur aktuelle Seite (Pfad-spezifisch)"
+
+#: templates/admin/form-builder/display.php:400
+msgid "admin.builder.display.trigger.hide_click_on_close.label"
+msgstr "Klick-Auslöser bei 'Schließen' ausblenden"
+
+#: templates/admin/form-builder/display.php:401
+msgid "admin.builder.display.trigger.hide_click_on_close.desc"
+msgstr "Versteckt das Element dauerhaft, wenn das Overlay geschlossen wird."
+
+#: templates/admin/form-builder/display.php:413
+msgid "admin.builder.display.trigger.hide_click_on_submit.label"
+msgstr "Klick-Auslöser bei 'Absenden' ausblenden"
+
+#: templates/admin/form-builder/display.php:414
+msgid "admin.builder.display.trigger.hide_click_on_submit.desc"
+msgstr "Versteckt das Element dauerhaft, wenn erfolgreich abgesendet wurde."
+
+#: templates/admin/form-builder/display.php:425
+msgid "admin.builder.display.group.closing_options.title"
+msgstr "Schließ- & Overlay-Optionen"
+
+#: templates/admin/form-builder/display.php:430
+msgid "admin.builder.display.overlay.allow_scroll.title"
+msgstr "Scrollen bei geöffnetem Overlay erlauben"
+
+#: templates/admin/form-builder/display.php:431
+msgid "admin.builder.display.overlay.allow_scroll.desc"
+msgstr "Darf der User die Seite im Hintergrund scrollen?"
+
+#: templates/admin/form-builder/display.php:441
+msgid "admin.builder.display.overlay.hide_header.title"
+msgstr "Kopfbereich (Header) ausblenden"
+
+#: templates/admin/form-builder/display.php:442
+msgid "admin.builder.display.overlay.hide_header.desc"
+msgstr "Entfernt den Header-Bereich aus dem Overlay"
+
+#: templates/admin/form-builder/display.php:452
+msgid "admin.builder.display.overlay.hide_footer.title"
+msgstr "Fußbereich (Footer) ausblenden"
+
+#: templates/admin/form-builder/display.php:453
+msgid "admin.builder.display.overlay.hide_footer.desc"
+msgstr "Entfernt den Footer-Bereich aus dem Overlay"
+
+#: templates/admin/form-builder/display.php:463
+msgid "admin.builder.display.overlay.show_backdrop.title"
+msgstr "Abgedunkelter Hintergrund (Backdrop)"
+
+#: templates/admin/form-builder/display.php:464
+msgid "admin.builder.display.overlay.show_backdrop.desc"
+msgstr "Overlay hebt sich durch Abdunklung von der Seite ab"
+
+#: templates/admin/form-builder/display.php:474
+msgid "admin.builder.display.overlay.close_on_backdrop.title"
+msgstr "Klick auf Hintergrund schließt Fenster"
+
+#: templates/admin/form-builder/display.php:475
+msgid "admin.builder.display.overlay.close_on_backdrop.desc"
+msgstr "Nutzer kann durch Klick ins Freie schließen"
+
+#: templates/admin/form-builder/display.php:485
+msgid "admin.builder.display.overlay.esc_close.title"
+msgstr "ESC-Taste schließt Fenster"
+
+#: templates/admin/form-builder/display.php:486
+msgid "admin.builder.display.overlay.esc_close.desc"
+msgstr "Barrierefreies Schließen über Tastatur"
+
+#: templates/admin/form-builder/display.php:504
+msgid "admin.builder.display.box_model.padding.title"
+msgstr "Innenabstand (Padding)"
+
+#: templates/admin/form-builder/display.php:511
+#: templates/admin/form-builder/display.php:550
+msgid "admin.builder.display.box_model.link.title"
+msgstr "Werte verknüpfen"
+
+#: templates/admin/form-builder/display.php:514
+#: templates/admin/form-builder/display.php:553
+msgid "admin.builder.display.box_model.reset.title"
+msgstr "Standardwerte wiederherstellen"
+
+#: templates/admin/form-builder/display.php:522
+#: templates/admin/form-builder/display.php:561
+msgid "admin.builder.display.box_model.label.top"
+msgstr "Oben"
+
+#: templates/admin/form-builder/display.php:526
+#: templates/admin/form-builder/display.php:565
+msgid "admin.builder.display.box_model.label.right"
+msgstr "Rechts"
+
+#: templates/admin/form-builder/display.php:530
+#: templates/admin/form-builder/display.php:569
+msgid "admin.builder.display.box_model.label.bottom"
+msgstr "Unten"
+
+#: templates/admin/form-builder/display.php:534
+#: templates/admin/form-builder/display.php:573
+msgid "admin.builder.display.box_model.label.left"
+msgstr "Links"
+
+#: templates/admin/form-builder/display.php:543
+msgid "admin.builder.display.box_model.margin.title"
+msgstr "Außenabstand (Margin)"
+
+#: templates/admin/form-builder/display.php:581
+msgid "admin.builder.display.dimensions.title"
+msgstr "Ausrichtung & Maße"
+
+#: templates/admin/form-builder/display.php:583
+msgid "admin.builder.display.dimensions.overlay_position.label"
+msgstr "Overlay-Position auf dem Bildschirm"
+
+#: templates/admin/form-builder/display.php:585
+msgid "admin.builder.display.dimensions.overlay_position.center"
+msgstr "Zentriert (Bildschirmmitte)"
+
+#: templates/admin/form-builder/display.php:586
+msgid "admin.builder.display.dimensions.overlay_position.bottom_right"
+msgstr "Unten Rechts (Standard bei Slide-In)"
+
+#: templates/admin/form-builder/display.php:587
+msgid "admin.builder.display.dimensions.overlay_position.bottom_left"
+msgstr "Unten Links"
+
+#: templates/admin/form-builder/display.php:588
+msgid "admin.builder.display.dimensions.overlay_position.bottom_middle"
+msgstr "Unten Mitte"
+
+#: templates/admin/form-builder/display.php:589
+msgid "admin.builder.display.dimensions.overlay_position.right_middle"
+msgstr "Mitte Rechts schwebend"
+
+#: templates/admin/form-builder/display.php:590
+msgid "admin.builder.display.dimensions.overlay_position.left_middle"
+msgstr "Mitte Links schwebend"
+
+#: templates/admin/form-builder/display.php:591
+msgid "admin.builder.display.dimensions.overlay_position.top_right"
+msgstr "Oben Rechts"
+
+#: templates/admin/form-builder/display.php:592
+msgid "admin.builder.display.dimensions.overlay_position.top_middle"
+msgstr "Oben Mitte"
+
+#: templates/admin/form-builder/display.php:593
+msgid "admin.builder.display.dimensions.overlay_position.top_left"
+msgstr "Oben Links"
+
+#: templates/admin/form-builder/display.php:598
+msgid "admin.builder.display.dimensions.max_width.label"
+msgstr "Maximalbreite"
+
+#: templates/admin/form-builder/display.php:606
+msgid "admin.builder.display.dimensions.min_height.label"
+msgstr "Mindesthöhe"
+
+#: templates/admin/form-builder/display.php:623
+msgid "admin.builder.display.custom_colors.title"
+msgstr "Individuelle Farbanpassung aktivieren"
+
+#: templates/admin/form-builder/display.php:624
+msgid "admin.builder.display.custom_colors.desc"
+msgstr "Überschreibt die Standardfarben deines Themes"
+
+#: templates/admin/form-builder/display.php:636
+msgid "admin.builder.display.custom_colors.label.background"
+msgstr "Hintergrund"
+
+#: templates/admin/form-builder/display.php:644
+msgid "admin.builder.display.custom_colors.label.border"
+msgstr "Rahmen / Rand"
+
+#: templates/admin/form-builder/display.php:652
+msgid "admin.builder.display.custom_colors.label.border_style"
+msgstr "Rahmen-Stil"
+
+#: templates/admin/form-builder/display.php:654
+msgid "admin.builder.display.custom_colors.option.solid"
+msgstr "Durchgezogen (Solid)"
+
+#: templates/admin/form-builder/display.php:655
+msgid "admin.builder.display.custom_colors.option.dashed"
+msgstr "Gestrichelt (Dashed)"
+
+#: templates/admin/form-builder/display.php:656
+msgid "admin.builder.display.custom_colors.option.dotted"
+msgstr "Gepunktet (Dotted)"
+
+#: templates/admin/form-builder/display.php:661
+msgid "admin.builder.display.custom_colors.label.border_width"
+msgstr "Rahmen-Breite"
+
+#: templates/admin/form-builder/display.php:669
+msgid "admin.builder.display.custom_colors.label.border_radius"
+msgstr "Rahmen-Radius"
+
+#: templates/admin/form-builder/display.php:681
+msgid "admin.builder.display.header_footer.title"
+msgstr "Kopfzeilen-Indikator & Footer"
+
+#: templates/admin/form-builder/display.php:684
+msgid "admin.builder.display.header_footer.indicator_type.label"
+msgstr "Indikator-Typ"
+
+#: templates/admin/form-builder/display.php:686
+msgid "admin.builder.display.header_footer.indicator_type.option.progress"
+msgstr "📊 Fortschrittsbalken (Standard)"
+
+#: templates/admin/form-builder/display.php:687
+msgid "admin.builder.display.header_footer.indicator_type.option.title"
+msgstr "📝 Formular-Titel im Header"
+
+#: templates/admin/form-builder/display.php:688
+msgid "admin.builder.display.header_footer.indicator_type.option.step"
+msgstr "🔢 Schritt-Anzeige (z.B. Schritt 1 / 2)"
+
+#: templates/admin/form-builder/display.php:689
+msgid "admin.builder.display.header_footer.indicator_type.option.none"
+msgstr "🚫 Keinen Indikator anzeigen"
+
+#: templates/admin/form-builder/display.php:694
+msgid "admin.builder.display.header_footer.custom_title.label"
+msgstr "Benutzerdefinierter Titel"
+
+#: templates/admin/form-builder/display.php:695
+msgid "admin.builder.display.header_footer.custom_title.placeholder"
+msgstr "Standard: Formulartitel"
+
+#: templates/admin/form-builder/display.php:700
+msgid "admin.builder.display.header_footer.show_footer.label"
+msgstr "Footer-Text im Overlay anzeigen"
+
+#: templates/admin/form-builder/display.php:708
+msgid "admin.builder.display.header_footer.custom_footer_text.label"
+msgstr "Benutzerdefinierter Footer-Text"
+
+#: templates/admin/form-builder/display.php:709
+msgid "admin.builder.display.header_footer.custom_footer_text.placeholder"
+msgstr "Wir schätzen dein ehrliches Feedback!"
+
+#: templates/admin/form-builder/fields.php:7
+msgid "admin.builder.fields.title"
+msgstr "Formularfelder bearbeiten"
+
+#: templates/admin/form-builder/fields.php:15
+msgid "admin.builder.fields.add_fields"
+msgstr "Felder hinzufügen"
+
+#: templates/admin/form-builder/fields.php:18
+msgid "admin.builder.fields.field_options"
+msgstr "Feldoptionen"
+
+#: templates/admin/form-builder/fields.php:34
+msgid "admin.builder.fields.search_placeholder"
+msgstr "Suchfelder ..."
+
+#: templates/admin/form-builder/fields.php:34
+msgid "admin.builder.fields.search_title"
+msgstr "Felder durchsuchen"
+
+#: templates/admin/form-builder/fields.php:38
+msgid "admin.builder.fields.standard_fields"
+msgstr "Standardfelder"
+
+#: templates/admin/form-builder/fields.php:49
+msgid "admin.builder.fields.headline"
+msgstr "Überschrift"
+
+#: templates/admin/form-builder/fields.php:54
+msgid "admin.builder.fields.description"
+msgstr "Beschreibung"
+
+#: templates/admin/form-builder/fields.php:59
+msgid "admin.builder.fields.button"
+msgstr "Button"
+
+#: templates/admin/form-builder/fields.php:64
+msgid "admin.builder.fields.textarea"
+msgstr "Textabsatz"
+
+#: templates/admin/form-builder/fields.php:69
+msgid "admin.builder.fields.reviews"
+msgstr "Bewertungen"
+
+#: templates/admin/form-builder/fields.php:77
+msgid "admin.builder.fields.rating"
+msgstr "Sternebewertung"
+
+#: templates/admin/form-builder/fields.php:82
+msgid "admin.builder.fields.thumbs"
+msgstr "Daumen-Feedback"
+
+#: templates/admin/form-builder/fields.php:87
+msgid "admin.builder.fields.smileys"
+msgstr "Smiley-Bewertung"
+
+#: templates/admin/form-builder/fields.php:92
+msgid "admin.builder.fields.nps"
+msgstr "Empfehlung (NPS)"
+
+#: templates/admin/form-builder/fields.php:99
+msgid "admin.builder.fields.search_no_results"
+msgstr "Keine Felder entsprechen deiner Suche."
+
+#: templates/admin/form-builder/fields.php:104
+msgid "admin.builder.fields.tip"
+msgstr "Tipp"
+
+#: templates/admin/form-builder/fields.php:104
+msgid "admin.builder.fields.tip_text"
+msgstr "Ziehe Elemente in den Canvas auf Schritt 1/Schritt 2 oder klicke einfach darauf, um sie hinzuzufügen."
+
+#: templates/admin/form-builder/fields.php:115
+msgid "admin.builder.fields.no_field_selected"
+msgstr "Klicke auf ein Element im Editor, um dessen Einstellungen anzuzeigen und zu bearbeiten."
+
+#: templates/admin/form-builder/fields.php:123
+msgid "admin.builder.fields.options.field_type"
+msgstr "FELD"
+
+#: templates/admin/form-builder/fields.php:124
+msgid "admin.builder.fields.options.id"
+msgstr "ID"
+
+#: templates/admin/form-builder/fields.php:129
+msgid "admin.builder.fields.options.label.title"
+msgstr "Beschriftung"
+
+#: templates/admin/form-builder/fields.php:129
+msgid "admin.builder.fields.options.label.hint"
+msgstr "Der Text, der für dieses Element angezeigt wird."
+
+#: templates/admin/form-builder/fields.php:137
+msgid "admin.builder.fields.options.description.title"
+msgstr "Ergänzender Text / Beschreibung"
+
+#: templates/admin/form-builder/fields.php:138
+msgid "admin.builder.fields.options.description.placeholder"
+msgstr "Optionale Beschreibung eingeben..."
+
+#: templates/admin/form-builder/fields.php:143
+msgid "admin.builder.fields.options.placeholder.title"
+msgstr "Platzhalter-Text"
+
+#: templates/admin/form-builder/fields.php:144
+msgid "admin.builder.fields.options.placeholder.placeholder"
+msgstr "Z.b. Schreibe hier..."
+
+#: templates/admin/form-builder/fields.php:149
+msgid "admin.builder.fields.options.button_type.title"
+msgstr "Button-Typ / Aktion"
+
+#: templates/admin/form-builder/fields.php:151
+msgid "admin.builder.fields.options.button_type.next"
+msgstr "Standard-Button mit Icon (Weiter / Absenden)"
+
+#: templates/admin/form-builder/fields.php:152
+msgid "admin.builder.fields.options.button_type.submit"
+msgstr "Absenden-Button"
+
+#: templates/admin/form-builder/fields.php:153
+msgid "admin.builder.fields.options.button_type.back"
+msgstr "Zurück-Button (Optional für Schritt 2 -> 1)"
+
+#: templates/admin/form-builder/fields.php:159
+msgid "admin.builder.fields.options.icon.title"
+msgstr "Symbol / Icon"
+
+#: templates/admin/form-builder/fields.php:159
+msgid "admin.builder.fields.options.icon.hint"
+msgstr "Wähle das Symbol aus, das angezeigt werden soll."
+
+#: templates/admin/form-builder/fields.php:161
+msgid "admin.builder.fields.options.icon.option.arrow_right"
+msgstr "Pfeil Rechts (➜)"
+
+#: templates/admin/form-builder/fields.php:162
+msgid "admin.builder.fields.options.icon.option.arrow_circle_right"
+msgstr "Pfeil Kreis Rechts"
+
+#: templates/admin/form-builder/fields.php:163
+msgid "admin.builder.fields.options.icon.option.arrow_left"
+msgstr "Pfeil Links (⬅)"
+
+#: templates/admin/form-builder/fields.php:164
+msgid "admin.builder.fields.options.icon.option.arrow_circle_left"
+msgstr "Pfeil Kreis Links"
+
+#: templates/admin/form-builder/fields.php:165
+msgid "admin.builder.fields.options.icon.option.paper_plane"
+msgstr "Papierflieger (Absenden)"
+
+#: templates/admin/form-builder/fields.php:166
+msgid "admin.builder.fields.options.icon.option.check"
+msgstr "Häkchen"
+
+#: templates/admin/form-builder/fields.php:167
+msgid "admin.builder.fields.options.icon.option.heart"
+msgstr "Herz"
+
+#: templates/admin/form-builder/fields.php:168
+msgid "admin.builder.fields.options.icon.option.comment"
+msgstr "Sprechblase"
+
+#: templates/admin/form-builder/fields.php:169
+msgid "admin.builder.fields.options.icon.option.laugh_beam"
+msgstr "Lachendes Gesicht"
+
+#: templates/admin/form-builder/fields.php:170
+msgid "admin.builder.fields.options.icon.option.futbol"
+msgstr "Fußball"
+
+#: templates/admin/form-builder/fields.php:171
+msgid "admin.builder.fields.options.icon.option.lightbulb"
+msgstr "Glühbirne"
+
+#: templates/admin/form-builder/fields.php:172
+msgid "admin.builder.fields.options.icon.option.bug"
+msgstr "Käfer"
+
+#: templates/admin/form-builder/fields.php:173
+msgid "admin.builder.fields.options.icon.option.comment_dots"
+msgstr "Sprechblase mit Punkten"
+
+#: templates/admin/form-builder/fields.php:174
+msgid "admin.builder.fields.options.icon.option.none"
+msgstr "Kein Icon"
+
+#: templates/admin/form-builder/fields.php:180
+msgid "admin.builder.fields.options.icon_position.title"
+msgstr "Icon-Position"
+
+#: templates/admin/form-builder/fields.php:182
+msgid "admin.builder.fields.options.icon_position.right"
+msgstr "Rechts vom Text"
+
+#: templates/admin/form-builder/fields.php:183
+msgid "admin.builder.fields.options.icon_position.left"
+msgstr "Links vom Text"
+
+#: templates/admin/form-builder/fields.php:189
+msgid "admin.builder.fields.options.rating_stars.title"
+msgstr "Anzahl der Sterne"
+
+#: templates/admin/form-builder/fields.php:189
+msgid "admin.builder.fields.options.rating_stars.hint"
+msgstr "Benutze eine 3- oder 5-stufige Bewertungsskala."
+
+#: templates/admin/form-builder/fields.php:191
+msgid "admin.builder.fields.options.rating_stars.3"
+msgstr "3 Sterne"
+
+#: templates/admin/form-builder/fields.php:192
+msgid "admin.builder.fields.options.rating_stars.5"
+msgstr "5 Sterne"
+
+#: templates/admin/form-builder/fields.php:198
+msgid "admin.builder.fields.options.alignment.title"
+msgstr "Ausrichtung"
+
+#: templates/admin/form-builder/fields.php:198
+msgid "admin.builder.fields.options.alignment.hint"
+msgstr "Wähle die Ausrichtung für dieses Element: Links, Mittig, Rechts."
+
+#: templates/admin/form-builder/fields.php:200
+msgid "admin.builder.fields.options.alignment.left"
+msgstr "Links"
+
+#: templates/admin/form-builder/fields.php:201
+msgid "admin.builder.fields.options.alignment.center"
+msgstr "Mittig"
+
+#: templates/admin/form-builder/fields.php:202
+msgid "admin.builder.fields.options.alignment.right"
+msgstr "Rechts"
+
+#: templates/admin/form-builder/fields.php:208
+msgid "admin.builder.fields.h_type.title"
+msgstr "HTML-Tag Typ"
+
+#: templates/admin/form-builder/fields.php:208
+msgid "admin.builder.fields.h_type.hint"
+msgstr "Wähle das HTML-Tag für dieses Element aus."
+
+#: templates/admin/form-builder/fields.php:210
+msgid "admin.builder.fields.h_type.h1"
+msgstr "Überschrift 1 (H1)"
+
+#: templates/admin/form-builder/fields.php:211
+msgid "admin.builder.fields.h_type.h2"
+msgstr "Überschrift 2 (H2)"
+
+#: templates/admin/form-builder/fields.php:212
+msgid "admin.builder.fields.h_type.h3"
+msgstr "Überschrift 3 (H3)"
+
+#: templates/admin/form-builder/fields.php:213
+msgid "admin.builder.fields.h_type.h4"
+msgstr "Überschrift 4 (H4)"
+
+#: templates/admin/form-builder/fields.php:214
+msgid "admin.builder.fields.h_type.h5"
+msgstr "Überschrift 5 (H5)"
+
+#: templates/admin/form-builder/fields.php:215
+msgid "admin.builder.fields.h_type.h6"
+msgstr "Überschrift 6 (H6)"
+
+#: templates/admin/form-builder/fields.php:216
+msgid "admin.builder.fields.h_type.div"
+msgstr "Bereich (DIV)"
+
+#: templates/admin/form-builder/fields.php:222
+msgid "admin.builder.fields.text_formatting.title"
+msgstr "Text-Formatierung"
+
+#: templates/admin/form-builder/fields.php:222
+msgid "admin.builder.fields.text_formatting.hint"
+msgstr "Formatiere den Text fett, kursiv oder unterstrichen."
+
+#: templates/admin/form-builder/fields.php:247
+msgid "admin.builder.fields.font_size.title"
+msgstr "Schriftgröße"
+
+#: templates/admin/form-builder/fields.php:248
+msgid "admin.builder.fields.font_size.reset"
+msgstr "Standard"
+
+#: templates/admin/form-builder/fields.php:263
+msgid "admin.builder.fields.line_height.title"
+msgstr "Zeilenhöhe"
+
+#: templates/admin/form-builder/fields.php:264
+msgid "admin.builder.fields.line_height.reset"
+msgstr "Standard"
+
+#: templates/admin/form-builder/fields.php:282
+msgid "admin.builder.fields.border_radius.title"
+msgstr "Eckenradius"
+
+#: templates/admin/form-builder/fields.php:283
+msgid "admin.builder.fields.border_radius.reset"
+msgstr "Standard"
+
+#: templates/admin/form-builder/fields.php:299
+msgid "admin.builder.fields.text_color.title"
+msgstr "Textfarbe"
+
+#: templates/admin/form-builder/fields.php:309
+msgid "admin.builder.fields.required.title"
+msgstr "Erforderlich (Pflichtfeld)"
+
+#: templates/admin/form-builder/fields.php:318
+msgid "admin.builder.fields.hide_label.title"
+msgstr "Beschriftung ausblenden"
+
+#: templates/admin/form-builder/fields.php:327
+msgid "admin.builder.fields.full_width.title"
+msgstr "Volle Breite (Full Width)"
+
+#: templates/admin/form-builder/fields.php:337
+msgid "admin.builder.fields.width.title"
+msgstr "Element-Breite"
+
+#: templates/admin/form-builder/fields.php:340
+msgid "admin.builder.fields.width.100"
+msgstr "100% (Ganze Zeile)"
+
+#: templates/admin/form-builder/fields.php:341
+msgid "admin.builder.fields.width.50"
+msgstr "50% (Halbe Zeile)"
+
+#: templates/admin/form-builder/fields.php:342
+msgid "admin.builder.fields.width.33"
+msgstr "33% (Drittel Zeile)"
+
+#: templates/admin/form-builder/fields.php:343
+msgid "admin.builder.fields.width.25"
+msgstr "25% (Viertel Zeile)"
+
+#: templates/admin/form-builder/fields.php:349
+msgid "admin.builder.fields.clear_before.title"
+msgstr "In neuer Zeile starten"
+
+#: templates/admin/form-builder/fields.php:358
+msgid "admin.builder.fields.smiley_legend.title"
+msgstr "Smiley-Legende anzeigen"
+
+#: templates/admin/form-builder/fields.php:368
+msgid "admin.builder.fields.custom_colors.title"
+msgstr "Farben anpassen"
+
+#: templates/admin/form-builder/fields.php:373
+msgid "admin.builder.fields.custom_colors.enabled_label"
+msgstr "Individuelle Farben aktivieren"
+
+#: templates/admin/form-builder/fields.php:382
+msgid "admin.builder.fields.custom_colors.standard_state"
+msgstr "Standard-Zustand"
+
+#: templates/admin/form-builder/fields.php:385
+msgid "admin.builder.fields.custom_colors.bg_color"
+msgstr "Hintergrundfarbe"
+
+#: templates/admin/form-builder/fields.php:393
+msgid "admin.builder.fields.custom_colors.text_color"
+msgstr "Textfarbe"
+
+#: templates/admin/form-builder/fields.php:401
+msgid "admin.builder.fields.custom_colors.border_color"
+msgstr "Randfarbe"
+
+#: templates/admin/form-builder/fields.php:409
+msgid "admin.builder.fields.custom_colors.hover_state"
+msgstr "Hover-Zustand"
+
+#: templates/admin/form-builder/fields.php:412
+msgid "admin.builder.fields.custom_colors.bg_color_hover"
+msgstr "Hintergrundfarbe (Hover)"
+
+#: templates/admin/form-builder/fields.php:420
+msgid "admin.builder.fields.custom_colors.text_color_hover"
+msgstr "Textfarbe (Hover)"
+
+#: templates/admin/form-builder/fields.php:428
+msgid "admin.builder.fields.custom_colors.border_color_hover"
+msgstr "Randfarbe (Hover)"
+
+#: templates/admin/form-builder/fields.php:436
+msgid "admin.builder.fields.custom_colors.reset"
+msgstr "Standardwerte wiederherstellen"
+
+#: templates/admin/form-builder/fields.php:445
+msgid "admin.builder.fields.step2.title_activate"
+msgstr "Schritt 2 aktivieren"
+
+#: templates/admin/form-builder/fields.php:453
+msgid "admin.builder.fields.step2.description"
+msgstr "Wenn aktiviert, springt das Formular bei Interaktion mit diesem Element in Schritt 2. Es wird ein separater Bereich im Editor dafür freigeschaltet."
+
+#: templates/admin/form-builder/fields.php:477
+msgid "admin.builder.fields.step1.title"
+msgstr "Schritt 1"
+
+#: templates/admin/form-builder/fields.php:478
+msgid "admin.builder.fields.step1.subtitle"
+msgstr "Initial-Ansicht des Popups / Widgets"
+
+#: templates/admin/form-builder/fields.php:482
+msgid "admin.builder.fields.nav.back"
+msgstr "Zurück zur Übersicht"
+
+#: templates/admin/form-builder/fields.php:491
+msgid "admin.builder.fields.step1.empty_notifier"
+msgstr "Ziehe hier Elementen hinein, um mit der Erstellung zu beginnen."
+
+#: templates/admin/form-builder/fields.php:512
+msgid "admin.builder.fields.step2.title"
+msgstr "Schritt 2"
+
+#: templates/admin/form-builder/fields.php:513
+msgid "admin.builder.fields.step2.subtitle"
+msgstr "Zusätzliches Detailfeedback bei Rating/Button Klick"
+
+#: templates/admin/form-builder/fields.php:517
+msgid "admin.builder.fields.nav.maximize"
+msgstr "Bearbeitungsfokus maximieren"
+
+#: templates/admin/form-builder/fields.php:526
+msgid "admin.builder.fields.step2.disabled_notifier"
+msgstr "Aktiviere \"Schritt 2\" in den Feldoptionen eines Elements auf Schritt 1, um diesen Schritt freizuschalten."
+
+#: templates/admin/form-builder/fields.php:531
+msgid "admin.builder.fields.step2.enabled_notifier"
+msgstr "Dieser Schritt ist freigeschaltet. Ziehe Elemente hinein für das Folgefeedback."
+
+#: templates/admin/form-builder/general.php:7
+#: templates/admin/form-builder/general.php:12
+msgid "admin.builder.general.title"
+msgstr "Allgemeine Einstellungen"
+
+#: templates/admin/form-builder/general.php:17
+msgid "admin.builder.general.form_id.label"
+msgstr "Interne eindeutige Formular-ID"
+
+#: templates/admin/form-builder/general.php:17
+msgid "admin.builder.general.form_id.hint"
+msgstr "WordPress Shortcode ID"
+
+#: templates/admin/form-builder/general.php:19
+msgid "admin.builder.general.form_id.description"
+msgstr "Eindeutige ID zur Registrierung im WordPress Plugin. Kann für Shortcodes wie %s verwendet werden."
+
+#: templates/admin/form-builder/general.php:23
+msgid "admin.builder.general.form_name.label"
+msgstr "Formular-Name"
+
+#: templates/admin/form-builder/general.php:24
+msgid "admin.builder.general.form_name.default"
+msgstr "Kundenzufriedenheit-Formular"
+
+#: templates/admin/form-builder/general.php:25
+msgid "admin.builder.general.form_name.description"
+msgstr "Ermöglicht das Identifizieren des Feedback-Formulars in der administrativen Liste."
+
+#: templates/admin/form-builder/general.php:29
+msgid "admin.builder.general.custom_classes.label"
+msgstr "Eigene CSS-Klassen für den Wrapper"
+
+#: templates/admin/form-builder/general.php:30
+msgid "admin.builder.general.custom_classes.default"
+msgstr "flwp-widget-shadow flwp-custom-style-dark"
+
+#: templates/admin/form-builder/general.php:30
+msgid "admin.builder.general.custom_classes.placeholder"
+msgstr "flwp-mycustom-css"
+
+#: templates/admin/form-builder/general.php:31
+msgid "admin.builder.general.custom_classes.description"
+msgstr "Zur manuellen Überschreibung der Standardstile im WordPress-Theme."
+
+#: templates/admin/form-builder/general.php:36
+msgid "admin.builder.general.honeypot.label"
+msgstr "Anti-Spam (Honeypot-Verfahren aktivieren)"
+
+#: templates/admin/form-builder/notification.php:12
+#: templates/admin/form-builder/notification.php:17
+msgid "admin.builder.notification.title"
+msgstr "E-Mail Benachrichtigungen"
+
+#: templates/admin/form-builder/notification.php:22
+msgid "admin.builder.notification.description"
+msgstr "Hier kannst du konfigurieren, ob du automatische E-Mail-Benachrichtigungen erhalten möchtest, sobald ein Nutzer ein neues Feedback über dein Formular einsendet. So bleibst du immer direkt informiert."
+
+#: templates/admin/form-builder/notification.php:28
+msgid "admin.builder.notification.enabled.label"
+msgstr "Benachrichtigungen aktivieren"
+
+#: templates/admin/form-builder/notification.php:39
+msgid "admin.builder.notification.recipient.label"
+msgstr "E-Mail des Empfängers"
+
+#: templates/admin/form-builder/notification.php:39
+msgid "admin.builder.notification.recipient.hint"
+msgstr "Kann eine E-Mail oder ein Tag sein."
+
+#: templates/admin/form-builder/notification.php:41
+msgid "admin.builder.notification.recipient.default"
+msgstr "E-Mail des Website-Administrators"
+
+#: templates/admin/form-builder/notification.php:46
+msgid "admin.builder.notification.subject.label"
+msgstr "E-Mail-Betreffzeile"
+
+#: templates/admin/form-builder/notification.php:48
+msgid "admin.builder.notification.subject.default"
+msgstr "Neuer Eintrag: Kundenzufriedenheit-Formular"
+
+#: templates/admin/form-builder/notification.php:53
+msgid "admin.builder.notification.sender_name.label"
+msgstr "Absendername"
+
+#: templates/admin/form-builder/notification.php:55
+msgid "admin.builder.notification.sender_name.default"
+msgstr "Webseiten-Titel"
+
+#: templates/admin/form-builder/notification.php:60
+msgid "admin.builder.notification.sender_email.label"
+msgstr "E-Mail-Adresse des Absenders"
+
+#: templates/admin/form-builder/styles.php:7
+#: templates/admin/form-builder/styles.php:12
+msgid "admin.builder.styles.title"
+msgstr "Design & Styles"
+
+#: templates/admin/form-builder/styles.php:17
+msgid "admin.builder.styles.description"
+msgstr "Hier kannst du Standardfarben für dein Formular festlegen. Viele Farben lassen sich in den Feldern auch überschreiben und an deine Wünsche anpassen."
+
+#: templates/admin/form-builder/styles.php:21
+msgid "admin.builder.styles.accent_color.label"
+msgstr "Haupt-Akzentfarbe (Main Accent)"
+
+#: templates/admin/form-builder/styles.php:25
+msgid "admin.builder.styles.accent_color.description"
+msgstr "Farbe für Links und Buttons."
+
+#: templates/admin/form-builder/styles.php:29
+msgid "admin.builder.styles.secondary_color.label"
+msgstr "Sekundärfarbe (Hover)"
+
+#: templates/admin/form-builder/styles.php:33
+msgid "admin.builder.styles.secondary_color.description"
+msgstr "Sekundärfarbe, die zb. für Hover-Effekte verwendet wird."
+
+#: templates/admin/form-builder/targeting.php:7
+msgid "admin.builder.targeting.title"
+msgstr "Ausspielungsregeln"
+
+#: templates/admin/form-builder/targeting.php:12
+msgid "admin.builder.targeting.header"
+msgstr "Ausspielung"
+
+#: templates/admin/form-builder/targeting.php:17
+msgid "admin.builder.targeting.description"
+msgstr "Konfiguriere hier die Bedingungen, unter denen das Formular auf deiner WordPress-Seite ausgespielt werden soll. Die Regeln können pro Anzeigetyp separat festgelegt werden."
+
+#: templates/admin/form-builder/tracking.php:8
+#: templates/admin/form-builder/tracking.php:13
+msgid "admin.builder.tracking.title"
+msgstr "Nutzer-Tracking & Metadaten"
+
+#: templates/admin/form-builder/tracking.php:19
+msgid "admin.builder.tracking.description"
+msgstr "Hier kannst du konfigurieren, welche technischen Nutzer- und System-Metadaten zusammen mit dem Feedback erfasst werden sollen. Diese zusätzlichen Informationen helfen dir, die Einsendungen im WordPress-Backend besser analysieren und filtern zu können."
+
+#: templates/admin/form-builder/tracking.php:25
+msgid "admin.builder.tracking.enabled.label"
+msgstr "Tracking generell aktivieren"
+
+#: templates/admin/form-builder/tracking.php:35
+msgid "admin.builder.tracking.data_points.title"
+msgstr "Zusätzliche Datenpunkte zum Erfassen auswählen:"
+
+#: templates/admin/form-builder/tracking.php:40
+msgid "admin.builder.tracking.url.label"
+msgstr "Seiten-URL (URL auf der das Formular abgeschickt wurde)"
+
+#: templates/admin/form-builder/tracking.php:51
+msgid "admin.builder.tracking.page_title.label"
+msgstr "Seitentitel (HTML-Titel der Seite)"
+
+#: templates/admin/form-builder/tracking.php:62
+msgid "admin.builder.tracking.referrer.label"
+msgstr "Referrer-URL (Vorherige Seite)"
+
+#: templates/admin/form-builder/tracking.php:73
+msgid "admin.builder.tracking.user_agent.label"
+msgstr "User Agent (Browser- & Systemversion)"
+
+#: templates/admin/form-builder/tracking.php:84
+msgid "admin.builder.tracking.language.label"
+msgstr "Browsersprache"
+
+#: templates/admin/form-builder/tracking.php:95
+msgid "admin.builder.tracking.screen_resolution.label"
+msgstr "Bildschirmauflösung"
+
+#: templates/admin/form-builder/tracking.php:106
+msgid "admin.builder.tracking.viewport_size.label"
+msgstr "Viewport-Größe (Browserfenster-Pixel)"
+
+#: templates/admin/form-builder/tracking.php:117
+msgid "admin.builder.tracking.timezone.label"
+msgstr "Lokale Zeitzone"
+
+#: templates/admin/form-builder/tracking.php:128
+msgid "admin.builder.tracking.connection_type.label"
+msgstr "Netzwerkverbindungstyp (4g/wifi/etc.)"
+
+#: templates/admin/form-builder/tracking.php:139
+msgid "admin.builder.tracking.device_type.label"
+msgstr "Gerätetyp (Desktop, Tablet, Mobilgerät)"
+
+#: templates/admin/form-builder/tracking.php:150
+msgid "admin.builder.tracking.session_id.label"
+msgstr "Anonymisierte Session-ID"
+
+#: templates/admin/form-builder/tracking.php:161
+msgid "admin.builder.tracking.time_on_page.label"
+msgstr "Verweildauer (in Sekunden)"
+
+#: templates/admin/form-builder/tracking.php:172
+msgid "admin.builder.tracking.color_scheme.label"
+msgstr "Farbschema (Light/Dark Mode des Systems)"
+
+#: templates/admin/partial/flwp-pro-notice-modal.php:6
+msgid "admin.builder.pro.headline"
+msgstr "Bringe dein Feedback auf das nächste Level!"
+
+#: templates/admin/partial/flwp-pro-notice-modal.php:9
+msgid "admin.builder.pro.advantage.1"
+msgstr "<strong>Premium Bewertungselemente</strong>: Nutze Thumbs-up/down, interaktive Smileys und den Industriestandard NPS."
+
+#: templates/admin/partial/flwp-pro-notice-modal.php:10
+msgid "admin.builder.pro.advantage.2"
+msgstr "<strong>Fortgeschrittene URL-Filter</strong>: Zeige Formulare nur auf bestimmten Seiten, Pfaden oder schließe diese gezielt aus."
+
+#: templates/admin/partial/flwp-pro-notice-modal.php:11
+msgid "admin.builder.pro.advantage.3"
+msgstr "<strong>Erweitertes Nutzer-Tracking</strong>: Erfasse automatisch Bildschirmauflösung, Verweildauer, Sprache, Gerätetyp und mehr."
+
+#: templates/admin/partial/flwp-pro-notice-modal.php:21
+msgid "admin.builder.pro.title"
+msgstr "FLWP Pro freischalten"
+
+#: templates/admin/partial/flwp-pro-notice-modal.php:36
+msgid "admin.builder.pro.advantages_title"
+msgstr "Deine Pro Vorteile:"
+
+#: templates/admin/partial/flwp-pro-notice-modal.php:49
+msgid "admin.builder.pro.cta_text"
+msgstr "Jetzt upgraden & freischalten"
+
+#: templates/admin/partial/mockup/export.php:15
+msgid "Content feedback"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:19
+msgid "Exit-intent form"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:23
+msgid "Feedback button form"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:40
+msgid "Data management (import & export)"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:45
+msgid "Manage your form structures, plugin configurations, and collected feedback entries in one central location."
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:99
+msgid "1. Feedback entries (received user data)"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:146
+msgid "Export entries"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:155
+msgid "Select your filters and download the feedback data in the desired format."
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:190
+msgid "Filter by form"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:224
+#: templates/admin/partial/mockup/export.php:675
+msgid "Select all forms"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:283
+msgid "Time period"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:299
+msgid "Last 30 days"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:315
+#: templates/admin/partial/mockup/feedback-list.php:49
+#: templates/admin/partial/mockup/feedback-list.php:102
+#: templates/admin/partial/mockup/feedback-list.php:194
+msgid "Status"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:331
+msgid "All entries"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:358
+msgid "Export hint:"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:362
+msgid "CSV contains dynamic columns (each question in your form gets its own column). JSON provides structured raw data including detailed device and meta data."
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:387
+msgid "Download CSV"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:402
+msgid "Download JSON"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:448
+msgid "Import feedbacks"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:457
+msgid "Upload an exported feedback file (.json) to restore entries."
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:491
+#: templates/admin/partial/mockup/export.php:844
+msgid "Select or drag file"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:499
+msgid "Supports .json feedback files"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:547
+msgid "2. Form structures (templates)"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:594
+msgid "Export forms"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:603
+msgid "Export selected form layouts as .json for other WordPress instances."
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:637
+msgid "Which forms would you like to export?"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:732
+msgid "Export layout(s) (.json)"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:753
+msgid "Ideal for transferring from a test (staging) to a live environment."
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:801
+msgid "Import forms"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:810
+msgid "Upload an exported form layout (.json) to add it. Note that existing form data with the same form ID will be overwritten."
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:852
+msgid "Supports .json form files (single or multiple forms)"
+msgstr ""
+
+#: templates/admin/partial/mockup/feedback-list.php:41
+msgid "Form"
+msgstr ""
+
+#: templates/admin/partial/mockup/feedback-list.php:45
+#: templates/admin/partial/mockup/feedback-list.php:90
+#: templates/admin/partial/mockup/feedback-list.php:166
+msgid "Display Type"
+msgstr ""
+
+#: templates/admin/partial/mockup/feedback-list.php:53
+msgid "Date Range"
+msgstr ""
+
+#: templates/admin/partial/mockup/feedback-list.php:57
+msgid "Filter"
+msgstr ""
+
+#. translators: %d: Number of demo feedback entries.
+#: templates/admin/partial/mockup/feedback-list.php:67
+#: templates/admin/partial/mockup/feedback-list.php:229
+#, php-format
+msgid "%d entries"
+msgstr ""
+
+#: templates/admin/partial/mockup/feedback-list.php:82
+#: templates/admin/partial/mockup/feedback-list.php:140
+msgid "ID"
+msgstr ""
+
+#: templates/admin/partial/mockup/feedback-list.php:86
+#: templates/admin/partial/mockup/feedback-list.php:159
+msgid "Form ID"
+msgstr ""
+
+#: templates/admin/partial/mockup/feedback-list.php:94
+#: templates/admin/partial/mockup/feedback-list.php:175
+msgid "Form Name"
+msgstr ""
+
+#: templates/admin/partial/mockup/feedback-list.php:98
+#: templates/admin/partial/mockup/feedback-list.php:182
+msgid "Page URL"
+msgstr ""
+
+#: templates/admin/partial/mockup/feedback-list.php:106
+#: templates/admin/partial/mockup/feedback-list.php:203
+msgid "Created"
+msgstr ""
+
+#: templates/admin/partial/mockup/feedback-list.php:110
+#: templates/admin/partial/mockup/feedback-list.php:210
+msgid "Updated"
+msgstr ""
+
+#: templates/admin/partial/mockup/feedback-list.php:149
+msgid "View"
+msgstr ""
+
+#: templates/admin/partial/mockup/feedback-list.php:152
+msgid "Delete"
+msgstr ""
+
+#. translators: 1: Current page, 2: Total number of pages.
+#: templates/admin/partial/mockup/feedback-list.php:243
+#, php-format
+msgid "%1$d of %2$d"
+msgstr ""
+
+#: templates/admin/premium/flwp-export.php:9
+msgid "admin.page.export.title"
+msgstr "Daten-Management (Import & Export)"
+
+#: templates/admin/premium/flwp-export.php:10
+msgid "admin.page.export.description"
+msgstr "Verwalte deine Formular-Strukturen, Plugin-Konfigurationen und gesammelten Feedback-Einträge an einem zentralen Ort."
+
+#: templates/admin/premium/flwp-export.php:18
+msgid "admin.page.export.feedback_entries.title"
+msgstr "1. Feedback-Einträge (Erhaltene Nutzerdaten)"
+
+#: templates/admin/premium/flwp-export.php:28
+msgid "admin.page.export.export_entries.title"
+msgstr "Einträge exportieren"
+
+#: templates/admin/premium/flwp-export.php:29
+msgid "admin.page.export.export_entries.description"
+msgstr "Wähle deine Filter und lade die Feedback-Daten im Wunschformat herunter."
+
+#: templates/admin/premium/flwp-export.php:36
+msgid "admin.page.export.filter.form.label"
+msgstr "Nach Formular filtern"
+
+#: templates/admin/premium/flwp-export.php:40
+msgid "admin.page.export.filter.form.select_all"
+msgstr "Alle Formulare auswählen"
+
+#: templates/admin/premium/flwp-export.php:54
+msgid "admin.page.export.filter.date_range.label"
+msgstr "Zeitraum"
+
+#: templates/admin/premium/flwp-export.php:56
+msgid "admin.page.export.filter.range.all"
+msgstr "Gesamter Zeitraum"
+
+#: templates/admin/premium/flwp-export.php:57
+msgid "admin.page.export.filter.range.today"
+msgstr "Heute"
+
+#: templates/admin/premium/flwp-export.php:58
+msgid "admin.page.export.filter.range.yesterday"
+msgstr "Gestern"
+
+#: templates/admin/premium/flwp-export.php:59
+msgid "admin.page.export.filter.range.last_7_days"
+msgstr "Letzte 7 Tage"
+
+#: templates/admin/premium/flwp-export.php:60
+msgid "admin.page.export.filter.range.last_30_days"
+msgstr "Letzte 30 Tage"
+
+#: templates/admin/premium/flwp-export.php:61
+msgid "admin.page.export.filter.range.this_month"
+msgstr "Diesen Monat"
+
+#: templates/admin/premium/flwp-export.php:62
+msgid "admin.page.export.filter.range.last_month"
+msgstr "Letzten Monat"
+
+#: templates/admin/premium/flwp-export.php:63
+msgid "admin.page.export.filter.range.this_year"
+msgstr "Dieses Jahr"
+
+#: templates/admin/premium/flwp-export.php:64
+msgid "admin.page.export.filter.range.last_year"
+msgstr "Letztes Jahr"
+
+#: templates/admin/premium/flwp-export.php:65
+msgid "admin.page.export.filter.range.custom"
+msgstr "Benutzerdefiniert..."
+
+#: templates/admin/premium/flwp-export.php:69
+msgid "admin.page.export.filter.status.label"
+msgstr "Status"
+
+#: templates/admin/premium/flwp-export.php:71
+msgid "admin.page.export.filter.status.all"
+msgstr "Alle Einträge"
+
+#: templates/admin/premium/flwp-export.php:72
+msgid "admin.page.export.filter.status.unread"
+msgstr "Ungelesen"
+
+#: templates/admin/premium/flwp-export.php:73
+msgid "admin.page.export.filter.status.read"
+msgstr "Gelesen"
+
+#: templates/admin/premium/flwp-export.php:74
+msgid "admin.page.export.filter.status.archived"
+msgstr "Archiviert"
+
+#: templates/admin/premium/flwp-export.php:82
+msgid "admin.page.export.filter.date.from"
+msgstr "Von"
+
+#: templates/admin/premium/flwp-export.php:86
+msgid "admin.page.export.filter.date.to"
+msgstr "Bis"
+
+#: templates/admin/premium/flwp-export.php:95
+msgid "admin.page.export.hint.title"
+msgstr "Export-Hinweis:"
+
+#: templates/admin/premium/flwp-export.php:95
+msgid "admin.page.export.hint.description"
+msgstr "CSV enthält dynamische Spalten (jede Frage deines Formulars erhält eine eigene Spalte). JSON liefert strukturierte Rohdaten inklusive detaillierter Geräte- und Metadaten."
+
+#: templates/admin/premium/flwp-export.php:101
+msgid "admin.page.export.button.csv"
+msgstr "CSV herunterladen"
+
+#: templates/admin/premium/flwp-export.php:104
+msgid "admin.page.export.button.json"
+msgstr "JSON herunterladen"
+
+#: templates/admin/premium/flwp-export.php:116
+msgid "admin.page.export.import_feedbacks.title"
+msgstr "Feedbacks importieren"
+
+#: templates/admin/premium/flwp-export.php:117
+msgid "admin.page.export.import_feedbacks.description"
+msgstr "Lade eine exportierte Feedback-Datei (.json) hoch, um Einträge wiederherzustellen."
+
+#: templates/admin/premium/flwp-export.php:125
+msgid "admin.page.export.import.drag_drop_text"
+msgstr "Datei auswählen oder herziehen"
+
+#: templates/admin/premium/flwp-export.php:126
+msgid "admin.page.export.import.supported_files"
+msgstr "Unterstützt .json Feedback-Dateien"
+
+#: templates/admin/premium/flwp-export.php:137
+msgid "admin.page.export.templates.title"
+msgstr "2. Formular-Strukturen (Templates)"
+
+#: templates/admin/premium/flwp-export.php:147
+msgid "admin.page.export.export_forms.title"
+msgstr "Formulare exportieren"
+
+#: templates/admin/premium/flwp-export.php:148
+msgid "admin.page.export.export_forms.description"
+msgstr "Exportiere ausgewählte Formular-Layouts als .json für andere WordPress-Instanzen."
+
+#: templates/admin/premium/flwp-export.php:154
+msgid "admin.page.export.filter.forms.label"
+msgstr "Welche Formulare möchtest du exportieren?"
+
+#: templates/admin/premium/flwp-export.php:159
+msgid "admin.page.export.filter.forms.select_all"
+msgstr "Alle Formulare auswählen"
+
+#: templates/admin/premium/flwp-export.php:170
+msgid "admin.page.export.button.export_forms"
+msgstr "Layout(s) exportieren (.json)"
+
+#: templates/admin/premium/flwp-export.php:172
+msgid "admin.page.export.hint.export_forms"
+msgstr "Ideal für den Transfer von einer Test- (Staging) in eine Live-Umgebung."
+
+#: templates/admin/premium/flwp-export.php:182
+msgid "admin.page.export.import_forms.title"
+msgstr "Formulare importieren"
+
+#: templates/admin/premium/flwp-export.php:183
+msgid "admin.page.export.import_forms.description"
+msgstr "Lade ein exportiertes Formular-Layout (.json) hoch, um es hinzuzufügen. Beachte dabei, dass bestehende Formulardaten mit gleicher Formular-ID überschrieben werden."
+
+#: templates/admin/premium/flwp-export.php:191
+msgid "admin.page.export.import_forms.drag_drop_text"
+msgstr "Datei auswählen oder herziehen"
+
+#: templates/admin/premium/flwp-export.php:192
+msgid "admin.page.export.import_forms.supported_files"
+msgstr "Unterstützt .json Formular-Dateien (einzelne oder mehrere Formulare)"
+
+#: templates/admin/premium/flwp-form-feedback-list.php:29
+msgid "admin.page.feedback_list.modal.id_title"
+msgstr "Feedback-Rückmeldung - #{{id}}"
+
+#: templates/admin/premium/flwp-form-feedback-list.php:30
+msgid "admin.page.feedback_list.modal.created_at"
+msgstr "Erstellt am"
+
+#: templates/admin/premium/flwp-form-feedback-list.php:33
+msgid "admin.page.feedback_list.modal.close"
+msgstr "Modal schließen"
+
+#: templates/admin/premium/flwp-form-feedback-list.php:45
+msgid "admin.page.feedback_list.modal.status.title"
+msgstr "Bearbeitungs-Status"
+
+#: templates/admin/premium/flwp-form-feedback-list.php:49
+msgid "admin.page.feedback_list.modal.status.unread"
+msgstr "Ungelesen"
+
+#: templates/admin/premium/flwp-form-feedback-list.php:52
+msgid "admin.page.feedback_list.modal.status.read"
+msgstr "Gelesen"
+
+#: templates/admin/premium/flwp-form-feedback-list.php:55
+msgid "admin.page.feedback_list.modal.status.archived"
+msgstr "Archiviert"
+
+#: templates/admin/premium/flwp-form-feedback-list.php:64
+msgid "admin.page.feedback_list.modal.customer_form_values"
+msgstr "Kunden-Formularwerte"
+
+#: templates/admin/premium/flwp-form-feedback-list.php:72
+msgid "admin.page.feedback_list.modal.source_url"
+msgstr "Quelle (Seiten-URL)"
+
+#: templates/admin/premium/flwp-form-feedback-list.php:76
+msgid "admin.page.feedback_list.modal.copy_to_clipboard"
+msgstr "In Zwischenablage kopieren"
+
+#: templates/admin/premium/flwp-form-feedback-list.php:79
+msgid "admin.page.feedback_list.modal.open_in_new_window"
+msgstr "In neuem Fenster öffnen"
+
+#: templates/admin/premium/flwp-form-feedback-list.php:92
+msgid "admin.page.feedback_list.modal.tracking.title"
+msgstr "Technische Tracking-Messwerte"
+
+#: templates/admin/premium/flwp-form-feedback-list.php:100
+msgid "admin.page.feedback_list.modal.tracking.device"
+msgstr "Gerätetyp / System"
+
+#: templates/admin/premium/flwp-form-feedback-list.php:109
+msgid "admin.page.feedback_list.modal.tracking.connection"
+msgstr "Netzwerk-Verbindung"
+
+#: templates/admin/premium/flwp-form-feedback-list.php:118
+msgid "admin.page.feedback_list.modal.tracking.resolution"
+msgstr "Auflösung (Viewport)"
+
+#: templates/admin/premium/flwp-form-feedback-list.php:127
+msgid "admin.page.feedback_list.modal.tracking.timespent"
+msgstr "Verweildauer"
+
+#: templates/admin/premium/flwp-form-feedback-list.php:136
+msgid "admin.page.feedback_list.modal.tracking.language"
+msgstr "Region & Sprache"
+
+#: templates/admin/premium/flwp-form-feedback-list.php:145
+msgid "admin.page.feedback_list.modal.tracking.colorscheme"
+msgstr "Helligkeit-Modus"
+
+#: templates/admin/premium/flwp-form-feedback-list.php:154
+msgid "admin.page.feedback_list.modal.tracking.session_id"
+msgstr "Anonymisierte Sitzungs-ID"
+
+#: templates/admin/premium/flwp-form-feedback-list.php:163
+msgid "admin.page.feedback_list.modal.tracking.user_agent"
+msgstr "Vollständiger User-Agent String"
+
+#: templates/admin/premium/flwp-form-feedback-list.php:172
+msgid "admin.page.feedback_list.modal.json_data"
+msgstr "Technische rohe JSON-Daten"
+
+#: templates/admin/premium/flwp-form-feedback-list.php:183
+msgid "admin.page.feedback_list.modal.close_button"
+msgstr "Schließen"
+
+#: assets/js/dist/flwp-admin.js:53
+#: assets/js/dist/flwp-form-builder.js:902
+#: assets/js/dist/flwp-form-frontend.js:906
+msgid "fields.smileys.legend.very_unsatisfied"
+msgstr "Sehr unzufrieden"
+
+#: assets/js/dist/flwp-admin.js:54
+#: assets/js/dist/flwp-form-builder.js:903
+#: assets/js/dist/flwp-form-frontend.js:907
+msgid "fields.smileys.legend.unsatisfied"
+msgstr "Unzufrieden"
+
+#: assets/js/dist/flwp-admin.js:55
+#: assets/js/dist/flwp-form-builder.js:904
+#: assets/js/dist/flwp-form-frontend.js:908
+msgid "fields.smileys.legend.neutral"
+msgstr "Neutral"
+
+#: assets/js/dist/flwp-admin.js:56
+#: assets/js/dist/flwp-form-builder.js:905
+#: assets/js/dist/flwp-form-frontend.js:909
+msgid "fields.smileys.legend.satisfied"
+msgstr "Zufrieden"
+
+#: assets/js/dist/flwp-admin.js:57
+#: assets/js/dist/flwp-form-builder.js:906
+#: assets/js/dist/flwp-form-frontend.js:910
+msgid "fields.smileys.legend.very_satisfied"
+msgstr "Sehr zufrieden"
+
+#: assets/js/dist/flwp-admin.js:106
+msgid "admin.feedback.load_error"
+msgstr "Fehler beim Laden der Feedback-Details"
+
+#: assets/js/dist/flwp-admin.js:110
+msgid "admin.feedback.load_network_error"
+msgstr "Netzwerkfehler beim Laden der Feedback-Details"
+
+#: assets/js/dist/flwp-admin.js:131
+#: assets/js/dist/flwp-admin.js:424
+msgid "admin.feedback.delete_error"
+msgstr "Fehler beim Löschen des Feedbacks"
+
+#: assets/js/dist/flwp-admin.js:135
+msgid "admin.feedback.delete_network_error"
+msgstr "Netzwerkfehler beim Löschen des Feedbacks"
+
+#: assets/js/dist/flwp-admin.js:310
+msgid "admin.feedback.select_exactly_one_csv"
+msgstr "Bitte wähle genau ein Formular für den CSV-Export aus."
+
+#: assets/js/dist/flwp-admin.js:314
+msgid "admin.feedback.select_only_one_csv_error"
+msgstr "Für den CSV-Export darf nur genau ein Formular ausgewählt sein, da die Strukturen der Formulare sich unterscheiden können. Bitte wähle nur ein einzelnes Formular aus."
+
+#: assets/js/dist/flwp-admin.js:330
+#: assets/js/dist/flwp-admin.js:347
+msgid "admin.feedback.select_at_least_one"
+msgstr "Bitte wähle mindestens ein Formular aus."
+
+#: assets/js/dist/flwp-admin.js:386
+msgid "admin.feedback.import_success_forms"
+msgstr "Formulare erfolgreich importiert!"
+
+#: assets/js/dist/flwp-admin.js:386
+msgid "admin.feedback.import_success_feedback"
+msgstr "Feedbacks erfolgreich importiert!"
+
+#: assets/js/dist/flwp-admin.js:389
+#: assets/js/dist/flwp-form-builder.js:5528
+msgid "admin.toast.import_error"
+msgstr "Fehler beim Laden/Importieren: {error}"
+
+#: assets/js/dist/flwp-admin.js:393
+#: assets/js/dist/flwp-form-builder.js:4018
+msgid "admin.toast.network_error"
+msgstr "Netzwerkfehler beim Speichern der Daten."
+
+#: assets/js/dist/flwp-admin.js:403
+#: assets/js/dist/flwp-form-builder.js:976
+#: assets/js/dist/flwp-form-builder.js:4049
+#: assets/js/dist/flwp-form-frontend.js:1101
+msgid "fields.unnamed"
+msgstr "Unbenannt"
+
+#: assets/js/dist/flwp-admin.js:404
+msgid "admin.feedback.delete_form_confirm"
+msgstr "Möchtest du das Formular \"{name}\" wirklich unwiderruflich löschen? Dabei werden auch alle dazugehörigen Feedbacks gelöscht."
+
+#: assets/js/dist/flwp-admin.js:416
+msgid "admin.feedback.delete_confirm"
+msgstr "Möchtest du das Feedback #{id} wirklich unwiderruflich löschen?"
+
+#: assets/js/dist/flwp-admin.js:429
+msgid "admin.feedback.saving"
+msgstr "Speichern..."
+
+#: assets/js/dist/flwp-admin.js:476
+msgid "admin.feedback.device_desktop"
+msgstr "Desktop"
+
+#: assets/js/dist/flwp-admin.js:476
+msgid "admin.feedback.device_mobile"
+msgstr "Mobile"
+
+#: assets/js/dist/flwp-admin.js:484
+msgid "admin.feedback.unknown"
+msgstr "Unbekannt"
+
+#: assets/js/dist/flwp-admin.js:502
+msgid "admin.feedback.broadband"
+msgstr "Breitband"
+
+#: assets/js/dist/flwp-admin.js:513
+msgid "admin.feedback.seconds"
+msgstr "Sekunden"
+
+#: assets/js/dist/flwp-admin.js:524
+msgid "admin.feedback.theme_dark"
+msgstr "Dunkles Design (Dark)"
+
+#: assets/js/dist/flwp-admin.js:525
+msgid "admin.feedback.theme_light"
+msgstr "Helles Design (Light)"
+
+#: assets/js/dist/flwp-admin.js:568
+msgid "admin.feedback.url_open_error"
+msgstr "Konnte URL nicht öffnen:"
+
+#: assets/js/dist/flwp-admin.js:638
+msgid "admin.feedback.status_update_error"
+msgstr "Fehler beim Aktualisieren des Status"
+
+#: assets/js/dist/flwp-form-builder.js:555
+#: assets/js/dist/flwp-form-frontend.js:559
+msgid "admin.builder.default_step2.headline"
+msgstr "Erzähle uns mehr"
+
+#: assets/js/dist/flwp-form-builder.js:556
+#: assets/js/dist/flwp-form-frontend.js:560
+msgid "admin.builder.default_step2.textarea_label"
+msgstr "Was können wir besser machen?"
+
+#: assets/js/dist/flwp-form-builder.js:556
+#: assets/js/dist/flwp-form-frontend.js:560
+msgid "admin.builder.default_step2.textarea_placeholder"
+msgstr "Schreibe hier dein Feedback..."
+
+#: assets/js/dist/flwp-form-builder.js:557
+#: assets/js/dist/flwp-form-frontend.js:561
+msgid "admin.builder.default_step2.button_label"
+msgstr "Feedback senden"
+
+#: assets/js/dist/flwp-form-builder.js:768
+#: assets/js/dist/flwp-form-builder.js:851
+#: assets/js/dist/flwp-form-frontend.js:772
+#: assets/js/dist/flwp-form-frontend.js:855
+msgid "admin.builder.unlink_values"
+msgstr "Werte entkoppeln"
+
+#: assets/js/dist/flwp-form-builder.js:779
+#: assets/js/dist/flwp-form-builder.js:854
+#: assets/js/dist/flwp-form-frontend.js:783
+#: assets/js/dist/flwp-form-frontend.js:858
+msgid "admin.builder.link_values"
+msgstr "Werte verknüpfen"
+
+#: assets/js/dist/flwp-form-builder.js:941
+#: assets/js/dist/flwp-form-frontend.js:1066
+msgid "admin.builder.default_feedback_placeholder"
+msgstr "Hier dein Feedback eingeben..."
+
+#: assets/js/dist/flwp-form-builder.js:1079
+#: assets/js/dist/flwp-form-frontend.js:1204
+msgid "admin.builder.submit_action"
+msgstr "Absenden-Aktion"
+
+#: assets/js/dist/flwp-form-builder.js:1079
+#: assets/js/dist/flwp-form-frontend.js:1204
+msgid "admin.builder.back_action"
+msgstr "Zurück zu Schritt 1"
+
+#: assets/js/dist/flwp-form-builder.js:1088
+#: assets/js/dist/flwp-form-builder.js:1175
+#: assets/js/dist/flwp-form-builder.js:1264
+#: assets/js/dist/flwp-form-builder.js:1345
+#: assets/js/dist/flwp-form-builder.js:1442
+#: assets/js/dist/flwp-form-frontend.js:1213
+#: assets/js/dist/flwp-form-frontend.js:1300
+#: assets/js/dist/flwp-form-frontend.js:1389
+#: assets/js/dist/flwp-form-frontend.js:1470
+#: assets/js/dist/flwp-form-frontend.js:1567
+msgid "admin.builder.step2_connected"
+msgstr "Verknüpft mit Schritt 2"
+
+#: assets/js/dist/flwp-form-builder.js:1259
+#: assets/js/dist/flwp-form-builder.js:1314
+#: assets/js/dist/flwp-form-frontend.js:1384
+#: assets/js/dist/flwp-form-frontend.js:1439
+msgid "fields.thumbs.yes"
+msgstr "Ja"
+
+#: assets/js/dist/flwp-form-builder.js:1260
+#: assets/js/dist/flwp-form-builder.js:1315
+#: assets/js/dist/flwp-form-frontend.js:1385
+#: assets/js/dist/flwp-form-frontend.js:1440
+msgid "fields.thumbs.no"
+msgstr "Nein"
+
+#: assets/js/dist/flwp-form-builder.js:1602
+msgid "admin.builder.reset_preview"
+msgstr "Vorschau zurücksetzen"
+
+#: assets/js/dist/flwp-form-builder.js:1648
+msgid "admin.builder.unlock_pro"
+msgstr "PRO freischalten"
+
+#: assets/js/dist/flwp-form-builder.js:1650
+msgid "admin.builder.use_template"
+msgstr "Vorlage nutzen"
+
+#: assets/js/dist/flwp-form-builder.js:1664
+msgid "admin.confirm.load_template"
+msgstr "Möchtest du diese Vorlage wirklich laden? Dadurch wird dein aktueller Entwurf überschrieben."
+
+#: assets/js/dist/flwp-form-builder.js:1677
+msgid "admin.toast.template_loaded"
+msgstr "Template \"{title}\" geladen!"
+
+#: assets/js/dist/flwp-form-builder.js:1718
+msgid "admin.conditions.url.label"
+msgstr "URL-Filter"
+
+#: assets/js/dist/flwp-form-builder.js:1724
+#: assets/js/dist/flwp-form-builder.js:1773
+msgid "admin.conditions.operators.contains"
+msgstr "enthält"
+
+#: assets/js/dist/flwp-form-builder.js:1725
+#: assets/js/dist/flwp-form-builder.js:1774
+msgid "admin.conditions.operators.not_contains"
+msgstr "enthält nicht"
+
+#: assets/js/dist/flwp-form-builder.js:1726
+#: assets/js/dist/flwp-form-builder.js:1775
+msgid "admin.conditions.operators.exact"
+msgstr "entspricht genau"
+
+#: assets/js/dist/flwp-form-builder.js:1727
+#: assets/js/dist/flwp-form-builder.js:1776
+msgid "admin.conditions.operators.not_exact"
+msgstr "entspricht nicht genau"
+
+#: assets/js/dist/flwp-form-builder.js:1730
+msgid "admin.conditions.placeholder.url"
+msgstr "z.B. /kontakt/ oder shop"
+
+#: assets/js/dist/flwp-form-builder.js:1735
+msgid "admin.conditions.page_type.label"
+msgstr "Seitentyp"
+
+#: assets/js/dist/flwp-form-builder.js:1741
+#: assets/js/dist/flwp-form-builder.js:1757
+msgid "admin.conditions.operators.in"
+msgstr "ist eins von"
+
+#: assets/js/dist/flwp-form-builder.js:1745
+msgid "admin.conditions.options.pages"
+msgstr "Seiten"
+
+#: assets/js/dist/flwp-form-builder.js:1746
+msgid "admin.conditions.options.posts"
+msgstr "Beiträge"
+
+#: assets/js/dist/flwp-form-builder.js:1751
+msgid "admin.conditions.device.label"
+msgstr "Gerätetyp"
+
+#: assets/js/dist/flwp-form-builder.js:1761
+msgid "admin.conditions.options.desktop"
+msgstr "Desktop"
+
+#: assets/js/dist/flwp-form-builder.js:1762
+msgid "admin.conditions.options.mobile"
+msgstr "Mobile"
+
+#: assets/js/dist/flwp-form-builder.js:1767
+msgid "admin.conditions.cookie.label"
+msgstr "Cookie-Wert"
+
+#: assets/js/dist/flwp-form-builder.js:1779
+msgid "admin.conditions.placeholder.cookie_name"
+msgstr "Cookie-Name (z.B. logged_in)"
+
+#: assets/js/dist/flwp-form-builder.js:1780
+msgid "admin.conditions.placeholder.cookie_value"
+msgstr "Wert (optional)"
+
+#: assets/js/dist/flwp-form-builder.js:1886
+msgid "admin.conditions.title"
+msgstr "Regel-Konditionen"
+
+#: assets/js/dist/flwp-form-builder.js:1894
+msgid "admin.conditions.show_on_frontpage"
+msgstr "Auf Startseite anzeigen"
+
+#: assets/js/dist/flwp-form-builder.js:1895
+msgid "admin.conditions.show_on_frontpage_desc"
+msgstr "Soll dieses Formular auf der Startseite Ihrer Website erscheinen?"
+
+#: assets/js/dist/flwp-form-builder.js:1915
+msgid "admin.conditions.and_group"
+msgstr "UND-Gruppe (Alle Bedingungen müssen erfüllt sein)"
+
+#: assets/js/dist/flwp-form-builder.js:1921
+msgid "admin.conditions.connector"
+msgstr "VERKNÜPFUNG"
+
+#: assets/js/dist/flwp-form-builder.js:1925
+msgid "admin.conditions.or_group"
+msgstr "ODER-Gruppe (Mindestens eine Bedingung muss erfüllt sein)"
+
+#: assets/js/dist/flwp-form-builder.js:1931
+msgid "admin.conditions.hint.title"
+msgstr "Wieso kann ich keine weiteren Bedingungen hinzufügen?"
+
+#: assets/js/dist/flwp-form-builder.js:1933
+msgid "admin.conditions.hint.text"
+msgstr "Einige Bedingungen (wie <em>Gerätetyp</em> oder <em>Seitentyp</em>) sind <strong>einzigartig (Unique)</strong> und können nur einmal verwendet werden. Andere Bedingungen (wie <em>URL-Filter</em> oder <em>Cookie-Wert</em>) erfordern die <strong>PRO-Version</strong>. Sobald alle für dich verfügbaren Bedingungen hinzugefügt wurden, wird die Schaltfläche zum Hinzufügen deaktiviert."
+
+#: assets/js/dist/flwp-form-builder.js:1946
+msgid "admin.conditions.type.and"
+msgstr "UND"
+
+#: assets/js/dist/flwp-form-builder.js:1946
+msgid "admin.conditions.type.or"
+msgstr "ODER"
+
+#: assets/js/dist/flwp-form-builder.js:1962
+#: assets/js/dist/flwp-form-builder.js:1967
+msgid "admin.conditions.empty_state"
+msgstr "Keine {type}-Bedingungen definiert. Diese Bedingungen werden ignoriert."
+
+#: assets/js/dist/flwp-form-builder.js:1983
+msgid "admin.conditions.add_button"
+msgstr "Bedingung hinzufügen"
+
+#: assets/js/dist/flwp-form-builder.js:1995
+msgid "admin.conditions.add_button_disabled_title"
+msgstr "Alle verfügbaren Bedingungen wurden bereits hinzugefügt."
+
+#: assets/js/dist/flwp-form-builder.js:2140
+msgid "admin.conditions.delete_condition"
+msgstr "Bedingung entfernen"
+
+#: assets/js/dist/flwp-form-builder.js:2156
+msgid "admin.warning.submit_button"
+msgstr "Achtung: Dieses Formular enthält mehrere Eingabefelder, aber keinen Absenden-Button oder Weiter-Button mit aktiviertem Step 2. Füge einen Button hinzu, damit Nutzer das Formular abschicken können."
+
+#: assets/js/dist/flwp-form-builder.js:2164
+msgid "admin.warning.step2_empty"
+msgstr "Achtung: In Schritt 1 ist Schritt 2 für mindestens ein Element aktiviert, aber in Schritt 2 wurden keine Elemente definiert. Füge Elemente zu Schritt 2 hinzu oder deaktiviere Schritt 2."
+
+#: assets/js/dist/flwp-form-builder.js:2172
+msgid "admin.warning.step2_missing_submit"
+msgstr "Achtung: Schritt 2 enthält Eingabefelder, aber keinen Absenden-Button."
+
+#: assets/js/dist/flwp-form-builder.js:2179
+msgid "admin.warning.empty_form"
+msgstr "Achtung: Das Formular enthält noch keine Elemente. Füge mindestens ein Element hinzu."
+
+#: assets/js/dist/flwp-form-builder.js:2246
+#: assets/js/dist/flwp-form-builder.js:2258
+msgid "validation.error.active_warnings"
+msgstr "{count} aktive Warnungen"
+
+#: assets/js/dist/flwp-form-builder.js:2415
+#: assets/js/dist/flwp-form-builder.js:2426
+msgid "admin.preview.title"
+msgstr "Plugin-Livevorschau"
+
+#: assets/js/dist/flwp-form-builder.js:2430
+msgid "admin.preview.address_placeholder"
+msgstr "https://deine-website.de/blog/artikel"
+
+#: assets/js/dist/flwp-form-builder.js:2434
+msgid "admin.preview.desktop_view"
+msgstr "Desktop Ansicht"
+
+#: assets/js/dist/flwp-form-builder.js:2437
+msgid "admin.preview.mobile_view"
+msgstr "Mobile Ansicht"
+
+#: assets/js/dist/flwp-form-builder.js:2442
+msgid "admin.preview.refresh_preview"
+msgstr "Vorschau aktualisieren"
+
+#: assets/js/dist/flwp-form-builder.js:2446
+msgid "admin.preview.close_preview"
+msgstr "Vorschau schließen"
+
+#: assets/js/dist/flwp-form-builder.js:2466
+msgid "admin.preview.active_mode_label"
+msgstr "Aktiver Modus:"
+
+#: assets/js/dist/flwp-form-builder.js:2468
+msgid "admin.preview.simulate_trigger"
+msgstr "Trigger simulieren"
+
+#: assets/js/dist/flwp-form-builder.js:2477
+msgid "admin.preview.modes.in_content_shortcode"
+msgstr "Shortcode"
+
+#: assets/js/dist/flwp-form-builder.js:2477
+msgid "admin.preview.modes.in_content_inline"
+msgstr "Inline"
+
+#: assets/js/dist/flwp-form-builder.js:2478
+msgid "admin.preview.modes.in_content"
+msgstr "In-Content ({type})"
+
+#: assets/js/dist/flwp-form-builder.js:2481
+msgid "admin.preview.modes.feedback_button"
+msgstr "Schwebender Feedback-Button"
+
+#: assets/js/dist/flwp-form-builder.js:2483
+msgid "admin.preview.modes.slide_in"
+msgstr "Slide-In Widget"
+
+#: assets/js/dist/flwp-form-builder.js:2485
+msgid "admin.preview.modes.overlay_modal"
+msgstr "Overlay Modal"
+
+#: assets/js/dist/flwp-form-builder.js:2493
+msgid "admin.preview.mock.logo"
+msgstr "Mein Blog"
+
+#: assets/js/dist/flwp-form-builder.js:2496
+msgid "admin.preview.mock.headline"
+msgstr "Wofür kann ich das Plugin FLWP nutzen?"
+
+#: assets/js/dist/flwp-form-builder.js:2497
+msgid "admin.preview.mock.desc1"
+msgstr "Mit FLWP kannst du viele verschiedene Feedback-Formulare erstellen und auf unterschiedliche Weise anzeigen lassen."
+
+#: assets/js/dist/flwp-form-builder.js:2499
+msgid "admin.preview.mock.desc2"
+msgstr "Lege unter \"Felder\" einfach ein Formular an und wähle dann unter \"Anzeige\" deinen Anzeigetype für dieses Formular aus."
+
+#: assets/js/dist/flwp-form-builder.js:2500
+msgid "admin.preview.mock.desc3"
+msgstr "Danach das Formular noch speichern und veröffentlichen und schon wird dein Formular auf deiner Seite angezeigt."
+
+#: assets/js/dist/flwp-form-builder.js:2501
+msgid "admin.preview.mock.desc4"
+msgstr "Hast du Fragen zu Einstellungen, kannst du gern einen Blick in unsere <a href=\"https://flwp.de/docs/\" target=\"_blank\">Dokumentation</a> werfen oder das <a href=\"https://flwp.de/support-forum/\" target=\"_blank\">Support-Forum</a> aufrufen."
+
+#: assets/js/dist/flwp-form-builder.js:2615
+msgid "admin.preview.default_footer_text"
+msgstr "Wir schätzen dein ehrliches Feedback!"
+
+#: assets/js/dist/flwp-form-builder.js:2857
+msgid "admin.display.group_title_in_content"
+msgstr "Maximale Breite &amp; Höhe"
+
+#: assets/js/dist/flwp-form-builder.js:2859
+msgid "admin.display.group_title_default"
+msgstr "Ausrichtung &amp; Maße"
+
+#: assets/js/dist/flwp-form-builder.js:2874
+msgid "admin.display.tab_btn_in_content"
+msgstr "Abstände &amp; Maße"
+
+#: assets/js/dist/flwp-form-builder.js:2876
+msgid "admin.display.tab_btn_default"
+msgstr "Ausrichtung &amp; Maße"
+
+#: assets/js/dist/flwp-form-builder.js:2897
+msgid "admin.display.step_label"
+msgstr "Schritt {step}"
+
+#: assets/js/dist/flwp-form-builder.js:3661
+msgid "fields.button.submit.default_text"
+msgstr "Absenden"
+
+#: assets/js/dist/flwp-form-builder.js:3665
+msgid "fields.button.back.default_text"
+msgstr "Zurück"
+
+#: assets/js/dist/flwp-form-builder.js:3669
+msgid "fields.button.next.default_text"
+msgstr "Weiter"
+
+#: assets/js/dist/flwp-form-builder.js:3731
+msgid "admin.toast.step2_unlocked"
+msgstr "Schritt 2 für dieses Element freigeschaltet!"
+
+#: assets/js/dist/flwp-form-builder.js:3827
+msgid "admin.toast.undo"
+msgstr "Aktion rückgängig gemacht"
+
+#: assets/js/dist/flwp-form-builder.js:3862
+msgid "admin.toast.redo"
+msgstr "Aktion wiederholt"
+
+#: assets/js/dist/flwp-form-builder.js:4010
+msgid "admin.toast.form_published"
+msgstr "Formular erfolgreich veröffentlicht!"
+
+#: assets/js/dist/flwp-form-builder.js:4010
+msgid "admin.toast.draft_saved"
+msgstr "Entwurf erfolgreich gespeichert!"
+
+#: assets/js/dist/flwp-form-builder.js:4013
+msgid "admin.toast.save_error"
+msgstr "Fehler beim Speichern: {error}"
+
+#: assets/js/dist/flwp-form-builder.js:4013
+msgid "admin.toast.unknown_error"
+msgstr "Unbekannter Fehler"
+
+#: assets/js/dist/flwp-form-builder.js:4302
+#: assets/js/dist/flwp-form-builder.js:4317
+#: assets/js/dist/flwp-form-builder.js:4322
+msgid "admin.builder.element_count_plural"
+msgstr "{count} Elemente"
+
+#: assets/js/dist/flwp-form-builder.js:4317
+#: assets/js/dist/flwp-form-builder.js:4322
+msgid "admin.builder.element_count_singular"
+msgstr "{count} Element"
+
+#: assets/js/dist/flwp-form-builder.js:4323
+msgid "admin.builder.active_for"
+msgstr "Aktiv für: {label}"
+
+#: assets/js/dist/flwp-form-builder.js:4325
+msgid "admin.builder.switch_recipient"
+msgstr "Empfänger wechseln"
+
+#: assets/js/dist/flwp-form-builder.js:4385
+#: assets/js/dist/flwp-form-builder.js:4791
+msgid "admin.builder.move_to_step2"
+msgstr "In Schritt 2 verschieben"
+
+#: assets/js/dist/flwp-form-builder.js:4385
+#: assets/js/dist/flwp-form-builder.js:4791
+msgid "admin.builder.move_to_step1"
+msgstr "In Schritt 1 verschieben"
+
+#: assets/js/dist/flwp-form-builder.js:4393
+#: assets/js/dist/flwp-form-builder.js:4783
+msgid "admin.builder.duplicate_element"
+msgstr "Element duplizieren"
+
+#: assets/js/dist/flwp-form-builder.js:4401
+#: assets/js/dist/flwp-form-builder.js:4802
+msgid "admin.builder.delete_element"
+msgstr "Element löschen"
+
+#: assets/js/dist/flwp-form-builder.js:4618
+msgid "admin.builder.customize_colors"
+msgstr "{name}-Farben anpassen"
+
+#: assets/js/dist/flwp-form-builder.js:4703
+msgid "admin.preview.widget_title"
+msgstr "Widget-Livevorschau"
+
+#: assets/js/dist/flwp-form-builder.js:4731
+msgid "admin.preview.form_preview_title"
+msgstr "Formular-Vorschau"
+
+#: assets/js/dist/flwp-form-builder.js:4775
+msgid "admin.builder.edit_element"
+msgstr "Element bearbeiten"
+
+#: assets/js/dist/flwp-form-builder.js:4828
+msgid "admin.toast.step2_auto_activated"
+msgstr "Schritt 2 wurde für \"{label}\" automatisch aktiviert."
+
+#: assets/js/dist/flwp-form-builder.js:4832
+msgid "admin.toast.step2_requirement_error"
+msgstr "Schritt 2 benötigt mindestens ein Rating- oder Button-Element in Schritt 1 mit aktiviertem Schritt-2-Pfad."
+
+#: assets/js/dist/flwp-form-builder.js:4847
+msgid "admin.toast.moved_to_step2"
+msgstr "\"{label}\" erfolgreich in Schritt 2 verschoben!"
+
+#: assets/js/dist/flwp-form-builder.js:4886
+msgid "admin.toast.moved_to_step1"
+msgstr "\"{label}\" erfolgreich in Schritt 1 verschoben!"
+
+#: assets/js/dist/flwp-form-builder.js:4900
+msgid "admin.builder.back_to_overview"
+msgstr "Zurück zur Übersicht"
+
+#: assets/js/dist/flwp-form-builder.js:4925
+msgid "admin.toast.deleted"
+msgstr "Element gelöscht"
+
+#: assets/js/dist/flwp-form-builder.js:4940
+msgid "admin.toast.duplicated"
+msgstr "Element dupliziert"
+
+#: assets/js/dist/flwp-form-builder.js:4962
+msgid "admin.toast.added"
+msgstr "Element \"{name}\" hinzugefügt"
+
+#: assets/js/dist/flwp-form-builder.js:5050
+msgid "admin.toast.dropped"
+msgstr "Element \"{name}\" abgelegt"
+
+#: assets/js/dist/flwp-form-builder.js:5060
+msgid "admin.toast.move_step_not_allowed"
+msgstr "Verschieben zwischen Schritten nicht erlaubt"
+
+#: assets/js/dist/flwp-form-builder.js:5134
+msgid "admin.toast.view_loaded"
+msgstr "Ansicht \"{view}\" geladen"
+
+#: assets/js/dist/flwp-form-builder.js:5503
+msgid "admin.toast.config_copied"
+msgstr "Konfiguration kopiert!"
+
+#: assets/js/dist/flwp-form-builder.js:5511
+msgid "admin.toast.invalid_json"
+msgstr "Bitte gib eine gültige JSON-Konfiguration ein."
+
+#: assets/js/dist/flwp-form-builder.js:5524
+msgid "admin.toast.config_loaded"
+msgstr "Konfiguration geladen!"
+
+#: assets/js/dist/flwp-form-builder.js:5555
+msgid "admin.builder.display_type_label"
+msgstr "Ausspielung für Anzeigetyp {label}"
+
+#: assets/js/dist/flwp-form-builder.js:5572
+msgid "admin.builder.targeting_tabs.in_content"
+msgstr "Automatische Platzierung (In-Content)"
+
+#: assets/js/dist/flwp-form-builder.js:5573
+msgid "admin.builder.targeting_tabs.shortcode"
+msgstr "Shortcode"
+
+#: assets/js/dist/flwp-form-builder.js:5577
+msgid "admin.builder.targeting_tabs.overlay"
+msgstr "Overlay"
+
+#: assets/js/dist/flwp-form-builder.js:5725
+#: assets/js/dist/flwp-form-builder.js:5821
+msgid "admin.toast.status_paused"
+msgstr "Pausiert"
+
+#: assets/js/dist/flwp-form-builder.js:5728
+#: assets/js/dist/flwp-form-builder.js:5822
+msgid "admin.toast.status_live"
+msgstr "Live"
+
+#: assets/js/dist/flwp-form-builder.js:5731
+#: assets/js/dist/flwp-form-builder.js:5823
+msgid "admin.toast.status_admin_only"
+msgstr "Admin-Only"
+
+#: assets/js/dist/flwp-form-builder.js:5824
+msgid "admin.toast.status_changed"
+msgstr "Formularstatus auf \"{status}\" geändert"
+
+#: assets/js/dist/flwp-form-builder.js:5851
+msgid "admin.builder.leave_editor_confirm"
+msgstr "Möchtest du den Editor wirklich verlassen?"
+
+#: assets/js/dist/flwp-form-builder.js:5865
+msgid "admin.toast.split_preview_reset"
+msgstr "Split-Vorschautest zurückgesetzt!"
+
+#: assets/js/dist/flwp-form-builder.js:5878
+#: assets/js/dist/flwp-form-builder.js:5887
+msgid "admin.toast.activate_step2_first"
+msgstr "Aktiviere zuerst 'Schritt 2' in den Feldoptionen!"
+
+#: assets/js/dist/flwp-form-frontend.js:2157
+msgid "widget.feedback_button.hide_button"
+msgstr "Feedback-Button für eine Weile ausblenden"
+
+#: assets/js/dist/flwp-form-frontend.js:2222
+msgid "widget.status_completed"
+msgstr "Abgeschlossen"
+
+#: assets/js/dist/flwp-form-frontend.js:2224
+msgid "widget.step_indicator_full"
+msgstr "Schritt {step} von {total}"
+
+#: assets/js/dist/flwp-form-frontend.js:2505
+msgid "validation.error.required"
+msgstr "Dieses Feld ist ein Pflichtfeld."
+
+#: assets/js/dist/flwp-form-frontend.js:2555
+#: assets/js/dist/flwp-form-frontend.js:2620
+msgid "widget.step_indicator"
+msgstr "Schritt {step} / {total}"
+
+#: assets/js/dist/flwp-form-frontend.js:2582
+msgid "widget.status_confirmed"
+msgstr "Bestätigt"
+
+#: assets/js/dist/flwp-form-frontend.js:2609
+msgid "admin.builder.simulation_redirect_msg"
+msgstr "[Simulation] Weiterleitung erfolgt zu:"
+
+#: assets/js/dist/flwp-form-frontend.js:2620
+msgid "widget.step_single"
+msgstr "Schritt {step}"
+
+#: assets/js/dist/flwp-form-frontend.js:2651
+msgid "widget.no_elements"
+msgstr "Keine Elemente ausgewählt."
+
+#: assets/js/dist/flwp-form-frontend.js:2718
+msgid "confirmation.message.redirecting"
+msgstr "Du wirst in {seconds} Sekunden weitergeleitet..."
+
+#: assets/js/dist/flwp-form-frontend.js:2721
+msgid "confirmation.message.target"
+msgstr "Ziel:"

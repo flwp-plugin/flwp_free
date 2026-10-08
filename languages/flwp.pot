@@ -1,0 +1,3744 @@
+# Copyright (C) 2026 Kai Steudten
+# This file is distributed under the GPLv2+.
+msgid ""
+msgstr ""
+"Project-Id-Version: FLWP – User Feedback & Surveys 1.0.5\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/flwp\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-10-07T21:02:35+02:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+
+#. Plugin Name of the plugin
+#: flwp.php:5
+msgid "FLWP – User Feedback & Surveys"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: flwp.php:7
+msgid "https://flwp.de"
+msgstr ""
+
+#. Description of the plugin
+#: flwp.php:9
+msgid "Collect and analyze user feedback directly in WordPress with a visual form builder, flexible display options, smart triggers, and targeting."
+msgstr ""
+
+#. Author of the plugin
+#: flwp.php:17
+msgid "Kai Steudten"
+msgstr ""
+
+#: includes/Admin.php:62
+#: includes/Admin.php:63
+msgid "admin.menu.dashboard"
+msgstr ""
+
+#: includes/Admin.php:71
+#: includes/Admin.php:72
+msgid "admin.menu.all_forms"
+msgstr ""
+
+#: includes/Admin.php:80
+#: includes/Admin.php:81
+msgid "admin.menu.add_form"
+msgstr ""
+
+#: includes/Admin.php:89
+#: includes/Admin.php:90
+msgid "admin.menu.feedback_list"
+msgstr ""
+
+#: includes/Admin.php:98
+#: includes/Admin.php:99
+msgid "admin.menu.export"
+msgstr ""
+
+#: includes/Admin.php:107
+#: includes/Admin.php:108
+msgid "admin.menu.about"
+msgstr ""
+
+#: includes/Admin.php:229
+#: includes/Admin.php:279
+#: includes/Admin.php:307
+#: includes/Admin.php:331
+#: includes/Admin.php:347
+#: includes/Admin.php:386
+#: includes/Admin.php:409
+#: includes/Admin.php:490
+#: includes/Export/Csv.php:18
+msgid "Permission denied"
+msgstr ""
+
+#: includes/Admin.php:237
+#: includes/Admin.php:286
+#: includes/Admin.php:314
+msgid "Missing data"
+msgstr ""
+
+#: includes/Admin.php:242
+msgid "Invalid data"
+msgstr ""
+
+#: includes/Admin.php:245
+#: includes/Database/Form.php:109
+msgid "admin.db.default_new_form_name"
+msgstr ""
+
+#: includes/Admin.php:254
+msgid "admin.error.limit_3_forms_reached"
+msgstr ""
+
+#: includes/Admin.php:265
+msgid "Form data saved successfully"
+msgstr ""
+
+#: includes/Admin.php:271
+msgid "Failed to save form data"
+msgstr ""
+
+#: includes/Admin.php:297
+msgid "Status updated successfully"
+msgstr ""
+
+#: includes/Admin.php:299
+msgid "Failed to update status"
+msgstr ""
+
+#: includes/Admin.php:321
+msgid "Feedback status updated successfully"
+msgstr ""
+
+#: includes/Admin.php:323
+msgid "Failed to update feedback status"
+msgstr ""
+
+#: includes/Admin.php:414
+msgid "ID missing"
+msgstr ""
+
+#: includes/Admin.php:420
+msgid "Feedback not found"
+msgstr ""
+
+#: includes/Admin.php:504
+msgid "Wrong import-type."
+msgstr ""
+
+#: includes/Admin.php:513
+msgid "Error during importing the file or wrong file format."
+msgstr ""
+
+#: includes/Admin.php:535
+msgid "admin.notice.thank_you"
+msgstr ""
+
+#: includes/Database/Form.php:18
+#: includes/FormFrontend.php:178
+#: includes/Helper/ConfigHelper.php:127
+msgid "admin.db.default_form_name"
+msgstr ""
+
+#: includes/Database/Form.php:241
+#: includes/Database/Form.php:247
+msgid "admin.form.duplicate_suffix"
+msgstr ""
+
+#: includes/EnvironmentChecks.php:97
+#: includes/EnvironmentChecks.php:125
+msgid "admin.env_check.error.title"
+msgstr ""
+
+#: includes/EnvironmentChecks.php:100
+msgid "admin.env_check.wp.too_old"
+msgstr ""
+
+#: includes/EnvironmentChecks.php:106
+msgid "admin.env_check.wp.update_core"
+msgstr ""
+
+#: includes/EnvironmentChecks.php:108
+msgid "admin.env_check.wp.ask_admin"
+msgstr ""
+
+#: includes/EnvironmentChecks.php:128
+msgid "admin.env_check.php.too_old"
+msgstr ""
+
+#: includes/EnvironmentChecks.php:131
+msgid "admin.env_check.php.update_link"
+msgstr ""
+
+#: includes/Export/Csv.php:66
+msgid "admin.export.csv.no_data_found"
+msgstr ""
+
+#: includes/Export/Csv.php:73
+msgid "admin.export.csv.id"
+msgstr ""
+
+#: includes/Export/Csv.php:74
+msgid "admin.export.csv.timestamp"
+msgstr ""
+
+#: includes/Export/Csv.php:75
+msgid "admin.export.csv.form_id"
+msgstr ""
+
+#: includes/Export/Csv.php:76
+msgid "admin.export.csv.type"
+msgstr ""
+
+#: includes/Export/Csv.php:77
+msgid "admin.export.csv.status"
+msgstr ""
+
+#: includes/Export/Csv.php:82
+msgid "admin.export.csv.tracking_url"
+msgstr ""
+
+#: includes/Export/Csv.php:83
+msgid "admin.export.csv.tracking_language"
+msgstr ""
+
+#: includes/Export/Csv.php:84
+msgid "admin.export.csv.tracking_screen_res_w"
+msgstr ""
+
+#: includes/Export/Csv.php:85
+msgid "admin.export.csv.tracking_screen_res_h"
+msgstr ""
+
+#: includes/Export/Csv.php:86
+msgid "admin.export.csv.tracking_viewport_w"
+msgstr ""
+
+#: includes/Export/Csv.php:87
+msgid "admin.export.csv.tracking_viewport_h"
+msgstr ""
+
+#: includes/Export/Csv.php:88
+msgid "admin.export.csv.tracking_timezone"
+msgstr ""
+
+#: includes/Export/Csv.php:89
+msgid "admin.export.csv.tracking_device_type"
+msgstr ""
+
+#: includes/Export/Csv.php:90
+msgid "admin.export.csv.tracking_time_on_page"
+msgstr ""
+
+#: includes/Export/Json.php:220
+msgid "admin.export.json.import_results"
+msgstr ""
+
+#: includes/Export/Json.php:295
+msgid "admin.export.json.import_feedbacks_results"
+msgstr ""
+
+#: includes/FormFrontend.php:211
+#: includes/Helper/ConfigHelper.php:191
+#: includes/Helper/ConfigHelper.php:227
+#: includes/Helper/ConfigHelper.php:261
+#: templates/frontend/flwp-form-footer.php:39
+#: assets/js/dist/flwp-form-builder.js:4108
+#: assets/js/dist/flwp-form-builder.js:4125
+#: assets/js/dist/flwp-form-frontend.js:2073
+#: assets/js/dist/flwp-form-frontend.js:2146
+msgid "admin.frontend.default_footer_text"
+msgstr ""
+
+#: includes/FormFrontend.php:531
+msgid "admin.notification.feedback_saved"
+msgstr ""
+
+#: includes/FormFrontend.php:533
+msgid "admin.notification.database_error"
+msgstr ""
+
+#: includes/FormFrontend.php:552
+msgid "admin.notification.subject"
+msgstr ""
+
+#: includes/FormFrontend.php:566
+msgid "admin.notification.email_body"
+msgstr ""
+
+#: includes/FormFrontend.php:585
+msgid "admin.notification.default_form_name"
+msgstr ""
+
+#: includes/FormFrontend.php:589
+msgid "admin.notification.time_suffix"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:12
+msgid "fields.headline.name"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:14
+msgid "fields.headline.default_label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:21
+msgid "fields.description.name"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:23
+msgid "fields.description.default_label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:30
+msgid "fields.button.name"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:32
+msgid "fields.button.default_label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:39
+msgid "fields.textarea.name"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:41
+msgid "fields.textarea.default_label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:48
+msgid "fields.rating.name"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:50
+msgid "fields.rating.default_label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:58
+msgid "fields.thumbs.name"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:60
+msgid "fields.thumbs.default_label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:69
+msgid "fields.smileys.name"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:71
+msgid "fields.smileys.default_label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:81
+msgid "fields.nps.name"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:83
+msgid "fields.nps.default_label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:118
+msgid "admin.config.default_email"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:286
+#: assets/js/dist/flwp-form-frontend.js:2565
+#: assets/js/dist/flwp-form-frontend.js:2700
+#: assets/js/dist/flwp-form-frontend.js:2716
+msgid "confirmation.message.default"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:292
+msgid "notification.subject.default"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:386
+msgid "admin.form_template.bug.title"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:390
+msgid "admin.form_template.website.title"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:394
+msgid "admin.form_template.template-4.title"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:398
+msgid "admin.form_template.nps.title"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:402
+#: includes/Helper/FormHelper.php:142
+msgid "admin.initial_form.in_content.title"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:406
+#: includes/Helper/FormHelper.php:154
+msgid "admin.initial_form.feedback_button.title"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:410
+#: includes/Helper/FormHelper.php:175
+msgid "admin.initial_form.exit_intent.title"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:414
+msgid "admin.form_template.blank.title"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:432
+#: includes/Helper/ConfigHelper.php:556
+msgid "admin.default.rating.label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:439
+msgid "admin.default.step1.headline.label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:440
+msgid "admin.default.step1.description.label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:445
+msgid "admin.default.step2.headline.label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:446
+msgid "admin.default.step2.description.label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:447
+msgid "admin.default.step2.textarea.label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:447
+msgid "admin.default.step2.textarea.placeholder"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:448
+msgid "admin.default.step2.button.back.label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:449
+msgid "admin.default.step2.button.submit.label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:459
+msgid "admin.feedback_button.btn_improve.label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:476
+msgid "admin.feedback_button.btn_missing.label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:493
+msgid "admin.feedback_button.btn_idea.label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:510
+msgid "admin.feedback_button.btn_problem.label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:527
+msgid "admin.feedback_button.btn_other.label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:546
+msgid "admin.feedback_button.step1.headline.label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:555
+msgid "admin.feedback_button.step2.improve.headline.label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:559
+msgid "admin.feedback_button.step2.missing.headline.label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:560
+msgid "admin.feedback_button.step2.missing.description.label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:561
+msgid "admin.feedback_button.step2.missing.textarea.label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:561
+msgid "admin.feedback_button.step2.missing.textarea.placeholder"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:562
+msgid "admin.feedback_button.step2.missing.button.label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:565
+msgid "admin.feedback_button.step2.idea.headline.label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:566
+msgid "admin.feedback_button.step2.idea.description.label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:567
+msgid "admin.feedback_button.step2.idea.textarea.label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:567
+msgid "admin.feedback_button.step2.idea.textarea.placeholder"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:568
+msgid "admin.feedback_button.step2.idea.button.label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:571
+msgid "admin.feedback_button.step2.problem.headline.label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:572
+msgid "admin.feedback_button.step2.problem.description.label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:573
+msgid "admin.feedback_button.step2.problem.textarea.label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:573
+msgid "admin.feedback_button.step2.problem.textarea.placeholder"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:574
+msgid "admin.feedback_button.step2.problem.button.label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:577
+msgid "admin.feedback_button.step2.other.headline.label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:578
+msgid "admin.feedback_button.step2.other.description.label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:579
+msgid "admin.feedback_button.step2.other.textarea.label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:579
+msgid "admin.feedback_button.step2.other.textarea.placeholder"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:580
+msgid "admin.feedback_button.step2.other.button.label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:589
+msgid "admin.exit_intent.rating.label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:604
+msgid "admin.exit_intent.headline.label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:611
+msgid "admin.exit_intent.description.label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:622
+msgid "admin.exit_intent.step2.headline.label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:628
+msgid "admin.exit_intent.step2.textarea.label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:630
+msgid "admin.exit_intent.step2.textarea.placeholder"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:636
+msgid "admin.exit_intent.step2.button.label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:654
+msgid "admin.template1.nps.label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:669
+msgid "admin.template1.headline.label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:674
+msgid "admin.template1.step2.headline.label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:675
+msgid "admin.template1.step2.textarea.label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:675
+msgid "admin.template1.step2.textarea.placeholder"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:676
+msgid "admin.template1.step2.button.label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:688
+msgid "admin.template2.headline.label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:689
+msgid "admin.template2.description.label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:690
+msgid "admin.template2.textarea.label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:690
+msgid "admin.template2.textarea.placeholder"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:691
+msgid "admin.template2.button.label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:700
+msgid "admin.template3.rating.label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:715
+msgid "admin.template3.step1.headline.label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:720
+msgid "admin.template3.step2.headline.label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:721
+msgid "admin.template3.step2.textarea.label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:721
+msgid "admin.template3.step2.textarea.placeholder"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:722
+msgid "admin.template3.step2.button.label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:732
+msgid "admin.template4.rating.label"
+msgstr ""
+
+#: includes/Helper/ConfigHelper.php:747
+msgid "admin.template4.step1.headline.label"
+msgstr ""
+
+#: includes/Helper/FormHelper.php:267
+msgid "admin.form_type.modal.name"
+msgstr ""
+
+#: includes/Helper/FormHelper.php:268
+msgid "admin.form_type.slide-in.name"
+msgstr ""
+
+#: includes/Helper/FormHelper.php:269
+msgid "admin.form_type.feedback-button.name"
+msgstr ""
+
+#: includes/Helper/FormHelper.php:270
+msgid "admin.form_type.shortcode.name"
+msgstr ""
+
+#: includes/Helper/FormHelper.php:271
+msgid "admin.form_type.pre-content.name"
+msgstr ""
+
+#: includes/Helper/FormHelper.php:272
+msgid "admin.form_type.post-content.name"
+msgstr ""
+
+#: includes/Lists/FormFeedbackListTable.php:33
+#: includes/Lists/FormListTable.php:39
+msgid "admin.form_list.id"
+msgstr ""
+
+#: includes/Lists/FormFeedbackListTable.php:34
+msgid "admin.form_list.form_id"
+msgstr ""
+
+#: includes/Lists/FormFeedbackListTable.php:35
+#: includes/Lists/FormFeedbackListTable.php:153
+msgid "admin.form_list.display_type"
+msgstr ""
+
+#: includes/Lists/FormFeedbackListTable.php:36
+msgid "admin.form_list.form_name"
+msgstr ""
+
+#: includes/Lists/FormFeedbackListTable.php:37
+msgid "admin.form_list.page_url"
+msgstr ""
+
+#: includes/Lists/FormFeedbackListTable.php:38
+#: includes/Lists/FormListTable.php:41
+msgid "admin.form_list.status"
+msgstr ""
+
+#: includes/Lists/FormFeedbackListTable.php:39
+msgid "admin.form_list.created"
+msgstr ""
+
+#: includes/Lists/FormFeedbackListTable.php:40
+#: includes/Lists/FormListTable.php:43
+msgid "admin.form_list.updated"
+msgstr ""
+
+#: includes/Lists/FormFeedbackListTable.php:79
+#: includes/Lists/FormFeedbackListTable.php:163
+msgid "admin.form_list.filter.status.read"
+msgstr ""
+
+#: includes/Lists/FormFeedbackListTable.php:82
+#: includes/Lists/FormFeedbackListTable.php:164
+msgid "admin.form_list.filter.status.archived"
+msgstr ""
+
+#: includes/Lists/FormFeedbackListTable.php:86
+#: includes/Lists/FormFeedbackListTable.php:162
+msgid "admin.form_list.filter.status.unread"
+msgstr ""
+
+#: includes/Lists/FormFeedbackListTable.php:105
+msgid "admin.form_list.action.view"
+msgstr ""
+
+#: includes/Lists/FormFeedbackListTable.php:110
+msgid "admin.form_list.action.delete"
+msgstr ""
+
+#: includes/Lists/FormFeedbackListTable.php:122
+msgid "admin.form_list.no_items"
+msgstr ""
+
+#: includes/Lists/FormFeedbackListTable.php:135
+msgid "admin.form_list.filter.form"
+msgstr ""
+
+#: includes/Lists/FormFeedbackListTable.php:161
+msgid "admin.form_list.filter.status.placeholder"
+msgstr ""
+
+#: includes/Lists/FormFeedbackListTable.php:168
+msgid "admin.form_list.filter.range.placeholder"
+msgstr ""
+
+#: includes/Lists/FormFeedbackListTable.php:169
+msgid "admin.form_list.filter.range.today"
+msgstr ""
+
+#: includes/Lists/FormFeedbackListTable.php:170
+msgid "admin.form_list.filter.range.yesterday"
+msgstr ""
+
+#: includes/Lists/FormFeedbackListTable.php:171
+msgid "admin.form_list.filter.range.last_7_days"
+msgstr ""
+
+#: includes/Lists/FormFeedbackListTable.php:172
+msgid "admin.form_list.filter.range.last_30_days"
+msgstr ""
+
+#: includes/Lists/FormFeedbackListTable.php:173
+msgid "admin.form_list.filter.range.this_month"
+msgstr ""
+
+#: includes/Lists/FormFeedbackListTable.php:174
+msgid "admin.form_list.filter.range.last_month"
+msgstr ""
+
+#: includes/Lists/FormFeedbackListTable.php:175
+msgid "admin.form_list.filter.range.this_year"
+msgstr ""
+
+#: includes/Lists/FormFeedbackListTable.php:176
+msgid "admin.form_list.filter.range.last_year"
+msgstr ""
+
+#: includes/Lists/FormFeedbackListTable.php:177
+msgid "admin.form_list.filter.range.custom"
+msgstr ""
+
+#: includes/Lists/FormFeedbackListTable.php:181
+msgid "admin.form_list.filter.date.start"
+msgstr ""
+
+#: includes/Lists/FormFeedbackListTable.php:182
+msgid "admin.form_list.filter.date.end"
+msgstr ""
+
+#: includes/Lists/FormFeedbackListTable.php:185
+msgid "admin.form_list.filter.button"
+msgstr ""
+
+#: includes/Lists/FormListTable.php:40
+msgid "admin.form_list.name"
+msgstr ""
+
+#: includes/Lists/FormListTable.php:42
+msgid "admin.form_list.shortcode"
+msgstr ""
+
+#: includes/Lists/FormListTable.php:64
+msgid "admin.form_list.status.paused"
+msgstr ""
+
+#: includes/Lists/FormListTable.php:69
+msgid "admin.form_list.status.live"
+msgstr ""
+
+#: includes/Lists/FormListTable.php:73
+msgid "admin.form_list.status.admin_only"
+msgstr ""
+
+#: includes/Lists/FormListTable.php:103
+msgid "admin.form_list.actions.edit"
+msgstr ""
+
+#: includes/Lists/FormListTable.php:112
+msgid "admin.form_list.actions.duplicate"
+msgstr ""
+
+#: includes/Lists/FormListTable.php:121
+msgid "admin.form_list.actions.delete"
+msgstr ""
+
+#: includes/Lists/FormListTable.php:144
+msgid "admin.form_list.no_forms"
+msgstr ""
+
+#: includes/Page/About.php:21
+msgid "admin.page.about.box.about"
+msgstr ""
+
+#: includes/Page/About.php:22
+msgid "admin.page.about.box.usage"
+msgstr ""
+
+#: includes/Page/About.php:23
+msgid "admin.page.about.box.more_info"
+msgstr ""
+
+#: includes/Page/About.php:24
+msgid "admin.page.about.box.support"
+msgstr ""
+
+#: includes/Page/About.php:25
+msgid "admin.page.about.box.affiliate"
+msgstr ""
+
+#: includes/Page/About.php:26
+msgid "admin.page.about.box.author"
+msgstr ""
+
+#: includes/Page/About.php:27
+msgid "admin.page.about.box.debug"
+msgstr ""
+
+#: includes/Page/About.php:36
+msgid "admin.page.about.about_text"
+msgstr ""
+
+#: includes/Page/About.php:39
+msgid "admin.page.about.usage_text"
+msgstr ""
+
+#: includes/Page/About.php:50
+msgid "admin.page.about.usage.step1"
+msgstr ""
+
+#: includes/Page/About.php:51
+msgid "admin.page.about.usage.step2"
+msgstr ""
+
+#: includes/Page/About.php:54
+msgid "admin.page.about.usage.step3"
+msgstr ""
+
+#: includes/Page/About.php:66
+msgid "admin.page.about.more_info.link"
+msgstr ""
+
+#: includes/Page/About.php:67
+msgid "admin.page.about.more_info.official_website"
+msgstr ""
+
+#: includes/Page/About.php:80
+msgid "admin.page.about.support.link"
+msgstr ""
+
+#: includes/Page/About.php:81
+msgid "admin.page.about.documentation.title"
+msgstr ""
+
+#: includes/Page/About.php:95
+msgid "admin.page.about.affiliate.link"
+msgstr ""
+
+#: includes/Page/About.php:96
+msgid "admin.page.about.affiliate"
+msgstr ""
+
+#: includes/Page/About.php:100
+msgid "admin.page.about.affiliate.text"
+msgstr ""
+
+#: includes/Page/About.php:112
+msgid "admin.page.about.author.text"
+msgstr ""
+
+#: includes/Page/About.php:126
+msgid "admin.page.about.debug.hint"
+msgstr ""
+
+#: includes/Page/Page.php:26
+msgid "FLWP"
+msgstr ""
+
+#: templates/admin/flwp-admin-page.php:24
+msgid "admin.horizontal_navigation.brand"
+msgstr ""
+
+#: templates/admin/flwp-admin-page.php:29
+msgid "admin.horizontal_navigation.dashboard"
+msgstr ""
+
+#: templates/admin/flwp-admin-page.php:34
+msgid "admin.horizontal_navigation.all_forms"
+msgstr ""
+
+#: templates/admin/flwp-admin-page.php:39
+msgid "admin.horizontal_navigation.add_form"
+msgstr ""
+
+#: templates/admin/flwp-admin-page.php:44
+msgid "admin.horizontal_navigation.feedback_list"
+msgstr ""
+
+#: templates/admin/flwp-admin-page.php:49
+msgid "admin.horizontal_navigation.export"
+msgstr ""
+
+#: templates/admin/flwp-admin-page.php:54
+msgid "admin.horizontal_navigation.about"
+msgstr ""
+
+#: templates/admin/flwp-dashboard.php:13
+msgid "admin.page.dashboard.welcome"
+msgstr ""
+
+#: templates/admin/flwp-dashboard.php:14
+msgid "admin.page.dashboard.overview"
+msgstr ""
+
+#: templates/admin/flwp-dashboard.php:19
+msgid "admin.page.dashboard.summary"
+msgstr ""
+
+#: templates/admin/flwp-dashboard.php:22
+msgid "admin.page.dashboard.total"
+msgstr ""
+
+#: templates/admin/flwp-dashboard.php:26
+msgid "admin.page.dashboard.today"
+msgstr ""
+
+#: templates/admin/flwp-dashboard.php:34
+msgid "admin.page.dashboard.distribution_by_type"
+msgstr ""
+
+#: templates/admin/flwp-dashboard.php:38
+msgid "admin.page.dashboard.type.shortcode"
+msgstr ""
+
+#: templates/admin/flwp-dashboard.php:42
+msgid "admin.page.dashboard.type.pre_content"
+msgstr ""
+
+#: templates/admin/flwp-dashboard.php:46
+msgid "admin.page.dashboard.type.post_content"
+msgstr ""
+
+#: templates/admin/flwp-dashboard.php:50
+msgid "admin.page.dashboard.type.overlay"
+msgstr ""
+
+#: templates/admin/flwp-dashboard.php:54
+msgid "admin.page.dashboard.type.slide_in"
+msgstr ""
+
+#: templates/admin/flwp-dashboard.php:58
+msgid "admin.page.dashboard.type.feedback_button"
+msgstr ""
+
+#: templates/admin/flwp-dashboard.php:66
+msgid "admin.page.dashboard.recent_activities"
+msgstr ""
+
+#: templates/admin/flwp-dashboard.php:73
+msgid "admin.page.dashboard.no_activities"
+msgstr ""
+
+#: templates/admin/flwp-dashboard.php:98
+msgid "admin.page.dashboard.feedback_trend"
+msgstr ""
+
+#: templates/admin/flwp-export.php:8
+msgid "admin.page.export.pro_notice.headline"
+msgstr ""
+
+#: templates/admin/flwp-export.php:10
+msgid "admin.page.export.pro_notice.intro"
+msgstr ""
+
+#: templates/admin/flwp-export.php:12
+msgid "admin.page.export.pro_notice.advantage.1"
+msgstr ""
+
+#: templates/admin/flwp-export.php:13
+msgid "admin.page.export.pro_notice.advantage.2"
+msgstr ""
+
+#: templates/admin/flwp-export.php:14
+msgid "admin.page.export.pro_notice.advantage.3"
+msgstr ""
+
+#: templates/admin/flwp-export.php:15
+msgid "admin.page.export.pro_notice.advantage.4"
+msgstr ""
+
+#: templates/admin/flwp-form-builder.php:13
+#: templates/admin/flwp-form-builder.php:80
+msgid "admin.page.builder.status.paused"
+msgstr ""
+
+#: templates/admin/flwp-form-builder.php:18
+#: templates/admin/flwp-form-builder.php:85
+msgid "admin.page.builder.status.live"
+msgstr ""
+
+#: templates/admin/flwp-form-builder.php:22
+#: templates/admin/flwp-form-builder.php:90
+msgid "admin.page.builder.status.admin_only"
+msgstr ""
+
+#: templates/admin/flwp-form-builder.php:46
+msgid "admin.page.builder.form_title.default"
+msgstr ""
+
+#: templates/admin/flwp-form-builder.php:46
+msgid "admin.page.builder.form_title.edit_title"
+msgstr ""
+
+#: templates/admin/flwp-form-builder.php:49
+msgid "admin.page.builder.form_id"
+msgstr ""
+
+#: templates/admin/flwp-form-builder.php:50
+msgid "admin.page.builder.last_saved"
+msgstr ""
+
+#: templates/admin/flwp-form-builder.php:51
+msgid "admin.page.builder.last_published"
+msgstr ""
+
+#: templates/admin/flwp-form-builder.php:60
+msgid "admin.page.builder.undo"
+msgstr ""
+
+#: templates/admin/flwp-form-builder.php:63
+msgid "admin.page.builder.redo"
+msgstr ""
+
+#: templates/admin/flwp-form-builder.php:70
+msgid "admin.page.builder.change_status"
+msgstr ""
+
+#: templates/admin/flwp-form-builder.php:98
+msgid "admin.page.builder.load_templates"
+msgstr ""
+
+#: templates/admin/flwp-form-builder.php:99
+msgid "admin.page.builder.templates"
+msgstr ""
+
+#: templates/admin/flwp-form-builder.php:101
+msgid "admin.page.builder.json_export_import"
+msgstr ""
+
+#: templates/admin/flwp-form-builder.php:102
+msgid "admin.page.builder.json_label"
+msgstr ""
+
+#: templates/admin/flwp-form-builder.php:108
+msgid "admin.page.builder.save_draft"
+msgstr ""
+
+#: templates/admin/flwp-form-builder.php:109
+msgid "admin.page.builder.save"
+msgstr ""
+
+#: templates/admin/flwp-form-builder.php:111
+msgid "admin.page.builder.publish"
+msgstr ""
+
+#: templates/admin/flwp-form-builder.php:112
+msgid "admin.page.builder.publish_btn"
+msgstr ""
+
+#: templates/admin/flwp-form-builder.php:118
+msgid "admin.page.builder.split_view_title"
+msgstr ""
+
+#: templates/admin/flwp-form-builder.php:119
+msgid "admin.page.builder.split_view"
+msgstr ""
+
+#: templates/admin/flwp-form-builder.php:121
+msgid "admin.page.builder.preview_modal_title"
+msgstr ""
+
+#: templates/admin/flwp-form-builder.php:122
+msgid "admin.page.builder.preview"
+msgstr ""
+
+#: templates/admin/flwp-form-builder.php:127
+msgid "admin.page.builder.close_editor"
+msgstr ""
+
+#: templates/admin/flwp-form-builder.php:133
+msgid "admin.page.builder.nav_steps"
+msgstr ""
+
+#: templates/admin/flwp-form-builder.php:135
+msgid "admin.page.builder.nav.fields"
+msgstr ""
+
+#: templates/admin/flwp-form-builder.php:138
+msgid "admin.page.builder.nav.general"
+msgstr ""
+
+#: templates/admin/flwp-form-builder.php:141
+msgid "admin.page.builder.nav.styles"
+msgstr ""
+
+#: templates/admin/flwp-form-builder.php:144
+msgid "admin.page.builder.nav.display"
+msgstr ""
+
+#: templates/admin/flwp-form-builder.php:147
+msgid "admin.page.builder.nav.targeting"
+msgstr ""
+
+#: templates/admin/flwp-form-builder.php:150
+msgid "admin.page.builder.nav.confirmation"
+msgstr ""
+
+#: templates/admin/flwp-form-builder.php:153
+msgid "admin.page.builder.nav.notification"
+msgstr ""
+
+#: templates/admin/flwp-form-builder.php:156
+msgid "admin.page.builder.nav.tracking"
+msgstr ""
+
+#: templates/admin/flwp-form-builder.php:187
+msgid "admin.page.builder.json_modal.title"
+msgstr ""
+
+#: templates/admin/flwp-form-builder.php:188
+#: templates/admin/flwp-form-builder.php:207
+msgid "admin.page.builder.close"
+msgstr ""
+
+#: templates/admin/flwp-form-builder.php:192
+msgid "admin.page.builder.json_modal.description"
+msgstr ""
+
+#: templates/admin/flwp-form-builder.php:196
+msgid "admin.page.builder.json_modal.label"
+msgstr ""
+
+#: templates/admin/flwp-form-builder.php:197
+msgid "admin.page.builder.json_modal.placeholder"
+msgstr ""
+
+#: templates/admin/flwp-form-builder.php:202
+msgid "admin.page.builder.json_modal.import_btn"
+msgstr ""
+
+#: templates/admin/flwp-form-builder.php:205
+msgid "admin.page.builder.json_modal.copy_btn"
+msgstr ""
+
+#: templates/admin/flwp-form-builder.php:225
+msgid "admin.page.builder.modal_tmpl_title"
+msgstr ""
+
+#: templates/admin/flwp-form-builder.php:230
+msgid "admin.page.builder.modal_tmpl_desc"
+msgstr ""
+
+#: templates/admin/flwp-form-builder.php:238
+msgid "admin.page.builder.modal_tmpl_cancel"
+msgstr ""
+
+#: templates/admin/flwp-form-builder.php:249
+msgid "admin.page.builder.pro.title"
+msgstr ""
+
+#: templates/admin/flwp-form-builder.php:258
+msgid "admin.page.builder.pro.subtitle"
+msgstr ""
+
+#: templates/admin/flwp-form-builder.php:260
+msgid "admin.page.builder.pro.description"
+msgstr ""
+
+#: templates/admin/flwp-form-builder.php:265
+msgid "admin.page.builder.pro.benefits_title"
+msgstr ""
+
+#: templates/admin/flwp-form-builder.php:269
+msgid "admin.page.builder.pro.benefit.1"
+msgstr ""
+
+#: templates/admin/flwp-form-builder.php:273
+msgid "admin.page.builder.pro.benefit.2"
+msgstr ""
+
+#: templates/admin/flwp-form-builder.php:277
+msgid "admin.page.builder.pro.benefit.3"
+msgstr ""
+
+#: templates/admin/flwp-form-builder.php:283
+msgid "admin.page.builder.pro.cancel_btn"
+msgstr ""
+
+#: templates/admin/flwp-form-builder.php:285
+msgid "admin.page.builder.pro.upgrade_btn"
+msgstr ""
+
+#: templates/admin/flwp-form-builder.php:321
+msgid "admin.builder.overlay_template.back"
+msgstr ""
+
+#: templates/admin/flwp-form-builder.php:333
+msgid "admin.builder.overlay_template.feedback"
+msgstr ""
+
+#: templates/admin/flwp-form-builder.php:340
+msgid "admin.builder.overlay_template.close"
+msgstr ""
+
+#: templates/admin/flwp-form-builder.php:352
+msgid "admin.builder.overlay_template.footer_text"
+msgstr ""
+
+#: templates/admin/flwp-form-feedback-list.php:8
+msgid "admin.page.feedback_list.pro_notice.headline"
+msgstr ""
+
+#: templates/admin/flwp-form-feedback-list.php:9
+msgid "admin.page.feedback_list.pro_notice.intro"
+msgstr ""
+
+#: templates/admin/flwp-form-feedback-list.php:11
+msgid "admin.page.feedback_list.pro_notice.advantage.1"
+msgstr ""
+
+#: templates/admin/flwp-form-feedback-list.php:12
+msgid "admin.page.feedback_list.pro_notice.advantage.2"
+msgstr ""
+
+#: templates/admin/flwp-form-feedback-list.php:13
+msgid "admin.page.feedback_list.pro_notice.advantage.3"
+msgstr ""
+
+#: templates/admin/flwp-form-feedback-list.php:14
+msgid "admin.page.feedback_list.pro_notice.advantage.4"
+msgstr ""
+
+#: templates/admin/flwp-form-feedback-list.php:23
+#: templates/admin/premium/flwp-form-feedback-list.php:9
+msgid "admin.page.feedback_list.title"
+msgstr ""
+
+#: templates/admin/flwp-form-list.php:9
+msgid "admin.page.form_list.title"
+msgstr ""
+
+#: templates/admin/flwp-form-list.php:10
+msgid "admin.page.form_list.add_new"
+msgstr ""
+
+#: templates/admin/flwp-form-list.php:15
+msgid "admin.page.form_list.notice.duplicate_success"
+msgstr ""
+
+#: templates/admin/flwp-form-list.php:21
+msgid "admin.page.form_list.notice.delete_success"
+msgstr ""
+
+#: templates/admin/flwp-form-list.php:27
+msgid "admin.page.form_list.notice.form_not_found"
+msgstr ""
+
+#: templates/admin/form-builder/confirmation.php:7
+msgid "admin.builder.confirmation.aria_label"
+msgstr ""
+
+#: templates/admin/form-builder/confirmation.php:12
+msgid "admin.builder.confirmation.title"
+msgstr ""
+
+#: templates/admin/form-builder/confirmation.php:17
+msgid "admin.builder.confirmation.description"
+msgstr ""
+
+#: templates/admin/form-builder/confirmation.php:21
+msgid "admin.builder.confirmation.confirm_type.label"
+msgstr ""
+
+#: templates/admin/form-builder/confirmation.php:23
+msgid "admin.builder.confirmation.confirm_type.message"
+msgstr ""
+
+#: templates/admin/form-builder/confirmation.php:24
+msgid "admin.builder.confirmation.confirm_type.url"
+msgstr ""
+
+#: templates/admin/form-builder/confirmation.php:30
+msgid "admin.builder.confirmation.confirm_color.label"
+msgstr ""
+
+#: templates/admin/form-builder/confirmation.php:38
+msgid "admin.builder.confirmation.confirm_message.label"
+msgstr ""
+
+#: templates/admin/form-builder/confirmation.php:42
+msgid "admin.builder.confirmation.confirm_message.default"
+msgstr ""
+
+#: templates/admin/form-builder/confirmation.php:59
+msgid "admin.builder.confirmation.redirect_url.label"
+msgstr ""
+
+#: templates/admin/form-builder/confirmation.php:60
+msgid "admin.builder.confirmation.redirect_url.default_value"
+msgstr ""
+
+#: templates/admin/form-builder/confirmation.php:60
+msgid "admin.builder.confirmation.redirect_url.placeholder"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:17
+msgid "admin.builder.display.header.title"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:28
+msgid "admin.builder.display.section1.title"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:30
+msgid "admin.builder.display.step1"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:33
+msgid "admin.builder.display.section1.description"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:43
+msgid "admin.builder.display.card1.title"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:44
+msgid "admin.builder.display.card1.description"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:57
+msgid "admin.builder.display.card2.title"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:58
+msgid "admin.builder.display.card2.description"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:71
+msgid "admin.builder.display.card3.title"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:72
+msgid "admin.builder.display.card3.description"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:85
+msgid "admin.builder.display.card4.title"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:86
+msgid "admin.builder.display.card4.description"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:98
+msgid "admin.builder.display.in_content.auto_insert"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:106
+msgid "admin.builder.display.in_content.position.label"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:108
+msgid "admin.builder.display.in_content.position.bottom"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:109
+msgid "admin.builder.display.in_content.position.top"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:119
+msgid "admin.builder.display.section2.title"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:121
+msgid "admin.builder.display.step2"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:124
+msgid "admin.builder.display.section2.description"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:138
+msgid "admin.builder.display.trigger.click"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:141
+msgid "admin.builder.display.trigger.exit_intent"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:144
+msgid "admin.builder.display.trigger.delay"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:147
+msgid "admin.builder.display.trigger.scroll"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:157
+msgid "admin.builder.display.trigger.click.selector.label"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:159
+msgid "admin.builder.display.trigger.click.hint"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:163
+msgid "admin.builder.display.trigger.click.standard_button.label"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:174
+msgid "admin.builder.display.trigger.exit_intent.hint"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:177
+msgid "admin.builder.display.trigger.exit_intent.sensitivity.label"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:179
+msgid "admin.builder.display.trigger.exit_intent.sensitivity.immediate"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:180
+msgid "admin.builder.display.trigger.exit_intent.sensitivity.5s"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:181
+msgid "admin.builder.display.trigger.exit_intent.sensitivity.10s"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:182
+msgid "admin.builder.display.trigger.exit_intent.sensitivity.60s"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:190
+msgid "admin.builder.display.trigger.delay.hint"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:193
+msgid "admin.builder.display.trigger.delay.label"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:201
+msgid "admin.builder.display.trigger.scroll.hint"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:204
+msgid "admin.builder.display.trigger.scroll.condition.label"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:206
+msgid "admin.builder.display.trigger.scroll.condition.end"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:207
+msgid "admin.builder.display.trigger.scroll.condition.percent"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:211
+msgid "admin.builder.display.trigger.scroll.percent.label"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:223
+msgid "admin.builder.display.feedback_button.title"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:225
+msgid "admin.builder.display.step.2"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:228
+msgid "admin.builder.display.feedback_button.description"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:233
+msgid "admin.builder.display.feedback_button.label.text"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:234
+msgid "admin.builder.display.feedback_button.label.default"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:237
+msgid "admin.builder.display.feedback_button.position.label"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:239
+msgid "admin.builder.display.feedback_button.position.right_middle"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:240
+msgid "admin.builder.display.feedback_button.position.left_middle"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:241
+msgid "admin.builder.display.feedback_button.position.bottom_right"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:242
+msgid "admin.builder.display.feedback_button.position.bottom_middle"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:243
+msgid "admin.builder.display.feedback_button.position.bottom_left"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:247
+msgid "admin.builder.display.feedback_button.hide_option.label"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:257
+msgid "admin.builder.display.feedback_button.custom_design.title"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:258
+msgid "admin.builder.display.feedback_button.custom_design.description"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:271
+msgid "admin.builder.display.feedback_button.font_size.label"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:281
+msgid "admin.builder.display.feedback_button.background.label"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:289
+msgid "admin.builder.display.feedback_button.text_color.label"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:297
+msgid "admin.builder.display.feedback_button.border.label"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:305
+msgid "admin.builder.display.feedback_button.hover.background.label"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:313
+msgid "admin.builder.display.feedback_button.hover.text_color.label"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:321
+msgid "admin.builder.display.feedback_button.hover.border.label"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:337
+msgid "admin.builder.display.global.title"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:339
+msgid "admin.builder.display.step.3"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:342
+msgid "admin.builder.display.global.description"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:348
+msgid "admin.builder.display.tab.behavior"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:351
+msgid "admin.builder.display.tab.box_model"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:354
+msgid "admin.builder.display.tab.styling"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:362
+msgid "admin.builder.display.group.frequency.title"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:367
+msgid "admin.builder.display.frequency.close_days.label"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:371
+#: templates/admin/form-builder/display.php:382
+msgid "admin.builder.display.days"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:373
+msgid "admin.builder.display.frequency.close_days.hint"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:378
+msgid "admin.builder.display.frequency.submit_days.label"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:384
+msgid "admin.builder.display.frequency.submit_days.hint"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:389
+msgid "admin.builder.display.cookie_scope.label"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:391
+msgid "admin.builder.display.cookie_scope.domain"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:392
+msgid "admin.builder.display.cookie_scope.page"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:400
+msgid "admin.builder.display.trigger.hide_click_on_close.label"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:401
+msgid "admin.builder.display.trigger.hide_click_on_close.desc"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:413
+msgid "admin.builder.display.trigger.hide_click_on_submit.label"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:414
+msgid "admin.builder.display.trigger.hide_click_on_submit.desc"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:425
+msgid "admin.builder.display.group.closing_options.title"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:430
+msgid "admin.builder.display.overlay.allow_scroll.title"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:431
+msgid "admin.builder.display.overlay.allow_scroll.desc"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:441
+msgid "admin.builder.display.overlay.hide_header.title"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:442
+msgid "admin.builder.display.overlay.hide_header.desc"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:452
+msgid "admin.builder.display.overlay.hide_footer.title"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:453
+msgid "admin.builder.display.overlay.hide_footer.desc"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:463
+msgid "admin.builder.display.overlay.show_backdrop.title"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:464
+msgid "admin.builder.display.overlay.show_backdrop.desc"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:474
+msgid "admin.builder.display.overlay.close_on_backdrop.title"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:475
+msgid "admin.builder.display.overlay.close_on_backdrop.desc"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:485
+msgid "admin.builder.display.overlay.esc_close.title"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:486
+msgid "admin.builder.display.overlay.esc_close.desc"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:504
+msgid "admin.builder.display.box_model.padding.title"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:511
+#: templates/admin/form-builder/display.php:550
+msgid "admin.builder.display.box_model.link.title"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:514
+#: templates/admin/form-builder/display.php:553
+msgid "admin.builder.display.box_model.reset.title"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:522
+#: templates/admin/form-builder/display.php:561
+msgid "admin.builder.display.box_model.label.top"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:526
+#: templates/admin/form-builder/display.php:565
+msgid "admin.builder.display.box_model.label.right"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:530
+#: templates/admin/form-builder/display.php:569
+msgid "admin.builder.display.box_model.label.bottom"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:534
+#: templates/admin/form-builder/display.php:573
+msgid "admin.builder.display.box_model.label.left"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:543
+msgid "admin.builder.display.box_model.margin.title"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:581
+msgid "admin.builder.display.dimensions.title"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:583
+msgid "admin.builder.display.dimensions.overlay_position.label"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:585
+msgid "admin.builder.display.dimensions.overlay_position.center"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:586
+msgid "admin.builder.display.dimensions.overlay_position.bottom_right"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:587
+msgid "admin.builder.display.dimensions.overlay_position.bottom_left"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:588
+msgid "admin.builder.display.dimensions.overlay_position.bottom_middle"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:589
+msgid "admin.builder.display.dimensions.overlay_position.right_middle"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:590
+msgid "admin.builder.display.dimensions.overlay_position.left_middle"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:591
+msgid "admin.builder.display.dimensions.overlay_position.top_right"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:592
+msgid "admin.builder.display.dimensions.overlay_position.top_middle"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:593
+msgid "admin.builder.display.dimensions.overlay_position.top_left"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:598
+msgid "admin.builder.display.dimensions.max_width.label"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:606
+msgid "admin.builder.display.dimensions.min_height.label"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:623
+msgid "admin.builder.display.custom_colors.title"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:624
+msgid "admin.builder.display.custom_colors.desc"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:636
+msgid "admin.builder.display.custom_colors.label.background"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:644
+msgid "admin.builder.display.custom_colors.label.border"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:652
+msgid "admin.builder.display.custom_colors.label.border_style"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:654
+msgid "admin.builder.display.custom_colors.option.solid"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:655
+msgid "admin.builder.display.custom_colors.option.dashed"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:656
+msgid "admin.builder.display.custom_colors.option.dotted"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:661
+msgid "admin.builder.display.custom_colors.label.border_width"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:669
+msgid "admin.builder.display.custom_colors.label.border_radius"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:681
+msgid "admin.builder.display.header_footer.title"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:684
+msgid "admin.builder.display.header_footer.indicator_type.label"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:686
+msgid "admin.builder.display.header_footer.indicator_type.option.progress"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:687
+msgid "admin.builder.display.header_footer.indicator_type.option.title"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:688
+msgid "admin.builder.display.header_footer.indicator_type.option.step"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:689
+msgid "admin.builder.display.header_footer.indicator_type.option.none"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:694
+msgid "admin.builder.display.header_footer.custom_title.label"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:695
+msgid "admin.builder.display.header_footer.custom_title.placeholder"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:700
+msgid "admin.builder.display.header_footer.show_footer.label"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:708
+msgid "admin.builder.display.header_footer.custom_footer_text.label"
+msgstr ""
+
+#: templates/admin/form-builder/display.php:709
+msgid "admin.builder.display.header_footer.custom_footer_text.placeholder"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:7
+msgid "admin.builder.fields.title"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:15
+msgid "admin.builder.fields.add_fields"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:18
+msgid "admin.builder.fields.field_options"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:34
+msgid "admin.builder.fields.search_placeholder"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:34
+msgid "admin.builder.fields.search_title"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:38
+msgid "admin.builder.fields.standard_fields"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:49
+msgid "admin.builder.fields.headline"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:54
+msgid "admin.builder.fields.description"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:59
+msgid "admin.builder.fields.button"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:64
+msgid "admin.builder.fields.textarea"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:69
+msgid "admin.builder.fields.reviews"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:77
+msgid "admin.builder.fields.rating"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:82
+msgid "admin.builder.fields.thumbs"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:87
+msgid "admin.builder.fields.smileys"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:92
+msgid "admin.builder.fields.nps"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:99
+msgid "admin.builder.fields.search_no_results"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:104
+msgid "admin.builder.fields.tip"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:104
+msgid "admin.builder.fields.tip_text"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:115
+msgid "admin.builder.fields.no_field_selected"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:123
+msgid "admin.builder.fields.options.field_type"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:124
+msgid "admin.builder.fields.options.id"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:129
+msgid "admin.builder.fields.options.label.title"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:129
+msgid "admin.builder.fields.options.label.hint"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:137
+msgid "admin.builder.fields.options.description.title"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:138
+msgid "admin.builder.fields.options.description.placeholder"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:143
+msgid "admin.builder.fields.options.placeholder.title"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:144
+msgid "admin.builder.fields.options.placeholder.placeholder"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:149
+msgid "admin.builder.fields.options.button_type.title"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:151
+msgid "admin.builder.fields.options.button_type.next"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:152
+msgid "admin.builder.fields.options.button_type.submit"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:153
+msgid "admin.builder.fields.options.button_type.back"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:159
+msgid "admin.builder.fields.options.icon.title"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:159
+msgid "admin.builder.fields.options.icon.hint"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:161
+msgid "admin.builder.fields.options.icon.option.arrow_right"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:162
+msgid "admin.builder.fields.options.icon.option.arrow_circle_right"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:163
+msgid "admin.builder.fields.options.icon.option.arrow_left"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:164
+msgid "admin.builder.fields.options.icon.option.arrow_circle_left"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:165
+msgid "admin.builder.fields.options.icon.option.paper_plane"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:166
+msgid "admin.builder.fields.options.icon.option.check"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:167
+msgid "admin.builder.fields.options.icon.option.heart"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:168
+msgid "admin.builder.fields.options.icon.option.comment"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:169
+msgid "admin.builder.fields.options.icon.option.laugh_beam"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:170
+msgid "admin.builder.fields.options.icon.option.futbol"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:171
+msgid "admin.builder.fields.options.icon.option.lightbulb"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:172
+msgid "admin.builder.fields.options.icon.option.bug"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:173
+msgid "admin.builder.fields.options.icon.option.comment_dots"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:174
+msgid "admin.builder.fields.options.icon.option.none"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:180
+msgid "admin.builder.fields.options.icon_position.title"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:182
+msgid "admin.builder.fields.options.icon_position.right"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:183
+msgid "admin.builder.fields.options.icon_position.left"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:189
+msgid "admin.builder.fields.options.rating_stars.title"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:189
+msgid "admin.builder.fields.options.rating_stars.hint"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:191
+msgid "admin.builder.fields.options.rating_stars.3"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:192
+msgid "admin.builder.fields.options.rating_stars.5"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:198
+msgid "admin.builder.fields.options.alignment.title"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:198
+msgid "admin.builder.fields.options.alignment.hint"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:200
+msgid "admin.builder.fields.options.alignment.left"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:201
+msgid "admin.builder.fields.options.alignment.center"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:202
+msgid "admin.builder.fields.options.alignment.right"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:208
+msgid "admin.builder.fields.h_type.title"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:208
+msgid "admin.builder.fields.h_type.hint"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:210
+msgid "admin.builder.fields.h_type.h1"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:211
+msgid "admin.builder.fields.h_type.h2"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:212
+msgid "admin.builder.fields.h_type.h3"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:213
+msgid "admin.builder.fields.h_type.h4"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:214
+msgid "admin.builder.fields.h_type.h5"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:215
+msgid "admin.builder.fields.h_type.h6"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:216
+msgid "admin.builder.fields.h_type.div"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:222
+msgid "admin.builder.fields.text_formatting.title"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:222
+msgid "admin.builder.fields.text_formatting.hint"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:247
+msgid "admin.builder.fields.font_size.title"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:248
+msgid "admin.builder.fields.font_size.reset"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:263
+msgid "admin.builder.fields.line_height.title"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:264
+msgid "admin.builder.fields.line_height.reset"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:282
+msgid "admin.builder.fields.border_radius.title"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:283
+msgid "admin.builder.fields.border_radius.reset"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:299
+msgid "admin.builder.fields.text_color.title"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:309
+msgid "admin.builder.fields.required.title"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:318
+msgid "admin.builder.fields.hide_label.title"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:327
+msgid "admin.builder.fields.full_width.title"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:337
+msgid "admin.builder.fields.width.title"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:340
+msgid "admin.builder.fields.width.100"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:341
+msgid "admin.builder.fields.width.50"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:342
+msgid "admin.builder.fields.width.33"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:343
+msgid "admin.builder.fields.width.25"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:349
+msgid "admin.builder.fields.clear_before.title"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:358
+msgid "admin.builder.fields.smiley_legend.title"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:368
+msgid "admin.builder.fields.custom_colors.title"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:373
+msgid "admin.builder.fields.custom_colors.enabled_label"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:382
+msgid "admin.builder.fields.custom_colors.standard_state"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:385
+msgid "admin.builder.fields.custom_colors.bg_color"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:393
+msgid "admin.builder.fields.custom_colors.text_color"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:401
+msgid "admin.builder.fields.custom_colors.border_color"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:409
+msgid "admin.builder.fields.custom_colors.hover_state"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:412
+msgid "admin.builder.fields.custom_colors.bg_color_hover"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:420
+msgid "admin.builder.fields.custom_colors.text_color_hover"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:428
+msgid "admin.builder.fields.custom_colors.border_color_hover"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:436
+msgid "admin.builder.fields.custom_colors.reset"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:445
+msgid "admin.builder.fields.step2.title_activate"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:453
+msgid "admin.builder.fields.step2.description"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:477
+msgid "admin.builder.fields.step1.title"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:478
+msgid "admin.builder.fields.step1.subtitle"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:482
+msgid "admin.builder.fields.nav.back"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:491
+msgid "admin.builder.fields.step1.empty_notifier"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:512
+msgid "admin.builder.fields.step2.title"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:513
+msgid "admin.builder.fields.step2.subtitle"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:517
+msgid "admin.builder.fields.nav.maximize"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:526
+msgid "admin.builder.fields.step2.disabled_notifier"
+msgstr ""
+
+#: templates/admin/form-builder/fields.php:531
+msgid "admin.builder.fields.step2.enabled_notifier"
+msgstr ""
+
+#: templates/admin/form-builder/general.php:7
+#: templates/admin/form-builder/general.php:12
+msgid "admin.builder.general.title"
+msgstr ""
+
+#: templates/admin/form-builder/general.php:17
+msgid "admin.builder.general.form_id.label"
+msgstr ""
+
+#: templates/admin/form-builder/general.php:17
+msgid "admin.builder.general.form_id.hint"
+msgstr ""
+
+#: templates/admin/form-builder/general.php:19
+msgid "admin.builder.general.form_id.description"
+msgstr ""
+
+#: templates/admin/form-builder/general.php:23
+msgid "admin.builder.general.form_name.label"
+msgstr ""
+
+#: templates/admin/form-builder/general.php:24
+msgid "admin.builder.general.form_name.default"
+msgstr ""
+
+#: templates/admin/form-builder/general.php:25
+msgid "admin.builder.general.form_name.description"
+msgstr ""
+
+#: templates/admin/form-builder/general.php:29
+msgid "admin.builder.general.custom_classes.label"
+msgstr ""
+
+#: templates/admin/form-builder/general.php:30
+msgid "admin.builder.general.custom_classes.default"
+msgstr ""
+
+#: templates/admin/form-builder/general.php:30
+msgid "admin.builder.general.custom_classes.placeholder"
+msgstr ""
+
+#: templates/admin/form-builder/general.php:31
+msgid "admin.builder.general.custom_classes.description"
+msgstr ""
+
+#: templates/admin/form-builder/general.php:36
+msgid "admin.builder.general.honeypot.label"
+msgstr ""
+
+#: templates/admin/form-builder/notification.php:12
+#: templates/admin/form-builder/notification.php:17
+msgid "admin.builder.notification.title"
+msgstr ""
+
+#: templates/admin/form-builder/notification.php:22
+msgid "admin.builder.notification.description"
+msgstr ""
+
+#: templates/admin/form-builder/notification.php:28
+msgid "admin.builder.notification.enabled.label"
+msgstr ""
+
+#: templates/admin/form-builder/notification.php:39
+msgid "admin.builder.notification.recipient.label"
+msgstr ""
+
+#: templates/admin/form-builder/notification.php:39
+msgid "admin.builder.notification.recipient.hint"
+msgstr ""
+
+#: templates/admin/form-builder/notification.php:41
+msgid "admin.builder.notification.recipient.default"
+msgstr ""
+
+#: templates/admin/form-builder/notification.php:46
+msgid "admin.builder.notification.subject.label"
+msgstr ""
+
+#: templates/admin/form-builder/notification.php:48
+msgid "admin.builder.notification.subject.default"
+msgstr ""
+
+#: templates/admin/form-builder/notification.php:53
+msgid "admin.builder.notification.sender_name.label"
+msgstr ""
+
+#: templates/admin/form-builder/notification.php:55
+msgid "admin.builder.notification.sender_name.default"
+msgstr ""
+
+#: templates/admin/form-builder/notification.php:60
+msgid "admin.builder.notification.sender_email.label"
+msgstr ""
+
+#: templates/admin/form-builder/styles.php:7
+#: templates/admin/form-builder/styles.php:12
+msgid "admin.builder.styles.title"
+msgstr ""
+
+#: templates/admin/form-builder/styles.php:17
+msgid "admin.builder.styles.description"
+msgstr ""
+
+#: templates/admin/form-builder/styles.php:21
+msgid "admin.builder.styles.accent_color.label"
+msgstr ""
+
+#: templates/admin/form-builder/styles.php:25
+msgid "admin.builder.styles.accent_color.description"
+msgstr ""
+
+#: templates/admin/form-builder/styles.php:29
+msgid "admin.builder.styles.secondary_color.label"
+msgstr ""
+
+#: templates/admin/form-builder/styles.php:33
+msgid "admin.builder.styles.secondary_color.description"
+msgstr ""
+
+#: templates/admin/form-builder/targeting.php:7
+msgid "admin.builder.targeting.title"
+msgstr ""
+
+#: templates/admin/form-builder/targeting.php:12
+msgid "admin.builder.targeting.header"
+msgstr ""
+
+#: templates/admin/form-builder/targeting.php:17
+msgid "admin.builder.targeting.description"
+msgstr ""
+
+#: templates/admin/form-builder/tracking.php:8
+#: templates/admin/form-builder/tracking.php:13
+msgid "admin.builder.tracking.title"
+msgstr ""
+
+#: templates/admin/form-builder/tracking.php:19
+msgid "admin.builder.tracking.description"
+msgstr ""
+
+#: templates/admin/form-builder/tracking.php:25
+msgid "admin.builder.tracking.enabled.label"
+msgstr ""
+
+#: templates/admin/form-builder/tracking.php:35
+msgid "admin.builder.tracking.data_points.title"
+msgstr ""
+
+#: templates/admin/form-builder/tracking.php:40
+msgid "admin.builder.tracking.url.label"
+msgstr ""
+
+#: templates/admin/form-builder/tracking.php:51
+msgid "admin.builder.tracking.page_title.label"
+msgstr ""
+
+#: templates/admin/form-builder/tracking.php:62
+msgid "admin.builder.tracking.referrer.label"
+msgstr ""
+
+#: templates/admin/form-builder/tracking.php:73
+msgid "admin.builder.tracking.user_agent.label"
+msgstr ""
+
+#: templates/admin/form-builder/tracking.php:84
+msgid "admin.builder.tracking.language.label"
+msgstr ""
+
+#: templates/admin/form-builder/tracking.php:95
+msgid "admin.builder.tracking.screen_resolution.label"
+msgstr ""
+
+#: templates/admin/form-builder/tracking.php:106
+msgid "admin.builder.tracking.viewport_size.label"
+msgstr ""
+
+#: templates/admin/form-builder/tracking.php:117
+msgid "admin.builder.tracking.timezone.label"
+msgstr ""
+
+#: templates/admin/form-builder/tracking.php:128
+msgid "admin.builder.tracking.connection_type.label"
+msgstr ""
+
+#: templates/admin/form-builder/tracking.php:139
+msgid "admin.builder.tracking.device_type.label"
+msgstr ""
+
+#: templates/admin/form-builder/tracking.php:150
+msgid "admin.builder.tracking.session_id.label"
+msgstr ""
+
+#: templates/admin/form-builder/tracking.php:161
+msgid "admin.builder.tracking.time_on_page.label"
+msgstr ""
+
+#: templates/admin/form-builder/tracking.php:172
+msgid "admin.builder.tracking.color_scheme.label"
+msgstr ""
+
+#: templates/admin/partial/flwp-pro-notice-modal.php:6
+msgid "admin.builder.pro.headline"
+msgstr ""
+
+#: templates/admin/partial/flwp-pro-notice-modal.php:9
+msgid "admin.builder.pro.advantage.1"
+msgstr ""
+
+#: templates/admin/partial/flwp-pro-notice-modal.php:10
+msgid "admin.builder.pro.advantage.2"
+msgstr ""
+
+#: templates/admin/partial/flwp-pro-notice-modal.php:11
+msgid "admin.builder.pro.advantage.3"
+msgstr ""
+
+#: templates/admin/partial/flwp-pro-notice-modal.php:21
+msgid "admin.builder.pro.title"
+msgstr ""
+
+#: templates/admin/partial/flwp-pro-notice-modal.php:36
+msgid "admin.builder.pro.advantages_title"
+msgstr ""
+
+#: templates/admin/partial/flwp-pro-notice-modal.php:49
+msgid "admin.builder.pro.cta_text"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:15
+msgid "Content feedback"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:19
+msgid "Exit-intent form"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:23
+msgid "Feedback button form"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:40
+msgid "Data management (import & export)"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:45
+msgid "Manage your form structures, plugin configurations, and collected feedback entries in one central location."
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:99
+msgid "1. Feedback entries (received user data)"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:146
+msgid "Export entries"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:155
+msgid "Select your filters and download the feedback data in the desired format."
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:190
+msgid "Filter by form"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:224
+#: templates/admin/partial/mockup/export.php:675
+msgid "Select all forms"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:283
+msgid "Time period"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:299
+msgid "Last 30 days"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:315
+#: templates/admin/partial/mockup/feedback-list.php:49
+#: templates/admin/partial/mockup/feedback-list.php:102
+#: templates/admin/partial/mockup/feedback-list.php:194
+msgid "Status"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:331
+msgid "All entries"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:358
+msgid "Export hint:"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:362
+msgid "CSV contains dynamic columns (each question in your form gets its own column). JSON provides structured raw data including detailed device and meta data."
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:387
+msgid "Download CSV"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:402
+msgid "Download JSON"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:448
+msgid "Import feedbacks"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:457
+msgid "Upload an exported feedback file (.json) to restore entries."
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:491
+#: templates/admin/partial/mockup/export.php:844
+msgid "Select or drag file"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:499
+msgid "Supports .json feedback files"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:547
+msgid "2. Form structures (templates)"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:594
+msgid "Export forms"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:603
+msgid "Export selected form layouts as .json for other WordPress instances."
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:637
+msgid "Which forms would you like to export?"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:732
+msgid "Export layout(s) (.json)"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:753
+msgid "Ideal for transferring from a test (staging) to a live environment."
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:801
+msgid "Import forms"
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:810
+msgid "Upload an exported form layout (.json) to add it. Note that existing form data with the same form ID will be overwritten."
+msgstr ""
+
+#: templates/admin/partial/mockup/export.php:852
+msgid "Supports .json form files (single or multiple forms)"
+msgstr ""
+
+#: templates/admin/partial/mockup/feedback-list.php:41
+msgid "Form"
+msgstr ""
+
+#: templates/admin/partial/mockup/feedback-list.php:45
+#: templates/admin/partial/mockup/feedback-list.php:90
+#: templates/admin/partial/mockup/feedback-list.php:166
+msgid "Display Type"
+msgstr ""
+
+#: templates/admin/partial/mockup/feedback-list.php:53
+msgid "Date Range"
+msgstr ""
+
+#: templates/admin/partial/mockup/feedback-list.php:57
+msgid "Filter"
+msgstr ""
+
+#. translators: %d: Number of demo feedback entries.
+#: templates/admin/partial/mockup/feedback-list.php:67
+#: templates/admin/partial/mockup/feedback-list.php:229
+#, php-format
+msgid "%d entries"
+msgstr ""
+
+#: templates/admin/partial/mockup/feedback-list.php:82
+#: templates/admin/partial/mockup/feedback-list.php:140
+msgid "ID"
+msgstr ""
+
+#: templates/admin/partial/mockup/feedback-list.php:86
+#: templates/admin/partial/mockup/feedback-list.php:159
+msgid "Form ID"
+msgstr ""
+
+#: templates/admin/partial/mockup/feedback-list.php:94
+#: templates/admin/partial/mockup/feedback-list.php:175
+msgid "Form Name"
+msgstr ""
+
+#: templates/admin/partial/mockup/feedback-list.php:98
+#: templates/admin/partial/mockup/feedback-list.php:182
+msgid "Page URL"
+msgstr ""
+
+#: templates/admin/partial/mockup/feedback-list.php:106
+#: templates/admin/partial/mockup/feedback-list.php:203
+msgid "Created"
+msgstr ""
+
+#: templates/admin/partial/mockup/feedback-list.php:110
+#: templates/admin/partial/mockup/feedback-list.php:210
+msgid "Updated"
+msgstr ""
+
+#: templates/admin/partial/mockup/feedback-list.php:149
+msgid "View"
+msgstr ""
+
+#: templates/admin/partial/mockup/feedback-list.php:152
+msgid "Delete"
+msgstr ""
+
+#. translators: 1: Current page, 2: Total number of pages.
+#: templates/admin/partial/mockup/feedback-list.php:243
+#, php-format
+msgid "%1$d of %2$d"
+msgstr ""
+
+#: templates/admin/premium/flwp-export.php:9
+msgid "admin.page.export.title"
+msgstr ""
+
+#: templates/admin/premium/flwp-export.php:10
+msgid "admin.page.export.description"
+msgstr ""
+
+#: templates/admin/premium/flwp-export.php:18
+msgid "admin.page.export.feedback_entries.title"
+msgstr ""
+
+#: templates/admin/premium/flwp-export.php:28
+msgid "admin.page.export.export_entries.title"
+msgstr ""
+
+#: templates/admin/premium/flwp-export.php:29
+msgid "admin.page.export.export_entries.description"
+msgstr ""
+
+#: templates/admin/premium/flwp-export.php:36
+msgid "admin.page.export.filter.form.label"
+msgstr ""
+
+#: templates/admin/premium/flwp-export.php:40
+msgid "admin.page.export.filter.form.select_all"
+msgstr ""
+
+#: templates/admin/premium/flwp-export.php:54
+msgid "admin.page.export.filter.date_range.label"
+msgstr ""
+
+#: templates/admin/premium/flwp-export.php:56
+msgid "admin.page.export.filter.range.all"
+msgstr ""
+
+#: templates/admin/premium/flwp-export.php:57
+msgid "admin.page.export.filter.range.today"
+msgstr ""
+
+#: templates/admin/premium/flwp-export.php:58
+msgid "admin.page.export.filter.range.yesterday"
+msgstr ""
+
+#: templates/admin/premium/flwp-export.php:59
+msgid "admin.page.export.filter.range.last_7_days"
+msgstr ""
+
+#: templates/admin/premium/flwp-export.php:60
+msgid "admin.page.export.filter.range.last_30_days"
+msgstr ""
+
+#: templates/admin/premium/flwp-export.php:61
+msgid "admin.page.export.filter.range.this_month"
+msgstr ""
+
+#: templates/admin/premium/flwp-export.php:62
+msgid "admin.page.export.filter.range.last_month"
+msgstr ""
+
+#: templates/admin/premium/flwp-export.php:63
+msgid "admin.page.export.filter.range.this_year"
+msgstr ""
+
+#: templates/admin/premium/flwp-export.php:64
+msgid "admin.page.export.filter.range.last_year"
+msgstr ""
+
+#: templates/admin/premium/flwp-export.php:65
+msgid "admin.page.export.filter.range.custom"
+msgstr ""
+
+#: templates/admin/premium/flwp-export.php:69
+msgid "admin.page.export.filter.status.label"
+msgstr ""
+
+#: templates/admin/premium/flwp-export.php:71
+msgid "admin.page.export.filter.status.all"
+msgstr ""
+
+#: templates/admin/premium/flwp-export.php:72
+msgid "admin.page.export.filter.status.unread"
+msgstr ""
+
+#: templates/admin/premium/flwp-export.php:73
+msgid "admin.page.export.filter.status.read"
+msgstr ""
+
+#: templates/admin/premium/flwp-export.php:74
+msgid "admin.page.export.filter.status.archived"
+msgstr ""
+
+#: templates/admin/premium/flwp-export.php:82
+msgid "admin.page.export.filter.date.from"
+msgstr ""
+
+#: templates/admin/premium/flwp-export.php:86
+msgid "admin.page.export.filter.date.to"
+msgstr ""
+
+#: templates/admin/premium/flwp-export.php:95
+msgid "admin.page.export.hint.title"
+msgstr ""
+
+#: templates/admin/premium/flwp-export.php:95
+msgid "admin.page.export.hint.description"
+msgstr ""
+
+#: templates/admin/premium/flwp-export.php:101
+msgid "admin.page.export.button.csv"
+msgstr ""
+
+#: templates/admin/premium/flwp-export.php:104
+msgid "admin.page.export.button.json"
+msgstr ""
+
+#: templates/admin/premium/flwp-export.php:116
+msgid "admin.page.export.import_feedbacks.title"
+msgstr ""
+
+#: templates/admin/premium/flwp-export.php:117
+msgid "admin.page.export.import_feedbacks.description"
+msgstr ""
+
+#: templates/admin/premium/flwp-export.php:125
+msgid "admin.page.export.import.drag_drop_text"
+msgstr ""
+
+#: templates/admin/premium/flwp-export.php:126
+msgid "admin.page.export.import.supported_files"
+msgstr ""
+
+#: templates/admin/premium/flwp-export.php:137
+msgid "admin.page.export.templates.title"
+msgstr ""
+
+#: templates/admin/premium/flwp-export.php:147
+msgid "admin.page.export.export_forms.title"
+msgstr ""
+
+#: templates/admin/premium/flwp-export.php:148
+msgid "admin.page.export.export_forms.description"
+msgstr ""
+
+#: templates/admin/premium/flwp-export.php:154
+msgid "admin.page.export.filter.forms.label"
+msgstr ""
+
+#: templates/admin/premium/flwp-export.php:159
+msgid "admin.page.export.filter.forms.select_all"
+msgstr ""
+
+#: templates/admin/premium/flwp-export.php:170
+msgid "admin.page.export.button.export_forms"
+msgstr ""
+
+#: templates/admin/premium/flwp-export.php:172
+msgid "admin.page.export.hint.export_forms"
+msgstr ""
+
+#: templates/admin/premium/flwp-export.php:182
+msgid "admin.page.export.import_forms.title"
+msgstr ""
+
+#: templates/admin/premium/flwp-export.php:183
+msgid "admin.page.export.import_forms.description"
+msgstr ""
+
+#: templates/admin/premium/flwp-export.php:191
+msgid "admin.page.export.import_forms.drag_drop_text"
+msgstr ""
+
+#: templates/admin/premium/flwp-export.php:192
+msgid "admin.page.export.import_forms.supported_files"
+msgstr ""
+
+#: templates/admin/premium/flwp-form-feedback-list.php:29
+msgid "admin.page.feedback_list.modal.id_title"
+msgstr ""
+
+#: templates/admin/premium/flwp-form-feedback-list.php:30
+msgid "admin.page.feedback_list.modal.created_at"
+msgstr ""
+
+#: templates/admin/premium/flwp-form-feedback-list.php:33
+msgid "admin.page.feedback_list.modal.close"
+msgstr ""
+
+#: templates/admin/premium/flwp-form-feedback-list.php:45
+msgid "admin.page.feedback_list.modal.status.title"
+msgstr ""
+
+#: templates/admin/premium/flwp-form-feedback-list.php:49
+msgid "admin.page.feedback_list.modal.status.unread"
+msgstr ""
+
+#: templates/admin/premium/flwp-form-feedback-list.php:52
+msgid "admin.page.feedback_list.modal.status.read"
+msgstr ""
+
+#: templates/admin/premium/flwp-form-feedback-list.php:55
+msgid "admin.page.feedback_list.modal.status.archived"
+msgstr ""
+
+#: templates/admin/premium/flwp-form-feedback-list.php:64
+msgid "admin.page.feedback_list.modal.customer_form_values"
+msgstr ""
+
+#: templates/admin/premium/flwp-form-feedback-list.php:72
+msgid "admin.page.feedback_list.modal.source_url"
+msgstr ""
+
+#: templates/admin/premium/flwp-form-feedback-list.php:76
+msgid "admin.page.feedback_list.modal.copy_to_clipboard"
+msgstr ""
+
+#: templates/admin/premium/flwp-form-feedback-list.php:79
+msgid "admin.page.feedback_list.modal.open_in_new_window"
+msgstr ""
+
+#: templates/admin/premium/flwp-form-feedback-list.php:92
+msgid "admin.page.feedback_list.modal.tracking.title"
+msgstr ""
+
+#: templates/admin/premium/flwp-form-feedback-list.php:100
+msgid "admin.page.feedback_list.modal.tracking.device"
+msgstr ""
+
+#: templates/admin/premium/flwp-form-feedback-list.php:109
+msgid "admin.page.feedback_list.modal.tracking.connection"
+msgstr ""
+
+#: templates/admin/premium/flwp-form-feedback-list.php:118
+msgid "admin.page.feedback_list.modal.tracking.resolution"
+msgstr ""
+
+#: templates/admin/premium/flwp-form-feedback-list.php:127
+msgid "admin.page.feedback_list.modal.tracking.timespent"
+msgstr ""
+
+#: templates/admin/premium/flwp-form-feedback-list.php:136
+msgid "admin.page.feedback_list.modal.tracking.language"
+msgstr ""
+
+#: templates/admin/premium/flwp-form-feedback-list.php:145
+msgid "admin.page.feedback_list.modal.tracking.colorscheme"
+msgstr ""
+
+#: templates/admin/premium/flwp-form-feedback-list.php:154
+msgid "admin.page.feedback_list.modal.tracking.session_id"
+msgstr ""
+
+#: templates/admin/premium/flwp-form-feedback-list.php:163
+msgid "admin.page.feedback_list.modal.tracking.user_agent"
+msgstr ""
+
+#: templates/admin/premium/flwp-form-feedback-list.php:172
+msgid "admin.page.feedback_list.modal.json_data"
+msgstr ""
+
+#: templates/admin/premium/flwp-form-feedback-list.php:183
+msgid "admin.page.feedback_list.modal.close_button"
+msgstr ""
+
+#: assets/js/dist/flwp-admin.js:53
+#: assets/js/dist/flwp-form-builder.js:902
+#: assets/js/dist/flwp-form-frontend.js:906
+msgid "fields.smileys.legend.very_unsatisfied"
+msgstr ""
+
+#: assets/js/dist/flwp-admin.js:54
+#: assets/js/dist/flwp-form-builder.js:903
+#: assets/js/dist/flwp-form-frontend.js:907
+msgid "fields.smileys.legend.unsatisfied"
+msgstr ""
+
+#: assets/js/dist/flwp-admin.js:55
+#: assets/js/dist/flwp-form-builder.js:904
+#: assets/js/dist/flwp-form-frontend.js:908
+msgid "fields.smileys.legend.neutral"
+msgstr ""
+
+#: assets/js/dist/flwp-admin.js:56
+#: assets/js/dist/flwp-form-builder.js:905
+#: assets/js/dist/flwp-form-frontend.js:909
+msgid "fields.smileys.legend.satisfied"
+msgstr ""
+
+#: assets/js/dist/flwp-admin.js:57
+#: assets/js/dist/flwp-form-builder.js:906
+#: assets/js/dist/flwp-form-frontend.js:910
+msgid "fields.smileys.legend.very_satisfied"
+msgstr ""
+
+#: assets/js/dist/flwp-admin.js:106
+msgid "admin.feedback.load_error"
+msgstr ""
+
+#: assets/js/dist/flwp-admin.js:110
+msgid "admin.feedback.load_network_error"
+msgstr ""
+
+#: assets/js/dist/flwp-admin.js:131
+#: assets/js/dist/flwp-admin.js:424
+msgid "admin.feedback.delete_error"
+msgstr ""
+
+#: assets/js/dist/flwp-admin.js:135
+msgid "admin.feedback.delete_network_error"
+msgstr ""
+
+#: assets/js/dist/flwp-admin.js:310
+msgid "admin.feedback.select_exactly_one_csv"
+msgstr ""
+
+#: assets/js/dist/flwp-admin.js:314
+msgid "admin.feedback.select_only_one_csv_error"
+msgstr ""
+
+#: assets/js/dist/flwp-admin.js:330
+#: assets/js/dist/flwp-admin.js:347
+msgid "admin.feedback.select_at_least_one"
+msgstr ""
+
+#: assets/js/dist/flwp-admin.js:386
+msgid "admin.feedback.import_success_forms"
+msgstr ""
+
+#: assets/js/dist/flwp-admin.js:386
+msgid "admin.feedback.import_success_feedback"
+msgstr ""
+
+#: assets/js/dist/flwp-admin.js:389
+#: assets/js/dist/flwp-form-builder.js:5528
+msgid "admin.toast.import_error"
+msgstr ""
+
+#: assets/js/dist/flwp-admin.js:393
+#: assets/js/dist/flwp-form-builder.js:4018
+msgid "admin.toast.network_error"
+msgstr ""
+
+#: assets/js/dist/flwp-admin.js:403
+#: assets/js/dist/flwp-form-builder.js:976
+#: assets/js/dist/flwp-form-builder.js:4049
+#: assets/js/dist/flwp-form-frontend.js:1101
+msgid "fields.unnamed"
+msgstr ""
+
+#: assets/js/dist/flwp-admin.js:404
+msgid "admin.feedback.delete_form_confirm"
+msgstr ""
+
+#: assets/js/dist/flwp-admin.js:416
+msgid "admin.feedback.delete_confirm"
+msgstr ""
+
+#: assets/js/dist/flwp-admin.js:429
+msgid "admin.feedback.saving"
+msgstr ""
+
+#: assets/js/dist/flwp-admin.js:476
+msgid "admin.feedback.device_desktop"
+msgstr ""
+
+#: assets/js/dist/flwp-admin.js:476
+msgid "admin.feedback.device_mobile"
+msgstr ""
+
+#: assets/js/dist/flwp-admin.js:484
+msgid "admin.feedback.unknown"
+msgstr ""
+
+#: assets/js/dist/flwp-admin.js:502
+msgid "admin.feedback.broadband"
+msgstr ""
+
+#: assets/js/dist/flwp-admin.js:513
+msgid "admin.feedback.seconds"
+msgstr ""
+
+#: assets/js/dist/flwp-admin.js:524
+msgid "admin.feedback.theme_dark"
+msgstr ""
+
+#: assets/js/dist/flwp-admin.js:525
+msgid "admin.feedback.theme_light"
+msgstr ""
+
+#: assets/js/dist/flwp-admin.js:568
+msgid "admin.feedback.url_open_error"
+msgstr ""
+
+#: assets/js/dist/flwp-admin.js:638
+msgid "admin.feedback.status_update_error"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:555
+#: assets/js/dist/flwp-form-frontend.js:559
+msgid "admin.builder.default_step2.headline"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:556
+#: assets/js/dist/flwp-form-frontend.js:560
+msgid "admin.builder.default_step2.textarea_label"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:556
+#: assets/js/dist/flwp-form-frontend.js:560
+msgid "admin.builder.default_step2.textarea_placeholder"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:557
+#: assets/js/dist/flwp-form-frontend.js:561
+msgid "admin.builder.default_step2.button_label"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:768
+#: assets/js/dist/flwp-form-builder.js:851
+#: assets/js/dist/flwp-form-frontend.js:772
+#: assets/js/dist/flwp-form-frontend.js:855
+msgid "admin.builder.unlink_values"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:779
+#: assets/js/dist/flwp-form-builder.js:854
+#: assets/js/dist/flwp-form-frontend.js:783
+#: assets/js/dist/flwp-form-frontend.js:858
+msgid "admin.builder.link_values"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:941
+#: assets/js/dist/flwp-form-frontend.js:1066
+msgid "admin.builder.default_feedback_placeholder"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:1079
+#: assets/js/dist/flwp-form-frontend.js:1204
+msgid "admin.builder.submit_action"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:1079
+#: assets/js/dist/flwp-form-frontend.js:1204
+msgid "admin.builder.back_action"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:1088
+#: assets/js/dist/flwp-form-builder.js:1175
+#: assets/js/dist/flwp-form-builder.js:1264
+#: assets/js/dist/flwp-form-builder.js:1345
+#: assets/js/dist/flwp-form-builder.js:1442
+#: assets/js/dist/flwp-form-frontend.js:1213
+#: assets/js/dist/flwp-form-frontend.js:1300
+#: assets/js/dist/flwp-form-frontend.js:1389
+#: assets/js/dist/flwp-form-frontend.js:1470
+#: assets/js/dist/flwp-form-frontend.js:1567
+msgid "admin.builder.step2_connected"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:1259
+#: assets/js/dist/flwp-form-builder.js:1314
+#: assets/js/dist/flwp-form-frontend.js:1384
+#: assets/js/dist/flwp-form-frontend.js:1439
+msgid "fields.thumbs.yes"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:1260
+#: assets/js/dist/flwp-form-builder.js:1315
+#: assets/js/dist/flwp-form-frontend.js:1385
+#: assets/js/dist/flwp-form-frontend.js:1440
+msgid "fields.thumbs.no"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:1602
+msgid "admin.builder.reset_preview"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:1648
+msgid "admin.builder.unlock_pro"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:1650
+msgid "admin.builder.use_template"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:1664
+msgid "admin.confirm.load_template"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:1677
+msgid "admin.toast.template_loaded"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:1718
+msgid "admin.conditions.url.label"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:1724
+#: assets/js/dist/flwp-form-builder.js:1773
+msgid "admin.conditions.operators.contains"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:1725
+#: assets/js/dist/flwp-form-builder.js:1774
+msgid "admin.conditions.operators.not_contains"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:1726
+#: assets/js/dist/flwp-form-builder.js:1775
+msgid "admin.conditions.operators.exact"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:1727
+#: assets/js/dist/flwp-form-builder.js:1776
+msgid "admin.conditions.operators.not_exact"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:1730
+msgid "admin.conditions.placeholder.url"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:1735
+msgid "admin.conditions.page_type.label"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:1741
+#: assets/js/dist/flwp-form-builder.js:1757
+msgid "admin.conditions.operators.in"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:1745
+msgid "admin.conditions.options.pages"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:1746
+msgid "admin.conditions.options.posts"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:1751
+msgid "admin.conditions.device.label"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:1761
+msgid "admin.conditions.options.desktop"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:1762
+msgid "admin.conditions.options.mobile"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:1767
+msgid "admin.conditions.cookie.label"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:1779
+msgid "admin.conditions.placeholder.cookie_name"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:1780
+msgid "admin.conditions.placeholder.cookie_value"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:1886
+msgid "admin.conditions.title"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:1894
+msgid "admin.conditions.show_on_frontpage"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:1895
+msgid "admin.conditions.show_on_frontpage_desc"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:1915
+msgid "admin.conditions.and_group"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:1921
+msgid "admin.conditions.connector"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:1925
+msgid "admin.conditions.or_group"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:1931
+msgid "admin.conditions.hint.title"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:1933
+msgid "admin.conditions.hint.text"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:1946
+msgid "admin.conditions.type.and"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:1946
+msgid "admin.conditions.type.or"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:1962
+#: assets/js/dist/flwp-form-builder.js:1967
+msgid "admin.conditions.empty_state"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:1983
+msgid "admin.conditions.add_button"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:1995
+msgid "admin.conditions.add_button_disabled_title"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:2140
+msgid "admin.conditions.delete_condition"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:2156
+msgid "admin.warning.submit_button"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:2164
+msgid "admin.warning.step2_empty"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:2172
+msgid "admin.warning.step2_missing_submit"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:2179
+msgid "admin.warning.empty_form"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:2246
+#: assets/js/dist/flwp-form-builder.js:2258
+msgid "validation.error.active_warnings"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:2415
+#: assets/js/dist/flwp-form-builder.js:2426
+msgid "admin.preview.title"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:2430
+msgid "admin.preview.address_placeholder"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:2434
+msgid "admin.preview.desktop_view"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:2437
+msgid "admin.preview.mobile_view"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:2442
+msgid "admin.preview.refresh_preview"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:2446
+msgid "admin.preview.close_preview"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:2466
+msgid "admin.preview.active_mode_label"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:2468
+msgid "admin.preview.simulate_trigger"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:2477
+msgid "admin.preview.modes.in_content_shortcode"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:2477
+msgid "admin.preview.modes.in_content_inline"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:2478
+msgid "admin.preview.modes.in_content"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:2481
+msgid "admin.preview.modes.feedback_button"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:2483
+msgid "admin.preview.modes.slide_in"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:2485
+msgid "admin.preview.modes.overlay_modal"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:2493
+msgid "admin.preview.mock.logo"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:2496
+msgid "admin.preview.mock.headline"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:2497
+msgid "admin.preview.mock.desc1"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:2499
+msgid "admin.preview.mock.desc2"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:2500
+msgid "admin.preview.mock.desc3"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:2501
+msgid "admin.preview.mock.desc4"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:2615
+msgid "admin.preview.default_footer_text"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:2857
+msgid "admin.display.group_title_in_content"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:2859
+msgid "admin.display.group_title_default"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:2874
+msgid "admin.display.tab_btn_in_content"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:2876
+msgid "admin.display.tab_btn_default"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:2897
+msgid "admin.display.step_label"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:3661
+msgid "fields.button.submit.default_text"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:3665
+msgid "fields.button.back.default_text"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:3669
+msgid "fields.button.next.default_text"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:3731
+msgid "admin.toast.step2_unlocked"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:3827
+msgid "admin.toast.undo"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:3862
+msgid "admin.toast.redo"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:4010
+msgid "admin.toast.form_published"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:4010
+msgid "admin.toast.draft_saved"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:4013
+msgid "admin.toast.save_error"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:4013
+msgid "admin.toast.unknown_error"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:4302
+#: assets/js/dist/flwp-form-builder.js:4317
+#: assets/js/dist/flwp-form-builder.js:4322
+msgid "admin.builder.element_count_plural"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:4317
+#: assets/js/dist/flwp-form-builder.js:4322
+msgid "admin.builder.element_count_singular"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:4323
+msgid "admin.builder.active_for"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:4325
+msgid "admin.builder.switch_recipient"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:4385
+#: assets/js/dist/flwp-form-builder.js:4791
+msgid "admin.builder.move_to_step2"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:4385
+#: assets/js/dist/flwp-form-builder.js:4791
+msgid "admin.builder.move_to_step1"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:4393
+#: assets/js/dist/flwp-form-builder.js:4783
+msgid "admin.builder.duplicate_element"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:4401
+#: assets/js/dist/flwp-form-builder.js:4802
+msgid "admin.builder.delete_element"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:4618
+msgid "admin.builder.customize_colors"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:4703
+msgid "admin.preview.widget_title"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:4731
+msgid "admin.preview.form_preview_title"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:4775
+msgid "admin.builder.edit_element"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:4828
+msgid "admin.toast.step2_auto_activated"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:4832
+msgid "admin.toast.step2_requirement_error"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:4847
+msgid "admin.toast.moved_to_step2"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:4886
+msgid "admin.toast.moved_to_step1"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:4900
+msgid "admin.builder.back_to_overview"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:4925
+msgid "admin.toast.deleted"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:4940
+msgid "admin.toast.duplicated"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:4962
+msgid "admin.toast.added"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:5050
+msgid "admin.toast.dropped"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:5060
+msgid "admin.toast.move_step_not_allowed"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:5134
+msgid "admin.toast.view_loaded"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:5503
+msgid "admin.toast.config_copied"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:5511
+msgid "admin.toast.invalid_json"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:5524
+msgid "admin.toast.config_loaded"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:5555
+msgid "admin.builder.display_type_label"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:5572
+msgid "admin.builder.targeting_tabs.in_content"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:5573
+msgid "admin.builder.targeting_tabs.shortcode"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:5577
+msgid "admin.builder.targeting_tabs.overlay"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:5725
+#: assets/js/dist/flwp-form-builder.js:5821
+msgid "admin.toast.status_paused"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:5728
+#: assets/js/dist/flwp-form-builder.js:5822
+msgid "admin.toast.status_live"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:5731
+#: assets/js/dist/flwp-form-builder.js:5823
+msgid "admin.toast.status_admin_only"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:5824
+msgid "admin.toast.status_changed"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:5851
+msgid "admin.builder.leave_editor_confirm"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:5865
+msgid "admin.toast.split_preview_reset"
+msgstr ""
+
+#: assets/js/dist/flwp-form-builder.js:5878
+#: assets/js/dist/flwp-form-builder.js:5887
+msgid "admin.toast.activate_step2_first"
+msgstr ""
+
+#: assets/js/dist/flwp-form-frontend.js:2157
+msgid "widget.feedback_button.hide_button"
+msgstr ""
+
+#: assets/js/dist/flwp-form-frontend.js:2222
+msgid "widget.status_completed"
+msgstr ""
+
+#: assets/js/dist/flwp-form-frontend.js:2224
+msgid "widget.step_indicator_full"
+msgstr ""
+
+#: assets/js/dist/flwp-form-frontend.js:2505
+msgid "validation.error.required"
+msgstr ""
+
+#: assets/js/dist/flwp-form-frontend.js:2555
+#: assets/js/dist/flwp-form-frontend.js:2620
+msgid "widget.step_indicator"
+msgstr ""
+
+#: assets/js/dist/flwp-form-frontend.js:2582
+msgid "widget.status_confirmed"
+msgstr ""
+
+#: assets/js/dist/flwp-form-frontend.js:2609
+msgid "admin.builder.simulation_redirect_msg"
+msgstr ""
+
+#: assets/js/dist/flwp-form-frontend.js:2620
+msgid "widget.step_single"
+msgstr ""
+
+#: assets/js/dist/flwp-form-frontend.js:2651
+msgid "widget.no_elements"
+msgstr ""
+
+#: assets/js/dist/flwp-form-frontend.js:2718
+msgid "confirmation.message.redirecting"
+msgstr ""
+
+#: assets/js/dist/flwp-form-frontend.js:2721
+msgid "confirmation.message.target"
+msgstr ""

@@ -1,0 +1,1204 @@
+:root {
+    --flwp-primary: #036aab; /* Strong Blue */
+    --flwp-primary-hover: #02568a; /* Darker Blue */
+    --flwp-border: #ddd; /* Slate-200 */
+    --flwp-border-active: #036aab; /* Strong Blue */
+    --flwp-success: #104689; /* Emerald-500 */
+    --flwp-warning: #f59e0b;
+    --flwp-error: #ef4444;
+    --flwp-fb-btn-bg: #FFFFFF;
+    --flwp-fb-btn-color: #104689;
+    --flwp-fb-btn-border: #104689;
+    --flwp-fb-btn-hover-bg-color: #104689;
+    --flwp-fb-btn-hover-color: #FFFFFF;
+    --flwp-fb-btn-hover-border-color: #104689;
+}
+
+.flwp-feedback-plugin:not(.flwp-split-preview-column) {
+    &, & :where(*) {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+/* Responsive width classes for .flwp-fd-group slots */
+.flwp-feedback-plugin .flwp-fd-group {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0; /* managed by step gap */
+}
+
+.flwp-feedback-plugin .flwp-fd-group.flwp-fd-width-100 {
+    width: 100%;
+}
+
+/* Alignment and flexbox layout rules */
+.flwp-feedback-plugin .flwp-fd-align-left {
+    align-items: flex-start;
+    text-align: left;
+}
+
+.flwp-feedback-plugin .flwp-fd-align-center {
+    align-items: center;
+    text-align: center;
+}
+
+.flwp-feedback-plugin .flwp-fd-align-right {
+    align-items: flex-end;
+    text-align: right;
+}
+
+.flwp-feedback-plugin .flwp-fd-text-left {
+    text-align: left;
+}
+
+.flwp-feedback-plugin .flwp-fd-text-center {
+    text-align: center;
+}
+
+.flwp-feedback-plugin .flwp-fd-text-right {
+    text-align: right;
+}
+
+.flwp-feedback-plugin .flwp-fd-justify-left {
+    justify-content: flex-start;
+}
+
+.flwp-feedback-plugin .flwp-fd-justify-center {
+    justify-content: center;
+}
+
+.flwp-feedback-plugin .flwp-fd-justify-right {
+    justify-content: flex-end;
+}
+
+/* Label & Empty items styling */
+.flwp-feedback-plugin .flwp-fd-label {
+    font-weight: 600;
+    font-size: 0.95em;
+    display: block;
+    width: 100%;
+}
+
+.flwp-feedback-plugin .flwp-fd-empty-message {
+    text-align: center;
+    padding: 24px 10.5px;
+    color: #64748b;
+    font-size: 12px;
+}
+
+/* Headline & Description */
+.flwp-feedback-plugin .flwp-fd-headline {
+    font-size: 1.1em;
+    font-weight: 600;
+    word-break: break-word;
+    width: 100%;
+    margin: 0;
+}
+
+.flwp-feedback-plugin .flwp-fd-description {
+    font-size: 0.9em;
+    line-height: 1.45;
+    word-break: break-word;
+    width: 100%;
+    margin: 0;
+}
+
+.flwp-feedback-plugin .flwp-fd-input, .flwp-feedback-plugin .flwp-fd-select, .flwp-feedback-plugin textarea.flwp-fd-textarea {
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 13px;
+    border: 1px solid var(--flwp-border);
+    border-radius: 4px;
+    outline: none;
+    background-color: white;
+}
+
+.flwp-feedback-plugin .flwp-fd-input:focus, .flwp-feedback-plugin .flwp-fd-select:focus, .flwp-feedback-plugin textarea.flwp-fd-textarea:focus {
+    border-color: var(--flwp-primary);
+    box-shadow: 0 0 0 2px rgba(3, 106, 171, 0.15);
+}
+
+.flwp-feedback-plugin textarea.flwp-fd-textarea {
+    resize: vertical;
+    min-height: 70px;
+    margin-top: 6px;
+}
+
+/* Buttons utility rules */
+.flwp-feedback-plugin button.flwp-btn {
+    font-size: 14px;
+    outline: none;
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border: 1px solid #dddddd;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+    font-weight: normal;
+    gap: 12px;
+    line-height: inherit;
+}
+
+.flwp-feedback-plugin button.flwp-btn:hover {
+    background-color: #f8fafc;
+}
+
+.flwp-feedback-plugin button.flwp-btn-primary {
+    background-color: var(--flwp-primary);
+    border-color: var(--flwp-primary);
+    color: white;
+    min-width: fit-content;
+}
+
+.flwp-feedback-plugin button.flwp-btn-primary:hover {
+    background-color: var(--flwp-primary-hover);
+    border-color: var(--flwp-primary-hover);
+}
+
+.flwp-feedback-plugin button.flwp-fd-btn-full {
+    width: 100%;
+    justify-content: center;
+}
+
+.flwp-feedback-plugin button.flwp-fd-btn-border {
+    border-style: solid;
+    border-width: 1px;
+    background-color: var(--el-normal-bg, var(--flwp-primary)) !important;
+    color: var(--el-normal-color, #ffffff) !important;
+    border-color: var(--el-normal-border, var(--flwp-primary)) !important;
+}
+
+.flwp-feedback-plugin button.flwp-fd-btn-border:hover {
+    background-color: var(--el-hover-bg, var(--flwp-primary-hover)) !important;
+    color: var(--el-hover-color, #ffffff) !important;
+    border-color: var(--el-hover-border, var(--flwp-primary-hover)) !important;
+}
+
+/* Rating / Stars */
+.flwp-feedback-plugin .flwp-fd-stars-row {
+    display: flex;
+    font-size: 26px;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.flwp-feedback-plugin .flwp-fd-star {
+    transition: color 0.15s;
+}
+
+/* Thumbs UP/DOWN selection */
+.flwp-feedback-plugin .flwp-fd-thumbs-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 6px;
+    width: 100%;
+    max-width: 280px;
+}
+
+.flwp-feedback-plugin .flwp-fd-thumbs-row.flwp-fd-justify-center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.flwp-feedback-plugin .flwp-fd-thumbs-row.flwp-fd-justify-right {
+    margin-left: auto;
+}
+
+.flwp-feedback-plugin button.flwp-fd-thumb-btn {
+    flex: 1;
+    background-color: var(--el-normal-bg, #ffffff) !important;
+    border: 1px solid var(--el-normal-border, #cbd5e1) !important;
+    color: var(--el-normal-color, #334155) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.flwp-feedback-plugin button.flwp-fd-thumb-btn:hover {
+    background-color: var(--el-hover-bg, #f1f5f9) !important;
+    border-color: var(--el-hover-border, #94a3b8) !important;
+    color: var(--el-hover-color, #1e293b) !important;
+}
+
+.flwp-feedback-plugin button.flwp-fd-thumb-btn.active {
+    background-color: var(--el-active-bg, #104689) !important;
+    border-color: var(--el-active-border, #104689) !important;
+    color: var(--el-active-color, #ffffff) !important;
+}
+
+/* Smileys Feedback Scale */
+.flwp-feedback-plugin .flwp-fd-smileys-row {
+    display: flex;
+    width: 100%;
+    font-size: 28px;
+    margin-top: 6px;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.flwp-feedback-plugin .flwp-fd-smileys-row-legend {
+    gap: 6px;
+}
+
+.flwp-feedback-plugin .flwp-fd-smiley-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 1 0px;
+    max-width: 72px;
+    min-width: 0px;
+    text-align: center;
+    justify-content: flex-start;
+    gap: 8px;
+}
+
+.flwp-feedback-plugin .flwp-fd-smiley-node {
+    color: #cbd5e1;
+    cursor: pointer;
+    transition: transform 0.2s, color 0.2s;
+}
+
+.flwp-feedback-plugin .flwp-fd-smiley-legend {
+    font-size: 10.5px;
+    line-height: 1.25;
+    font-weight: 500;
+    color: transparent;
+    visibility: hidden;
+    height: 32px;
+}
+
+.flwp-feedback-plugin .flwp-fd-smiley-legend-active {
+    color: inherit;
+    visibility: visible;
+}
+
+/* Net Promoter Score (NPS) Scale */
+.flwp-feedback-plugin .flwp-fd-nps-row {
+    display: flex;
+    gap: 5px;
+    margin-top: 6px;
+}
+
+.flwp-feedback-plugin .flwp-fd-nps-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background-color: var(--el-normal-bg, #ffffff) !important;
+    border: 1px solid var(--el-normal-border, #cbd5e1) !important;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--el-normal-color, #475569) !important;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.flwp-feedback-plugin .flwp-fd-nps-box:hover {
+    background-color: var(--el-hover-bg, #f1f5f9) !important;
+    border-color: var(--el-hover-border, #94a3b8) !important;
+    color: var(--el-hover-color, #1e293b) !important;
+}
+
+.flwp-feedback-plugin .flwp-fd-nps-box.active {
+    background-color: var(--el-active-bg, #104689) !important;
+    border-color: var(--el-active-border, #104689) !important;
+    color: var(--el-active-color, #ffffff) !important;
+}
+
+.flwp-feedback-plugin .flwp-fd-nps-range-labels {
+    display: flex;
+    font-size: 10px;
+    color: #64748b;
+    margin-top: 4px;
+    width: 100%;
+}
+
+.flwp-feedback-plugin .flwp-fd-align-self-left {
+    justify-content: space-between;
+}
+
+.flwp-feedback-plugin .flwp-fd-align-self-center {
+    justify-content: space-around;
+    max-width: 320px;
+    margin: 4px auto 0 auto;
+}
+
+.flwp-feedback-plugin .flwp-fd-align-self-right {
+    justify-content: flex-end;
+    max-width: 320px;
+    margin-left: auto;
+}
+
+/* Confirmation Layout screens */
+.flwp-feedback-plugin .flwp-fd-confirm-msg {
+    text-align: center;
+    padding: 12px 0;
+}
+
+.flwp-feedback-plugin .flwp-fd-confirm-icon {
+    font-size: 34px;
+    color: var(--flwp-success);
+    margin-bottom: 12px;
+}
+
+.flwp-feedback-plugin .flwp-fd-confirm-text {
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.flwp-feedback-plugin .flwp-fd-confirm-box {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 16px;
+    background: #f8fafc;
+    font-size: 12px;
+}
+
+.flwp-feedback-plugin .flwp-fd-confirm-box-title {
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 8px;
+}
+
+.flwp-feedback-plugin .flwp-fd-confirm-badge {
+    background-color: gainsboro;
+    padding: 4px 8px;
+    border-radius: 3px;
+    margin-top: 6px;
+    word-break: break-all;
+    display: inline-block;
+}
+
+/* Multi-step form step toggling classes */
+.flwp-feedback-plugin .flwp-fd-step,
+.flwp-feedback-plugin .flwp-fd-success {
+    display: none !important;
+}
+
+.flwp-feedback-plugin .flwp-fd-step.is-active,
+.flwp-feedback-plugin .flwp-fd-success.is-active {
+    display: flex !important;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 7px;
+    width: 100%;
+}
+
+.flwp-feedback-plugin .flwp-fd-success.is-active {
+    justify-content: center;
+}
+
+/* Validation styles and modern feedback visual animations */
+.flwp-fd-group.flwp-fd-invalid textarea {
+    border-color: #ef4444 !important;
+    background-color: #fef2f2 !important;
+}
+
+.flwp-fd-group.flwp-fd-invalid .flwp-fd-stars-row,
+.flwp-fd-group.flwp-fd-invalid .flwp-fd-smileys-row,
+.flwp-fd-group.flwp-fd-invalid .flwp-fd-thumbs-row,
+.flwp-fd-group.flwp-fd-invalid .flwp-fd-nps-row {
+    outline: 1px dashed #ef4444;
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+.flwp-fd-error-msg {
+    color: #ef4444;
+    font-size: 11px;
+    font-weight: 500;
+    margin-top: 2px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    animation: flwp-shake 0.3s ease-in-out;
+}
+
+.flwp-feedback-plugin .flwp-feedback-button-widget-visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.flwp-feedback-plugin button[id^="flwp-standard-feedback-btn-"].flwp-feedback-button-widget-button {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    padding: 10px 22px; /* Adjusted for border */
+    background-color: var(--flwp-fb-btn-bg, #fff);
+    color: var(--flwp-fb-btn-color, #104689);
+    border: 2px solid var(--flwp-fb-btn-border, #104689);
+    border-radius:  0 0 0.5rem 0.5rem;
+    border-top: 0;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1;
+    z-index: 999;
+    transition: background-color 0.2s, color 0.2s, transform 0.3s ease-out, opacity 0.6s ease-out;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.flwp-feedback-plugin button[id^="flwp-standard-feedback-btn-"].flwp-feedback-button-widget-button.flwp-feedback-button-widget-button--right-middle {
+    right: 0;
+    top: 50%;
+    transform: translate3d(50%, -50%, 0) rotate(-270deg) translateY(50%);
+    transform-origin: center;
+}
+
+.flwp-feedback-plugin button[id^="flwp-standard-feedback-btn-"].flwp-feedback-button-widget-button.flwp-feedback-button-widget-button--left-middle {
+    left: 0;
+    top: 50%;
+    transform: translate3d(-50%, 43%, 0) rotate(270deg) translateY(50%);
+    transform-origin: center;
+}
+
+.flwp-feedback-plugin button[id^="flwp-standard-feedback-btn-"].flwp-feedback-button-widget-button.flwp-feedback-button-widget-button--bottom-right {
+    bottom: 0;
+    right: 40px;
+    top: auto;
+    left: auto;
+    transform: none;
+    transform-origin: bottom right;
+    border-radius: 0.5rem 0.5rem 0 0;
+    border-top: 2px solid var(--flwp-fb-btn-border, #104689);
+    border-bottom: 0;
+}
+
+.flwp-feedback-plugin button[id^="flwp-standard-feedback-btn-"].flwp-feedback-button-widget-button.flwp-feedback-button-widget-button--bottom-middle {
+    bottom: 0;
+    left: 50%;
+    top: auto;
+    right: auto;
+    transform: translateX(-50%);
+    transform-origin: bottom center;
+    border-radius: 0.5rem 0.5rem 0 0;
+    border-top: 2px solid var(--flwp-fb-btn-border, #104689);
+    border-bottom: 0;
+}
+
+.flwp-feedback-plugin button[id^="flwp-standard-feedback-btn-"].flwp-feedback-button-widget-button.flwp-feedback-button-widget-button--bottom-left {
+    bottom: 0;
+    left: 40px;
+    top: auto;
+    right: auto;
+    transform: none;
+    transform-origin: bottom left;
+    border-radius: 0.5rem 0.5rem 0 0;
+    border-top: 2px solid var(--flwp-fb-btn-border, #104689);
+    border-bottom: 0;
+}
+
+
+
+/* Container position */
+.flwp-feedback-plugin .flwp-feedback-button-widget-container.flwp-feedback-button-widget-container--right-middle {
+    right: 20px;
+    left: auto;
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
+}
+
+.flwp-feedback-plugin .flwp-feedback-button-widget-container.flwp-feedback-button-widget-container--right-middle.flwp-feedback-button-widget-container--hidden {
+    transform: translate(20px, -50%) scale(0.95);
+    opacity: 0;
+}
+
+.flwp-feedback-plugin .flwp-feedback-button-widget-container.flwp-feedback-button-widget-container--left-middle {
+    left: 20px;
+    right: auto;
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
+}
+
+.flwp-feedback-plugin .flwp-feedback-button-widget-container.flwp-feedback-button-widget-container--left-middle.flwp-feedback-button-widget-container--hidden {
+    transform: translate(-20px, -50%) scale(0.95);
+    opacity: 0;
+}
+
+.flwp-feedback-plugin .flwp-feedback-button-widget-container.flwp-feedback-button-widget-container--bottom-right {
+    right: 20px;
+    left: auto;
+    bottom: 20px;
+}
+
+.flwp-feedback-plugin .flwp-feedback-button-widget-container.flwp-feedback-button-widget-container--bottom-middle {
+    left: 50%;
+    right: auto;
+    bottom: 20px;
+    transform: translateX(-50%);
+}
+
+.flwp-feedback-plugin .flwp-feedback-button-widget-container.flwp-feedback-button-widget-container--bottom-middle.flwp-feedback-button-widget-container--hidden {
+    transform: translate(-50%, 20px);
+    opacity: 0;
+}
+
+.flwp-feedback-plugin .flwp-feedback-button-widget-container.flwp-feedback-button-widget-container--bottom-left {
+    left: 20px;
+    right: auto;
+    bottom: 20px;
+}
+
+/* This class is added via JS when scrolling past the threshold on desktop */
+.flwp-feedback-plugin button[id^="flwp-standard-feedback-btn-"].flwp-feedback-button-widget-button.flwp-feedback-button-widget-button--visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.flwp-feedback-plugin button[id^="flwp-standard-feedback-btn-"].flwp-feedback-button-widget-button .flwp-feedback-button-widget-button-text {
+    display: inline-block;
+    text-transform: none;
+}
+
+.flwp-feedback-plugin button[id^="flwp-standard-feedback-btn-"].flwp-feedback-button-widget-button .flwp-feedback-button-widget-button-icon {
+    display: none;
+    font-size: 22px;
+    line-height: 1;
+}
+
+.flwp-feedback-plugin button[id^="flwp-standard-feedback-btn-"].flwp-feedback-button-widget-button:hover {
+    background-color: var(--flwp-fb-btn-hover-bg-color, #104689);
+    color: var(--flwp-fb-btn-hover-color, #ffffff);
+    border-color: var(--flwp-fb-btn-hover-border-color, #104689);
+}
+
+.flwp-feedback-button-widget-is-open .flwp-feedback-plugin button[id^="flwp-standard-feedback-btn-"].flwp-feedback-button-widget-button,
+body.flwp-feedback-button-widget-is-open .flwp-feedback-plugin button[id^="flwp-standard-feedback-btn-"].flwp-feedback-button-widget-button {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
+.flwp-feedback-plugin .flwp-feedback-button-widget-container {
+    position: fixed;
+    bottom: 20px;
+    width: calc(100vw - 40px); /* Responsive width for narrow desktop */
+    max-width: 340px; /* Max width for standard desktop */
+    background-color: #ffffff;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    z-index: 1000;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.flwp-feedback-plugin .flwp-feedback-button-widget-container--hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+    visibility: hidden;
+}
+
+.flwp-feedback-plugin .flwp-feedback-button-widget-header {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border-bottom: 1px solid #dddddd;
+    background-color: #f9fafb;
+    flex-shrink: 0;
+}
+
+.flwp-feedback-plugin button.flwp-feedback-button-widget-icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6b7280;
+    font-size: 1.25rem;
+}
+
+.flwp-feedback-plugin button.flwp-feedback-button-widget-icon-button:hover {
+    background-color: #dddddd;
+    color: #1f2937;
+}
+
+.flwp-feedback-plugin button.flwp-feedback-button-widget-icon-button[hidden] {
+    visibility: hidden;
+}
+
+.flwp-feedback-plugin .flwp-feedback-button-widget-progress-bar-container {
+    flex-grow: 1;
+    height: 8px;
+    background-color: #dddddd;
+    border-radius: 4px;
+    margin: 0 12px;
+    overflow: hidden;
+}
+
+.flwp-feedback-plugin .flwp-feedback-button-widget-progress-bar {
+    width: 0%;
+    height: 100%;
+    background-color: #104689;
+    border-radius: 4px;
+    transition: width 0.4s ease;
+}
+
+.flwp-feedback-plugin .flwp-feedback-button-widget-content {
+    overflow: hidden;
+    position: relative;
+    flex-grow: 1;
+    transition: height 0.3s ease-in-out;
+    padding: 20px;
+}
+
+@keyframes slide-in-right {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+@keyframes slide-out-left {
+    from { transform: translateX(0); opacity: 1; }
+    to { transform: translateX(-100%); opacity: 0; }
+}
+@keyframes slide-in-left {
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+@keyframes slide-out-right {
+    from { transform: translateX(0); opacity: 1; }
+    to { transform: translateX(100%); opacity: 0; }
+}
+
+.flwp-feedback-plugin .slide-in-right { animation: slide-in-right 0.3s forwards cubic-bezier(0.25, 1, 0.5, 1); }
+.flwp-feedback-plugin .slide-out-left { animation: slide-out-left 0.3s forwards cubic-bezier(0.5, 0, 0.75, 0); }
+.flwp-feedback-plugin .slide-in-left { animation: slide-in-left 0.3s forwards cubic-bezier(0.25, 1, 0.5, 1); }
+.flwp-feedback-plugin .slide-out-right { animation: slide-out-right 0.3s forwards cubic-bezier(0.5, 0, 0.75, 0); }
+
+.flwp-feedback-plugin.flwp-general-overlay-backdrop.flwp-overlay-no-backdrop {
+    background-color: transparent !important;
+    backdrop-filter: none !important;
+}
+
+.flwp-feedback-plugin.flwp-general-overlay-backdrop.flwp-overlay-no-backdrop:not(.flwp-close-on-backdrop) {
+    pointer-events: none !important;
+}
+
+.flwp-feedback-plugin.flwp-general-overlay-backdrop.flwp-preview-mode {
+    position: absolute !important;
+}
+
+.flwp-feedback-plugin.flwp-general-overlay-backdrop.flwp-overlay-no-backdrop .flwp-general-overlay-modal,
+.flwp-feedback-plugin.flwp-general-overlay-backdrop.flwp-overlay-no-backdrop .flwp-feedback-plugin-container {
+    pointer-events: auto !important;
+}
+
+/* In-Content Feedback Styles */
+.flwp-feedback-plugin.flwp-in-content-feedback-container {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 600px;
+    text-align: center;
+    transition: all 0.3s ease;
+    visibility: hidden;
+}
+
+@keyframes flwp-shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-4px); }
+    75% { transform: translateX(4px); }
+}
+
+/* Break class in Live Form */
+.flwp-fd-break {
+    flex-basis: 100%;
+    width: 100%;
+    height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.flwp-feedback-plugin .flwp-feedback-button-widget-hide-container {
+    text-align: center;
+    margin: 10px auto 0 auto;
+}
+
+.flwp-feedback-plugin .flwp-feedback-button-widget-hide-link {
+    font-size: 0.8rem;
+    color: #6b7280;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.flwp-feedback-plugin .flwp-feedback-button-widget-hide-link:hover {
+    text-decoration: underline;
+    color: #104689;
+}
+
+@media (max-width: 480px) {
+    .flwp-feedback-plugin.flwp-in-content-feedback-container {
+        padding: 0;
+        margin: 2rem 1rem;
+    }
+}
+
+@media (min-width: 600px) {
+    .flwp-feedback-plugin .flwp-fd-group.flwp-fd-width-50 {
+        width: calc(50% - 8px);
+    }
+
+    .flwp-feedback-plugin .flwp-fd-group.flwp-fd-width-33 {
+        width: calc(33.333% - 10.667px);
+    }
+
+    .flwp-feedback-plugin .flwp-fd-group.flwp-fd-width-25 {
+        width: calc(25% - 12px);
+    }
+}
+
+@media (max-width: 599px) {
+    .flwp-feedback-plugin .flwp-fd-group.flwp-fd-width-50,
+    .flwp-feedback-plugin .flwp-fd-group.flwp-fd-width-33,
+    .flwp-feedback-plugin .flwp-fd-group.flwp-fd-width-25 {
+        width: 100% !important;
+    }
+
+    .flwp-feedback-plugin button.flwp-btn {
+        width: 100% !important;
+        justify-content: center !important;
+    }
+}
+
+/* --- MOBILE & RESPONSIVE STYLES (MUST BE AT THE END) --- */
+@media (max-width: 767px) {
+    .flwp-feedback-plugin button[id^="flwp-standard-feedback-btn-"].flwp-feedback-button-widget-button {
+        /* Mobile overrides to make it a fixed FAB */
+        position: fixed;
+        top: auto;
+        right: 1.25rem;
+        bottom: 1.25rem;
+        transform: none;
+        transform-origin: center;
+        min-width: 49px;
+        padding: 11px;
+        border-radius: 50%;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        gap: 0;
+        /* Revert to solid button style for mobile */
+        background-color: var(--flwp-fb-btn-bg, #fff);
+        color: var(--flwp-fb-btn-color, #104689);
+        border: 2px solid var(--flwp-fb-btn-border, #104689);
+        /* Ensure it's always visible on mobile, overriding desktop styles */
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .flwp-feedback-plugin button[id^="flwp-standard-feedback-btn-"].flwp-feedback-button-widget-button:hover {
+        background-color: #0b386f;
+    }
+
+    .flwp-feedback-plugin button[id^="flwp-standard-feedback-btn-"].flwp-feedback-button-widget-button .flwp-feedback-button-widget-button-text {
+        display: none;
+    }
+
+    .flwp-feedback-plugin button[id^="flwp-standard-feedback-btn-"].flwp-feedback-button-widget-button .flwp-feedback-button-widget-button-icon {
+        display: inline-block;
+    }
+
+    .flwp-feedback-plugin .flwp-feedback-button-widget-container {
+        width: 100%;
+        height: 100%;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        max-width: none; /* Override desktop max-width */
+        border-radius: 0;
+        box-shadow: none;
+        transform: translateY(0);
+    }
+
+    .flwp-feedback-plugin .flwp-feedback-button-widget-container--hidden {
+        transform: translateY(100%);
+        opacity: 1; /* Keep opacity for transition */
+    }
+
+    .flwp-feedback-plugin .flwp-feedback-button-widget-content {
+        overflow-y: auto;
+    }
+
+    .flwp-feedback-button-widget-is-open .flwp-feedback-plugin button[id^="flwp-standard-feedback-btn-"].flwp-feedback-button-widget-button,
+    body.flwp-feedback-button-widget-is-open .flwp-feedback-plugin button[id^="flwp-standard-feedback-btn-"].flwp-feedback-button-widget-button {
+        display: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+    }
+}
+
+
+/* General Overlay System styles (Abstracted from Exit-Intent and Feedback-Button) */
+.flwp-feedback-plugin.flwp-general-overlay-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    backdrop-filter: blur(2px);
+}
+
+.flwp-feedback-plugin.flwp-general-overlay-backdrop.flwp-overlay-is-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Custom Position Classes for General Overlay */
+.flwp-feedback-plugin.flwp-general-overlay-backdrop.flwp-overlay-pos-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.flwp-feedback-plugin.flwp-general-overlay-backdrop.flwp-overlay-pos-right-middle {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 2rem;
+}
+.flwp-feedback-plugin.flwp-general-overlay-backdrop.flwp-overlay-pos-left-middle {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 2rem;
+}
+.flwp-feedback-plugin.flwp-general-overlay-backdrop.flwp-overlay-pos-bottom-middle {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 2rem;
+}
+.flwp-feedback-plugin.flwp-general-overlay-backdrop.flwp-overlay-pos-top-middle {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 2rem;
+}
+.flwp-feedback-plugin.flwp-general-overlay-backdrop.flwp-overlay-pos-bottom-right {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 2rem;
+}
+.flwp-feedback-plugin.flwp-general-overlay-backdrop.flwp-overlay-pos-bottom-left {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 2rem;
+}
+.flwp-feedback-plugin.flwp-general-overlay-backdrop.flwp-overlay-pos-top-right {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 2rem;
+}
+.flwp-feedback-plugin.flwp-general-overlay-backdrop.flwp-overlay-pos-top-left {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 2rem;
+}
+
+/* Modal layout container card */
+.flwp-feedback-plugin .flwp-general-overlay-modal {
+    background-color: #ffffff;
+    width: 95%;
+    max-width: 480px;
+    border-radius: 12px;
+    padding: 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
+    position: relative;
+    transform: scale(0.92);
+    opacity: 0;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e2e8f0;
+}
+
+/* Position-dependent default widths */
+.flwp-feedback-plugin .flwp-general-overlay-modal.flwp-overlay-card-pos-bottom-right,
+.flwp-feedback-plugin .flwp-general-overlay-modal.flwp-overlay-card-pos-bottom-left,
+.flwp-feedback-plugin .flwp-general-overlay-modal.flwp-overlay-card-pos-top-right,
+.flwp-feedback-plugin .flwp-general-overlay-modal.flwp-overlay-card-pos-top-left {
+    max-width: 380px;
+}
+
+.flwp-feedback-plugin.flwp-general-overlay-backdrop.flwp-overlay-is-visible .flwp-general-overlay-modal {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Deactivate default transitions for slide-in overlays to avoid conflicts */
+.flwp-feedback-plugin .flwp-general-overlay-modal.slide-in-left,
+.flwp-feedback-plugin .flwp-general-overlay-modal.slide-in-right,
+.flwp-feedback-plugin .flwp-general-overlay-modal.slide-out-left,
+.flwp-feedback-plugin .flwp-general-overlay-modal.slide-out-right {
+    transition: opacity 0.3s ease;
+    transform: none;
+    opacity: 1;
+}
+
+.flwp-feedback-plugin .flwp-general-overlay-modal.slide-out-left,
+.flwp-feedback-plugin .flwp-general-overlay-modal.slide-out-right {
+    opacity: 0;
+}
+
+/* Position and entry transitions */
+.flwp-feedback-plugin.flwp-general-overlay-backdrop .flwp-overlay-card-pos-bottom-right,
+.flwp-feedback-plugin.flwp-general-overlay-backdrop .flwp-overlay-card-pos-bottom-left {
+    transform: translateY(60px);
+}
+.flwp-feedback-plugin.flwp-general-overlay-backdrop.flwp-overlay-is-visible .flwp-overlay-card-pos-bottom-right,
+.flwp-feedback-plugin.flwp-general-overlay-backdrop.flwp-overlay-is-visible .flwp-overlay-card-pos-bottom-left {
+    transform: translateY(0);
+}
+
+.flwp-feedback-plugin.flwp-general-overlay-backdrop .flwp-overlay-card-pos-top-right,
+.flwp-feedback-plugin.flwp-general-overlay-backdrop .flwp-overlay-card-pos-top-left {
+    transform: translateY(-60px);
+}
+.flwp-feedback-plugin.flwp-general-overlay-backdrop.flwp-overlay-is-visible .flwp-overlay-card-pos-top-right,
+.flwp-feedback-plugin.flwp-general-overlay-backdrop.flwp-overlay-is-visible .flwp-overlay-card-pos-top-left {
+    transform: translateY(0);
+}
+
+/* Buttons inside the overlay header */
+.flwp-feedback-plugin[id^="flwp-overlay-container-"] button.flwp-general-overlay-icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    color: #64748b;
+    padding: 6px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.flwp-feedback-plugin[id^="flwp-overlay-container-"] button.flwp-general-overlay-icon-btn:hover {
+    background-color: #f1f5f9;
+    color: #0f172a;
+}
+
+/* Abstracted Progress Bar for General Overlay */
+.flwp-feedback-plugin[id^="flwp-overlay-container-"] .flwp-general-overlay-progress-bar-container {
+    display: none;
+    width: 100%;
+    max-width: 200px;
+    height: 6px;
+    background-color: #e2e8f0;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.flwp-feedback-plugin[id^="flwp-overlay-container-"] .flwp-general-overlay-progress-bar {
+    width: 35%;
+    height: 100%;
+    background-color: #104689;
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+/* Header of General Overlay */
+.flwp-feedback-plugin[id^="flwp-overlay-container-"] .flwp-overlay-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    border-radius: 12px 12px 0 0;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 6px 20px;
+    position: relative;
+}
+
+/* Header indicator wrapper */
+.flwp-feedback-plugin[id^="flwp-overlay-container-"] .flwp-overlay-header-indicator-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Header Title */
+.flwp-feedback-plugin[id^="flwp-overlay-container-"] .flwp-overlay-header-title {
+    display: none;
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #222222;
+    text-align: center;
+}
+
+/* Header Step Indicator */
+.flwp-feedback-plugin[id^="flwp-overlay-container-"] .flwp-overlay-header-step-indicator {
+    display: none;
+    font-size: 13px;
+    font-weight: 500;
+    color: #6c757d;
+    text-align: center;
+}
+
+/* Overlay Body */
+.flwp-feedback-plugin[id^="flwp-overlay-container-"] .flwp-overlay-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+}
+
+/* Overlay Footer */
+.flwp-feedback-plugin[id^="flwp-overlay-container-"] .flwp-overlay-footer {
+    font-size: 11px;
+    text-align: center;
+    color: #6c757d;
+    border-top: 1px solid #e2e8f0;
+    padding: 10px 20px;
+}
+
+/* Mobile Optimization: Bottom Sheet transformation for General Overlay (< 640px) AND Preview Mobile Viewport */
+@media (max-width: 640px) {
+    .flwp-feedback-plugin.flwp-general-overlay-backdrop {
+        align-items: flex-end !important;
+        justify-content: center !important;
+        padding: 0 !important;
+    }
+
+    .flwp-feedback-plugin .flwp-general-overlay-modal,
+    .flwp-feedback-plugin.flwp-general-overlay-backdrop .flwp-general-overlay-modal,
+    .flwp-feedback-plugin.flwp-general-overlay-backdrop .flwp-overlay-card-pos-bottom-right,
+    .flwp-feedback-plugin.flwp-general-overlay-backdrop .flwp-overlay-card-pos-bottom-left,
+    .flwp-feedback-plugin.flwp-general-overlay-backdrop .flwp-overlay-card-pos-top-right,
+    .flwp-feedback-plugin.flwp-general-overlay-backdrop .flwp-overlay-card-pos-top-left,
+    .flwp-feedback-plugin.flwp-general-overlay-backdrop .flwp-overlay-card-pos-right-middle,
+    .flwp-feedback-plugin.flwp-general-overlay-backdrop .flwp-overlay-card-pos-left-middle,
+    .flwp-feedback-plugin.flwp-general-overlay-backdrop .flwp-overlay-card-pos-bottom-middle,
+    .flwp-feedback-plugin.flwp-general-overlay-backdrop .flwp-overlay-card-pos-top-middle,
+    .flwp-feedback-plugin.flwp-general-overlay-backdrop .flwp-overlay-card-pos-center {
+        width: 100% !important;
+        max-width: 100% !important;
+        max-height: 85vh !important;
+        border-radius: 20px 20px 0 0 !important;
+        margin: 0 !important;
+        border-bottom: none !important;
+        box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08) !important;
+        transform: translateY(100%) !important;
+        opacity: 0 !important;
+        transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease !important;
+    }
+
+    .flwp-feedback-plugin.flwp-general-overlay-backdrop.flwp-overlay-is-visible .flwp-general-overlay-modal,
+    .flwp-feedback-plugin.flwp-general-overlay-backdrop.flwp-overlay-is-visible .flwp-overlay-card-pos-bottom-right,
+    .flwp-feedback-plugin.flwp-general-overlay-backdrop.flwp-overlay-is-visible .flwp-overlay-card-pos-bottom-left,
+    .flwp-feedback-plugin.flwp-general-overlay-backdrop.flwp-overlay-is-visible .flwp-overlay-card-pos-top-right,
+    .flwp-feedback-plugin.flwp-general-overlay-backdrop.flwp-overlay-is-visible .flwp-overlay-card-pos-top-left,
+    .flwp-feedback-plugin.flwp-general-overlay-backdrop.flwp-overlay-is-visible .flwp-overlay-card-pos-right-middle,
+    .flwp-feedback-plugin.flwp-general-overlay-backdrop.flwp-overlay-is-visible .flwp-overlay-card-pos-left-middle,
+    .flwp-feedback-plugin.flwp-general-overlay-backdrop.flwp-overlay-is-visible .flwp-overlay-card-pos-bottom-middle,
+    .flwp-feedback-plugin.flwp-general-overlay-backdrop.flwp-overlay-is-visible .flwp-overlay-card-pos-top-middle,
+    .flwp-feedback-plugin.flwp-general-overlay-backdrop.flwp-overlay-is-visible .flwp-overlay-card-pos-center {
+        transform: translateY(0) !important;
+        opacity: 1 !important;
+    }
+
+    .flwp-feedback-plugin[id^="flwp-overlay-container-"] .flwp-overlay-header {
+        border-radius: 20px 20px 0 0 !important;
+    }
+
+    .flwp-feedback-plugin[id^="flwp-overlay-container-"] .flwp-overlay-body {
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch;
+        max-height: calc(85vh - 110px) !important;
+    }
+}
+
+/* Also trigger Mobile Bottom Sheet when previewing in .viewport-mobile container */
+.viewport-mobile .flwp-feedback-plugin.flwp-general-overlay-backdrop {
+    align-items: flex-end !important;
+    justify-content: center !important;
+    padding: 0 !important;
+}
+
+.viewport-mobile .flwp-feedback-plugin .flwp-general-overlay-modal,
+.viewport-mobile .flwp-feedback-plugin.flwp-general-overlay-backdrop .flwp-general-overlay-modal,
+.viewport-mobile .flwp-feedback-plugin.flwp-general-overlay-backdrop .flwp-overlay-card-pos-bottom-right,
+.viewport-mobile .flwp-feedback-plugin.flwp-general-overlay-backdrop .flwp-overlay-card-pos-bottom-left,
+.viewport-mobile .flwp-feedback-plugin.flwp-general-overlay-backdrop .flwp-overlay-card-pos-top-right,
+.viewport-mobile .flwp-feedback-plugin.flwp-general-overlay-backdrop .flwp-overlay-card-pos-top-left,
+.viewport-mobile .flwp-feedback-plugin.flwp-general-overlay-backdrop .flwp-overlay-card-pos-right-middle,
+.viewport-mobile .flwp-feedback-plugin.flwp-general-overlay-backdrop .flwp-overlay-card-pos-left-middle,
+.viewport-mobile .flwp-feedback-plugin.flwp-general-overlay-backdrop .flwp-overlay-card-pos-bottom-middle,
+.viewport-mobile .flwp-feedback-plugin.flwp-general-overlay-backdrop .flwp-overlay-card-pos-top-middle,
+.viewport-mobile .flwp-feedback-plugin.flwp-general-overlay-backdrop .flwp-overlay-card-pos-center {
+    width: 100% !important;
+    max-width: 100% !important;
+    max-height: 85vh !important;
+    border-radius: 20px 20px 0 0 !important;
+    margin: 0 !important;
+    border-bottom: none !important;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08) !important;
+    transform: translateY(100%) !important;
+    opacity: 0 !important;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease !important;
+}
+
+.viewport-mobile .flwp-feedback-plugin.flwp-general-overlay-backdrop.flwp-overlay-is-visible .flwp-general-overlay-modal,
+.viewport-mobile .flwp-feedback-plugin.flwp-general-overlay-backdrop.flwp-overlay-is-visible .flwp-overlay-card-pos-bottom-right,
+.viewport-mobile .flwp-feedback-plugin.flwp-general-overlay-backdrop.flwp-overlay-is-visible .flwp-overlay-card-pos-bottom-left,
+.viewport-mobile .flwp-feedback-plugin.flwp-general-overlay-backdrop.flwp-overlay-is-visible .flwp-overlay-card-pos-top-right,
+.viewport-mobile .flwp-feedback-plugin.flwp-general-overlay-backdrop.flwp-overlay-is-visible .flwp-overlay-card-pos-top-left,
+.viewport-mobile .flwp-feedback-plugin.flwp-general-overlay-backdrop.flwp-overlay-is-visible .flwp-overlay-card-pos-right-middle,
+.viewport-mobile .flwp-feedback-plugin.flwp-general-overlay-backdrop.flwp-overlay-is-visible .flwp-overlay-card-pos-left-middle,
+.viewport-mobile .flwp-feedback-plugin.flwp-general-overlay-backdrop.flwp-overlay-is-visible .flwp-overlay-card-pos-bottom-middle,
+.viewport-mobile .flwp-feedback-plugin.flwp-general-overlay-backdrop.flwp-overlay-is-visible .flwp-overlay-card-pos-top-middle,
+.viewport-mobile .flwp-feedback-plugin.flwp-general-overlay-backdrop.flwp-overlay-is-visible .flwp-overlay-card-pos-center {
+    transform: translateY(0) !important;
+    opacity: 1 !important;
+}
+
+.viewport-mobile .flwp-feedback-plugin .flwp-overlay-header {
+    border-radius: 20px 20px 0 0 !important;
+}
+
+.viewport-mobile .flwp-feedback-plugin .flwp-overlay-body {
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+    max-height: calc(85vh - 110px) !important;
+}
