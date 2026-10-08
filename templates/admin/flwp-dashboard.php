@@ -83,7 +83,7 @@ $formHelper = new FormHelper();
                                     <?php echo esc_html($data['title'] ?? '-'); ?>
                                 </span>
                                 <small style="color: var(--flwp-text-secondary); font-size: 11px;">
-                                    <?php echo date_i18n(get_option('date_format') . ' ' . get_option('time_format'), strtotime($item['created'])); ?>
+                                    <?php echo esc_html(date_i18n(get_option('date_format') . ' ' . get_option('time_format'), strtotime($item['created']))); ?>
                                     <span style="margin-left: 2px; opacity: 0.8;">| #<?php echo (int) $item['id']; ?></span>
                                 </small>
                             </div>

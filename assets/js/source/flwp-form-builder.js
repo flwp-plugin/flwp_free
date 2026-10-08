@@ -8,13 +8,6 @@ import { FormValidator } from '../components/flwp-form-builder-form-validator.js
 import { initFormBuilderTemplateDisplay } from '../components/flwp-form-builder-template-display.js';
 import { PreviewEngine } from '../components/flwp-form-builder-preview-engine.js';
 
-if (typeof window.flwpFormBuilder === 'undefined') {
-    window.flwpFormBuilder = {
-        nonce: 'mock-nonce',
-        ajaxurl: '/api/mock-ajax'
-    };
-}
-
 const flwpFormBuilder = window.flwpFormBuilder;
 
 const FLWPFormBuilder = (function() {
@@ -785,36 +778,22 @@ const FLWPFormBuilder = (function() {
                 upgradeCtaBtn.setAttribute("href", config.upgradeUrl);
             }
 
-            if (config.isPro) {
-                // If PRO version is active, remove all badges and blockers
-                document.querySelectorAll(".flwp-draggable-pro-item").forEach(el => {
-                    el.classList.remove("flwp-draggable-pro-item");
-                });
-                document.querySelectorAll(".flwp-pro-inline-badge").forEach(el => {
-                    el.style.display = "none";
-                });
-                document.querySelectorAll(".flwp-pro-feature-locked").forEach(el => {
-                    el.classList.remove("flwp-pro-feature-locked");
-                });
-            } else {
-                // If Free version is active, block click actions and show modal
-                const lockedFeatures = document.querySelectorAll(".flwp-pro-feature-locked");
-                lockedFeatures.forEach(feat => {
-                    feat.addEventListener("click", (e) => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        engine.openProUpgradeModal();
-                    }, true);
-                });
+            const lockedFeatures = document.querySelectorAll(".flwp-pro-feature-locked");
+            lockedFeatures.forEach(feat => {
+                feat.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    engine.openProUpgradeModal();
+                }, true);
+            });
 
-                const addUrlFilterBtn = document.getElementById("flwp-btn-add-url-filter");
-                if (addUrlFilterBtn) {
-                    addUrlFilterBtn.addEventListener("click", (e) => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        engine.openProUpgradeModal();
-                    }, true);
-                }
+            const addUrlFilterBtn = document.getElementById("flwp-btn-add-url-filter");
+            if (addUrlFilterBtn) {
+                addUrlFilterBtn.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    engine.openProUpgradeModal();
+                }, true);
             }
         },
         getActiveStep2TriggerId: function() {

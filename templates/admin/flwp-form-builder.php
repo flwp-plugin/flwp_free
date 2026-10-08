@@ -46,7 +46,7 @@ if (!empty($formId) && is_numeric($formId)) {
                             <input type="text" id="flwp-form-title" class="flwp-form-title-input" value="<?php echo (esc_html($formData['settings']['main']['title'] ?? '') ?? esc_html__('admin.page.builder.form_title.default', 'flwp'))?>" title="<?php echo esc_html__('admin.page.builder.form_title.edit_title', 'flwp') ?>" />
                             <i class="fas fa-pen text-xs" style="color: #94a3b8; cursor: pointer;"></i>
                         </div>
-	                    <span style="font-size: 11px; color: var(--flwp-text-secondary);"><?php esc_html_e('admin.page.builder.form_id', 'flwp'); ?>: <span id="flwp-active-form-id-display"><?php echo $displayedFormId ?></span>
+	                    <span style="font-size: 11px; color: var(--flwp-text-secondary);"><?php esc_html_e('admin.page.builder.form_id', 'flwp'); ?>: <span id="flwp-active-form-id-display"><?php echo esc_html($displayedFormId) ?></span>
 	                        <span style="margin-left: 12px; border-left: 1px solid rgba(255, 255, 255, 0.2); padding-left: 12px;"><?php esc_html_e('admin.page.builder.last_saved', 'flwp'); ?>: <span id="flwp-last-updated-display"><?php echo '-' ?></span></span>
 	                        <span style="margin-left: 12px; border-left: 1px solid rgba(255, 255, 255, 0.2); padding-left: 12px;"><?php esc_html_e('admin.page.builder.last_published', 'flwp'); ?>: <span id="flwp-last-published-display"><?php echo '-' ?></span></span>
 	                    </span>

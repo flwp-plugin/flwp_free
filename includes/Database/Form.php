@@ -112,7 +112,7 @@ class Form extends Database {
         $formats = [];
 
         // Extrahiere den Namen aus den JSON-Daten, falls vorhanden
-        $decoded_data = json_decode(stripslashes($data), true);
+        $decoded_data = json_decode($data, true);
 
         if (is_array($decoded_data)) {
             $form_helper = new FormHelper();

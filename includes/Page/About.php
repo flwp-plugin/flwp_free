@@ -130,7 +130,6 @@ class About extends Page {
             <li>Block Theme: <?php echo wp_is_block_theme() ? 'yes' : 'no'; ?></li>
             <li>FLWP: <?php echo esc_html(FLWP_VERSION); ?></li>
             <li>FLWP (DB): <?php echo esc_html(FLWP_DB_VERSION); ?></li>
-            <li>Plan: <?php echo flwp_fs()->can_use_premium_code__premium_only() ? 'Pro' : 'Free'?></li>
             <li>WordPress: <?php echo esc_html(wp_get_wp_version()); ?></li>
             <li>Multisite: <?php echo is_multisite() ? 'yes' : 'no'; ?></li>
             <li>PHP: <?php echo esc_html(PHP_VERSION); ?></li>

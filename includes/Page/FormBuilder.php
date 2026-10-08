@@ -71,9 +71,6 @@ class FormBuilder extends Page {
 		    'formPublishedTimestamp' => $form_published ? $form_published->getTimestamp() : null,
 		    'pluginVersion'          => FLWP_VERSION,
 		    'pluginUrl'              => FLWP_PLUGIN_URL,
-		    'isPro'                  => flwp_fs()->can_use_premium_code__premium_only() ? 1 : 0,
-		    'upgradeUrl'             => flwp_fs()->get_upgrade_url(),
-			'can_use_premium_code'   => flwp_fs()->can_use_premium_code__premium_only(),
 		]);
 
         $this->data = [

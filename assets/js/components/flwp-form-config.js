@@ -9,29 +9,19 @@ let formTemplates = '';
 let isPro = false;
 let upgradeUrl = 'https://flwp.de';
 let locale = 'en_GB';
-let can_use_premium_code = false;
 if (typeof flwpFormBuilder !== "undefined") {
-    const backendIsPro = parseInt(flwpFormBuilder.isPro || flwpAdmin.isPro);
     fieldTypesConfig = flwpFormBuilder.fieldTypesConfig || '';
     formTemplates = flwpFormBuilder.formTemplates || '';
-    isPro = backendIsPro === 1;
-    upgradeUrl = flwpFormBuilder.upgradeUrl || 'https://flwp.de';
     locale = flwpFormBuilder.locale || 'en_GB';
-    can_use_premium_code = flwpFormBuilder.can_use_premium_code || false;
 }
 
 if (typeof flwpAdmin !== "undefined") {
-    const backendIsPro = parseInt(flwpAdmin.isPro || 0);
-    isPro = backendIsPro === 1;
-    upgradeUrl = flwpAdmin.upgradeUrl || 'https://flwp.de';
     locale = flwpAdmin.locale || 'en_GB';
-    can_use_premium_code = flwpAdmin.can_use_premium_code || false;
 }
 
 export const config = {
     isPro: isPro,
     upgradeUrl: upgradeUrl,
-    can_use_premium_code: can_use_premium_code,
     locale: locale,
     localeV2: locale.replace('_', '-'),
     CONTEXT: {

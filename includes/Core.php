@@ -22,11 +22,6 @@ class Core {
     }
 
 	public static function plugin_activation() {
-		$pluginBasename = 'flwp/flwp.php';
-		if (is_plugin_active($pluginBasename)) {
-			deactivate_plugins($pluginBasename);
-		}
-
 		\FLWP\Database\Database::update_check();
 	}
 }

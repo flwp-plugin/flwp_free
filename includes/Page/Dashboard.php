@@ -4,7 +4,6 @@ namespace FLWP\Page;
 
 use FLWP\Database\FormFeedback;
 use FLWP\EnvironmentChecks;
-use FLWP\Lists\FormFeedbackListTable;
 
 /**
  * Dashboard Page class.

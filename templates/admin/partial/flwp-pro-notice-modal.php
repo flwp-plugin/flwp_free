@@ -3,8 +3,8 @@ if (!defined('ABSPATH')) {
 	exit;
 }
 
-$finalProNoticeHeadline = (!empty($proNoticeHeadline) ? esc_html($proNoticeHeadline) : esc_html__('admin.builder.pro.headline', 'flwp'));
-$finalProNoticeIntro = (!empty($proNoticeIntro) ? wp_kses($proNoticeIntro, ['strong' => []]) : wp_kses('admin.builder.pro.intro', ['strong' => []]));
+$finalProNoticeHeadline = (!empty($proNoticeHeadline) ? $proNoticeHeadline : __('admin.builder.pro.headline', 'flwp'));
+$finalProNoticeIntro = (!empty($proNoticeIntro) ? $proNoticeIntro : __('admin.builder.pro.intro', 'flwp'));
 $finalProNoticeAdvantages = $proNoticeAdvantages ?? [
     esc_html__('admin.builder.pro.advantage.1', 'flwp'),
     esc_html__('admin.builder.pro.advantage.2', 'flwp'),
@@ -26,9 +26,9 @@ $finalProNoticeAdvantages = $proNoticeAdvantages ?? [
                 <div style="font-size: 48px; margin-bottom: 12px; color: var(--flwp-warning);">
                     <i class="fas fa-gem"></i>
                 </div>
-                <h4 style="font-size: 18px; font-weight: 700; color: var(--flwp-text); margin-bottom: 8px;"><?php echo $finalProNoticeHeadline ?></h4>
+                <h4 style="font-size: 18px; font-weight: 700; color: var(--flwp-text); margin-bottom: 8px;"><?php echo esc_html($finalProNoticeHeadline) ?></h4>
                 <p style="color: var(--flwp-text-secondary); font-size: 13.5px; line-height: 1.5; margin: 0;">
-                    <?php echo $finalProNoticeIntro ?>
+                    <?php echo wp_kses($finalProNoticeIntro, ['strong' => []]) ?>
                 </p>
             </div>
 
@@ -45,7 +45,7 @@ $finalProNoticeAdvantages = $proNoticeAdvantages ?? [
             </div>
         </div>
         <div class="flwp-modal-footer" style="padding: 16px 24px; border-top: 1px solid var(--flwp-border); display: flex; justify-content: center; gap: 12px; background-color: var(--flwp-bg); border-bottom-left-radius: 12px; border-bottom-right-radius: 12px;">
-            <a href="<?php echo esc_url(flwp_fs()->get_upgrade_url()) ?>" target="_blank" class="flwp-btn" id="flwp-btn-pro-upgrade-cta" style="background-color: var(--flwp-primary); color: white; font-weight: 600; padding: 8px 20px; border-radius: 6px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--flwp-primary); box-shadow: var(--flwp-shadow-md); transition: all 0.2s; height: auto;">
+            <a href="<?php echo esc_url('https://flwp.de') ?>" target="_blank" class="flwp-btn" id="flwp-btn-pro-upgrade-cta" style="background-color: var(--flwp-primary); color: white; font-weight: 600; padding: 8px 20px; border-radius: 6px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--flwp-primary); box-shadow: var(--flwp-shadow-md); transition: all 0.2s; height: auto;">
                 <i class="fas fa-shopping-cart"></i> <?php esc_html_e('admin.builder.pro.cta_text', 'flwp'); ?>
             </a>
         </div>

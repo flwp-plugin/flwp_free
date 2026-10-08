@@ -2,8 +2,6 @@
 
 namespace FLWP\Page;
 
-use FLWP\Lists\FormFeedbackListTable;
-
 /**
  * Feedbacks Page class.
  */
@@ -24,13 +22,6 @@ class Feedbacks extends Page {
 			wp_safe_redirect(admin_url('admin.php?page=flwp-form-feedbacks'));
 			exit;
 		}
-
-        $feedback_table = new FormFeedbackListTable();
-        $feedback_table->prepare_items();
-
-        $this->data = [
-            'feedback_table' => $feedback_table,
-        ];
 
         parent::render();
     }

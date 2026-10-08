@@ -16,10 +16,8 @@ if (!class_exists('WP_List_Table')) {
 class FormListTable extends WP_List_Table
 {
 
-	public $isFree = false;
 	public $total_items = 0;
 	protected $adminNonce = '';
-
 
 	public function __construct()
 	{
@@ -104,14 +102,12 @@ class FormListTable extends WP_List_Table
 			),
 		];
 
-		if (!$this->isFree || $this->total_items < 3) {
-			$actions['duplicate'] = sprintf(
-				'<a href="?page=flwp-forms&action=duplicate&id=%d&nonce=%s">%s</a>',
-				(int)$item->getId(),
-				esc_attr($this->adminNonce),
-				esc_html__('admin.form_list.actions.duplicate', 'flwp')
-			);
-		}
+		$actions['duplicate'] = sprintf(
+			'<a href="?page=flwp-forms&action=duplicate&id=%d&nonce=%s">%s</a>',
+			(int)$item->getId(),
+			esc_attr($this->adminNonce),
+			esc_html__('admin.form_list.actions.duplicate', 'flwp')
+		);
 
 		$actions['delete'] = sprintf(
 			'<a href="?page=flwp-forms&action=delete&id=%d&nonce=%s" class="flwp-delete-form-js" data-name="%s">%s</a>',

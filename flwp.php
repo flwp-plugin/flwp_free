@@ -34,66 +34,6 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-if ( ! function_exists( 'flwp_fs' ) ) {
-    // Create a helper function for easy SDK access.
-    function flwp_fs() {
-        global $flwp_fs;
-
-        if ( ! isset( $flwp_fs ) ) {
-            // Include Freemius SDK.
-            require_once dirname( __FILE__ ) . '/vendor/freemius/start.php';
-
-            $flwp_fs = fs_dynamic_init( array(
-                'id'                  => '34450',
-                'slug'                => 'flwp',
-                'type'                => 'plugin',
-                'public_key'          => 'pk_2425a5921378f3dd6a5cb14b00a30',
-                'is_premium'          => true,
-                'premium_suffix'      => 'Pro',
-                // If your plugin is a serviceware, set this option to false.
-                'has_premium_version' => true,
-                'has_addons'          => false,
-                'has_paid_plans'      => true,
-                'is_org_compliant'    => true,
-                // Automatically removed in the free version. If you're not using the
-                // auto-generated free version, delete this line before uploading to wp.org.
-                'wp_org_gatekeeper'   => 'OA7#BoRiBNqdf52FvzEf!!074aRLPs8fspif$7K1#4u4Csys1fQlCecVcUTOs2mcpeVHi#C2j9d09fOTvbC0HloPT7fFee5WdS3G',
-                'has_affiliation'     => 'all',
-                'menu'                => array(
-                    'slug'           => 'flwp-dashboard',
-                    'first-path'     => 'admin.php?page=flwp-dashboard',
-                    'contact'        => false,
-                    'support'        => false,
-                ),
-            ) );
-        }
-
-        return $flwp_fs;
-    }
-
-    // Init Freemius.
-    flwp_fs();
-    // Signal that SDK was initiated.
-    do_action( 'flwp_fs_loaded' );
-}
-
-/**
- * Cleanup data when uninstall.
- *
- * Since Freemius tracks the uninstall event, using uninstall.php, the uninstall data will not be sent, including
- * the feedback from the user. So, we'll need to hook into Freemius's "after_uninstall".
- *
- * @since 1.0.2
- */
-if (!function_exists('flwp_fs_uninstall_cleanup')) {
-	function flwp_fs_uninstall_cleanup()
-	{
-		\FLWP\Database\Database::uninstall_cleanup();
-	}
-}
-
-flwp_fs()->add_action( 'after_uninstall', 'flwp_fs_uninstall_cleanup' );
-
 // Konstanten definieren
 if (!defined('FLWP_PLUGIN_NAME_PREFIX')) {
 	define('FLWP_PLUGIN_NAME_PREFIX', 'FLWP_');

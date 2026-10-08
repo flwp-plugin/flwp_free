@@ -103,9 +103,9 @@ class EnvironmentChecks {
                 <strong>
                 <?php
                 if (current_user_can('update_core')) {
-                    printf(esc_html__('admin.env_check.wp.update_core', 'flwp'), esc_url(self_admin_url('update-core.php')), self::MIN_WP_VERSION);
+                    printf(esc_html__('admin.env_check.wp.update_core', 'flwp'), esc_url(self_admin_url('update-core.php')), esc_html(self::MIN_WP_VERSION));
                 } else {
-                    printf(esc_html__('admin.env_check.wp.ask_admin', 'flwp'), self::MIN_WP_VERSION);
+                    printf(esc_html__('admin.env_check.wp.ask_admin', 'flwp'), esc_html(self::MIN_WP_VERSION));
                 }
                 ?>
                 </strong>
@@ -125,7 +125,7 @@ class EnvironmentChecks {
                 <?php esc_html_e('admin.env_check.error.title', 'flwp'); ?>
             </em></h3>
             <p style="font-size:14px">
-                <?php printf(esc_html__('admin.env_check.php.too_old', 'flwp'), self::MIN_PHP_VERSION); ?>
+                <?php printf(esc_html__('admin.env_check.php.too_old', 'flwp'), esc_html(self::MIN_PHP_VERSION)); ?>
             </p>
             <p style="font-size:14px">
                 <strong><?php printf(esc_html__('admin.env_check.php.update_link', 'flwp'), esc_url(wp_get_update_php_url())); ?></strong>
