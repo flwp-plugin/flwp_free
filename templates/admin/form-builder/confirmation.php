@@ -39,7 +39,7 @@ if (!defined('ABSPATH')) {
 
             <?php
             wp_editor(
-                    esc_html_e('admin.builder.confirmation.confirm_message.default', 'flwp'),
+                    esc_html__('admin.builder.confirmation.confirm_message.default', 'flwp'),
                     'flwp_confirm_message_text',
                     [
                             'media_buttons' => false,

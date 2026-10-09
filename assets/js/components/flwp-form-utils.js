@@ -620,7 +620,7 @@ export const utils = {
             }
         }
 
-        if (!stateObj.steps.step2[triggerId]) {
+        if (!stateObj.steps.step2[triggerId] || !stateObj.steps.step2[triggerId].length) {
             const baseMs = Date.now();
             stateObj.steps.step2[triggerId] = [
                 { id: `flwp-el-${baseMs}`, type: "headline", label: __("admin.builder.default_step2.headline"), settings: { fontSize: "inherit", alignment: "left" } },

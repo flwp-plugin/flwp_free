@@ -28,9 +28,14 @@ class FormDataSanitizer
 		} else {
 			$this->removed[] = $path . ': ' . $reason;
 		}
-		if (defined('WP_DEBUG') && WP_DEBUG && defined('WP_DEBUG_LOG') && WP_DEBUG_LOG) {
+		if (
+			defined( 'WP_DEBUG' ) && WP_DEBUG &&
+			defined( 'WP_DEBUG_LOG' ) && WP_DEBUG_LOG
+		) {
 			error_log(
-				'[FLWP FormDataSanitizer] ' . ($fatal ? 'Invalid: ' : 'Removed/adjusted: ') . $path . ' (' . $reason . ')'
+				'[FLWP FormDataSanitizer] ' .
+				( $fatal ? 'Invalid: ' : 'Removed/adjusted: ' ) .
+				$path . ' (' . $reason . ')'
 			);
 		}
 	}
@@ -109,7 +114,13 @@ class FormDataSanitizer
 			return wp_kses_post($value);
 		}
 		if ('text' === $rule) {
-			return sanitize_text_field($value);
+			$clean = sanitize_text_field( $value );
+
+			if ($clean !== $value) {
+				$this->report($path, 'Text sanitized');
+			}
+
+			return $clean;
 		}
 		if ('email' === $rule) {
 			return sanitize_email($value);
@@ -197,6 +208,15 @@ class FormDataSanitizer
 			return $value;
 		}
 
+		if ('lineheight' === $rule) {
+			if (!preg_match('/^(?:normal|(?:\d+(?:\.\d+)?)(?:px|%|em|rem)?)$/D', $value)) {
+				$this->report($path, 'Invalid line height', true);
+				return '';
+			}
+
+			return $value;
+		}
+
 		return sanitize_text_field($value);
 	}
 
@@ -207,7 +227,8 @@ class FormDataSanitizer
 			'right'  => 'csslength',
 			'bottom' => 'csslength',
 			'left'   => 'csslength',
-			'unit'   => 'enum:px|%|em|rem'
+			'unit'   => 'enum:px|%|em|rem',
+			'linked' => 'bool',
 		];
 	}
 
@@ -221,9 +242,17 @@ class FormDataSanitizer
 					'margin'          => $this->spacing_box_schema(),
 					'position'        => 'enum:left|center|right',
 					'minHeight'       => 'int',
-					'customMinHeight' => 'int'
+					'customMinHeight' => 'int',
+					'maxWidth'        => 'int',
 				],
-				'design'  => ['customStylesEnabled' => 'bool', 'bgColor' => 'color', 'borderColor' => 'color'],
+				'design' => [
+					'customStylesEnabled' => 'bool',
+					'bgColor'             => 'color',
+					'borderColor'         => 'color',
+					'borderStyle'         => 'enum:none|solid|dashed|dotted|double',
+					'borderWidth'         => 'int',
+					'borderRadius'        => 'int',
+				],
 			];
 		}
 
@@ -240,13 +269,14 @@ class FormDataSanitizer
 				'hideFooter'       => 'bool'
 			],
 			'spacing' => [
-				'position'     => 'enum:center|top-left|top-right|bottom-left|bottom-right|left|right|top|bottom',
-				'overlayWidth' => 'csslength'
+				'position'     => 'enum:center|bottom-right|bottom-left|bottom-middle|right-middle|left-middle|top-right|top-middle|top-left',
+				'overlayWidth' => 'int'
 			],
 			'design'  => [
-				'headerIndicator'  => 'enum:progress|step|none',
+				'headerIndicator'  => 'enum:progress|title|step|none',
 				'showFooterText'   => 'bool',
-				'customFooterText' => 'text'
+				'customFooterText' => 'text',
+				'headerTitle' => 'text',
 			],
 		];
 	}
@@ -256,7 +286,8 @@ class FormDataSanitizer
 		return [
 			'exitIntent' => ['delay' => 'delay'],
 			'scroll'     => ['type' => 'enum:end|percent', 'percent' => 'percent'],
-			'click'      => ['selector' => 'selector', 'hideOnClose' => 'bool'],
+			'click'      => ['selector' => 'selector', 'hideOnClose' => 'bool',	'hideOnSubmit' => 'bool'],
+			'delay'      => ['seconds' => 'int'],
 		];
 	}
 
@@ -288,7 +319,7 @@ class FormDataSanitizer
 				} else {
 					$schema += [
 						'text'                => 'text',
-						'position'            => 'enum:left-top|left-middle|left-bottom|right-top|right-middle|right-bottom',
+						'position'            => 'enum:right-middle|left-middle|bottom-right|bottom-middle|bottom-left',
 						'customStylesEnabled' => 'bool',
 						'hideOptionEnabled'   => 'bool',
 						'fontSize'            => 'positive',
@@ -425,6 +456,10 @@ class FormDataSanitizer
 			'alignment'           => 'enum:left|center|right',
 			'fontSize'            => 'csslength',
 			'hideLabel'           => 'bool',
+			'bold'                => 'bool',
+			'italic'              => 'bool',
+			'underline'           => 'bool',
+			'lineHeight'          => 'lineheight',
 			'customColorsEnabled' => 'bool',
 			'bgColor'             => 'color',
 			'textColor'           => 'color',
@@ -433,18 +468,26 @@ class FormDataSanitizer
 			'hoverTextColor'      => 'color',
 			'hoverBorderColor'    => 'color',
 			'icon'                => 'icon',
+			'iconPosition' => 'enum:left|right',
+			'width'               => 'enum:100%|50%|33%|25%',
+			'clearBefore'         => 'bool',
 		];
 		if ('button' === $type) {
 			return $common + [
 					'buttonType'   => 'enum:next|back|submit',
-					'iconPosition' => 'enum:left|right',
 					'width'        => 'csslength',
 					'fullWidth'    => 'bool',
-					'step2Enabled' => 'bool'
+					'step2Enabled' => 'bool',
+					'borderRadius' => 'csslength',
 				];
 		}
 		if ('textarea' === $type) {
 			return $common + ['placeholder' => 'text', 'required' => 'bool'];
+		}
+		if ('headline' === $type) {
+			return $common + [
+					'hType' => 'enum:h1|h2|h3|h4|h5|h6|div',
+				];
 		}
 		if (in_array($type, ['rating', 'thumbs', 'smileys', 'nps'], true)) {
 			return $common + [
@@ -500,6 +543,7 @@ class FormDataSanitizer
 				$this->report($path . '.' . $key, 'Unknown key');
 			}
 		}
+
 		$ids = [];
 		$out = ['step1' => $this->sanitize_fields($value['step1'] ?? null, $path . '.step1', $ids), 'step2' => []];
 		$triggers = [];
@@ -511,7 +555,9 @@ class FormDataSanitizer
 		$step2 = $this->object($value['step2'] ?? [], $path . '.step2');
 		foreach ($step2 as $trigger_id => $fields) {
 			if (!isset($triggers[$trigger_id])) {
-				$this->report($path . '.step2.' . $trigger_id, 'Orphaned step2 reference', true);
+				unset($out['step2'][$trigger_id]);
+
+				$this->report($path . '.step2.' . $trigger_id, 'Orphaned step2 reference');
 				continue;
 			}
 			$out['step2'][$trigger_id] = $this->sanitize_fields($fields, $path . '.step2.' . $trigger_id, $ids);
@@ -584,6 +630,14 @@ class FormDataSanitizer
 				$out['steps'] = $this->sanitize_steps($value, 'steps');
 			} elseif ('activeStep2TriggerId' === $key) {
 				$out[$key] = '' === $value ? '' : $this->scalar($value, 'id', $key);
+
+				if (!empty($out[$key])) {
+					foreach ($out['steps']['step1'] as $stepField) {
+						if ($stepField['id'] === $out[$key] && empty($stepField['settings']['step2Enabled'])) {
+							$out[$key] = '';
+						}
+					}
+				}
 			} elseif ('status' === $key) {
 				$out['status'] = $this->scalar($value, 'int', 'status');
 			} elseif ('id' === $key) {
@@ -600,7 +654,7 @@ class FormDataSanitizer
 		if (isset($out['activeStep2TriggerId']) && '' !== $out['activeStep2TriggerId']) {
 			$trigger_id = $out['activeStep2TriggerId'];
 			if (!isset($out['steps']['step2'][$trigger_id])) {
-				$this->report('activeStep2TriggerId', 'Unknown step2 reference', true);
+				$this->report('activeStep2TriggerId', 'Unknown step2 reference', false);
 			}
 		}
 		if ($this->errors) {
