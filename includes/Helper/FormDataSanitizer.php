@@ -5,6 +5,10 @@ namespace FLWP\Helper;
 
 use WP_Error;
 
+if (!defined('ABSPATH')) {
+	exit;
+}
+
 class FormDataSanitizer
 {
 	private $allowed_fields;

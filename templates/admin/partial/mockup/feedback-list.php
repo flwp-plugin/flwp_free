@@ -8,6 +8,10 @@
  * - no functional actions
  */
 
+if (!defined('ABSPATH')) {
+	exit;
+}
+
 $mock_feedbacks = array(
 	array( 120, 78, 'Overlay',         'Website Feedback',       '/blog/wordpress-feedback/',      'Unread',   '07.10.2026 17:08' ),
 	array( 119, 77, 'Feedback Button', 'General Feedback',       '/products/',                     'Unread',   '07.10.2026 17:02' ),

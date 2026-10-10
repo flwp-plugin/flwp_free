@@ -124,13 +124,17 @@ class FormFeedbackListTable extends WP_List_Table {
 
     public function extra_tablenav( $which ) {
         if ( $which === 'top' ) {
+			// phpcs:disable WordPress.Security.NonceVerification.Recommended -- Read-only GET parameters for filter prefill.
 			$range = !empty($_GET['filter_range']) ? sanitize_text_field(wp_unslash($_GET['filter_range'])) : '';
 			$start_date = !empty($_GET['filter_start_date']) ? sanitize_text_field(wp_unslash($_GET['filter_start_date'])) : '';
 			$end_date = !empty($_GET['filter_end_date']) ? sanitize_text_field(wp_unslash($_GET['filter_end_date'])) : '';
+			$filterFormType = !empty($_GET['filter_form_type']) ? sanitize_text_field(wp_unslash($_GET['filter_form_type'])) : '';
+			$filterStatus = !empty($_GET['filter_status']) ? sanitize_text_field(wp_unslash($_GET['filter_status'])) : '';
+			$formId = !empty($_GET['filter_form_id']) ? (int) $_GET['filter_form_id'] : '';
 			$date_style = ($range === 'custom') ? '' : 'display:none;';
+			// phpcs:enable WordPress.Security.NonceVerification.Recommended
             ?>
             <div class="alignleft actions">
-                <?php $form_id_filter = !empty( $_GET['filter_form_id'] ) ? (int) $_GET['filter_form_id'] : ''; ?>
                 <select name="filter_form_id" id="filter-form-id-select">
                     <option value=""><?php esc_html_e( 'admin.form_list.filter.form', 'flwp' ); ?></option>
                     <?php
@@ -140,7 +144,7 @@ class FormFeedbackListTable extends WP_List_Table {
                         printf(
                                 '<option value="%d" %s>%d %s</option>',
 								(int) $form->getId(),
-                                selected($form_id_filter, (int) $form->getId(), false),
+                                selected($formId, (int) $form->getId(), false),
 								(int) $form->getId(),
                                 esc_html($form->getName())
                         );
@@ -148,20 +152,18 @@ class FormFeedbackListTable extends WP_List_Table {
                     ?>
                 </select>
 
-                <?php $form_type_filter = ! empty( $_GET['filter_form_type'] ) ? sanitize_text_field(wp_unslash($_GET['filter_form_type'] )) : ''; ?>
                 <select name="filter_form_type" id="filter-form-type-select">
                     <option value=""><?php esc_html_e( 'admin.form_list.display_type', 'flwp' ); ?></option>
                     <?php foreach ($this->formHelper->get_form_type_name_mapping() as $type => $name) : ?>
-                        <option value="<?php echo esc_attr($type); ?>" <?php selected($form_type_filter, $type); ?>><?php echo esc_html($name); ?></option>
+                        <option value="<?php echo esc_attr($type); ?>" <?php selected($filterFormType, $type); ?>><?php echo esc_html($name); ?></option>
                     <?php endforeach; ?>
                 </select>
 
-                <?php $status_filter = ! empty( $_GET['filter_status'] ) ? sanitize_text_field(wp_unslash($_GET['filter_status'] )) : ''; ?>
                 <select name="filter_status" id="filter-status-select">
                     <option value=""><?php esc_html_e( 'admin.form_list.filter.status.placeholder', 'flwp' ); ?></option>
-                    <option value="unread" <?php selected( $status_filter, 'unread' ); ?>><?php esc_html_e( 'admin.form_list.filter.status.unread', 'flwp' ); ?></option>
-                    <option value="read" <?php selected( $status_filter, 'read' ); ?>><?php esc_html_e( 'admin.form_list.filter.status.read', 'flwp' ); ?></option>
-                    <option value="archived" <?php selected( $status_filter, 'archived' ); ?>><?php esc_html_e( 'admin.form_list.filter.status.archived', 'flwp' ); ?></option>
+                    <option value="unread" <?php selected( $filterStatus, 'unread' ); ?>><?php esc_html_e( 'admin.form_list.filter.status.unread', 'flwp' ); ?></option>
+                    <option value="read" <?php selected( $filterStatus, 'read' ); ?>><?php esc_html_e( 'admin.form_list.filter.status.read', 'flwp' ); ?></option>
+                    <option value="archived" <?php selected( $filterStatus, 'archived' ); ?>><?php esc_html_e( 'admin.form_list.filter.status.archived', 'flwp' ); ?></option>
                 </select>
 
                 <select name="filter_range" id="filter-range-select">
@@ -189,6 +191,12 @@ class FormFeedbackListTable extends WP_List_Table {
     }
 
     public function prepare_items() {
+		if (!current_user_can('manage_options')) {
+			wp_die(
+				esc_html__('You do not have permission to access this page.', 'flwp')
+			);
+		}
+
         $columns  = $this->get_columns();
         $hidden   = [];
         $sortable = $this->get_sortable_columns();
@@ -198,15 +206,16 @@ class FormFeedbackListTable extends WP_List_Table {
         $per_page     = 20;
         $current_page = $this->get_pagenum();
 
-		$orderby = (!empty($_GET['orderby'])) ? sanitize_text_field(wp_unslash($_GET['orderby'])) : 'created';
-		$order = (!empty($_GET['order'])) ? sanitize_text_field(wp_unslash($_GET['order'])) : 'desc';
-
-		$filter_range = !empty($_GET['filter_range']) ? sanitize_text_field(wp_unslash($_GET['filter_range'])) : '';
-		$filter_status = !empty($_GET['filter_status']) ? sanitize_text_field(wp_unslash($_GET['filter_status'])) : '';
-		$filter_form_type = !empty($_GET['filter_form_type']) ? sanitize_text_field(wp_unslash($_GET['filter_form_type'])) : '';
-		$filter_form_id = !empty($_GET['filter_form_id']) ? (int) wp_unslash($_GET['filter_form_id']) : '';
-		$filter_start_date = !empty($_GET['filter_start_date']) ? sanitize_text_field(wp_unslash($_GET['filter_start_date'])) : '';
-		$filter_end_date = !empty($_GET['filter_end_date']) ? sanitize_text_field(wp_unslash($_GET['filter_end_date'])) : '';
+		// phpcs:disable WordPress.Security.NonceVerification.Recommended -- Sorting and filtering are read-only operations.
+		$orderby = (!empty($_GET['orderby'])) ? sanitize_sql_orderby(wp_unslash($_GET['orderby'] ?? '')) : 'created';
+		$order = (!empty($_GET['order'])) ? sanitize_text_field(wp_unslash($_GET['order'] ?? '')) : 'desc';
+		$filter_range = !empty($_GET['filter_range']) ? sanitize_text_field(wp_unslash($_GET['filter_range'] ?? '')) : '';
+		$filter_status = !empty($_GET['filter_status']) ? sanitize_text_field(wp_unslash($_GET['filter_status'] ?? '')) : '';
+		$filter_form_type = !empty($_GET['filter_form_type']) ? sanitize_text_field(wp_unslash($_GET['filter_form_type'] ?? '')) : '';
+		$filter_form_id = !empty($_GET['filter_form_id']) ? sanitize_text_field(wp_unslash($_GET['filter_form_id'] ?? '')) : '';
+		$filter_start_date = !empty($_GET['filter_start_date']) ? sanitize_text_field(wp_unslash($_GET['filter_start_date'] ?? '')) : '';
+		$filter_end_date = !empty($_GET['filter_end_date']) ? sanitize_text_field(wp_unslash($_GET['filter_end_date'] ?? '')) : '';
+		// phpcs:enable WordPress.Security.NonceVerification.Recommended
 
         // Map orderby to DB columns
         $mapping = [
@@ -244,31 +253,6 @@ class FormFeedbackListTable extends WP_List_Table {
                 'feedback_entity' => $feedback
             ];
         }
-
-		$requestUri = sanitize_url(wp_unslash($_SERVER['REQUEST_URI'] ?? ''));
-		// Preserve parameters in pagination and sorting links
-		if (!empty($filter_range)) {
-			$requestUri = add_query_arg('filter_range', $filter_range, $requestUri);
-		}
-		if (!empty($filter_status)) {
-			$requestUri = add_query_arg('filter_status', $filter_status, $requestUri);
-		}
-		if (!empty($filter_form_type)) {
-			$requestUri = add_query_arg('filter_form_type', $filter_form_type, $requestUri);
-		}
-		if (!empty($filter_form_id)) {
-			$requestUri = add_query_arg('filter_form_id', $filter_form_id, $requestUri);
-		}
-		if (!empty($filter_start_date)) {
-			$requestUri = add_query_arg('filter_start_date', $filter_start_date, $requestUri);
-		}
-		if (!empty($filter_end_date)) {
-			$requestUri = add_query_arg('filter_end_date', $filter_end_date, $requestUri);
-		}
-
-		if (!empty($requestUri)) {
-			$_SERVER['REQUEST_URI'] = $requestUri;
-		}
 
         $this->set_pagination_args( [
             'total_items' => $total_items,

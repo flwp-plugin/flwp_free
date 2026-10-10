@@ -22,11 +22,6 @@ class Feedbacks extends Page {
 	 * Prepares data for the feedback list page.
 	 */
 	public function render() {
-		if (!empty($_GET['filter_action']) && (!isset($_GET['nonce']) || !wp_verify_nonce(sanitize_text_field(wp_unslash($_GET['nonce'])), 'flwp_admin_nonce'))) {
-			wp_safe_redirect(admin_url('admin.php?page=flwp-form-feedbacks'));
-			exit;
-		}
-
 		$feedback_table = new FormFeedbackListTable();
 		$feedback_table->prepare_items();
 

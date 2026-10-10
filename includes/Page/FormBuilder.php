@@ -28,7 +28,11 @@ class FormBuilder extends Page {
 		$langugageHelper = new LanguageHelper();
 		$currentLocale = $langugageHelper->get_current_locale();
 
-        $form_id = isset($_GET['id']) ? (int) $_GET['id'] : 0;
+		$form_id = 0;
+		if (!empty($_GET['id']) && wp_verify_nonce(sanitize_text_field(wp_unslash($_GET['nonce'] ?? '')), 'flwp_admin_nonce')) {
+			$form_id = absint(wp_unslash($_GET['id']));
+		}
+
         $form_data = json_encode($configHelper->get_default_form_config(), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
         $form_updated = '';
 		$form_saved = null;

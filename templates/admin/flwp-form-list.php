@@ -30,6 +30,7 @@ if (!defined('ABSPATH')) {
 
 	<form method="get">
 		<input type="hidden" name="page" value="flwp-forms" />
+		<?php wp_nonce_field('flwp_admin_nonce', 'nonce'); ?>
 		<?php
 		$form_table->display();
 		?>

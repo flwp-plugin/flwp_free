@@ -143,6 +143,12 @@ class FormListTable extends WP_List_Table
 
 	public function prepare_items()
 	{
+		if (!current_user_can('manage_options')) {
+			wp_die(
+				esc_html__('You do not have permission to access this page.', 'flwp')
+			);
+		}
+
 		$columns = $this->get_columns();
 		$hidden = [];
 		$sortable = $this->get_sortable_columns();
@@ -152,8 +158,10 @@ class FormListTable extends WP_List_Table
 		$per_page = 20;
 		$current_page = $this->get_pagenum();
 
+		// phpcs:disable WordPress.Security.NonceVerification.Recommended -- Sorting and filtering are read-only operations.
 		$orderby = (!empty($_GET['orderby'])) ? sanitize_text_field(wp_unslash($_GET['orderby'])) : 'updated';
 		$order = (!empty($_GET['order'])) ? sanitize_text_field(wp_unslash($_GET['order'])) : 'desc';
+		// phpcs:enable WordPress.Security.NonceVerification.Recommended
 
 		// Map orderby to DB columns
 		$mapping = [

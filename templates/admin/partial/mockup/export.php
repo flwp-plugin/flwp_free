@@ -9,6 +9,11 @@
  * - no functional controls
  */
 
+if (!defined('ABSPATH')) {
+	exit;
+}
+
+
 $mock_forms = array(
 	array(
 		'id'   => 76,

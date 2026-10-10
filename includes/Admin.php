@@ -222,6 +222,7 @@ class Admin {
         }
 
 		$form_id = isset($_POST['form_id']) ? absint($_POST['form_id']) : 0;
+		// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- JSON is validated and sanitized field-by-field by FormDataSanitizer.
 		$raw_data = (isset($_POST['form_data']) && is_string($_POST['form_data'])) ? wp_unslash($_POST['form_data']) : '';
 		$type = isset($_POST['type']) && is_string($_POST['type']) ? sanitize_key(wp_unslash($_POST['type'])) : 'preview';
 
@@ -234,8 +235,12 @@ class Admin {
 		}
 
 		$decoded_data = json_decode($raw_data, true);
-		if (empty($decoded_data) || is_array($decoded_data) === false) {
-			wp_send_json_error(esc_html__('Invalid data', 'flwp'));
+		if (
+			JSON_ERROR_NONE !== json_last_error() ||
+			!is_array($decoded_data) ||
+			empty($decoded_data)
+		) {
+			wp_send_json_error(esc_html__('Invalid data', 'flwp'), 400);
 		}
 
 		$valid_form_fields = [
@@ -253,7 +258,8 @@ class Admin {
 		$sanitizedFormDataDecoded = $sanitizer->sanitize($decoded_data);
 		if (is_wp_error($sanitizedFormDataDecoded)) {
 			wp_send_json_error(
-				esc_html__('Invalid form configuration. Please check your form settings.', 'flwp')
+				esc_html__('Invalid form configuration. Please check your form settings.', 'flwp'),
+				400
 			);
 		}
 
@@ -338,7 +344,7 @@ class Admin {
             wp_send_json_error(esc_html__('Permission denied', 'flwp'));
         }
 
-        $id = (int) ($_POST['id'] ?? 0);
+        $id = absint(wp_unslash($_POST['id'] ?? 0));
         $feedback_db = new FormFeedback();
         if (!empty($id) && $feedback_db->delete_feedback($id)) {
             wp_send_json_success();

@@ -40,8 +40,8 @@ abstract class Page {
 			'nonce' => wp_create_nonce('flwp_admin_nonce')
 		];
 
-		if (!empty($_GET['nonce']) && wp_verify_nonce($_GET['nonce'], 'flwp_admin_nonce')) {
-			$data['id'] = esc_html($_GET['id'] ?? '');
+		if (!empty($_GET['nonce']) && wp_verify_nonce(sanitize_key(wp_unslash($_GET['nonce'])), 'flwp_admin_nonce')) {
+			$data['id'] = sanitize_text_field(wp_unslash($_GET['id'] ?? ''));
 		}
 
 		$this->data = array_merge($this->data, $data);
