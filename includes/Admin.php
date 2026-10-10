@@ -4,9 +4,9 @@ namespace FLWP;
 
 use FLWP\Database\Form;
 use FLWP\Database\FormFeedback;
+use FLWP\Helper\FormFeedbackHelper;
 use FLWP\Helper\IndexBuilder;
 use FLWP\Page\About;
-use FLWP\Page\Affiliate;
 use FLWP\Page\Dashboard;
 use FLWP\Page\Export;
 use FLWP\Page\Feedbacks;
@@ -25,6 +25,9 @@ class Admin {
         add_action('wp_ajax_flwp_get_chart_recent_feedbacks', [$this, 'ajax_get_chart_recent_feedbacks']);
         add_action('wp_ajax_flwp_save_form_data', [$this, 'ajax_save_form_data']);
         add_action('wp_ajax_flwp_update_form_status', [$this, 'ajax_update_form_status']);
+		add_action('wp_ajax_flwp_update_form_feedback_status', [$this, 'ajax_update_form_feedback_status']);
+		add_action('wp_ajax_flwp_get_form_feedback_by_id', [$this, 'ajax_get_form_feedback_by_id']);
+		add_action('wp_ajax_flwp_delete_feedback', [$this, 'ajax_delete_feedback']);
     }
 
     public function add_menu_page() {
@@ -172,7 +175,8 @@ class Admin {
 		}
 
 		if (isset($_GET['page']) && $_GET['page'] === 'flwp-forms' && isset($_GET['action']) && isset($_GET['id'])) {
-			if (!isset($_GET['nonce']) || !wp_verify_nonce(sanitize_text_field(wp_unslash($_GET['nonce'])), 'flwp_admin_nonce')) {
+			$nonce = sanitize_text_field(wp_unslash($_GET['nonce'] ?? ''));
+			if (empty($nonce) || !wp_verify_nonce($nonce, 'flwp_admin_nonce')) {
 				wp_safe_redirect(admin_url('admin.php?page=flwp-forms'));
 				exit;
 			}
@@ -183,19 +187,20 @@ class Admin {
             if ( $_GET['action'] === 'duplicate' ) {
                 $new_id = $form_db->duplicate_form( $id );
                 if ( $new_id ) {
-					wp_safe_redirect( admin_url( 'admin.php?page=flwp-forms&duplicate_success=1' ) );
+					wp_safe_redirect( admin_url( 'admin.php?page=flwp-forms&duplicate_success=1&nonce=' . $nonce ) );
                     exit;
                 }
             } elseif ( $_GET['action'] === 'delete' ) {
                 if ( $form_db->delete_form( $id ) ) {
-					wp_safe_redirect( admin_url( 'admin.php?page=flwp-forms&delete_success=1' ) );
+					wp_safe_redirect( admin_url( 'admin.php?page=flwp-forms&delete_success=1&nonce=' . $nonce ) );
                     exit;
                 }
             }
         }
 
         if ( isset( $_GET['page'] ) && $_GET['page'] === 'flwp-form-builder' && isset( $_GET['id'] ) ) {
-			if (!isset($_GET['nonce']) || !wp_verify_nonce(sanitize_text_field(wp_unslash($_GET['nonce'])), 'flwp_admin_nonce')) {
+			$nonce = sanitize_text_field(wp_unslash($_GET['nonce'] ?? ''));
+			if (empty($nonce) || !wp_verify_nonce($nonce, 'flwp_admin_nonce')) {
 				wp_safe_redirect(admin_url('admin.php?page=flwp-forms'));
 				exit;
 			}
@@ -203,7 +208,7 @@ class Admin {
             $form_db = new Form();
             $id = (int) $_GET['id'];
             if ( $id && !$form_db->get_form( $id ) ) {
-				wp_safe_redirect( admin_url( 'admin.php?page=flwp-forms&form_not_found=1' ) );
+				wp_safe_redirect( admin_url( 'admin.php?page=flwp-forms&form_not_found=1&nonce=' . $nonce ) );
                 exit;
             }
         }
@@ -248,11 +253,7 @@ class Admin {
 		$sanitizedFormDataDecoded = $sanitizer->sanitize($decoded_data);
 		if (is_wp_error($sanitizedFormDataDecoded)) {
 			wp_send_json_error(
-				[
-					'message' => __('Invalid form configuration. Please check your form settings.', 'flwp'),
-					'code'    => $sanitizedFormDataDecoded->get_error_code(),
-				],
-				400
+				esc_html__('Invalid form configuration. Please check your form settings.', 'flwp')
 			);
 		}
 
@@ -303,6 +304,46 @@ class Admin {
             wp_send_json_success(['message' => esc_html__('Status updated successfully', 'flwp')]);
         } else {
             wp_send_json_error(esc_html__('Failed to update status', 'flwp'));
+        }
+    }
+
+    public function ajax_update_form_feedback_status() {
+        check_ajax_referer('flwp_admin_nonce', 'nonce');
+
+        if (!current_user_can('manage_options')) {
+            wp_send_json_error(esc_html__('Permission denied', 'flwp'));
+        }
+
+        $feedback_id = isset($_POST['feedback_id']) ? (int) $_POST['feedback_id'] : 0;
+        $status      = isset($_POST['status']) ? sanitize_text_field(wp_unslash($_POST['status'])) : '';
+
+        if (!$feedback_id || !$status) {
+            wp_send_json_error(esc_html__('Missing data', 'flwp'));
+        }
+
+        $fb_db   = new FormFeedback();
+        $success = $fb_db->update_status($feedback_id, $status);
+
+        if ($success !== false) {
+            wp_send_json_success(['message' => esc_html__('Feedback status updated successfully', 'flwp')]);
+        } else {
+            wp_send_json_error(esc_html__('Failed to update feedback status', 'flwp'));
+        }
+    }
+
+    public function ajax_delete_feedback() {
+        check_ajax_referer('flwp_admin_nonce', 'nonce');
+
+        if (!current_user_can('manage_options')) {
+            wp_send_json_error(esc_html__('Permission denied', 'flwp'));
+        }
+
+        $id = (int) ($_POST['id'] ?? 0);
+        $feedback_db = new FormFeedback();
+        if (!empty($id) && $feedback_db->delete_feedback($id)) {
+            wp_send_json_success();
+        } else {
+            wp_send_json_error();
         }
     }
 
@@ -366,6 +407,118 @@ class Admin {
         wp_send_json_success([
             'feedback' => $formatted_feedback
         ]);
+    }
+
+    public function ajax_get_form_feedback_by_id() {
+        check_ajax_referer('flwp_admin_nonce', 'nonce');
+
+        if (!current_user_can('manage_options')) {
+            wp_send_json_error(esc_html__('Permission denied', 'flwp'));
+        }
+
+        $id = isset($_GET['id']) ? (int) $_GET['id'] : 0;
+        if (!$id) {
+            wp_send_json_error(esc_html__('ID missing', 'flwp'));
+        }
+
+        $feedback_db = new FormFeedback();
+        $feedback = $feedback_db->get_feedback_by_id($id);
+        if (!$feedback) {
+            wp_send_json_error(esc_html__('Feedback not found', 'flwp'));
+        }
+
+        $user_data = $feedback->getDecodedFeedbackData();
+
+        $helper = new FormFeedbackHelper();
+        $prepared_data = $helper->prepare_steps_for_detail_view($user_data);
+
+        $feedbackArray = $feedback->toArray(['feedback_data']);
+        $feedbackArray['title'] = $user_data['title'];
+
+		$form_db = new Form();
+		$formData = $form_db->get_form($feedback->getFormId());
+
+		$accentColor = '#000';
+		if (!empty($formData->getDecodedPreviewData())) {
+			$accentColor = $formData->getDecodedPreviewData()['settings']['styles']['accentColor'] ?? '#000';
+		}
+
+        wp_send_json_success([
+            'feedback' => $feedbackArray,
+            'steps' => $prepared_data['steps'],
+            'user_values' => $prepared_data['userValues'],
+			'accent_color' => $accentColor,
+        ]);
+    }
+
+    public function handle_export_csv__premium_only() {
+        check_ajax_referer('flwp_admin_nonce', 'nonce');
+
+        $args = [
+            'form_id'    => !empty($_POST['form_id']) ? sanitize_text_field(wp_unslash($_POST['form_id'])) : 'all',
+            'range'      => !empty($_POST['range']) ? sanitize_text_field(wp_unslash($_POST['range'])) : '',
+            'status'     => !empty($_POST['status']) ? sanitize_text_field(wp_unslash($_POST['status'])) : 'all',
+            'start_date' => !empty($_POST['start_date']) ? sanitize_text_field(wp_unslash($_POST['start_date'])) : '',
+            'end_date'   => !empty($_POST['end_date']) ? sanitize_text_field(wp_unslash(['end_date'])) : '',
+        ];
+
+        Csv::exportFeedback($args);
+    }
+
+    public function handle_export_json__premium_only() {
+        check_ajax_referer('flwp_admin_nonce', 'nonce');
+
+        $type = !empty($_POST['export_type']) ? sanitize_text_field(wp_unslash($_POST['export_type'])) : '';
+
+        switch ($type) {
+            case 'forms':
+                $form_id = !empty($_POST['form_id']) ? sanitize_text_field(wp_unslash($_POST['form_id'])) : '';
+                $json_exporter = new Json();
+                $json_exporter->exportAllForms($form_id);
+                break;
+            case 'feedback':
+                $form_id = !empty($_POST['form_id']) ? sanitize_text_field(wp_unslash($_POST['form_id'])) : '';
+                $filters = [
+                    'range'      => !empty($_POST['range']) ? sanitize_text_field(wp_unslash($_POST['range'])) : '',
+                    'status'     => !empty($_POST['status']) ? sanitize_text_field(wp_unslash($_POST['status'])) : 'all',
+                    'start_date' => !empty($_POST['start_date']) ? sanitize_text_field(wp_unslash(['start_date'])) : '',
+                    'end_date'   => !empty($_POST['end_date']) ? sanitize_text_field(wp_unslash($_POST['end_date'])) : '',
+                ];
+                $json_exporter = new Json();
+                $json_exporter->exportAllFeedback($form_id, $filters);
+                break;
+        }
+    }
+
+    public function handle_import_json__premium_only() {
+        check_ajax_referer('flwp_admin_nonce', 'nonce');
+
+        if (!current_user_can('manage_options')) {
+            wp_send_json_error(esc_html__('Permission denied', 'flwp'));
+        }
+
+        $config = Json::import();
+        $type = sanitize_text_field(wp_unslash($_POST['type'] ?? 'forms'));
+
+        if (!empty($config)) {
+            $json_exporter = new Json();
+
+            if ($type === 'forms') {
+                $import_result = $json_exporter->importForms($config);
+            } elseif ($type === 'feedback') {
+                $import_result = $json_exporter->importFeedbacks($config);
+            } else {
+                wp_send_json_error(esc_html__('Wrong import-type.', 'flwp'));
+            }
+
+            if ($import_result['success']) {
+                wp_send_json_success($import_result['message']);
+            } else {
+                wp_send_json_error($import_result['message']);
+            }
+        } else {
+            wp_send_json_error(esc_html__('Error during importing the file or wrong file format.', 'flwp'));
+        }
     }
 
     /**

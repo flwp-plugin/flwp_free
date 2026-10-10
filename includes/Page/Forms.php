@@ -24,10 +24,20 @@ class Forms extends Page {
         $form_table = new FormListTable();
         $form_table->prepare_items();
 
-        $this->data = [
-            'form_table' => $form_table,
-			'nonce' => wp_create_nonce('flwp_admin_nonce')
-        ];
+		$data = [
+			'isDelete' => false,
+			'isDuplicate' => false,
+			'formNotFound' => false,
+			'form_table' => $form_table,
+		];
+
+		if (!empty($_GET['nonce']) && wp_verify_nonce($_GET['nonce'], 'flwp_admin_nonce')) {
+			$data['isDelete'] = (bool) absint(wp_unslash($_GET['delete_success'] ?? 0));
+			$data['isDuplicate'] = (bool) absint($_GET['duplicate_success'] ?? 0);
+			$data['formNotFound'] = (bool) absint($_GET['form_not_found'] ?? 0);
+		}
+
+        $this->data = $data;
 
         parent::render();
     }

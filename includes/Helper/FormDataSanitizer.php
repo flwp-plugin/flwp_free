@@ -29,9 +29,10 @@ class FormDataSanitizer
 			$this->removed[] = $path . ': ' . $reason;
 		}
 		if (
-			defined( 'WP_DEBUG' ) && WP_DEBUG &&
-			defined( 'WP_DEBUG_LOG' ) && WP_DEBUG_LOG
+			defined('WP_DEBUG') && WP_DEBUG &&
+			defined('WP_DEBUG_LOG') && WP_DEBUG_LOG
 		) {
+			// phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log -- Debug logging only when WP_DEBUG and WP_DEBUG_LOG are enabled.
 			error_log(
 				'[FLWP FormDataSanitizer] ' .
 				( $fatal ? 'Invalid: ' : 'Removed/adjusted: ' ) .

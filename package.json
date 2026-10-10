@@ -1,7 +1,7 @@
 {
   "scripts": {
     "build": "node build.mjs --watch",
-    "translate_flwp": "po2json wp-content/plugins/flwp/languages/flwp-de_DE.po wp-content/plugins/flwp/languages/flwp-de_DE.json --domain flwp -f jed1.x"
+    "translate": "sh scripts/generate_translation_files.sh"
   },
   "devDependencies": {
     "esbuild": "0.28.2",

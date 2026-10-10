@@ -129,8 +129,9 @@ class FormListTable extends WP_List_Table
 	public function column_name($item)
 	{
 		return sprintf(
-			'<strong><a class="row-title" href="?page=flwp-form-builder&id=%d">%s</a></strong>',
+			'<strong><a class="row-title" href="?page=flwp-form-builder&id=%d&nonce=%s">%s</a></strong>',
 			$item->getId(),
+			$this->adminNonce,
 			esc_html($item->getName())
 		);
 	}

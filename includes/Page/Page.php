@@ -30,12 +30,24 @@ abstract class Page {
      * Renders the page.
      */
     public function render() {
+		$currentScreen = get_current_screen();
+
         $admin_template = $this->get_template_path();
-        
-        // Extract data for the template
-        if (!empty($this->data)) {
-            extract($this->data);
-        }
+
+		$data = [
+			'id' => '',
+			'page' => !empty($currentScreen) ? str_replace('flwp_page_', '', $currentScreen->id) : '',
+			'nonce' => wp_create_nonce('flwp_admin_nonce')
+		];
+
+		if (!empty($_GET['nonce']) && wp_verify_nonce($_GET['nonce'], 'flwp_admin_nonce')) {
+			$data['id'] = esc_html($_GET['id'] ?? '');
+		}
+
+		$this->data = array_merge($this->data, $data);
+
+		// Extract data for the template
+		extract($this->data);
 
         // We use the common admin page wrapper
         include FLWP_PLUGIN_PATH . 'templates/admin/flwp-admin-page.php';

@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2026-09-18T09:20:05+02:00\n"
-"PO-Revision-Date: 2026-10-07T19:02:36+00:00\n"
+"PO-Revision-Date: 2026-10-09T13:31:14+00:00\n"
 "Language: en_GB\n"
 "X-Generator: Poedit 3.9\n"
 
@@ -32,108 +32,107 @@ msgstr ""
 msgid "Kai Steudten"
 msgstr ""
 
-#: includes/Admin.php:62
-#: includes/Admin.php:63
+#: includes/Admin.php:54
+#: includes/Admin.php:55
 msgid "admin.menu.dashboard"
 msgstr "Dashboard"
 
-#: includes/Admin.php:71
-#: includes/Admin.php:72
+#: includes/Admin.php:63
+#: includes/Admin.php:64
 msgid "admin.menu.all_forms"
 msgstr "All Forms"
 
-#: includes/Admin.php:80
-#: includes/Admin.php:81
+#: includes/Admin.php:72
+#: includes/Admin.php:73
 msgid "admin.menu.add_form"
 msgstr "Add Form"
 
-#: includes/Admin.php:89
-#: includes/Admin.php:90
+#: includes/Admin.php:81
+#: includes/Admin.php:82
 msgid "admin.menu.feedback_list"
 msgstr "Feedback List"
 
-#: includes/Admin.php:98
-#: includes/Admin.php:99
+#: includes/Admin.php:90
+#: includes/Admin.php:91
 msgid "admin.menu.export"
 msgstr "Export"
 
-#: includes/Admin.php:107
-#: includes/Admin.php:108
+#: includes/Admin.php:99
+#: includes/Admin.php:100
 msgid "admin.menu.about"
 msgstr "About FLWP"
 
-#: includes/Admin.php:229
-#: includes/Admin.php:279
-#: includes/Admin.php:307
-#: includes/Admin.php:331
-#: includes/Admin.php:347
-#: includes/Admin.php:386
-#: includes/Admin.php:409
-#: includes/Admin.php:490
-#: includes/Export/Csv.php:18
+#: includes/Admin.php:219
+#: includes/Admin.php:288
+#: includes/Admin.php:316
+#: includes/Admin.php:340
+#: includes/Admin.php:356
+#: includes/Admin.php:395
+#: includes/Admin.php:418
+#: includes/Admin.php:499
 msgid "Permission denied"
 msgstr ""
 
-#: includes/Admin.php:237
-#: includes/Admin.php:286
-#: includes/Admin.php:314
+#: includes/Admin.php:231
+#: includes/Admin.php:295
+#: includes/Admin.php:323
 msgid "Missing data"
 msgstr ""
 
-#: includes/Admin.php:242
+#: includes/Admin.php:236
 msgid "Invalid data"
 msgstr ""
 
-#: includes/Admin.php:245
+#: includes/Admin.php:255
+msgid "Invalid form configuration. Please check your form settings."
+msgstr ""
+
+#: includes/Admin.php:264
 #: includes/Database/Form.php:109
 msgid "admin.db.default_new_form_name"
 msgstr "New Form"
 
-#: includes/Admin.php:254
-msgid "admin.error.limit_3_forms_reached"
-msgstr "Limit of 3 forms reached for free version."
-
-#: includes/Admin.php:265
+#: includes/Admin.php:274
 msgid "Form data saved successfully"
 msgstr ""
 
-#: includes/Admin.php:271
+#: includes/Admin.php:280
 msgid "Failed to save form data"
 msgstr ""
 
-#: includes/Admin.php:297
+#: includes/Admin.php:306
 msgid "Status updated successfully"
 msgstr ""
 
-#: includes/Admin.php:299
+#: includes/Admin.php:308
 msgid "Failed to update status"
 msgstr ""
 
-#: includes/Admin.php:321
+#: includes/Admin.php:330
 msgid "Feedback status updated successfully"
 msgstr ""
 
-#: includes/Admin.php:323
+#: includes/Admin.php:332
 msgid "Failed to update feedback status"
 msgstr ""
 
-#: includes/Admin.php:414
+#: includes/Admin.php:423
 msgid "ID missing"
 msgstr ""
 
-#: includes/Admin.php:420
+#: includes/Admin.php:429
 msgid "Feedback not found"
 msgstr ""
 
-#: includes/Admin.php:504
+#: includes/Admin.php:513
 msgid "Wrong import-type."
 msgstr ""
 
-#: includes/Admin.php:513
+#: includes/Admin.php:522
 msgid "Error during importing the file or wrong file format."
 msgstr ""
 
-#: includes/Admin.php:535
+#: includes/Admin.php:544
 msgid "admin.notice.thank_you"
 msgstr "Thank you for using %s."
 
@@ -173,83 +172,15 @@ msgstr "Your server is using a PHP version that is too old for the FLWP plugin t
 msgid "admin.env_check.php.update_link"
 msgstr "<a href=\"%s\">Learn more about updating PHP</a> or contact your server administrator."
 
-#: includes/Export/Csv.php:66
-msgid "admin.export.csv.no_data_found"
-msgstr "No data found"
-
-#: includes/Export/Csv.php:73
-msgid "admin.export.csv.id"
-msgstr "ID"
-
-#: includes/Export/Csv.php:74
-msgid "admin.export.csv.timestamp"
-msgstr "Timestamp"
-
-#: includes/Export/Csv.php:75
-msgid "admin.export.csv.form_id"
-msgstr "Form ID"
-
-#: includes/Export/Csv.php:76
-msgid "admin.export.csv.type"
-msgstr "Type"
-
-#: includes/Export/Csv.php:77
-msgid "admin.export.csv.status"
-msgstr "Status"
-
-#: includes/Export/Csv.php:82
-msgid "admin.export.csv.tracking_url"
-msgstr "Page URL"
-
-#: includes/Export/Csv.php:83
-msgid "admin.export.csv.tracking_language"
-msgstr "Language"
-
-#: includes/Export/Csv.php:84
-msgid "admin.export.csv.tracking_screen_res_w"
-msgstr "Screen Width"
-
-#: includes/Export/Csv.php:85
-msgid "admin.export.csv.tracking_screen_res_h"
-msgstr "Screen Height"
-
-#: includes/Export/Csv.php:86
-msgid "admin.export.csv.tracking_viewport_w"
-msgstr "Viewport Width"
-
-#: includes/Export/Csv.php:87
-msgid "admin.export.csv.tracking_viewport_h"
-msgstr "Viewport Height"
-
-#: includes/Export/Csv.php:88
-msgid "admin.export.csv.tracking_timezone"
-msgstr "Timezone"
-
-#: includes/Export/Csv.php:89
-msgid "admin.export.csv.tracking_device_type"
-msgstr "Device"
-
-#: includes/Export/Csv.php:90
-msgid "admin.export.csv.tracking_time_on_page"
-msgstr "Time on page (s)"
-
-#: includes/Export/Json.php:220
-msgid "admin.export.json.import_results"
-msgstr "%d forms imported (%d new, %d updated). %d errors."
-
-#: includes/Export/Json.php:295
-msgid "admin.export.json.import_feedbacks_results"
-msgstr "%d feedbacks imported (%d new, %d updated, %d ignored). %d errors."
-
 #: includes/FormFrontend.php:211
 #: includes/Helper/ConfigHelper.php:191
 #: includes/Helper/ConfigHelper.php:227
 #: includes/Helper/ConfigHelper.php:261
 #: templates/frontend/flwp-form-footer.php:39
-#: assets/js/dist/flwp-form-builder.js:4108
-#: assets/js/dist/flwp-form-builder.js:4125
-#: assets/js/dist/flwp-form-frontend.js:2073
-#: assets/js/dist/flwp-form-frontend.js:2146
+#: assets/js/dist/flwp-form-builder.js:3826
+#: assets/js/dist/flwp-form-builder.js:3843
+#: assets/js/dist/flwp-form-frontend.js:1797
+#: assets/js/dist/flwp-form-frontend.js:1870
 msgid "admin.frontend.default_footer_text"
 msgstr "We appreciate your honest feedback!"
 
@@ -346,9 +277,9 @@ msgid "admin.config.default_email"
 msgstr "Email address"
 
 #: includes/Helper/ConfigHelper.php:286
-#: assets/js/dist/flwp-form-frontend.js:2565
-#: assets/js/dist/flwp-form-frontend.js:2700
-#: assets/js/dist/flwp-form-frontend.js:2716
+#: assets/js/dist/flwp-form-frontend.js:2289
+#: assets/js/dist/flwp-form-frontend.js:2424
+#: assets/js/dist/flwp-form-frontend.js:2440
 msgid "confirmation.message.default"
 msgstr "<p>Thank you for your feedback! It helps us to improve continuously.</p>"
 
@@ -640,6 +571,10 @@ msgstr "How do you rate the article?"
 msgid "admin.template4.step1.headline.label"
 msgstr "Article rating"
 
+#: includes/Helper/FormDataSanitizer.php:663
+msgid "Invalid form configuration."
+msgstr ""
+
 #: includes/Helper/FormHelper.php:267
 msgid "admin.form_type.modal.name"
 msgstr "Overlay"
@@ -665,7 +600,7 @@ msgid "admin.form_type.post-content.name"
 msgstr "Post-Content"
 
 #: includes/Lists/FormFeedbackListTable.php:33
-#: includes/Lists/FormListTable.php:39
+#: includes/Lists/FormListTable.php:37
 msgid "admin.form_list.id"
 msgstr "ID"
 
@@ -687,7 +622,7 @@ msgid "admin.form_list.page_url"
 msgstr "Page URL"
 
 #: includes/Lists/FormFeedbackListTable.php:38
-#: includes/Lists/FormListTable.php:41
+#: includes/Lists/FormListTable.php:39
 msgid "admin.form_list.status"
 msgstr "Status"
 
@@ -696,22 +631,26 @@ msgid "admin.form_list.created"
 msgstr "Created"
 
 #: includes/Lists/FormFeedbackListTable.php:40
-#: includes/Lists/FormListTable.php:43
+#: includes/Lists/FormListTable.php:41
 msgid "admin.form_list.updated"
 msgstr "Updated"
 
 #: includes/Lists/FormFeedbackListTable.php:79
 #: includes/Lists/FormFeedbackListTable.php:163
+#: assets/js/dist/flwp-admin.js:396
+#: assets/js/dist/flwp-admin.js:400
 msgid "admin.form_list.filter.status.read"
 msgstr "Read"
 
 #: includes/Lists/FormFeedbackListTable.php:82
 #: includes/Lists/FormFeedbackListTable.php:164
+#: assets/js/dist/flwp-admin.js:403
 msgid "admin.form_list.filter.status.archived"
 msgstr "Archived"
 
 #: includes/Lists/FormFeedbackListTable.php:86
 #: includes/Lists/FormFeedbackListTable.php:162
+#: assets/js/dist/flwp-admin.js:407
 msgid "admin.form_list.filter.status.unread"
 msgstr "Unread"
 
@@ -787,39 +726,39 @@ msgstr "End date"
 msgid "admin.form_list.filter.button"
 msgstr "Filter"
 
-#: includes/Lists/FormListTable.php:40
+#: includes/Lists/FormListTable.php:38
 msgid "admin.form_list.name"
 msgstr "Name"
 
-#: includes/Lists/FormListTable.php:42
+#: includes/Lists/FormListTable.php:40
 msgid "admin.form_list.shortcode"
 msgstr "Shortcode"
 
-#: includes/Lists/FormListTable.php:64
+#: includes/Lists/FormListTable.php:62
 msgid "admin.form_list.status.paused"
 msgstr "Paused"
 
-#: includes/Lists/FormListTable.php:69
+#: includes/Lists/FormListTable.php:67
 msgid "admin.form_list.status.live"
 msgstr "Live"
 
-#: includes/Lists/FormListTable.php:73
+#: includes/Lists/FormListTable.php:71
 msgid "admin.form_list.status.admin_only"
 msgstr "Admin-only"
 
-#: includes/Lists/FormListTable.php:103
+#: includes/Lists/FormListTable.php:101
 msgid "admin.form_list.actions.edit"
 msgstr "Edit"
 
-#: includes/Lists/FormListTable.php:112
+#: includes/Lists/FormListTable.php:109
 msgid "admin.form_list.actions.duplicate"
 msgstr "Duplicate"
 
-#: includes/Lists/FormListTable.php:121
+#: includes/Lists/FormListTable.php:117
 msgid "admin.form_list.actions.delete"
 msgstr "Delete"
 
-#: includes/Lists/FormListTable.php:144
+#: includes/Lists/FormListTable.php:140
 msgid "admin.form_list.no_forms"
 msgstr "No forms found."
 
@@ -1251,34 +1190,69 @@ msgstr "Close"
 msgid "admin.builder.overlay_template.footer_text"
 msgstr "We value your honest feedback!"
 
-#: templates/admin/flwp-form-feedback-list.php:8
-msgid "admin.page.feedback_list.pro_notice.headline"
-msgstr "Display and manage your feedback entries in WordPress"
-
 #: templates/admin/flwp-form-feedback-list.php:9
-msgid "admin.page.feedback_list.pro_notice.intro"
-msgstr "After upgrading to <strong>FLWP Pro</strong>, all future feedback entries will be saved in your WordPress database and listed here."
-
-#: templates/admin/flwp-form-feedback-list.php:11
-msgid "admin.page.feedback_list.pro_notice.advantage.1"
-msgstr "Manage all feedback easily in your WordPress dashboard"
-
-#: templates/admin/flwp-form-feedback-list.php:12
-msgid "admin.page.feedback_list.pro_notice.advantage.2"
-msgstr "View details of each feedback, such as tracking data or user values"
-
-#: templates/admin/flwp-form-feedback-list.php:13
-msgid "admin.page.feedback_list.pro_notice.advantage.3"
-msgstr "Mark feedback as read/unread"
-
-#: templates/admin/flwp-form-feedback-list.php:14
-msgid "admin.page.feedback_list.pro_notice.advantage.4"
-msgstr "Filter all feedback entries for more precise analysis"
-
-#: templates/admin/flwp-form-feedback-list.php:23
-#: templates/admin/premium/flwp-form-feedback-list.php:9
 msgid "admin.page.feedback_list.title"
 msgstr "Form Feedback"
+
+#: templates/admin/flwp-form-feedback-list.php:29
+msgid "admin.page.feedback_list.modal.id_title"
+msgstr "Feedback - #{{id}}"
+
+#: templates/admin/flwp-form-feedback-list.php:30
+msgid "admin.page.feedback_list.modal.created_at"
+msgstr "Created on"
+
+#: templates/admin/flwp-form-feedback-list.php:33
+msgid "admin.page.feedback_list.modal.close"
+msgstr "Close modal"
+
+#: templates/admin/flwp-form-feedback-list.php:45
+msgid "admin.page.feedback_list.modal.status.title"
+msgstr "Processing status"
+
+#: templates/admin/flwp-form-feedback-list.php:49
+msgid "admin.page.feedback_list.modal.status.unread"
+msgstr "Unread"
+
+#: templates/admin/flwp-form-feedback-list.php:52
+msgid "admin.page.feedback_list.modal.status.read"
+msgstr "Read"
+
+#: templates/admin/flwp-form-feedback-list.php:55
+msgid "admin.page.feedback_list.modal.status.archived"
+msgstr "Archived"
+
+#: templates/admin/flwp-form-feedback-list.php:64
+msgid "admin.page.feedback_list.modal.customer_form_values"
+msgstr "Customer form values"
+
+#: templates/admin/flwp-form-feedback-list.php:72
+msgid "admin.page.feedback_list.modal.source_url"
+msgstr "Source (page URL)"
+
+#: templates/admin/flwp-form-feedback-list.php:76
+msgid "admin.page.feedback_list.modal.copy_to_clipboard"
+msgstr "Copy to clipboard"
+
+#: templates/admin/flwp-form-feedback-list.php:79
+msgid "admin.page.feedback_list.modal.open_in_new_window"
+msgstr "Open in new window"
+
+#: templates/admin/flwp-form-feedback-list.php:92
+msgid "admin.page.feedback_list.modal.tracking.title"
+msgstr "Technical tracking metrics"
+
+#: templates/admin/flwp-form-feedback-list.php:101
+msgid "admin.page.feedback_list.modal.tracking.user_agent"
+msgstr "Full user-agent string"
+
+#: templates/admin/flwp-form-feedback-list.php:110
+msgid "admin.page.feedback_list.modal.json_data"
+msgstr "Technical raw JSON data"
+
+#: templates/admin/flwp-form-feedback-list.php:121
+msgid "admin.page.feedback_list.modal.close_button"
+msgstr "Close"
 
 #: templates/admin/flwp-form-list.php:9
 msgid "admin.page.form_list.title"
@@ -2531,6 +2505,10 @@ msgstr "Colour scheme (system light/dark mode)"
 msgid "admin.builder.pro.headline"
 msgstr "Take your feedback to the next level!"
 
+#: templates/admin/partial/flwp-pro-notice-modal.php:7
+msgid "admin.builder.pro.intro"
+msgstr ""
+
 #: templates/admin/partial/flwp-pro-notice-modal.php:9
 msgid "admin.builder.pro.advantage.1"
 msgstr "<strong>Premium rating elements</strong>: Use thumbs-up/down, interactive smileys and the industry standard NPS."
@@ -2753,400 +2731,77 @@ msgstr ""
 msgid "%1$d of %2$d"
 msgstr ""
 
-#: templates/admin/premium/flwp-export.php:9
-msgid "admin.page.export.title"
-msgstr "Data management (import & export)"
-
-#: templates/admin/premium/flwp-export.php:10
-msgid "admin.page.export.description"
-msgstr "Manage your form structures, plugin configurations, and collected feedback entries in one central location."
-
-#: templates/admin/premium/flwp-export.php:18
-msgid "admin.page.export.feedback_entries.title"
-msgstr "1. Feedback entries (received user data)"
-
-#: templates/admin/premium/flwp-export.php:28
-msgid "admin.page.export.export_entries.title"
-msgstr "Export entries"
-
-#: templates/admin/premium/flwp-export.php:29
-msgid "admin.page.export.export_entries.description"
-msgstr "Select your filters and download the feedback data in the desired format."
-
-#: templates/admin/premium/flwp-export.php:36
-msgid "admin.page.export.filter.form.label"
-msgstr "Filter by form"
-
-#: templates/admin/premium/flwp-export.php:40
-msgid "admin.page.export.filter.form.select_all"
-msgstr "Select all forms"
-
-#: templates/admin/premium/flwp-export.php:54
-msgid "admin.page.export.filter.date_range.label"
-msgstr "Time period"
-
-#: templates/admin/premium/flwp-export.php:56
-msgid "admin.page.export.filter.range.all"
-msgstr "Entire time period"
-
-#: templates/admin/premium/flwp-export.php:57
-msgid "admin.page.export.filter.range.today"
-msgstr "Today"
-
-#: templates/admin/premium/flwp-export.php:58
-msgid "admin.page.export.filter.range.yesterday"
-msgstr "Yesterday"
-
-#: templates/admin/premium/flwp-export.php:59
-msgid "admin.page.export.filter.range.last_7_days"
-msgstr "Last 7 days"
-
-#: templates/admin/premium/flwp-export.php:60
-msgid "admin.page.export.filter.range.last_30_days"
-msgstr "Last 30 days"
-
-#: templates/admin/premium/flwp-export.php:61
-msgid "admin.page.export.filter.range.this_month"
-msgstr "This month"
-
-#: templates/admin/premium/flwp-export.php:62
-msgid "admin.page.export.filter.range.last_month"
-msgstr "Last month"
-
-#: templates/admin/premium/flwp-export.php:63
-msgid "admin.page.export.filter.range.this_year"
-msgstr "This year"
-
-#: templates/admin/premium/flwp-export.php:64
-msgid "admin.page.export.filter.range.last_year"
-msgstr "Last year"
-
-#: templates/admin/premium/flwp-export.php:65
-msgid "admin.page.export.filter.range.custom"
-msgstr "Custom..."
-
-#: templates/admin/premium/flwp-export.php:69
-msgid "admin.page.export.filter.status.label"
-msgstr "Status"
-
-#: templates/admin/premium/flwp-export.php:71
-msgid "admin.page.export.filter.status.all"
-msgstr "All entries"
-
-#: templates/admin/premium/flwp-export.php:72
-msgid "admin.page.export.filter.status.unread"
-msgstr "Unread"
-
-#: templates/admin/premium/flwp-export.php:73
-msgid "admin.page.export.filter.status.read"
-msgstr "Read"
-
-#: templates/admin/premium/flwp-export.php:74
-msgid "admin.page.export.filter.status.archived"
-msgstr "Archived"
-
-#: templates/admin/premium/flwp-export.php:82
-msgid "admin.page.export.filter.date.from"
-msgstr "From"
-
-#: templates/admin/premium/flwp-export.php:86
-msgid "admin.page.export.filter.date.to"
-msgstr "To"
-
-#: templates/admin/premium/flwp-export.php:95
-msgid "admin.page.export.hint.title"
-msgstr "Export hint:"
-
-#: templates/admin/premium/flwp-export.php:95
-msgid "admin.page.export.hint.description"
-msgstr "CSV contains dynamic columns (each question in your form gets its own column). JSON provides structured raw data including detailed device and meta data."
-
-#: templates/admin/premium/flwp-export.php:101
-msgid "admin.page.export.button.csv"
-msgstr "Download CSV"
-
-#: templates/admin/premium/flwp-export.php:104
-msgid "admin.page.export.button.json"
-msgstr "Download JSON"
-
-#: templates/admin/premium/flwp-export.php:116
-msgid "admin.page.export.import_feedbacks.title"
-msgstr "Import feedbacks"
-
-#: templates/admin/premium/flwp-export.php:117
-msgid "admin.page.export.import_feedbacks.description"
-msgstr "Upload an exported feedback file (.json) to restore entries."
-
-#: templates/admin/premium/flwp-export.php:125
-msgid "admin.page.export.import.drag_drop_text"
-msgstr "Select or drag file"
-
-#: templates/admin/premium/flwp-export.php:126
-msgid "admin.page.export.import.supported_files"
-msgstr "Supports .json feedback files"
-
-#: templates/admin/premium/flwp-export.php:137
-msgid "admin.page.export.templates.title"
-msgstr "2. Form structures (templates)"
-
-#: templates/admin/premium/flwp-export.php:147
-msgid "admin.page.export.export_forms.title"
-msgstr "Export forms"
-
-#: templates/admin/premium/flwp-export.php:148
-msgid "admin.page.export.export_forms.description"
-msgstr "Export selected form layouts as .json for other WordPress instances."
-
-#: templates/admin/premium/flwp-export.php:154
-msgid "admin.page.export.filter.forms.label"
-msgstr "Which forms would you like to export?"
-
-#: templates/admin/premium/flwp-export.php:159
-msgid "admin.page.export.filter.forms.select_all"
-msgstr "Select all forms"
-
-#: templates/admin/premium/flwp-export.php:170
-msgid "admin.page.export.button.export_forms"
-msgstr "Export layout(s) (.json)"
-
-#: templates/admin/premium/flwp-export.php:172
-msgid "admin.page.export.hint.export_forms"
-msgstr "Ideal for transferring from a test (staging) to a live environment."
-
-#: templates/admin/premium/flwp-export.php:182
-msgid "admin.page.export.import_forms.title"
-msgstr "Import forms"
-
-#: templates/admin/premium/flwp-export.php:183
-msgid "admin.page.export.import_forms.description"
-msgstr "Upload an exported form layout (.json) to add it. Note that existing form data with the same form ID will be overwritten."
-
-#: templates/admin/premium/flwp-export.php:191
-msgid "admin.page.export.import_forms.drag_drop_text"
-msgstr "Select or drag file"
-
-#: templates/admin/premium/flwp-export.php:192
-msgid "admin.page.export.import_forms.supported_files"
-msgstr "Supports .json form files (single or multiple forms)"
-
-#: templates/admin/premium/flwp-form-feedback-list.php:29
-msgid "admin.page.feedback_list.modal.id_title"
-msgstr "Feedback - #{{id}}"
-
-#: templates/admin/premium/flwp-form-feedback-list.php:30
-msgid "admin.page.feedback_list.modal.created_at"
-msgstr "Created on"
-
-#: templates/admin/premium/flwp-form-feedback-list.php:33
-msgid "admin.page.feedback_list.modal.close"
-msgstr "Close modal"
-
-#: templates/admin/premium/flwp-form-feedback-list.php:45
-msgid "admin.page.feedback_list.modal.status.title"
-msgstr "Processing status"
-
-#: templates/admin/premium/flwp-form-feedback-list.php:49
-msgid "admin.page.feedback_list.modal.status.unread"
-msgstr "Unread"
-
-#: templates/admin/premium/flwp-form-feedback-list.php:52
-msgid "admin.page.feedback_list.modal.status.read"
-msgstr "Read"
-
-#: templates/admin/premium/flwp-form-feedback-list.php:55
-msgid "admin.page.feedback_list.modal.status.archived"
-msgstr "Archived"
-
-#: templates/admin/premium/flwp-form-feedback-list.php:64
-msgid "admin.page.feedback_list.modal.customer_form_values"
-msgstr "Customer form values"
-
-#: templates/admin/premium/flwp-form-feedback-list.php:72
-msgid "admin.page.feedback_list.modal.source_url"
-msgstr "Source (page URL)"
-
-#: templates/admin/premium/flwp-form-feedback-list.php:76
-msgid "admin.page.feedback_list.modal.copy_to_clipboard"
-msgstr "Copy to clipboard"
-
-#: templates/admin/premium/flwp-form-feedback-list.php:79
-msgid "admin.page.feedback_list.modal.open_in_new_window"
-msgstr "Open in new window"
-
-#: templates/admin/premium/flwp-form-feedback-list.php:92
-msgid "admin.page.feedback_list.modal.tracking.title"
-msgstr "Technical tracking metrics"
-
-#: templates/admin/premium/flwp-form-feedback-list.php:100
-msgid "admin.page.feedback_list.modal.tracking.device"
-msgstr "Device type / system"
-
-#: templates/admin/premium/flwp-form-feedback-list.php:109
-msgid "admin.page.feedback_list.modal.tracking.connection"
-msgstr "Network connection"
-
-#: templates/admin/premium/flwp-form-feedback-list.php:118
-msgid "admin.page.feedback_list.modal.tracking.resolution"
-msgstr "Resolution (viewport)"
-
-#: templates/admin/premium/flwp-form-feedback-list.php:127
-msgid "admin.page.feedback_list.modal.tracking.timespent"
-msgstr "Time spent"
-
-#: templates/admin/premium/flwp-form-feedback-list.php:136
-msgid "admin.page.feedback_list.modal.tracking.language"
-msgstr "Region & language"
-
-#: templates/admin/premium/flwp-form-feedback-list.php:145
-msgid "admin.page.feedback_list.modal.tracking.colorscheme"
-msgstr "Brightness mode"
-
-#: templates/admin/premium/flwp-form-feedback-list.php:154
-msgid "admin.page.feedback_list.modal.tracking.session_id"
-msgstr "Anonymised session ID"
-
-#: templates/admin/premium/flwp-form-feedback-list.php:163
-msgid "admin.page.feedback_list.modal.tracking.user_agent"
-msgstr "Full user-agent string"
-
-#: templates/admin/premium/flwp-form-feedback-list.php:172
-msgid "admin.page.feedback_list.modal.json_data"
-msgstr "Technical raw JSON data"
-
-#: templates/admin/premium/flwp-form-feedback-list.php:183
-msgid "admin.page.feedback_list.modal.close_button"
-msgstr "Close"
-
-#: assets/js/dist/flwp-admin.js:53
-#: assets/js/dist/flwp-form-builder.js:902
-#: assets/js/dist/flwp-form-frontend.js:906
+#: assets/js/dist/flwp-admin.js:47
+#: assets/js/dist/flwp-form-builder.js:896
+#: assets/js/dist/flwp-form-frontend.js:900
 msgid "fields.smileys.legend.very_unsatisfied"
 msgstr "Very unsatisfied"
 
-#: assets/js/dist/flwp-admin.js:54
-#: assets/js/dist/flwp-form-builder.js:903
-#: assets/js/dist/flwp-form-frontend.js:907
+#: assets/js/dist/flwp-admin.js:48
+#: assets/js/dist/flwp-form-builder.js:897
+#: assets/js/dist/flwp-form-frontend.js:901
 msgid "fields.smileys.legend.unsatisfied"
 msgstr "Unsatisfied"
 
-#: assets/js/dist/flwp-admin.js:55
-#: assets/js/dist/flwp-form-builder.js:904
-#: assets/js/dist/flwp-form-frontend.js:908
+#: assets/js/dist/flwp-admin.js:49
+#: assets/js/dist/flwp-form-builder.js:898
+#: assets/js/dist/flwp-form-frontend.js:902
 msgid "fields.smileys.legend.neutral"
 msgstr "Neutral"
 
-#: assets/js/dist/flwp-admin.js:56
-#: assets/js/dist/flwp-form-builder.js:905
-#: assets/js/dist/flwp-form-frontend.js:909
+#: assets/js/dist/flwp-admin.js:50
+#: assets/js/dist/flwp-form-builder.js:899
+#: assets/js/dist/flwp-form-frontend.js:903
 msgid "fields.smileys.legend.satisfied"
 msgstr "Satisfied"
 
-#: assets/js/dist/flwp-admin.js:57
-#: assets/js/dist/flwp-form-builder.js:906
-#: assets/js/dist/flwp-form-frontend.js:910
+#: assets/js/dist/flwp-admin.js:51
+#: assets/js/dist/flwp-form-builder.js:900
+#: assets/js/dist/flwp-form-frontend.js:904
 msgid "fields.smileys.legend.very_satisfied"
 msgstr "Very satisfied"
 
-#: assets/js/dist/flwp-admin.js:106
+#: assets/js/dist/flwp-admin.js:94
 msgid "admin.feedback.load_error"
 msgstr "Error loading feedback details"
 
-#: assets/js/dist/flwp-admin.js:110
+#: assets/js/dist/flwp-admin.js:98
 msgid "admin.feedback.load_network_error"
 msgstr "Network error loading feedback details"
 
-#: assets/js/dist/flwp-admin.js:131
-#: assets/js/dist/flwp-admin.js:424
+#: assets/js/dist/flwp-admin.js:119
+#: assets/js/dist/flwp-admin.js:244
 msgid "admin.feedback.delete_error"
 msgstr "Error deleting feedback"
 
-#: assets/js/dist/flwp-admin.js:135
+#: assets/js/dist/flwp-admin.js:123
 msgid "admin.feedback.delete_network_error"
 msgstr "Network error deleting feedback"
 
-#: assets/js/dist/flwp-admin.js:310
-msgid "admin.feedback.select_exactly_one_csv"
-msgstr "Please select exactly one form for CSV export."
-
-#: assets/js/dist/flwp-admin.js:314
-msgid "admin.feedback.select_only_one_csv_error"
-msgstr "Only exactly one form may be selected for CSV export, as form structures can differ. Please select only a single form."
-
-#: assets/js/dist/flwp-admin.js:330
-#: assets/js/dist/flwp-admin.js:347
-msgid "admin.feedback.select_at_least_one"
-msgstr "Please select at least one form."
-
-#: assets/js/dist/flwp-admin.js:386
-msgid "admin.feedback.import_success_forms"
-msgstr "Forms imported successfully!"
-
-#: assets/js/dist/flwp-admin.js:386
-msgid "admin.feedback.import_success_feedback"
-msgstr "Feedback imported successfully!"
-
-#: assets/js/dist/flwp-admin.js:389
-#: assets/js/dist/flwp-form-builder.js:5528
-msgid "admin.toast.import_error"
-msgstr "Error loading/importing: {error}"
-
-#: assets/js/dist/flwp-admin.js:393
-#: assets/js/dist/flwp-form-builder.js:4018
-msgid "admin.toast.network_error"
-msgstr "Network error saving data."
-
-#: assets/js/dist/flwp-admin.js:403
-#: assets/js/dist/flwp-form-builder.js:976
-#: assets/js/dist/flwp-form-builder.js:4049
-#: assets/js/dist/flwp-form-frontend.js:1101
+#: assets/js/dist/flwp-admin.js:223
+#: assets/js/dist/flwp-form-builder.js:970
+#: assets/js/dist/flwp-form-builder.js:3767
+#: assets/js/dist/flwp-form-frontend.js:1095
 msgid "fields.unnamed"
 msgstr "Unnamed"
 
-#: assets/js/dist/flwp-admin.js:404
+#: assets/js/dist/flwp-admin.js:224
 msgid "admin.feedback.delete_form_confirm"
 msgstr "Do you really want to permanently delete the form \"{name}\"? This will also delete all associated feedback."
 
-#: assets/js/dist/flwp-admin.js:416
+#: assets/js/dist/flwp-admin.js:236
 msgid "admin.feedback.delete_confirm"
 msgstr "Do you really want to permanently delete feedback #{id}?"
 
-#: assets/js/dist/flwp-admin.js:429
+#: assets/js/dist/flwp-admin.js:249
 msgid "admin.feedback.saving"
 msgstr "Saving..."
 
-#: assets/js/dist/flwp-admin.js:476
-msgid "admin.feedback.device_desktop"
-msgstr "Desktop"
-
-#: assets/js/dist/flwp-admin.js:476
-msgid "admin.feedback.device_mobile"
-msgstr "Mobile"
-
-#: assets/js/dist/flwp-admin.js:484
-msgid "admin.feedback.unknown"
-msgstr "Unknown"
-
-#: assets/js/dist/flwp-admin.js:502
-msgid "admin.feedback.broadband"
-msgstr "Broadband"
-
-#: assets/js/dist/flwp-admin.js:513
-msgid "admin.feedback.seconds"
-msgstr "Seconds"
-
-#: assets/js/dist/flwp-admin.js:524
-msgid "admin.feedback.theme_dark"
-msgstr "Dark theme"
-
-#: assets/js/dist/flwp-admin.js:525
-msgid "admin.feedback.theme_light"
-msgstr "Light theme"
-
-#: assets/js/dist/flwp-admin.js:568
+#: assets/js/dist/flwp-admin.js:329
 msgid "admin.feedback.url_open_error"
 msgstr "Could not open URL:"
 
-#: assets/js/dist/flwp-admin.js:638
+#: assets/js/dist/flwp-admin.js:415
 msgid "admin.feedback.status_update_error"
 msgstr "Error updating status"
 
@@ -3184,560 +2839,548 @@ msgstr "Unlink values"
 msgid "admin.builder.link_values"
 msgstr "Link values"
 
-#: assets/js/dist/flwp-form-builder.js:941
-#: assets/js/dist/flwp-form-frontend.js:1066
+#: assets/js/dist/flwp-form-builder.js:935
+#: assets/js/dist/flwp-form-frontend.js:1060
 msgid "admin.builder.default_feedback_placeholder"
 msgstr "Enter your feedback here..."
 
-#: assets/js/dist/flwp-form-builder.js:1079
-#: assets/js/dist/flwp-form-frontend.js:1204
+#: assets/js/dist/flwp-form-builder.js:1073
+#: assets/js/dist/flwp-form-frontend.js:1198
 msgid "admin.builder.submit_action"
 msgstr "Submit action"
 
-#: assets/js/dist/flwp-form-builder.js:1079
-#: assets/js/dist/flwp-form-frontend.js:1204
+#: assets/js/dist/flwp-form-builder.js:1073
+#: assets/js/dist/flwp-form-frontend.js:1198
 msgid "admin.builder.back_action"
 msgstr "Back to step 1"
 
-#: assets/js/dist/flwp-form-builder.js:1088
-#: assets/js/dist/flwp-form-builder.js:1175
-#: assets/js/dist/flwp-form-builder.js:1264
-#: assets/js/dist/flwp-form-builder.js:1345
-#: assets/js/dist/flwp-form-builder.js:1442
-#: assets/js/dist/flwp-form-frontend.js:1213
-#: assets/js/dist/flwp-form-frontend.js:1300
-#: assets/js/dist/flwp-form-frontend.js:1389
-#: assets/js/dist/flwp-form-frontend.js:1470
-#: assets/js/dist/flwp-form-frontend.js:1567
+#: assets/js/dist/flwp-form-builder.js:1082
+#: assets/js/dist/flwp-form-builder.js:1169
+#: assets/js/dist/flwp-form-frontend.js:1207
+#: assets/js/dist/flwp-form-frontend.js:1294
 msgid "admin.builder.step2_connected"
 msgstr "Linked to step 2"
 
-#: assets/js/dist/flwp-form-builder.js:1259
-#: assets/js/dist/flwp-form-builder.js:1314
-#: assets/js/dist/flwp-form-frontend.js:1384
-#: assets/js/dist/flwp-form-frontend.js:1439
-msgid "fields.thumbs.yes"
-msgstr "Yes"
-
-#: assets/js/dist/flwp-form-builder.js:1260
-#: assets/js/dist/flwp-form-builder.js:1315
-#: assets/js/dist/flwp-form-frontend.js:1385
-#: assets/js/dist/flwp-form-frontend.js:1440
-msgid "fields.thumbs.no"
-msgstr "No"
-
-#: assets/js/dist/flwp-form-builder.js:1602
+#: assets/js/dist/flwp-form-builder.js:1326
 msgid "admin.builder.reset_preview"
 msgstr "Reset preview"
 
-#: assets/js/dist/flwp-form-builder.js:1648
+#: assets/js/dist/flwp-form-builder.js:1372
 msgid "admin.builder.unlock_pro"
 msgstr "Unlock PRO"
 
-#: assets/js/dist/flwp-form-builder.js:1650
+#: assets/js/dist/flwp-form-builder.js:1374
 msgid "admin.builder.use_template"
 msgstr "Use template"
 
-#: assets/js/dist/flwp-form-builder.js:1664
+#: assets/js/dist/flwp-form-builder.js:1388
 msgid "admin.confirm.load_template"
 msgstr "Do you really want to load this template? This will overwrite your current draft."
 
-#: assets/js/dist/flwp-form-builder.js:1677
+#: assets/js/dist/flwp-form-builder.js:1401
 msgid "admin.toast.template_loaded"
 msgstr "Template \"{title}\" loaded!"
 
-#: assets/js/dist/flwp-form-builder.js:1718
+#: assets/js/dist/flwp-form-builder.js:1442
 msgid "admin.conditions.url.label"
 msgstr "URL filter"
 
-#: assets/js/dist/flwp-form-builder.js:1724
-#: assets/js/dist/flwp-form-builder.js:1773
+#: assets/js/dist/flwp-form-builder.js:1448
+#: assets/js/dist/flwp-form-builder.js:1497
 msgid "admin.conditions.operators.contains"
 msgstr "contains"
 
-#: assets/js/dist/flwp-form-builder.js:1725
-#: assets/js/dist/flwp-form-builder.js:1774
+#: assets/js/dist/flwp-form-builder.js:1449
+#: assets/js/dist/flwp-form-builder.js:1498
 msgid "admin.conditions.operators.not_contains"
 msgstr "does not contain"
 
-#: assets/js/dist/flwp-form-builder.js:1726
-#: assets/js/dist/flwp-form-builder.js:1775
+#: assets/js/dist/flwp-form-builder.js:1450
+#: assets/js/dist/flwp-form-builder.js:1499
 msgid "admin.conditions.operators.exact"
 msgstr "matches exactly"
 
-#: assets/js/dist/flwp-form-builder.js:1727
-#: assets/js/dist/flwp-form-builder.js:1776
+#: assets/js/dist/flwp-form-builder.js:1451
+#: assets/js/dist/flwp-form-builder.js:1500
 msgid "admin.conditions.operators.not_exact"
 msgstr "does not match exactly"
 
-#: assets/js/dist/flwp-form-builder.js:1730
+#: assets/js/dist/flwp-form-builder.js:1454
 msgid "admin.conditions.placeholder.url"
 msgstr "e.g. /contact/ or shop"
 
-#: assets/js/dist/flwp-form-builder.js:1735
+#: assets/js/dist/flwp-form-builder.js:1459
 msgid "admin.conditions.page_type.label"
 msgstr "Page type"
 
-#: assets/js/dist/flwp-form-builder.js:1741
-#: assets/js/dist/flwp-form-builder.js:1757
+#: assets/js/dist/flwp-form-builder.js:1465
+#: assets/js/dist/flwp-form-builder.js:1481
 msgid "admin.conditions.operators.in"
 msgstr "is one of"
 
-#: assets/js/dist/flwp-form-builder.js:1745
+#: assets/js/dist/flwp-form-builder.js:1469
 msgid "admin.conditions.options.pages"
 msgstr "Pages"
 
-#: assets/js/dist/flwp-form-builder.js:1746
+#: assets/js/dist/flwp-form-builder.js:1470
 msgid "admin.conditions.options.posts"
 msgstr "Posts"
 
-#: assets/js/dist/flwp-form-builder.js:1751
+#: assets/js/dist/flwp-form-builder.js:1475
 msgid "admin.conditions.device.label"
 msgstr "Device type"
 
-#: assets/js/dist/flwp-form-builder.js:1761
+#: assets/js/dist/flwp-form-builder.js:1485
 msgid "admin.conditions.options.desktop"
 msgstr "Desktop"
 
-#: assets/js/dist/flwp-form-builder.js:1762
+#: assets/js/dist/flwp-form-builder.js:1486
 msgid "admin.conditions.options.mobile"
 msgstr "Mobile"
 
-#: assets/js/dist/flwp-form-builder.js:1767
+#: assets/js/dist/flwp-form-builder.js:1491
 msgid "admin.conditions.cookie.label"
 msgstr "Cookie value"
 
-#: assets/js/dist/flwp-form-builder.js:1779
+#: assets/js/dist/flwp-form-builder.js:1503
 msgid "admin.conditions.placeholder.cookie_name"
 msgstr "Cookie name (e.g. logged_in)"
 
-#: assets/js/dist/flwp-form-builder.js:1780
+#: assets/js/dist/flwp-form-builder.js:1504
 msgid "admin.conditions.placeholder.cookie_value"
 msgstr "Value (optional)"
 
-#: assets/js/dist/flwp-form-builder.js:1886
+#: assets/js/dist/flwp-form-builder.js:1610
 msgid "admin.conditions.title"
 msgstr "Rule conditions"
 
-#: assets/js/dist/flwp-form-builder.js:1894
+#: assets/js/dist/flwp-form-builder.js:1618
 msgid "admin.conditions.show_on_frontpage"
 msgstr "Show on front page"
 
-#: assets/js/dist/flwp-form-builder.js:1895
+#: assets/js/dist/flwp-form-builder.js:1619
 msgid "admin.conditions.show_on_frontpage_desc"
 msgstr "Should this form appear on your website's front page?"
 
-#: assets/js/dist/flwp-form-builder.js:1915
+#: assets/js/dist/flwp-form-builder.js:1639
 msgid "admin.conditions.and_group"
 msgstr "AND group (All conditions must be met)"
 
-#: assets/js/dist/flwp-form-builder.js:1921
+#: assets/js/dist/flwp-form-builder.js:1645
 msgid "admin.conditions.connector"
 msgstr "CONNECTOR"
 
-#: assets/js/dist/flwp-form-builder.js:1925
+#: assets/js/dist/flwp-form-builder.js:1649
 msgid "admin.conditions.or_group"
 msgstr "OR group (At least one condition must be met)"
 
-#: assets/js/dist/flwp-form-builder.js:1931
+#: assets/js/dist/flwp-form-builder.js:1655
 msgid "admin.conditions.hint.title"
 msgstr "Why can't I add any more conditions?"
 
-#: assets/js/dist/flwp-form-builder.js:1933
+#: assets/js/dist/flwp-form-builder.js:1657
 msgid "admin.conditions.hint.text"
 msgstr "Some conditions (like <em>Device type</em> or <em>Page type</em>) are <strong>unique</strong> and can only be used once. Other conditions (like <em>URL filter</em> or <em>Cookie value</em>) require the <strong>PRO version</strong>. Once all conditions available to you have been added, the add button will be disabled."
 
-#: assets/js/dist/flwp-form-builder.js:1946
+#: assets/js/dist/flwp-form-builder.js:1670
 msgid "admin.conditions.type.and"
 msgstr "AND"
 
-#: assets/js/dist/flwp-form-builder.js:1946
+#: assets/js/dist/flwp-form-builder.js:1670
 msgid "admin.conditions.type.or"
 msgstr "OR"
 
-#: assets/js/dist/flwp-form-builder.js:1962
-#: assets/js/dist/flwp-form-builder.js:1967
+#: assets/js/dist/flwp-form-builder.js:1686
+#: assets/js/dist/flwp-form-builder.js:1691
 msgid "admin.conditions.empty_state"
 msgstr "No {type} conditions defined. These conditions will be ignored."
 
-#: assets/js/dist/flwp-form-builder.js:1983
+#: assets/js/dist/flwp-form-builder.js:1707
 msgid "admin.conditions.add_button"
 msgstr "Add condition"
 
-#: assets/js/dist/flwp-form-builder.js:1995
+#: assets/js/dist/flwp-form-builder.js:1719
 msgid "admin.conditions.add_button_disabled_title"
 msgstr "All available conditions have already been added."
 
-#: assets/js/dist/flwp-form-builder.js:2140
+#: assets/js/dist/flwp-form-builder.js:1864
 msgid "admin.conditions.delete_condition"
 msgstr "Remove condition"
 
-#: assets/js/dist/flwp-form-builder.js:2156
+#: assets/js/dist/flwp-form-builder.js:1880
 msgid "admin.warning.submit_button"
 msgstr "Warning: This form contains multiple input fields, but no submit button or next button with activated step 2. Add a button so users can submit the form."
 
-#: assets/js/dist/flwp-form-builder.js:2164
+#: assets/js/dist/flwp-form-builder.js:1888
 msgid "admin.warning.step2_empty"
 msgstr "Warning: Step 2 is enabled for at least one element in Step 1, but no elements were defined in Step 2. Add elements to Step 2 or disable Step 2."
 
-#: assets/js/dist/flwp-form-builder.js:2172
+#: assets/js/dist/flwp-form-builder.js:1896
 msgid "admin.warning.step2_missing_submit"
 msgstr "Attention: Step 2 contains input fields, but no submit button."
 
-#: assets/js/dist/flwp-form-builder.js:2179
+#: assets/js/dist/flwp-form-builder.js:1903
 msgid "admin.warning.empty_form"
 msgstr "Warning: The form does not contain any elements yet. Add at least one element."
 
-#: assets/js/dist/flwp-form-builder.js:2246
-#: assets/js/dist/flwp-form-builder.js:2258
+#: assets/js/dist/flwp-form-builder.js:1970
+#: assets/js/dist/flwp-form-builder.js:1982
 msgid "validation.error.active_warnings"
 msgstr "{count} active warnings"
 
-#: assets/js/dist/flwp-form-builder.js:2415
-#: assets/js/dist/flwp-form-builder.js:2426
+#: assets/js/dist/flwp-form-builder.js:2139
+#: assets/js/dist/flwp-form-builder.js:2150
 msgid "admin.preview.title"
 msgstr "Plugin live preview"
 
-#: assets/js/dist/flwp-form-builder.js:2430
+#: assets/js/dist/flwp-form-builder.js:2154
 msgid "admin.preview.address_placeholder"
 msgstr "https://your-website.com/blog/article"
 
-#: assets/js/dist/flwp-form-builder.js:2434
+#: assets/js/dist/flwp-form-builder.js:2158
 msgid "admin.preview.desktop_view"
 msgstr "Desktop view"
 
-#: assets/js/dist/flwp-form-builder.js:2437
+#: assets/js/dist/flwp-form-builder.js:2161
 msgid "admin.preview.mobile_view"
 msgstr "Mobile view"
 
-#: assets/js/dist/flwp-form-builder.js:2442
+#: assets/js/dist/flwp-form-builder.js:2166
 msgid "admin.preview.refresh_preview"
 msgstr "Refresh preview"
 
-#: assets/js/dist/flwp-form-builder.js:2446
+#: assets/js/dist/flwp-form-builder.js:2170
 msgid "admin.preview.close_preview"
 msgstr "Close preview"
 
-#: assets/js/dist/flwp-form-builder.js:2466
+#: assets/js/dist/flwp-form-builder.js:2190
 msgid "admin.preview.active_mode_label"
 msgstr "Active mode:"
 
-#: assets/js/dist/flwp-form-builder.js:2468
+#: assets/js/dist/flwp-form-builder.js:2192
 msgid "admin.preview.simulate_trigger"
 msgstr "Simulate trigger"
 
-#: assets/js/dist/flwp-form-builder.js:2477
+#: assets/js/dist/flwp-form-builder.js:2201
 msgid "admin.preview.modes.in_content_shortcode"
 msgstr "Shortcode"
 
-#: assets/js/dist/flwp-form-builder.js:2477
+#: assets/js/dist/flwp-form-builder.js:2201
 msgid "admin.preview.modes.in_content_inline"
 msgstr "Inline"
 
-#: assets/js/dist/flwp-form-builder.js:2478
+#: assets/js/dist/flwp-form-builder.js:2202
 msgid "admin.preview.modes.in_content"
 msgstr "In-content ({type})"
 
-#: assets/js/dist/flwp-form-builder.js:2481
+#: assets/js/dist/flwp-form-builder.js:2205
 msgid "admin.preview.modes.feedback_button"
 msgstr "Floating feedback button"
 
-#: assets/js/dist/flwp-form-builder.js:2483
+#: assets/js/dist/flwp-form-builder.js:2207
 msgid "admin.preview.modes.slide_in"
 msgstr "Slide-in widget"
 
-#: assets/js/dist/flwp-form-builder.js:2485
+#: assets/js/dist/flwp-form-builder.js:2209
 msgid "admin.preview.modes.overlay_modal"
 msgstr "Overlay modal"
 
-#: assets/js/dist/flwp-form-builder.js:2493
+#: assets/js/dist/flwp-form-builder.js:2217
 msgid "admin.preview.mock.logo"
 msgstr "My blog"
 
-#: assets/js/dist/flwp-form-builder.js:2496
+#: assets/js/dist/flwp-form-builder.js:2220
 msgid "admin.preview.mock.headline"
 msgstr "What can I use the FLWP plugin for?"
 
-#: assets/js/dist/flwp-form-builder.js:2497
+#: assets/js/dist/flwp-form-builder.js:2221
 msgid "admin.preview.mock.desc1"
 msgstr "With FLWP, you can create many different feedback forms and display them in various ways."
 
-#: assets/js/dist/flwp-form-builder.js:2499
+#: assets/js/dist/flwp-form-builder.js:2223
 msgid "admin.preview.mock.desc2"
 msgstr "Simply create a form under \"Fields\" and then select your display type for this form under \"Display\"."
 
-#: assets/js/dist/flwp-form-builder.js:2500
+#: assets/js/dist/flwp-form-builder.js:2224
 msgid "admin.preview.mock.desc3"
 msgstr "Then save and publish the form, and your form will be displayed on your site."
 
-#: assets/js/dist/flwp-form-builder.js:2501
+#: assets/js/dist/flwp-form-builder.js:2225
 msgid "admin.preview.mock.desc4"
 msgstr "If you have questions about settings, feel free to take a look at our <a href=\"https://flwp.de/docs/\" target=\"_blank\">documentation</a> or visit the <a href=\"https://flwp.de/support-forum/\" target=\"_blank\">support-forum</a>."
 
-#: assets/js/dist/flwp-form-builder.js:2615
+#: assets/js/dist/flwp-form-builder.js:2339
 msgid "admin.preview.default_footer_text"
 msgstr "We appreciate your honest feedback!"
 
-#: assets/js/dist/flwp-form-builder.js:2857
+#: assets/js/dist/flwp-form-builder.js:2581
 msgid "admin.display.group_title_in_content"
 msgstr "Maximum width &amp; height"
 
-#: assets/js/dist/flwp-form-builder.js:2859
+#: assets/js/dist/flwp-form-builder.js:2583
 msgid "admin.display.group_title_default"
 msgstr "Alignment &amp; dimensions"
 
-#: assets/js/dist/flwp-form-builder.js:2874
+#: assets/js/dist/flwp-form-builder.js:2598
 msgid "admin.display.tab_btn_in_content"
 msgstr "Spacing &amp; dimensions"
 
-#: assets/js/dist/flwp-form-builder.js:2876
+#: assets/js/dist/flwp-form-builder.js:2600
 msgid "admin.display.tab_btn_default"
 msgstr "Alignment &amp; dimensions"
 
-#: assets/js/dist/flwp-form-builder.js:2897
+#: assets/js/dist/flwp-form-builder.js:2621
 msgid "admin.display.step_label"
 msgstr "Step {step}"
 
-#: assets/js/dist/flwp-form-builder.js:3661
+#: assets/js/dist/flwp-form-builder.js:3379
 msgid "fields.button.submit.default_text"
 msgstr "Submit"
 
-#: assets/js/dist/flwp-form-builder.js:3665
+#: assets/js/dist/flwp-form-builder.js:3383
 msgid "fields.button.back.default_text"
 msgstr "Back"
 
-#: assets/js/dist/flwp-form-builder.js:3669
+#: assets/js/dist/flwp-form-builder.js:3387
 msgid "fields.button.next.default_text"
 msgstr "Next"
 
-#: assets/js/dist/flwp-form-builder.js:3731
+#: assets/js/dist/flwp-form-builder.js:3449
 msgid "admin.toast.step2_unlocked"
 msgstr "Step 2 unlocked for this element!"
 
-#: assets/js/dist/flwp-form-builder.js:3827
+#: assets/js/dist/flwp-form-builder.js:3545
 msgid "admin.toast.undo"
 msgstr "Action undone"
 
-#: assets/js/dist/flwp-form-builder.js:3862
+#: assets/js/dist/flwp-form-builder.js:3580
 msgid "admin.toast.redo"
 msgstr "Action redone"
 
-#: assets/js/dist/flwp-form-builder.js:4010
+#: assets/js/dist/flwp-form-builder.js:3728
 msgid "admin.toast.form_published"
 msgstr "Form published successfully!"
 
-#: assets/js/dist/flwp-form-builder.js:4010
+#: assets/js/dist/flwp-form-builder.js:3728
 msgid "admin.toast.draft_saved"
 msgstr "Draft saved successfully!"
 
-#: assets/js/dist/flwp-form-builder.js:4013
+#: assets/js/dist/flwp-form-builder.js:3731
 msgid "admin.toast.save_error"
 msgstr "Error saving: {error}"
 
-#: assets/js/dist/flwp-form-builder.js:4013
+#: assets/js/dist/flwp-form-builder.js:3731
 msgid "admin.toast.unknown_error"
 msgstr "Unknown error"
 
-#: assets/js/dist/flwp-form-builder.js:4302
-#: assets/js/dist/flwp-form-builder.js:4317
-#: assets/js/dist/flwp-form-builder.js:4322
+#: assets/js/dist/flwp-form-builder.js:3736
+msgid "admin.toast.network_error"
+msgstr "Network error saving data."
+
+#: assets/js/dist/flwp-form-builder.js:4008
+#: assets/js/dist/flwp-form-builder.js:4023
+#: assets/js/dist/flwp-form-builder.js:4028
 msgid "admin.builder.element_count_plural"
 msgstr "{count} elements"
 
-#: assets/js/dist/flwp-form-builder.js:4317
-#: assets/js/dist/flwp-form-builder.js:4322
+#: assets/js/dist/flwp-form-builder.js:4023
+#: assets/js/dist/flwp-form-builder.js:4028
 msgid "admin.builder.element_count_singular"
 msgstr "{count} element"
 
-#: assets/js/dist/flwp-form-builder.js:4323
+#: assets/js/dist/flwp-form-builder.js:4029
 msgid "admin.builder.active_for"
 msgstr "Active for: {label}"
 
-#: assets/js/dist/flwp-form-builder.js:4325
+#: assets/js/dist/flwp-form-builder.js:4031
 msgid "admin.builder.switch_recipient"
 msgstr "Switch recipient"
 
-#: assets/js/dist/flwp-form-builder.js:4385
-#: assets/js/dist/flwp-form-builder.js:4791
+#: assets/js/dist/flwp-form-builder.js:4091
+#: assets/js/dist/flwp-form-builder.js:4497
 msgid "admin.builder.move_to_step2"
 msgstr "Move to step 2"
 
-#: assets/js/dist/flwp-form-builder.js:4385
-#: assets/js/dist/flwp-form-builder.js:4791
+#: assets/js/dist/flwp-form-builder.js:4091
+#: assets/js/dist/flwp-form-builder.js:4497
 msgid "admin.builder.move_to_step1"
 msgstr "Move to step 1"
 
-#: assets/js/dist/flwp-form-builder.js:4393
-#: assets/js/dist/flwp-form-builder.js:4783
+#: assets/js/dist/flwp-form-builder.js:4099
+#: assets/js/dist/flwp-form-builder.js:4489
 msgid "admin.builder.duplicate_element"
 msgstr "Duplicate element"
 
-#: assets/js/dist/flwp-form-builder.js:4401
-#: assets/js/dist/flwp-form-builder.js:4802
+#: assets/js/dist/flwp-form-builder.js:4107
+#: assets/js/dist/flwp-form-builder.js:4508
 msgid "admin.builder.delete_element"
 msgstr "Delete element"
 
-#: assets/js/dist/flwp-form-builder.js:4618
+#: assets/js/dist/flwp-form-builder.js:4324
 msgid "admin.builder.customize_colors"
 msgstr "Customise {name} colours"
 
-#: assets/js/dist/flwp-form-builder.js:4703
+#: assets/js/dist/flwp-form-builder.js:4409
 msgid "admin.preview.widget_title"
 msgstr "Widget live preview"
 
-#: assets/js/dist/flwp-form-builder.js:4731
+#: assets/js/dist/flwp-form-builder.js:4437
 msgid "admin.preview.form_preview_title"
 msgstr "Form preview"
 
-#: assets/js/dist/flwp-form-builder.js:4775
+#: assets/js/dist/flwp-form-builder.js:4481
 msgid "admin.builder.edit_element"
 msgstr "Edit element"
 
-#: assets/js/dist/flwp-form-builder.js:4828
+#: assets/js/dist/flwp-form-builder.js:4534
 msgid "admin.toast.step2_auto_activated"
 msgstr "Step 2 was automatically activated for \"{label}\"."
 
-#: assets/js/dist/flwp-form-builder.js:4832
+#: assets/js/dist/flwp-form-builder.js:4538
 msgid "admin.toast.step2_requirement_error"
 msgstr "Step 2 requires at least one rating or button element in Step 1 with an activated step 2 path."
 
-#: assets/js/dist/flwp-form-builder.js:4847
+#: assets/js/dist/flwp-form-builder.js:4553
 msgid "admin.toast.moved_to_step2"
 msgstr "\"{label}\" successfully moved to Step 2!"
 
-#: assets/js/dist/flwp-form-builder.js:4886
+#: assets/js/dist/flwp-form-builder.js:4592
 msgid "admin.toast.moved_to_step1"
 msgstr "\"{label}\" successfully moved to Step 1!"
 
-#: assets/js/dist/flwp-form-builder.js:4900
+#: assets/js/dist/flwp-form-builder.js:4606
 msgid "admin.builder.back_to_overview"
 msgstr "Back to overview"
 
-#: assets/js/dist/flwp-form-builder.js:4925
+#: assets/js/dist/flwp-form-builder.js:4631
 msgid "admin.toast.deleted"
 msgstr "Element deleted"
 
-#: assets/js/dist/flwp-form-builder.js:4940
+#: assets/js/dist/flwp-form-builder.js:4646
 msgid "admin.toast.duplicated"
 msgstr "Element duplicated"
 
-#: assets/js/dist/flwp-form-builder.js:4962
+#: assets/js/dist/flwp-form-builder.js:4668
 msgid "admin.toast.added"
 msgstr "Element \"{name}\" added"
 
-#: assets/js/dist/flwp-form-builder.js:5050
+#: assets/js/dist/flwp-form-builder.js:4756
 msgid "admin.toast.dropped"
 msgstr "Element \"{name}\" dropped"
 
-#: assets/js/dist/flwp-form-builder.js:5060
+#: assets/js/dist/flwp-form-builder.js:4766
 msgid "admin.toast.move_step_not_allowed"
 msgstr "Moving between steps is not allowed"
 
-#: assets/js/dist/flwp-form-builder.js:5134
+#: assets/js/dist/flwp-form-builder.js:4840
 msgid "admin.toast.view_loaded"
 msgstr "View \"{view}\" loaded"
 
-#: assets/js/dist/flwp-form-builder.js:5503
+#: assets/js/dist/flwp-form-builder.js:5209
 msgid "admin.toast.config_copied"
 msgstr "Configuration copied!"
 
-#: assets/js/dist/flwp-form-builder.js:5511
+#: assets/js/dist/flwp-form-builder.js:5217
 msgid "admin.toast.invalid_json"
 msgstr "Please enter a valid JSON configuration."
 
-#: assets/js/dist/flwp-form-builder.js:5524
+#: assets/js/dist/flwp-form-builder.js:5230
 msgid "admin.toast.config_loaded"
 msgstr "Configuration loaded!"
 
-#: assets/js/dist/flwp-form-builder.js:5555
+#: assets/js/dist/flwp-form-builder.js:5234
+msgid "admin.toast.import_error"
+msgstr "Error loading/importing: {error}"
+
+#: assets/js/dist/flwp-form-builder.js:5261
 msgid "admin.builder.display_type_label"
 msgstr "Display for display type {label}"
 
-#: assets/js/dist/flwp-form-builder.js:5572
+#: assets/js/dist/flwp-form-builder.js:5278
 msgid "admin.builder.targeting_tabs.in_content"
 msgstr "Automatic placement (In-content)"
 
-#: assets/js/dist/flwp-form-builder.js:5573
+#: assets/js/dist/flwp-form-builder.js:5279
 msgid "admin.builder.targeting_tabs.shortcode"
 msgstr "Shortcode"
 
-#: assets/js/dist/flwp-form-builder.js:5577
+#: assets/js/dist/flwp-form-builder.js:5283
 msgid "admin.builder.targeting_tabs.overlay"
 msgstr "Overlay"
 
-#: assets/js/dist/flwp-form-builder.js:5725
-#: assets/js/dist/flwp-form-builder.js:5821
+#: assets/js/dist/flwp-form-builder.js:5431
+#: assets/js/dist/flwp-form-builder.js:5527
 msgid "admin.toast.status_paused"
 msgstr "Paused"
 
-#: assets/js/dist/flwp-form-builder.js:5728
-#: assets/js/dist/flwp-form-builder.js:5822
+#: assets/js/dist/flwp-form-builder.js:5434
+#: assets/js/dist/flwp-form-builder.js:5528
 msgid "admin.toast.status_live"
 msgstr "Live"
 
-#: assets/js/dist/flwp-form-builder.js:5731
-#: assets/js/dist/flwp-form-builder.js:5823
+#: assets/js/dist/flwp-form-builder.js:5437
+#: assets/js/dist/flwp-form-builder.js:5529
 msgid "admin.toast.status_admin_only"
 msgstr "Admin-only"
 
-#: assets/js/dist/flwp-form-builder.js:5824
+#: assets/js/dist/flwp-form-builder.js:5530
 msgid "admin.toast.status_changed"
 msgstr "Form status changed to \"{status}\""
 
-#: assets/js/dist/flwp-form-builder.js:5851
+#: assets/js/dist/flwp-form-builder.js:5557
 msgid "admin.builder.leave_editor_confirm"
 msgstr "Do you really want to leave the editor?"
 
-#: assets/js/dist/flwp-form-builder.js:5865
+#: assets/js/dist/flwp-form-builder.js:5571
 msgid "admin.toast.split_preview_reset"
 msgstr "Split preview test reset!"
 
-#: assets/js/dist/flwp-form-builder.js:5878
-#: assets/js/dist/flwp-form-builder.js:5887
+#: assets/js/dist/flwp-form-builder.js:5584
+#: assets/js/dist/flwp-form-builder.js:5593
 msgid "admin.toast.activate_step2_first"
 msgstr "Activate 'Step 2' in the field options first!"
 
-#: assets/js/dist/flwp-form-frontend.js:2157
+#: assets/js/dist/flwp-form-frontend.js:1881
 msgid "widget.feedback_button.hide_button"
 msgstr "Hide feedback button for a while"
 
-#: assets/js/dist/flwp-form-frontend.js:2222
+#: assets/js/dist/flwp-form-frontend.js:1946
 msgid "widget.status_completed"
 msgstr "Completed"
 
-#: assets/js/dist/flwp-form-frontend.js:2224
+#: assets/js/dist/flwp-form-frontend.js:1948
 msgid "widget.step_indicator_full"
 msgstr "Step {step} of {total}"
 
-#: assets/js/dist/flwp-form-frontend.js:2505
+#: assets/js/dist/flwp-form-frontend.js:2229
 msgid "validation.error.required"
 msgstr "This field is a required field."
 
-#: assets/js/dist/flwp-form-frontend.js:2555
-#: assets/js/dist/flwp-form-frontend.js:2620
+#: assets/js/dist/flwp-form-frontend.js:2279
+#: assets/js/dist/flwp-form-frontend.js:2344
 msgid "widget.step_indicator"
 msgstr "Step {step} / {total}"
 
-#: assets/js/dist/flwp-form-frontend.js:2582
+#: assets/js/dist/flwp-form-frontend.js:2306
 msgid "widget.status_confirmed"
 msgstr "Confirmed"
 
-#: assets/js/dist/flwp-form-frontend.js:2609
+#: assets/js/dist/flwp-form-frontend.js:2333
 msgid "admin.builder.simulation_redirect_msg"
 msgstr "[Simulation] Redirecting to:"
 
-#: assets/js/dist/flwp-form-frontend.js:2620
+#: assets/js/dist/flwp-form-frontend.js:2344
 msgid "widget.step_single"
 msgstr "Step {step}"
 
-#: assets/js/dist/flwp-form-frontend.js:2651
+#: assets/js/dist/flwp-form-frontend.js:2375
 msgid "widget.no_elements"
 msgstr "No elements selected."
 
-#: assets/js/dist/flwp-form-frontend.js:2718
+#: assets/js/dist/flwp-form-frontend.js:2442
 msgid "confirmation.message.redirecting"
 msgstr "You will be redirected in {seconds} seconds..."
 
-#: assets/js/dist/flwp-form-frontend.js:2721
+#: assets/js/dist/flwp-form-frontend.js:2445
 msgid "confirmation.message.target"
 msgstr "Target:"

@@ -103,7 +103,14 @@ class EnvironmentChecks {
                 <strong>
                 <?php
                 if (current_user_can('update_core')) {
-                    printf(esc_html__('admin.env_check.wp.update_core', 'flwp'), esc_url(self_admin_url('update-core.php')), esc_html(self::MIN_WP_VERSION));
+					echo sprintf(
+						esc_html__('admin.env_check.wp.update_core', 'flwp'),
+		                '<a href="' . esc_url(self_admin_url('update-core.php')) . '">' . esc_html__(
+			                'admin.env_check.wp.update_core.txt',
+			                'flwp'
+		                ) . '</a>',
+						esc_html(self::MIN_WP_VERSION)
+					);
                 } else {
                     printf(esc_html__('admin.env_check.wp.ask_admin', 'flwp'), esc_html(self::MIN_WP_VERSION));
                 }
@@ -128,7 +135,18 @@ class EnvironmentChecks {
                 <?php printf(esc_html__('admin.env_check.php.too_old', 'flwp'), esc_html(self::MIN_PHP_VERSION)); ?>
             </p>
             <p style="font-size:14px">
-                <strong><?php printf(esc_html__('admin.env_check.php.update_link', 'flwp'), esc_url(wp_get_update_php_url())); ?></strong>
+                <strong>
+	                <?php
+					echo sprintf(
+						esc_html__('admin.env_check.php.update_link', 'flwp'),
+		                '<a href="' . esc_url(wp_get_update_php_url()) . '">' . esc_html__(
+							'admin.env_check.php.update_link.txt',
+			                'flwp'
+						) . '</a>',
+		                esc_html(self::MIN_WP_VERSION)
+					);
+				 ?>
+                </strong>
             </p>
         </div>
         <?php
