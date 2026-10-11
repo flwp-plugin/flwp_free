@@ -4,7 +4,6 @@
     "translate": "sh scripts/generate_translation_files.sh"
   },
   "devDependencies": {
-    "esbuild": "0.28.2",
-    "po2json": "^0.3.0"
+    "esbuild": "0.28.2"
   }
 }
