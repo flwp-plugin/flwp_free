@@ -162,7 +162,11 @@ class FLWPOverlayController {
         }
 
         // Hide custom click selectors if defined
-        if (this.config.trigger === 'click' && this.config.triggerSettings && this.config.triggerSettings.clickSelector) {
+        if (this.config.trigger === 'click'
+            && this.config.triggerSettings
+            && this.config.triggerSettings.clickSelector
+            && this.config.triggerSettings.hideOnClose
+        ) {
             try {
                 const targets = document.querySelectorAll(this.config.triggerSettings.clickSelector);
                 targets.forEach(target => {

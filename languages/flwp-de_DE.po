@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2026-09-15 11:57+0000\n"
-"PO-Revision-Date: 2026-10-09T13:31:14+00:00\n"
+"PO-Revision-Date: 2026-10-11T11:19:02+00:00\n"
 "Language: de_DE\n"
 "X-Generator: Poedit 3.9\n"
 "X-Domain: flwp\n"
@@ -63,77 +63,77 @@ msgstr "Export"
 msgid "admin.menu.about"
 msgstr "Über FLWP"
 
-#: includes/Admin.php:219
-#: includes/Admin.php:288
-#: includes/Admin.php:316
-#: includes/Admin.php:340
-#: includes/Admin.php:356
-#: includes/Admin.php:395
-#: includes/Admin.php:418
-#: includes/Admin.php:499
+#: includes/Admin.php:221
+#: includes/Admin.php:292
+#: includes/Admin.php:320
+#: includes/Admin.php:344
+#: includes/Admin.php:360
+#: includes/Admin.php:399
+#: includes/Admin.php:422
+#: includes/Admin.php:503
 msgid "Permission denied"
 msgstr ""
 
-#: includes/Admin.php:231
-#: includes/Admin.php:295
-#: includes/Admin.php:323
+#: includes/Admin.php:234
+#: includes/Admin.php:299
+#: includes/Admin.php:327
 msgid "Missing data"
 msgstr ""
 
-#: includes/Admin.php:236
+#: includes/Admin.php:243
 msgid "Invalid data"
 msgstr ""
 
-#: includes/Admin.php:255
+#: includes/Admin.php:261
 msgid "Invalid form configuration. Please check your form settings."
 msgstr ""
 
-#: includes/Admin.php:264
-#: includes/Database/Form.php:109
+#: includes/Admin.php:268
+#: includes/Database/Form.php:144
 msgid "admin.db.default_new_form_name"
 msgstr "Neues Formular"
 
-#: includes/Admin.php:274
+#: includes/Admin.php:278
 msgid "Form data saved successfully"
 msgstr ""
 
-#: includes/Admin.php:280
+#: includes/Admin.php:284
 msgid "Failed to save form data"
 msgstr ""
 
-#: includes/Admin.php:306
+#: includes/Admin.php:310
 msgid "Status updated successfully"
 msgstr ""
 
-#: includes/Admin.php:308
+#: includes/Admin.php:312
 msgid "Failed to update status"
 msgstr ""
 
-#: includes/Admin.php:330
+#: includes/Admin.php:334
 msgid "Feedback status updated successfully"
 msgstr ""
 
-#: includes/Admin.php:332
+#: includes/Admin.php:336
 msgid "Failed to update feedback status"
 msgstr ""
 
-#: includes/Admin.php:423
+#: includes/Admin.php:427
 msgid "ID missing"
 msgstr ""
 
-#: includes/Admin.php:429
+#: includes/Admin.php:433
 msgid "Feedback not found"
 msgstr ""
 
-#: includes/Admin.php:513
+#: includes/Admin.php:517
 msgid "Wrong import-type."
 msgstr ""
 
-#: includes/Admin.php:522
+#: includes/Admin.php:526
 msgid "Error during importing the file or wrong file format."
 msgstr ""
 
-#: includes/Admin.php:544
+#: includes/Admin.php:548
 msgid "admin.notice.thank_you"
 msgstr "Vielen Dank, dass Du %s verwendest."
 
@@ -143,13 +143,13 @@ msgstr "Vielen Dank, dass Du %s verwendest."
 msgid "admin.db.default_form_name"
 msgstr "Feedbackformular"
 
-#: includes/Database/Form.php:241
-#: includes/Database/Form.php:247
+#: includes/Database/Form.php:276
+#: includes/Database/Form.php:282
 msgid "admin.form.duplicate_suffix"
 msgstr "Kopie"
 
 #: includes/EnvironmentChecks.php:97
-#: includes/EnvironmentChecks.php:125
+#: includes/EnvironmentChecks.php:132
 msgid "admin.env_check.error.title"
 msgstr "Achtung: Leider gibt es ein Problem!"
 
@@ -157,27 +157,27 @@ msgstr "Achtung: Leider gibt es ein Problem!"
 msgid "admin.env_check.wp.too_old"
 msgstr "Die installierte WordPress-Version ist zu alt für das FLWP-Plugin! FLWP erfordert eine aktuelle Version!"
 
-#: includes/EnvironmentChecks.php:106
+#: includes/EnvironmentChecks.php:107
 msgid "admin.env_check.wp.update_core"
 msgstr "Bitte %s auf mindestens Version %s"
 
-#: includes/EnvironmentChecks.php:110
+#: includes/EnvironmentChecks.php:108
 msgid "admin.env_check.wp.update_core.txt"
 msgstr "aktualisiere deine WordPress-Installation"
 
-#: includes/EnvironmentChecks.php:108
+#: includes/EnvironmentChecks.php:115
 msgid "admin.env_check.wp.ask_admin"
 msgstr "Bitte deinen Website-Administrator, WordPress auf mindestens Version %1$s zu aktualisieren!"
 
-#: includes/EnvironmentChecks.php:128
+#: includes/EnvironmentChecks.php:135
 msgid "admin.env_check.php.too_old"
 msgstr "Dein Server verwendet eine PHP-Version, die zu alt ist, damit das FLWP-Plugin funktioniert. FLWP erfordert PHP %s oder neuer, wobei neuere Versionen empfohlen werden."
 
-#: includes/EnvironmentChecks.php:131
+#: includes/EnvironmentChecks.php:141
 msgid "admin.env_check.php.update_link"
 msgstr "%s oder kontaktiere deinen Serveradministrator."
 
-#: includes/EnvironmentChecks.php:144
+#: includes/EnvironmentChecks.php:142
 msgid "admin.env_check.php.update_link.txt"
 msgstr "Erfahre mehr über die Aktualisierung von PHP"
 
@@ -313,17 +313,17 @@ msgid "admin.form_template.nps.title"
 msgstr "Net Promoter Score (NPS)"
 
 #: includes/Helper/ConfigHelper.php:402
-#: includes/Helper/FormHelper.php:142
+#: includes/Helper/FormHelper.php:122
 msgid "admin.initial_form.in_content.title"
 msgstr "Inhaltsfeedback"
 
 #: includes/Helper/ConfigHelper.php:406
-#: includes/Helper/FormHelper.php:154
+#: includes/Helper/FormHelper.php:134
 msgid "admin.initial_form.feedback_button.title"
 msgstr "Feedback-Button Formular"
 
 #: includes/Helper/ConfigHelper.php:410
-#: includes/Helper/FormHelper.php:175
+#: includes/Helper/FormHelper.php:155
 msgid "admin.initial_form.exit_intent.title"
 msgstr "Exit-Intent Formular"
 
@@ -580,31 +580,31 @@ msgstr "Wie bewertest du den Artikel?"
 msgid "admin.template4.step1.headline.label"
 msgstr "Artikelbewertung"
 
-#: includes/Helper/FormDataSanitizer.php:663
+#: includes/Helper/FormDataSanitizer.php:668
 msgid "Invalid form configuration."
 msgstr ""
 
-#: includes/Helper/FormHelper.php:267
+#: includes/Helper/FormHelper.php:247
 msgid "admin.form_type.modal.name"
 msgstr "Overlay"
 
-#: includes/Helper/FormHelper.php:268
+#: includes/Helper/FormHelper.php:248
 msgid "admin.form_type.slide-in.name"
 msgstr "Slide-In"
 
-#: includes/Helper/FormHelper.php:269
+#: includes/Helper/FormHelper.php:249
 msgid "admin.form_type.feedback-button.name"
 msgstr "Feedback-Button"
 
-#: includes/Helper/FormHelper.php:270
+#: includes/Helper/FormHelper.php:250
 msgid "admin.form_type.shortcode.name"
 msgstr "Shortcode"
 
-#: includes/Helper/FormHelper.php:271
+#: includes/Helper/FormHelper.php:251
 msgid "admin.form_type.pre-content.name"
 msgstr "Pre-Content"
 
-#: includes/Helper/FormHelper.php:272
+#: includes/Helper/FormHelper.php:252
 msgid "admin.form_type.post-content.name"
 msgstr "Post-Content"
 
@@ -618,7 +618,7 @@ msgid "admin.form_list.form_id"
 msgstr "Formular-ID"
 
 #: includes/Lists/FormFeedbackListTable.php:35
-#: includes/Lists/FormFeedbackListTable.php:153
+#: includes/Lists/FormFeedbackListTable.php:156
 msgid "admin.form_list.display_type"
 msgstr "Anzeigetyp"
 
@@ -645,20 +645,20 @@ msgid "admin.form_list.updated"
 msgstr "Aktualisiert"
 
 #: includes/Lists/FormFeedbackListTable.php:79
-#: includes/Lists/FormFeedbackListTable.php:163
+#: includes/Lists/FormFeedbackListTable.php:165
 #: assets/js/dist/flwp-admin.js:396
 #: assets/js/dist/flwp-admin.js:400
 msgid "admin.form_list.filter.status.read"
 msgstr "Gelesen"
 
 #: includes/Lists/FormFeedbackListTable.php:82
-#: includes/Lists/FormFeedbackListTable.php:164
+#: includes/Lists/FormFeedbackListTable.php:166
 #: assets/js/dist/flwp-admin.js:403
 msgid "admin.form_list.filter.status.archived"
 msgstr "Archiviert"
 
 #: includes/Lists/FormFeedbackListTable.php:86
-#: includes/Lists/FormFeedbackListTable.php:162
+#: includes/Lists/FormFeedbackListTable.php:164
 #: assets/js/dist/flwp-admin.js:407
 msgid "admin.form_list.filter.status.unread"
 msgstr "Ungelesen"
@@ -675,65 +675,70 @@ msgstr "Löschen"
 msgid "admin.form_list.no_items"
 msgstr "Keine Formular-Feedbacks gefunden."
 
-#: includes/Lists/FormFeedbackListTable.php:135
+#: includes/Lists/FormFeedbackListTable.php:139
 msgid "admin.form_list.filter.form"
 msgstr "Formular"
 
-#: includes/Lists/FormFeedbackListTable.php:161
+#: includes/Lists/FormFeedbackListTable.php:163
 msgid "admin.form_list.filter.status.placeholder"
 msgstr "Status"
 
-#: includes/Lists/FormFeedbackListTable.php:168
+#: includes/Lists/FormFeedbackListTable.php:170
 msgid "admin.form_list.filter.range.placeholder"
 msgstr "Zeitraum"
 
-#: includes/Lists/FormFeedbackListTable.php:169
+#: includes/Lists/FormFeedbackListTable.php:171
 msgid "admin.form_list.filter.range.today"
 msgstr "Heute"
 
-#: includes/Lists/FormFeedbackListTable.php:170
+#: includes/Lists/FormFeedbackListTable.php:172
 msgid "admin.form_list.filter.range.yesterday"
 msgstr "Gestern"
 
-#: includes/Lists/FormFeedbackListTable.php:171
+#: includes/Lists/FormFeedbackListTable.php:173
 msgid "admin.form_list.filter.range.last_7_days"
 msgstr "Letzte 7 Tage"
 
-#: includes/Lists/FormFeedbackListTable.php:172
+#: includes/Lists/FormFeedbackListTable.php:174
 msgid "admin.form_list.filter.range.last_30_days"
 msgstr "Letzte 30 Tage"
 
-#: includes/Lists/FormFeedbackListTable.php:173
+#: includes/Lists/FormFeedbackListTable.php:175
 msgid "admin.form_list.filter.range.this_month"
 msgstr "Diesen Monat"
 
-#: includes/Lists/FormFeedbackListTable.php:174
+#: includes/Lists/FormFeedbackListTable.php:176
 msgid "admin.form_list.filter.range.last_month"
 msgstr "Letzten Monat"
 
-#: includes/Lists/FormFeedbackListTable.php:175
+#: includes/Lists/FormFeedbackListTable.php:177
 msgid "admin.form_list.filter.range.this_year"
 msgstr "Dieses Jahr"
 
-#: includes/Lists/FormFeedbackListTable.php:176
+#: includes/Lists/FormFeedbackListTable.php:178
 msgid "admin.form_list.filter.range.last_year"
 msgstr "Letztes Jahr"
 
-#: includes/Lists/FormFeedbackListTable.php:177
+#: includes/Lists/FormFeedbackListTable.php:179
 msgid "admin.form_list.filter.range.custom"
 msgstr "Benutzerdefiniert"
 
-#: includes/Lists/FormFeedbackListTable.php:181
+#: includes/Lists/FormFeedbackListTable.php:183
 msgid "admin.form_list.filter.date.start"
 msgstr "Startdatum"
 
-#: includes/Lists/FormFeedbackListTable.php:182
+#: includes/Lists/FormFeedbackListTable.php:184
 msgid "admin.form_list.filter.date.end"
 msgstr "Enddatum"
 
-#: includes/Lists/FormFeedbackListTable.php:185
+#: includes/Lists/FormFeedbackListTable.php:187
 msgid "admin.form_list.filter.button"
 msgstr "Filtern"
+
+#: includes/Lists/FormFeedbackListTable.php:196
+#: includes/Lists/FormListTable.php:148
+msgid "You do not have permission to access this page."
+msgstr ""
 
 #: includes/Lists/FormListTable.php:38
 msgid "admin.form_list.name"
@@ -767,7 +772,7 @@ msgstr "Duplizieren"
 msgid "admin.form_list.actions.delete"
 msgstr "Löschen"
 
-#: includes/Lists/FormListTable.php:140
+#: includes/Lists/FormListTable.php:141
 msgid "admin.form_list.no_forms"
 msgstr "Keine Formulare gefunden."
 
@@ -859,31 +864,31 @@ msgstr "Bitte gib diese Informationen bei Fehlerberichten und Support-Anfragen a
 msgid "FLWP"
 msgstr "FLWP"
 
-#: templates/admin/flwp-admin-page.php:24
+#: templates/admin/flwp-admin-page.php:21
 msgid "admin.horizontal_navigation.brand"
 msgstr "FLWP"
 
-#: templates/admin/flwp-admin-page.php:29
+#: templates/admin/flwp-admin-page.php:26
 msgid "admin.horizontal_navigation.dashboard"
 msgstr "Dashboard"
 
-#: templates/admin/flwp-admin-page.php:34
+#: templates/admin/flwp-admin-page.php:31
 msgid "admin.horizontal_navigation.all_forms"
 msgstr "Formulare"
 
-#: templates/admin/flwp-admin-page.php:39
+#: templates/admin/flwp-admin-page.php:36
 msgid "admin.horizontal_navigation.add_form"
 msgstr "Formular anlegen"
 
-#: templates/admin/flwp-admin-page.php:44
+#: templates/admin/flwp-admin-page.php:41
 msgid "admin.horizontal_navigation.feedback_list"
 msgstr "Feedback-Liste"
 
-#: templates/admin/flwp-admin-page.php:49
+#: templates/admin/flwp-admin-page.php:46
 msgid "admin.horizontal_navigation.export"
 msgstr "Export"
 
-#: templates/admin/flwp-admin-page.php:54
+#: templates/admin/flwp-admin-page.php:51
 msgid "admin.horizontal_navigation.about"
 msgstr "Über FLWP"
 
@@ -971,231 +976,231 @@ msgstr "Nutze erweiterte Filteroptionen für gezielte Daten-Exporte"
 msgid "admin.page.export.pro_notice.advantage.4"
 msgstr "Exportiere detaillierte Tracking-Daten zu jedem Feedback-Eintrag"
 
-#: templates/admin/flwp-form-builder.php:13
-#: templates/admin/flwp-form-builder.php:80
+#: templates/admin/flwp-form-builder.php:10
+#: templates/admin/flwp-form-builder.php:76
 msgid "admin.page.builder.status.paused"
 msgstr "Pausiert"
 
-#: templates/admin/flwp-form-builder.php:18
-#: templates/admin/flwp-form-builder.php:85
+#: templates/admin/flwp-form-builder.php:15
+#: templates/admin/flwp-form-builder.php:81
 msgid "admin.page.builder.status.live"
 msgstr "Live"
 
-#: templates/admin/flwp-form-builder.php:22
-#: templates/admin/flwp-form-builder.php:90
+#: templates/admin/flwp-form-builder.php:19
+#: templates/admin/flwp-form-builder.php:86
 msgid "admin.page.builder.status.admin_only"
 msgstr "Admin-Only"
 
-#: templates/admin/flwp-form-builder.php:46
+#: templates/admin/flwp-form-builder.php:42
 msgid "admin.page.builder.form_title.default"
 msgstr "Feedback-Formular"
 
-#: templates/admin/flwp-form-builder.php:46
+#: templates/admin/flwp-form-builder.php:42
 msgid "admin.page.builder.form_title.edit_title"
 msgstr "Formulartitel bearbeiten"
 
-#: templates/admin/flwp-form-builder.php:49
+#: templates/admin/flwp-form-builder.php:45
 msgid "admin.page.builder.form_id"
 msgstr "Formular-ID"
 
-#: templates/admin/flwp-form-builder.php:50
+#: templates/admin/flwp-form-builder.php:46
 msgid "admin.page.builder.last_saved"
 msgstr "Letzte Speicherung"
 
-#: templates/admin/flwp-form-builder.php:51
+#: templates/admin/flwp-form-builder.php:47
 msgid "admin.page.builder.last_published"
 msgstr "Letzte Veröffentlichung"
 
-#: templates/admin/flwp-form-builder.php:60
+#: templates/admin/flwp-form-builder.php:56
 msgid "admin.page.builder.undo"
 msgstr "Letzte Aktion rückgängig machen (Strg + Z)"
 
-#: templates/admin/flwp-form-builder.php:63
+#: templates/admin/flwp-form-builder.php:59
 msgid "admin.page.builder.redo"
 msgstr "Aktion wiederholen (Strg + Y)"
 
-#: templates/admin/flwp-form-builder.php:70
+#: templates/admin/flwp-form-builder.php:66
 msgid "admin.page.builder.change_status"
 msgstr "Formularstatus ändern"
 
-#: templates/admin/flwp-form-builder.php:98
+#: templates/admin/flwp-form-builder.php:94
 msgid "admin.page.builder.load_templates"
 msgstr "Vorlage laden"
 
-#: templates/admin/flwp-form-builder.php:99
+#: templates/admin/flwp-form-builder.php:95
 msgid "admin.page.builder.templates"
 msgstr "Vorlagen"
 
-#: templates/admin/flwp-form-builder.php:101
+#: templates/admin/flwp-form-builder.php:97
 msgid "admin.page.builder.json_export_import"
 msgstr "JSON Definition exportieren/importieren"
 
-#: templates/admin/flwp-form-builder.php:102
+#: templates/admin/flwp-form-builder.php:98
 msgid "admin.page.builder.json_label"
 msgstr "JSON"
 
-#: templates/admin/flwp-form-builder.php:108
+#: templates/admin/flwp-form-builder.php:104
 msgid "admin.page.builder.save_draft"
 msgstr "Entwurf speichern"
 
-#: templates/admin/flwp-form-builder.php:109
+#: templates/admin/flwp-form-builder.php:105
 msgid "admin.page.builder.save"
 msgstr "Speichern"
 
-#: templates/admin/flwp-form-builder.php:111
+#: templates/admin/flwp-form-builder.php:107
 msgid "admin.page.builder.publish"
 msgstr "Formular veröffentlichen"
 
-#: templates/admin/flwp-form-builder.php:112
+#: templates/admin/flwp-form-builder.php:108
 msgid "admin.page.builder.publish_btn"
 msgstr "Veröffentlichen"
 
-#: templates/admin/flwp-form-builder.php:118
+#: templates/admin/flwp-form-builder.php:114
 msgid "admin.page.builder.split_view_title"
 msgstr "Split-View (Nebeneinander)"
 
-#: templates/admin/flwp-form-builder.php:119
+#: templates/admin/flwp-form-builder.php:115
 msgid "admin.page.builder.split_view"
 msgstr "Split-View"
 
-#: templates/admin/flwp-form-builder.php:121
+#: templates/admin/flwp-form-builder.php:117
 msgid "admin.page.builder.preview_modal_title"
 msgstr "Vollbild-Vorschau öffnen"
 
-#: templates/admin/flwp-form-builder.php:122
+#: templates/admin/flwp-form-builder.php:118
 msgid "admin.page.builder.preview"
 msgstr "Vorschau"
 
-#: templates/admin/flwp-form-builder.php:127
+#: templates/admin/flwp-form-builder.php:123
 msgid "admin.page.builder.close_editor"
 msgstr "Editor schließen"
 
-#: templates/admin/flwp-form-builder.php:133
+#: templates/admin/flwp-form-builder.php:129
 msgid "admin.page.builder.nav_steps"
 msgstr "Editor Navigationsschritte"
 
-#: templates/admin/flwp-form-builder.php:135
+#: templates/admin/flwp-form-builder.php:131
 msgid "admin.page.builder.nav.fields"
 msgstr "Felder"
 
-#: templates/admin/flwp-form-builder.php:138
+#: templates/admin/flwp-form-builder.php:134
 msgid "admin.page.builder.nav.general"
 msgstr "Allgemein"
 
-#: templates/admin/flwp-form-builder.php:141
+#: templates/admin/flwp-form-builder.php:137
 msgid "admin.page.builder.nav.styles"
 msgstr "Styles"
 
-#: templates/admin/flwp-form-builder.php:144
+#: templates/admin/flwp-form-builder.php:140
 msgid "admin.page.builder.nav.display"
 msgstr "Anzeige"
 
-#: templates/admin/flwp-form-builder.php:147
+#: templates/admin/flwp-form-builder.php:143
 msgid "admin.page.builder.nav.targeting"
 msgstr "Ausspielung"
 
-#: templates/admin/flwp-form-builder.php:150
+#: templates/admin/flwp-form-builder.php:146
 msgid "admin.page.builder.nav.confirmation"
 msgstr "Bestätigung"
 
-#: templates/admin/flwp-form-builder.php:153
+#: templates/admin/flwp-form-builder.php:149
 msgid "admin.page.builder.nav.notification"
 msgstr "Benachrichtigung"
 
-#: templates/admin/flwp-form-builder.php:156
+#: templates/admin/flwp-form-builder.php:152
 msgid "admin.page.builder.nav.tracking"
 msgstr "Tracking"
 
-#: templates/admin/flwp-form-builder.php:187
+#: templates/admin/flwp-form-builder.php:183
 msgid "admin.page.builder.json_modal.title"
 msgstr "Formular-Speicherdefinition (JSON)"
 
-#: templates/admin/flwp-form-builder.php:188
-#: templates/admin/flwp-form-builder.php:207
+#: templates/admin/flwp-form-builder.php:184
+#: templates/admin/flwp-form-builder.php:203
 msgid "admin.page.builder.close"
 msgstr "Schließen"
 
-#: templates/admin/flwp-form-builder.php:192
+#: templates/admin/flwp-form-builder.php:188
 msgid "admin.page.builder.json_modal.description"
 msgstr "Dies ist die serialisierte Definition des aktuellen Formulars. Du kannst das JSON kopieren, um es abzuspeichern, oder eine zuvor gespeicherte Definition einfügen, um das Formular direkt wiederherzustellen."
 
-#: templates/admin/flwp-form-builder.php:196
+#: templates/admin/flwp-form-builder.php:192
 msgid "admin.page.builder.json_modal.label"
 msgstr "JSON-Definition"
 
-#: templates/admin/flwp-form-builder.php:197
+#: templates/admin/flwp-form-builder.php:193
 msgid "admin.page.builder.json_modal.placeholder"
 msgstr "Füge hier eine JSON-Definition ein..."
 
-#: templates/admin/flwp-form-builder.php:202
+#: templates/admin/flwp-form-builder.php:198
 msgid "admin.page.builder.json_modal.import_btn"
 msgstr "JSON laden / Importieren"
 
-#: templates/admin/flwp-form-builder.php:205
+#: templates/admin/flwp-form-builder.php:201
 msgid "admin.page.builder.json_modal.copy_btn"
 msgstr "In die Zwischenablage kopieren"
 
-#: templates/admin/flwp-form-builder.php:225
+#: templates/admin/flwp-form-builder.php:221
 msgid "admin.page.builder.modal_tmpl_title"
 msgstr "Feedback-Vorlage laden"
 
-#: templates/admin/flwp-form-builder.php:230
+#: templates/admin/flwp-form-builder.php:226
 msgid "admin.page.builder.modal_tmpl_desc"
 msgstr "Wähle eine professionell gestaltete Vorlage als Startpunkt für dein Feedback-Formular. Bitte beachte, dass dies dein aktuelles Formular im Editor überschreibt."
 
-#: templates/admin/flwp-form-builder.php:238
+#: templates/admin/flwp-form-builder.php:234
 msgid "admin.page.builder.modal_tmpl_cancel"
 msgstr "Abbrechen"
 
-#: templates/admin/flwp-form-builder.php:249
+#: templates/admin/flwp-form-builder.php:245
 msgid "admin.page.builder.pro.title"
 msgstr "FLWP Pro freischalten"
 
-#: templates/admin/flwp-form-builder.php:258
+#: templates/admin/flwp-form-builder.php:254
 msgid "admin.page.builder.pro.subtitle"
 msgstr "Bringe dein Feedback auf das nächste Level!"
 
-#: templates/admin/flwp-form-builder.php:260
+#: templates/admin/flwp-form-builder.php:256
 msgid "admin.page.builder.pro.description"
 msgstr "Diese Funktion ist exklusiv in der PRO-Version von FLWP verfügbar. Optimiere deine Conversion-Rate und erhalte tiefere Einblicke."
 
-#: templates/admin/flwp-form-builder.php:265
+#: templates/admin/flwp-form-builder.php:261
 msgid "admin.page.builder.pro.benefits_title"
 msgstr "Deine Pro Vorteile:"
 
-#: templates/admin/flwp-form-builder.php:269
+#: templates/admin/flwp-form-builder.php:265
 msgid "admin.page.builder.pro.benefit.1"
 msgstr "Premium Bewertungselemente: Nutze Thumbs-up/down, interaktive Smileys und den Industriestandard NPS."
 
-#: templates/admin/flwp-form-builder.php:273
+#: templates/admin/flwp-form-builder.php:269
 msgid "admin.page.builder.pro.benefit.2"
 msgstr "Fortgeschrittene URL-Filter: Zeige Formulare nur auf bestimmten Seiten, Pfaden oder schließe diese gezielt aus."
 
-#: templates/admin/flwp-form-builder.php:277
+#: templates/admin/flwp-form-builder.php:273
 msgid "admin.page.builder.pro.benefit.3"
 msgstr "Erweitertes Nutzer-Tracking: Erfasse automatisch Bildschirmauflösung, Verweildauer, Sprache, Gerätetyp und mehr."
 
-#: templates/admin/flwp-form-builder.php:283
+#: templates/admin/flwp-form-builder.php:279
 msgid "admin.page.builder.pro.cancel_btn"
 msgstr "Abbrechen"
 
-#: templates/admin/flwp-form-builder.php:285
+#: templates/admin/flwp-form-builder.php:281
 msgid "admin.page.builder.pro.upgrade_btn"
 msgstr "Jetzt upgraden & freischalten"
 
-#: templates/admin/flwp-form-builder.php:321
+#: templates/admin/flwp-form-builder.php:317
 msgid "admin.builder.overlay_template.back"
 msgstr "Zurück"
 
-#: templates/admin/flwp-form-builder.php:333
+#: templates/admin/flwp-form-builder.php:329
 msgid "admin.builder.overlay_template.feedback"
 msgstr "Feedback"
 
-#: templates/admin/flwp-form-builder.php:340
+#: templates/admin/flwp-form-builder.php:336
 msgid "admin.builder.overlay_template.close"
 msgstr "Schließen"
 
-#: templates/admin/flwp-form-builder.php:352
+#: templates/admin/flwp-form-builder.php:348
 msgid "admin.builder.overlay_template.footer_text"
 msgstr "Wir schätzen dein ehrliches Feedback!"
 
@@ -2359,48 +2364,48 @@ msgstr "Zur manuellen Überschreibung der Standardstile im WordPress-Theme."
 msgid "admin.builder.general.honeypot.label"
 msgstr "Anti-Spam (Honeypot-Verfahren aktivieren)"
 
+#: templates/admin/form-builder/notification.php:7
 #: templates/admin/form-builder/notification.php:12
-#: templates/admin/form-builder/notification.php:17
 msgid "admin.builder.notification.title"
 msgstr "E-Mail Benachrichtigungen"
 
-#: templates/admin/form-builder/notification.php:22
+#: templates/admin/form-builder/notification.php:17
 msgid "admin.builder.notification.description"
 msgstr "Hier kannst du konfigurieren, ob du automatische E-Mail-Benachrichtigungen erhalten möchtest, sobald ein Nutzer ein neues Feedback über dein Formular einsendet. So bleibst du immer direkt informiert."
 
-#: templates/admin/form-builder/notification.php:28
+#: templates/admin/form-builder/notification.php:23
 msgid "admin.builder.notification.enabled.label"
 msgstr "Benachrichtigungen aktivieren"
 
-#: templates/admin/form-builder/notification.php:39
+#: templates/admin/form-builder/notification.php:34
 msgid "admin.builder.notification.recipient.label"
 msgstr "E-Mail des Empfängers"
 
-#: templates/admin/form-builder/notification.php:39
+#: templates/admin/form-builder/notification.php:34
 msgid "admin.builder.notification.recipient.hint"
 msgstr "Kann eine E-Mail oder ein Tag sein."
 
-#: templates/admin/form-builder/notification.php:41
+#: templates/admin/form-builder/notification.php:36
 msgid "admin.builder.notification.recipient.default"
 msgstr "E-Mail des Website-Administrators"
 
-#: templates/admin/form-builder/notification.php:46
+#: templates/admin/form-builder/notification.php:41
 msgid "admin.builder.notification.subject.label"
 msgstr "E-Mail-Betreffzeile"
 
-#: templates/admin/form-builder/notification.php:48
+#: templates/admin/form-builder/notification.php:43
 msgid "admin.builder.notification.subject.default"
 msgstr "Neuer Eintrag: Kundenzufriedenheit-Formular"
 
-#: templates/admin/form-builder/notification.php:53
+#: templates/admin/form-builder/notification.php:48
 msgid "admin.builder.notification.sender_name.label"
 msgstr "Absendername"
 
-#: templates/admin/form-builder/notification.php:55
+#: templates/admin/form-builder/notification.php:50
 msgid "admin.builder.notification.sender_name.default"
 msgstr "Webseiten-Titel"
 
-#: templates/admin/form-builder/notification.php:60
+#: templates/admin/form-builder/notification.php:55
 msgid "admin.builder.notification.sender_email.label"
 msgstr "E-Mail-Adresse des Absenders"
 
@@ -2542,200 +2547,200 @@ msgstr "Deine Pro Vorteile:"
 msgid "admin.builder.pro.cta_text"
 msgstr "Jetzt upgraden & freischalten"
 
-#: templates/admin/partial/mockup/export.php:15
+#: templates/admin/partial/mockup/export.php:19
 msgid "Content feedback"
 msgstr ""
 
-#: templates/admin/partial/mockup/export.php:19
+#: templates/admin/partial/mockup/export.php:23
 msgid "Exit-intent form"
 msgstr ""
 
-#: templates/admin/partial/mockup/export.php:23
+#: templates/admin/partial/mockup/export.php:27
 msgid "Feedback button form"
 msgstr ""
 
-#: templates/admin/partial/mockup/export.php:40
+#: templates/admin/partial/mockup/export.php:44
 msgid "Data management (import & export)"
 msgstr ""
 
-#: templates/admin/partial/mockup/export.php:45
+#: templates/admin/partial/mockup/export.php:49
 msgid "Manage your form structures, plugin configurations, and collected feedback entries in one central location."
 msgstr ""
 
-#: templates/admin/partial/mockup/export.php:99
+#: templates/admin/partial/mockup/export.php:103
 msgid "1. Feedback entries (received user data)"
 msgstr ""
 
-#: templates/admin/partial/mockup/export.php:146
+#: templates/admin/partial/mockup/export.php:150
 msgid "Export entries"
 msgstr ""
 
-#: templates/admin/partial/mockup/export.php:155
+#: templates/admin/partial/mockup/export.php:159
 msgid "Select your filters and download the feedback data in the desired format."
 msgstr ""
 
-#: templates/admin/partial/mockup/export.php:190
+#: templates/admin/partial/mockup/export.php:194
 msgid "Filter by form"
 msgstr ""
 
-#: templates/admin/partial/mockup/export.php:224
-#: templates/admin/partial/mockup/export.php:675
+#: templates/admin/partial/mockup/export.php:228
+#: templates/admin/partial/mockup/export.php:679
 msgid "Select all forms"
 msgstr ""
 
-#: templates/admin/partial/mockup/export.php:283
+#: templates/admin/partial/mockup/export.php:287
 msgid "Time period"
 msgstr ""
 
-#: templates/admin/partial/mockup/export.php:299
+#: templates/admin/partial/mockup/export.php:303
 msgid "Last 30 days"
 msgstr ""
 
-#: templates/admin/partial/mockup/export.php:315
-#: templates/admin/partial/mockup/feedback-list.php:49
-#: templates/admin/partial/mockup/feedback-list.php:102
-#: templates/admin/partial/mockup/feedback-list.php:194
+#: templates/admin/partial/mockup/export.php:319
+#: templates/admin/partial/mockup/feedback-list.php:53
+#: templates/admin/partial/mockup/feedback-list.php:106
+#: templates/admin/partial/mockup/feedback-list.php:198
 msgid "Status"
 msgstr ""
 
-#: templates/admin/partial/mockup/export.php:331
+#: templates/admin/partial/mockup/export.php:335
 msgid "All entries"
 msgstr ""
 
-#: templates/admin/partial/mockup/export.php:358
+#: templates/admin/partial/mockup/export.php:362
 msgid "Export hint:"
 msgstr ""
 
-#: templates/admin/partial/mockup/export.php:362
+#: templates/admin/partial/mockup/export.php:366
 msgid "CSV contains dynamic columns (each question in your form gets its own column). JSON provides structured raw data including detailed device and meta data."
 msgstr ""
 
-#: templates/admin/partial/mockup/export.php:387
+#: templates/admin/partial/mockup/export.php:391
 msgid "Download CSV"
 msgstr ""
 
-#: templates/admin/partial/mockup/export.php:402
+#: templates/admin/partial/mockup/export.php:406
 msgid "Download JSON"
 msgstr ""
 
-#: templates/admin/partial/mockup/export.php:448
+#: templates/admin/partial/mockup/export.php:452
 msgid "Import feedbacks"
 msgstr ""
 
-#: templates/admin/partial/mockup/export.php:457
+#: templates/admin/partial/mockup/export.php:461
 msgid "Upload an exported feedback file (.json) to restore entries."
 msgstr ""
 
-#: templates/admin/partial/mockup/export.php:491
-#: templates/admin/partial/mockup/export.php:844
+#: templates/admin/partial/mockup/export.php:495
+#: templates/admin/partial/mockup/export.php:848
 msgid "Select or drag file"
 msgstr ""
 
-#: templates/admin/partial/mockup/export.php:499
+#: templates/admin/partial/mockup/export.php:503
 msgid "Supports .json feedback files"
 msgstr ""
 
-#: templates/admin/partial/mockup/export.php:547
+#: templates/admin/partial/mockup/export.php:551
 msgid "2. Form structures (templates)"
 msgstr ""
 
-#: templates/admin/partial/mockup/export.php:594
+#: templates/admin/partial/mockup/export.php:598
 msgid "Export forms"
 msgstr ""
 
-#: templates/admin/partial/mockup/export.php:603
+#: templates/admin/partial/mockup/export.php:607
 msgid "Export selected form layouts as .json for other WordPress instances."
 msgstr ""
 
-#: templates/admin/partial/mockup/export.php:637
+#: templates/admin/partial/mockup/export.php:641
 msgid "Which forms would you like to export?"
 msgstr ""
 
-#: templates/admin/partial/mockup/export.php:732
+#: templates/admin/partial/mockup/export.php:736
 msgid "Export layout(s) (.json)"
 msgstr ""
 
-#: templates/admin/partial/mockup/export.php:753
+#: templates/admin/partial/mockup/export.php:757
 msgid "Ideal for transferring from a test (staging) to a live environment."
 msgstr ""
 
-#: templates/admin/partial/mockup/export.php:801
+#: templates/admin/partial/mockup/export.php:805
 msgid "Import forms"
 msgstr ""
 
-#: templates/admin/partial/mockup/export.php:810
+#: templates/admin/partial/mockup/export.php:814
 msgid "Upload an exported form layout (.json) to add it. Note that existing form data with the same form ID will be overwritten."
 msgstr ""
 
-#: templates/admin/partial/mockup/export.php:852
+#: templates/admin/partial/mockup/export.php:856
 msgid "Supports .json form files (single or multiple forms)"
 msgstr ""
 
-#: templates/admin/partial/mockup/feedback-list.php:41
+#: templates/admin/partial/mockup/feedback-list.php:45
 msgid "Form"
 msgstr ""
 
-#: templates/admin/partial/mockup/feedback-list.php:45
-#: templates/admin/partial/mockup/feedback-list.php:90
-#: templates/admin/partial/mockup/feedback-list.php:166
+#: templates/admin/partial/mockup/feedback-list.php:49
+#: templates/admin/partial/mockup/feedback-list.php:94
+#: templates/admin/partial/mockup/feedback-list.php:170
 msgid "Display Type"
 msgstr ""
 
-#: templates/admin/partial/mockup/feedback-list.php:53
+#: templates/admin/partial/mockup/feedback-list.php:57
 msgid "Date Range"
 msgstr ""
 
-#: templates/admin/partial/mockup/feedback-list.php:57
+#: templates/admin/partial/mockup/feedback-list.php:61
 msgid "Filter"
 msgstr ""
 
 #. translators: %d: Number of demo feedback entries.
-#: templates/admin/partial/mockup/feedback-list.php:67
-#: templates/admin/partial/mockup/feedback-list.php:229
+#: templates/admin/partial/mockup/feedback-list.php:71
+#: templates/admin/partial/mockup/feedback-list.php:233
 #, php-format
 msgid "%d entries"
 msgstr ""
 
-#: templates/admin/partial/mockup/feedback-list.php:82
-#: templates/admin/partial/mockup/feedback-list.php:140
+#: templates/admin/partial/mockup/feedback-list.php:86
+#: templates/admin/partial/mockup/feedback-list.php:144
 msgid "ID"
 msgstr ""
 
-#: templates/admin/partial/mockup/feedback-list.php:86
-#: templates/admin/partial/mockup/feedback-list.php:159
+#: templates/admin/partial/mockup/feedback-list.php:90
+#: templates/admin/partial/mockup/feedback-list.php:163
 msgid "Form ID"
 msgstr ""
 
-#: templates/admin/partial/mockup/feedback-list.php:94
-#: templates/admin/partial/mockup/feedback-list.php:175
+#: templates/admin/partial/mockup/feedback-list.php:98
+#: templates/admin/partial/mockup/feedback-list.php:179
 msgid "Form Name"
 msgstr ""
 
-#: templates/admin/partial/mockup/feedback-list.php:98
-#: templates/admin/partial/mockup/feedback-list.php:182
+#: templates/admin/partial/mockup/feedback-list.php:102
+#: templates/admin/partial/mockup/feedback-list.php:186
 msgid "Page URL"
 msgstr ""
 
-#: templates/admin/partial/mockup/feedback-list.php:106
-#: templates/admin/partial/mockup/feedback-list.php:203
+#: templates/admin/partial/mockup/feedback-list.php:110
+#: templates/admin/partial/mockup/feedback-list.php:207
 msgid "Created"
 msgstr ""
 
-#: templates/admin/partial/mockup/feedback-list.php:110
-#: templates/admin/partial/mockup/feedback-list.php:210
+#: templates/admin/partial/mockup/feedback-list.php:114
+#: templates/admin/partial/mockup/feedback-list.php:214
 msgid "Updated"
 msgstr ""
 
-#: templates/admin/partial/mockup/feedback-list.php:149
+#: templates/admin/partial/mockup/feedback-list.php:153
 msgid "View"
 msgstr ""
 
-#: templates/admin/partial/mockup/feedback-list.php:152
+#: templates/admin/partial/mockup/feedback-list.php:156
 msgid "Delete"
 msgstr ""
 
 #. translators: 1: Current page, 2: Total number of pages.
-#: templates/admin/partial/mockup/feedback-list.php:243
+#: templates/admin/partial/mockup/feedback-list.php:247
 #, php-format
 msgid "%1$d of %2$d"
 msgstr ""

@@ -18,7 +18,7 @@ Create feedback forms with a visual form builder and display them exactly where 
 
 FLWP provides flexible display rules, smart triggers, frequency controls, email notifications, and configurable confirmation behavior.
 
-The free version allows you to create and use up to three feedback forms. Submitted feedback is delivered via email notifications, while FLWP Pro adds feedback management and analysis directly in the WordPress admin area.
+The free version lets you create unlimited feedback forms and manage submitted feedback directly in the WordPress admin area. View individual responses, organize feedback by status, and use basic filters. FLWP Pro adds advanced analytics, detailed technical context, additional field types, and import/export tools.
 
 Submitted feedback data is stored locally in your WordPress database.
 
@@ -27,7 +27,7 @@ The frontend is built with native JavaScript (ES Modules), CSS, and semantic HTM
 == Highlights & Features ==
 
 * **Visual Form Builder:** Create and edit feedback forms with a live preview, multi-step support, undo/redo, and reusable templates.
-* **Unlimited Feedback Forms:** Create and use unlimited feedback forms with the free version of FLWP.
+* **Unlimited Feedback Forms:** Create and publish as many feedback forms as you need with FLWP Free or Pro.
 * **Flexible Form Fields:** Build forms using headlines, descriptions, text areas, buttons, and rating fields.
 * **Flexible Display Options:** Display feedback forms before or after content, via shortcode, as overlays, slide-ins, or floating feedback buttons.
 * **Smart Triggers:** Open feedback forms based on clicks, time delays, scroll depth, or exit intent.
@@ -40,6 +40,7 @@ The frontend is built with native JavaScript (ES Modules), CSS, and semantic HTM
 * **Lightweight Frontend:** Frontend functionality is built with native JavaScript (ES Modules), CSS, and semantic HTML.
 * **Accessibility:** Forms use semantic markup and support keyboard interaction and relevant ARIA attributes.
 * **Local Feedback Storage:** Submitted feedback data is stored in your WordPress database.
+* **Feedback Management:** View individual submissions, manage unread/read/archived statuses, delete entries, and filter feedback in the WordPress admin area.
 
 == Display Options ==
 
@@ -112,7 +113,7 @@ Available placeholders include:
 `{time}`
 `{page_url}`
 
-Free users can use email notifications to receive submitted feedback without requiring feedback management in the WordPress admin area.
+Email notifications complement the feedback inbox available in the WordPress admin area in both Free and Pro.
 
 == Confirmation Actions ==
 
@@ -127,55 +128,55 @@ FLWP can:
 
 == Feedback Data & Context ==
 
-FLWP can store contextual information together with submitted feedback.
+FLWP lets you choose whether to collect additional technical and page-related information alongside feedback submissions. Tracking can be disabled entirely, and individual data points can be enabled or disabled where available.
 
-The free version includes:
+FLWP Free provides these optional tracking data points:
 
-* Page URL
-* Page title
-* Referrer URL
-* User agent
+* Page URL (the URL where the form was submitted)
+* Page title (the page's HTML title)
+* Referrer URL (the previous page, when available)
+* User agent (browser and system information)
 
-FLWP Pro adds additional context and tracking metadata, including:
+FLWP Pro unlocks these additional optional tracking data points:
 
 * Browser language
 * Screen resolution
-* Viewport size
-* Timezone
-* Connection information
-* Device type
+* Viewport size (browser window dimensions)
+* Local timezone
+* Network connection type (when available)
+* Device type (desktop, tablet, or mobile)
 * Anonymized session ID
-* Time on page
-* Color scheme
+* Time spent on page (in seconds)
+* Colour scheme (system light/dark preference)
+
+Collecting tracking data and viewing technical details are separate features: FLWP Free includes feedback responses and basic submission management in WordPress, while FLWP Pro adds the detailed technical context view for individual submissions.
 
 The anonymized session ID is randomly generated in the visitor's browser session and does not contain a WordPress user ID.
 
 == FLWP Pro ==
 
-FLWP Pro extends the free plugin with additional tools for collecting, managing, and analyzing feedback.
+FLWP Pro extends the free plugin with more advanced ways to collect and analyze feedback. Core feedback management, including viewing individual answers and managing submission statuses, is already available in Free.
 
 Pro features include:
 
-* Unlimited feedback forms
 * Thumbs up / down fields
 * Smiley / emoji rating fields
 * Net Promoter Score (NPS) fields
-* Feedback management directly in the WordPress admin area
-* Feedback status management for unread, read, and archived entries
-* Filtering and detailed feedback information
+* Nine additional optional technical tracking data points
+* Detailed technical context view for individual submissions
+* Advanced feedback analytics and dashboard insights
+* Advanced feedback filtering and analysis tools
 * Additional targeting rules based on URLs and cookie values
-* Additional feedback context and tracking metadata
 * Import and export of feedback data as CSV or JSON
 * Import and export of form configurations
-* Feedback statistics and dashboard insights
 
-The free version remains fully usable for creating and displaying up to three feedback forms and receiving submitted feedback via email.
+The free version lets you create and display unlimited feedback forms, view and manage responses in WordPress, and receive email notifications.
 
 == Feedback Management ==
 
-FLWP Pro provides feedback management directly in the WordPress admin area.
+FLWP Free and Pro both provide feedback management directly in the WordPress admin area.
 
-Submitted feedback can be viewed together with its form values and available context information.
+View submitted answers for individual feedback entries, change their status, and delete entries. FLWP Pro adds a detailed technical context view for individual submissions and advanced analysis capabilities.
 
 Feedback entries can be organized using the following statuses:
 
@@ -183,7 +184,7 @@ Feedback entries can be organized using the following statuses:
 * Read
 * Archived
 
-Feedback can also be filtered by criteria such as form, display type, status, and date range.
+Basic feedback filters help you find submissions by form, display type, status, or date. FLWP Pro extends these capabilities with advanced filtering and analysis.
 
 == Import & Export ==
 
@@ -221,15 +222,13 @@ You can also embed a form manually using the shortcode `[flwp_form id="123"]`, r
 
 = How many feedback forms can I create? =
 
-The free version of FLWP allows you to create and use up to three feedback forms.
-
-FLWP Pro removes this limit and allows you to create unlimited feedback forms.
+Both FLWP Free and FLWP Pro allow you to create and use unlimited feedback forms.
 
 = Where is submitted feedback stored? =
 
 Submitted feedback data is stored locally in your WordPress database.
 
-Free users receive submitted feedback through email notifications. FLWP Pro additionally provides feedback management and analysis directly in the WordPress admin area.
+Both Free and Pro store submitted feedback locally and let you view and manage responses in the WordPress admin area. Email notifications are also available. FLWP Pro adds advanced analysis and technical context.
 
 = How do I manually embed a form into a page? =
 
@@ -261,11 +260,9 @@ Yes. Display conditions can be combined using AND/OR logic to create more specif
 
 = Can I manage submitted feedback in WordPress? =
 
-Feedback management in the WordPress admin area is available with FLWP Pro.
+Yes. FLWP Free includes a feedback list, individual submitted answers, unread/read/archived statuses, deletion, and basic filtering.
 
-FLWP Pro includes feedback details, status management, filtering, additional context information, and feedback statistics.
-
-Free users receive submitted feedback through email notifications.
+FLWP Pro adds detailed technical context, advanced analysis, and extended filtering capabilities.
 
 = Can feedback data be exported? =
 
@@ -275,11 +272,11 @@ Feedback can be exported as CSV or JSON. FLWP Pro also supports importing feedba
 
 = Does FLWP collect additional context about feedback submissions? =
 
-FLWP can store context information together with feedback submissions.
+Tracking is optional and can be turned off. You can choose which available data points to collect.
 
-The free version includes the page URL, page title, referrer URL, and user agent.
+FLWP Free can collect the page URL, page title, referrer URL, and user agent. FLWP Pro additionally offers browser language, screen resolution, viewport size, local timezone, network connection type, device type, anonymized session ID, time spent on page, and colour scheme.
 
-FLWP Pro adds additional metadata such as browser language, screen resolution, viewport size, timezone, connection information, device type, anonymized session ID, time on page, and color scheme.
+The Pro edition also unlocks a detailed technical context view for individual submissions. Availability of individual data points depends on browser support and the tracking options enabled.
 
 = What is the anonymized session ID? =
 
@@ -300,8 +297,8 @@ No. FLWP's frontend functionality is built with native JavaScript (ES Modules) a
 1. FLWP dashboard with feedback statistics and recent activity.
 2. Visual form builder with live preview and field selection.
 3. Display and targeting rules for controlling where feedback forms appear.
-4. Feedback management and detailed feedback view in FLWP Pro.
-5. Feedback import and export tools in FLWP Pro.
+4. Feedback inbox and individual submitted answers, available in FLWP Free and Pro.
+5. Optional tracking settings with Free and Pro data points.
 
 == Links ==
 

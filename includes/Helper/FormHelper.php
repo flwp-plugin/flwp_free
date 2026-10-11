@@ -43,49 +43,29 @@ class FormHelper {
      * @param Form $form Das Formular-Entity-Objekt.
      * @return bool True, wenn das Formular angezeigt werden darf.
      */
-    public function should_display_form(Form $form): bool {
-        $is_admin_only = $form->getStatus() === 3;
-        if ($is_admin_only) {
-            return current_user_can('manage_options');
-        }
+	public function should_display_form(Form $form): bool {
+		$is_admin_only = $form->getStatus() === 3;
+		if ($is_admin_only) {
+			return current_user_can('manage_options');
+		}
 
-        // Grundvoraussetzung: Status muss 2 sein
-        if ($form->getStatus() !== 2) {
-            return false;
-        }
+		// Grundvoraussetzung: Status muss 2 sein
+		if ($form->getStatus() !== 2) {
+			return false;
+		}
 
-        $formVersionData = $this->get_current_form_version_data($form);
-        if (empty($formVersionData['data'])) {
-            return false;
-        }
+		$formVersionData = $this->get_current_form_version_data($form);
+		if (empty($formVersionData['data'])) {
+			return false;
+		}
 
-        $form_data = json_decode($formVersionData['data'], true);
-        if (empty($form_data)) {
-            return false;
-        }
+		$form_data = json_decode($formVersionData['data'], true);
+		if (empty($form_data)) {
+			return false;
+		}
 
-        // Cookie-Check (Backend-seitiges Ausblenden nach Submit/Close)
-        $settings = $form_data['settings'] ?? [];
-        $globalData = $settings['display']['globalData']['main'] ?? [];
-        $scope = $globalData['cookieScope'] ?? 'domain';
-        
-        $formId = $form->getId();
-        $pathKey = '';
-
-        if ($scope === 'page') {
-            $currentPath = wp_parse_url(sanitize_url(['REQUEST_URI'] ?? ''), PHP_URL_PATH) ?: '';
-            $pathKey = '_' . hash('crc32b', $currentPath);
-        }
-        
-        $submitCookie = "flwp_submitted_{$formId}{$pathKey}";
-        $closeCookie = "flwp_closed_{$formId}{$pathKey}";
-        
-        if (isset($_COOKIE[$submitCookie]) || isset($_COOKIE[$closeCookie])) {
-            return false;
-        }
-
-        return true;
-    }
+		return true;
+	}
 
     /**
      * Durchläuft alle Input-Felder des Formulars (Step 1 und Step 2).
