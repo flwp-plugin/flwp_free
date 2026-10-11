@@ -685,7 +685,7 @@ $flwpMockForms = array(
                                 margin: 2px 0;
                             "></div>
 
-							<?php foreach ( $mock_forms as $mock_form ) : ?>
+							<?php foreach ( $flwpMockForms as $flwpMockForm ) : ?>
 
 								<label style="
                                     display: flex;
@@ -706,8 +706,8 @@ $flwpMockForms = array(
                                         <?php
 										printf(
 											'%s - %s',
-	                                        esc_html( $mock_form['id'] ),
-	                                        esc_html( $mock_form['name'] )
+	                                        esc_html( $flwpMockForm['id'] ),
+	                                        esc_html( $flwpMockForm['name'] )
 										);
 										?>
                                     </span>
