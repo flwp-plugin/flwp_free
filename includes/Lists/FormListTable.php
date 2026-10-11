@@ -82,7 +82,7 @@ class FormListTable extends WP_List_Table
 					strtotime($item->getUpdated())
 				);
 			default:
-				return print_r($item, true);
+				return '-';
 		}
 	}
 

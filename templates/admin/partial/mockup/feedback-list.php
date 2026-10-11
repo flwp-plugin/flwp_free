@@ -12,7 +12,7 @@ if (!defined('ABSPATH')) {
 	exit;
 }
 
-$mock_feedbacks = array(
+$flwpMockFeedbacks = array(
 	array( 120, 78, 'Overlay',         'Website Feedback',       '/blog/wordpress-feedback/',      'Unread',   '07.10.2026 17:08' ),
 	array( 119, 77, 'Feedback Button', 'General Feedback',       '/products/',                     'Unread',   '07.10.2026 17:02' ),
 	array( 118, 76, 'Shortcode',       'Article Feedback',       '/blog/wordpress-tips/',           'Read',     '07.10.2026 16:54' ),
@@ -69,7 +69,7 @@ $mock_feedbacks = array(
 				printf(
 				/* translators: %d: Number of demo feedback entries. */
 					esc_html__( '%d entries', 'flwp' ),
-	                count( $mock_feedbacks )
+	                count( $flwpMockFeedbacks )
 				);
 				?>
             </span>
@@ -117,24 +117,24 @@ $mock_feedbacks = array(
 		</thead>
 
 		<tbody>
-			<?php foreach ( $mock_feedbacks as $feedback ) : ?>
+			<?php foreach ( $flwpMockFeedbacks as $flwpMockFeedback ) : ?>
 				<?php
 				list(
 					$id,
-					$form_id,
-					$form_type,
-					$form_name,
-					$page_url,
-					$status,
-					$created
-					) = $feedback;
+					$flwpFormId,
+					$flwpFormType,
+					$flwpFormName,
+					$flwpPageUrl,
+					$flwpStatus,
+					$flwpCreated
+					) = $flwpMockFeedback;
 
-				$status_class = 'unread';
+				$flwpStatusClass = 'unread';
 
-				if ( 'Read' === $status ) {
-					$status_class = 'read';
-				} elseif ( 'Archived' === $status ) {
-					$status_class = 'archived';
+				if ( 'Read' === $flwpStatus ) {
+					$flwpStatusClass = 'read';
+				} elseif ( 'Archived' === $flwpStatus ) {
+					$flwpStatusClass = 'archived';
 				}
 				?>
 
@@ -162,7 +162,7 @@ $mock_feedbacks = array(
 						class="form_id column-form_id"
 						data-colname="<?php esc_attr_e( 'Form ID', 'flwp' ); ?>"
 					>
-						<?php echo esc_html( $form_id ); ?>
+						<?php echo esc_html( $flwpFormId ); ?>
 					</td>
 
 					<td
@@ -170,7 +170,7 @@ $mock_feedbacks = array(
 						data-colname="<?php esc_attr_e( 'Display Type', 'flwp' ); ?>"
 					>
 						<code style="font-size: 10px;">
-							<?php echo esc_html( $form_type ); ?>
+							<?php echo esc_html( $flwpFormType ); ?>
 						</code>
 					</td>
 
@@ -178,7 +178,7 @@ $mock_feedbacks = array(
 						class="form_name column-form_name"
 						data-colname="<?php esc_attr_e( 'Form Name', 'flwp' ); ?>"
 					>
-						<?php echo esc_html( $form_name ); ?>
+						<?php echo esc_html( $flwpFormName ); ?>
 					</td>
 
 					<td
@@ -189,7 +189,7 @@ $mock_feedbacks = array(
 							class="flwp-text-muted"
 							style="font-size:11px; max-width:250px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"
 						>
-							<?php echo esc_html( $page_url ); ?>
+							<?php echo esc_html( $flwpPageUrl ); ?>
 						</div>
 					</td>
 
@@ -197,8 +197,8 @@ $mock_feedbacks = array(
 						class="status column-status"
 						data-colname="<?php esc_attr_e( 'Status', 'flwp' ); ?>"
 					>
-                        <span class="flwp-status-badge <?php echo esc_attr( $status_class ); ?>">
-                            <?php echo esc_html( $status ); ?>
+                        <span class="flwp-status-badge <?php echo esc_attr( $flwpStatusClass ); ?>">
+                            <?php echo esc_html( $flwpStatus ); ?>
                         </span>
 					</td>
 
@@ -206,14 +206,14 @@ $mock_feedbacks = array(
 						class="created column-created"
 						data-colname="<?php esc_attr_e( 'Created', 'flwp' ); ?>"
 					>
-						<?php echo esc_html( $created ); ?>
+						<?php echo esc_html( $flwpCreated ); ?>
 					</td>
 
 					<td
 						class="updated column-updated"
 						data-colname="<?php esc_attr_e( 'Updated', 'flwp' ); ?>"
 					>
-						<?php echo esc_html( $created ); ?>
+						<?php echo esc_html( $flwpCreated ); ?>
 					</td>
 				</tr>
 
@@ -231,7 +231,7 @@ $mock_feedbacks = array(
 				printf(
 				/* translators: %d: Number of demo feedback entries. */
 					esc_html__( '%d entries', 'flwp' ),
-	                count( $mock_feedbacks )
+	                count( $flwpMockFeedbacks )
 				);
 				?>
             </span>

@@ -49,13 +49,43 @@ class FormFeedback extends Database {
     }
 
     private function add_foreign_key() {
-        $form_table = $this->wpdb->prefix . 'flwp_form_data';
-        $check_fk = $this->wpdb->get_results("SELECT CONSTRAINT_NAME FROM information_schema.KEY_COLUMN_USAGE WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = '$this->table_name' AND CONSTRAINT_NAME = 'FK_ff_fd'");
+		$wpdb = $this->wpdb;
 
-        if (empty($check_fk)) {
-            $this->wpdb->query("ALTER TABLE $this->table_name ADD CONSTRAINT FK_ff_fd FOREIGN KEY (flwp_ff_fd_id) REFERENCES $form_table (flwp_fd_id) ON DELETE CASCADE ON UPDATE NO ACTION");
-        }
-    }
+        $form_table = $wpdb->prefix . 'flwp_form_data';
+
+		// phpcs:ignore WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.DirectDatabaseQuery.DirectQuery -- Checking a foreign key constraint for a custom plugin table.
+		$check_fk = $wpdb->get_var(
+			$wpdb->prepare(
+				"SELECT CONSTRAINT_NAME
+				 FROM information_schema.KEY_COLUMN_USAGE
+				 WHERE TABLE_SCHEMA = DATABASE()
+				   AND TABLE_NAME = %s
+				   AND CONSTRAINT_NAME = %s
+				   AND REFERENCED_TABLE_NAME IS NOT NULL",
+				$this->table_name,
+				'FK_ff_fd'
+			)
+		);
+
+		if (null !== $check_fk) {
+			return;
+		}
+
+		// phpcs:ignore WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.DirectDatabaseQuery.DirectQuery -- Custom plugin table.
+		$wpdb->query(
+			$wpdb->prepare(
+				// phpcs:ignore WordPress.DB.DirectDatabaseQuery.SchemaChange -- Foreign key creation for custom plugin table.
+				'ALTER TABLE %i
+					 ADD CONSTRAINT FK_ff_fd
+					 FOREIGN KEY (flwp_ff_fd_id)
+					 REFERENCES %i (flwp_fd_id)
+					 ON DELETE CASCADE
+					 ON UPDATE NO ACTION',
+			    $this->table_name,
+			    $form_table
+			)
+		);
+	}
 
     private function apply_filters($args) {
         $where = "WHERE 1=1";
@@ -64,6 +94,7 @@ class FormFeedback extends Database {
             if (is_array($args['form_id'])) {
                 $ids = array_map('intval', $args['form_id']);
                 $placeholders = implode(',', array_fill(0, count($ids), '%d'));
+				// phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared, WordPress.DB.PreparedSQLPlaceholders.UnfinishedPrepare -- Placeholders are generated exclusively from %d; values are bound via prepare().
                 $where .= $this->wpdb->prepare(" AND flwp_ff_fd_id IN ($placeholders)", $ids);
             } else {
                 $where .= $this->wpdb->prepare(" AND flwp_ff_fd_id = %d", $args['form_id']);
@@ -129,8 +160,10 @@ class FormFeedback extends Database {
     }
 
     public function get_feedbacks($args = []) {
-        $orderby = !empty($args['orderby']) ? sanitize_sql_orderby($args['orderby']) : 'flwp_ff_created';
-        $order = !empty($args['order']) ? sanitize_text_field($args['order']) : 'DESC';
+		$wpdb = $this->wpdb;
+
+        $orderby = !empty($args['orderby']) ? sanitize_sql_orderby(wp_unslash($args['orderby'])) : 'flwp_ff_created';
+        $order = !empty($args['order']) ? sanitize_text_field(wp_unslash($args['order'])) : 'DESC';
         $limit = isset($args['limit']) ? (int) $args['limit'] : 50;
         $offset = isset($args['offset']) ? (int) $args['offset'] : 0;
 
@@ -143,12 +176,16 @@ class FormFeedback extends Database {
 
         $order = (strtoupper($order) === 'ASC') ? 'ASC' : 'DESC';
 
-        $query = "SELECT * FROM $this->table_name 
-            $where
-            ORDER BY $orderby $order 
-            LIMIT %d OFFSET %d";
-
-        $results = $this->wpdb->get_results($this->wpdb->prepare($query, [$limit, $offset]), ARRAY_A);
+		// phpcs:ignore WordPress.DB.DirectDatabaseQuery.NoCaching, PluginCheck.Security.DirectDB.UnescapedDBParameter, WordPress.DB.DirectDatabaseQuery.DirectQuery
+		$results = $wpdb->get_results(
+			$wpdb->prepare(
+				// phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+				"SELECT * FROM %i {$where} ORDER BY {$orderby} {$order} LIMIT %d OFFSET %d", [
+					$this->table_name, $limit, $offset
+				]
+			),
+			ARRAY_A
+		);
 
         $feedbacks = [];
         if ($results) {
@@ -161,8 +198,12 @@ class FormFeedback extends Database {
     }
 
     public function get_feedback_count($args = []) {
+		$wpdb = $this->wpdb;
+
         $where = $this->apply_filters($args);
-        return (int) $this->wpdb->get_var("SELECT COUNT(*) FROM $this->table_name $where");
+
+		// phpcs:ignore WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.PreparedSQL.InterpolatedNotPrepared, PluginCheck.Security.DirectDB.UnescapedDBParameter
+        return (int) $wpdb->get_var($wpdb->prepare("SELECT COUNT(*) FROM %i {$where}", $this->table_name));
     }
 
     private function getPreparedTrackingData($tracking_data) {
@@ -310,17 +351,27 @@ class FormFeedback extends Database {
     }
 
     public function get_feedback_by_id($id) {
-        $row = $this->wpdb->get_row($this->wpdb->prepare(
-            "SELECT * FROM $this->table_name WHERE flwp_ff_id = %d",
-            $id
-        ), ARRAY_A);
+		$wpdb = $this->wpdb;
+
+		// phpcs:ignore WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.DirectDatabaseQuery.DirectQuery
+        $row = $wpdb->get_row(
+			$wpdb->prepare("SELECT * FROM %i WHERE flwp_ff_id = %d", [
+				$this->table_name,
+				$id
+			]),
+			ARRAY_A
+		);
 
         return $row ? new \FLWP\Database\Entity\FormFeedback($row) : null;
     }
 
     public function get_feedback_by_identifier($identifier) {
-        $row = $this->wpdb->get_row($this->wpdb->prepare(
-            "SELECT * FROM $this->table_name WHERE flwp_ff_identifier = %s",
+		$wpdb = $this->wpdb;
+
+		// phpcs:ignore WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.DirectDatabaseQuery.DirectQuery
+        $row = $wpdb->get_row($wpdb->prepare(
+            "SELECT * FROM %i WHERE flwp_ff_identifier = %s",
+			$this->table_name,
             $identifier
         ), ARRAY_A);
 
@@ -328,20 +379,81 @@ class FormFeedback extends Database {
     }
 
     public function get_stats($form_id = null) {
-        $where = !empty($form_id) ? $this->wpdb->prepare("WHERE flwp_ff_fd_id = %d", $form_id) : '';
-        
-        $total = $this->wpdb->get_var("SELECT COUNT(*) FROM $this->table_name $where");
-        
-        $today_where = !empty($form_id) ? $this->wpdb->prepare("AND flwp_ff_fd_id = %d", $form_id) : '';
-        $today = $this->wpdb->get_var("SELECT COUNT(*) FROM $this->table_name WHERE DATE(flwp_ff_created) = CURDATE() $today_where");
+		$wpdb = $this->wpdb;
 
-        $status_results = $this->wpdb->get_results("SELECT flwp_ff_status as status, COUNT(*) as count FROM $this->table_name $where GROUP BY flwp_ff_status", ARRAY_A);
+		// phpcs:disable WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.DirectDatabaseQuery.DirectQuery
+		if (null !== $form_id && absint($form_id) > 0) {
+			$total = $wpdb->get_var(
+				$wpdb->prepare(
+					'SELECT COUNT(*) FROM %i WHERE flwp_ff_fd_id = %d',
+				    $this->table_name,
+				    absint($form_id)
+				)
+			);
+
+			$today = $wpdb->get_var(
+				$wpdb->prepare(
+					"SELECT COUNT(*) FROM %i WHERE DATE(flwp_ff_created) = CURDATE() AND flwp_ff_fd_id = %d",
+				   $this->table_name,
+				   absint($form_id)
+				)
+			);
+
+			$status_results = $wpdb->get_results(
+				$wpdb->prepare(
+					"SELECT flwp_ff_status as status, COUNT(*) as count FROM %i AND flwp_ff_fd_id = %d GROUP BY flwp_ff_status",
+					$this->table_name,
+					absint($form_id)
+				),
+				ARRAY_A
+			);
+
+			$type_results = $wpdb->get_results(
+				$wpdb->prepare(
+					"SELECT flwp_ff_form_type as type, COUNT(*) as count FROM %i AND flwp_ff_fd_id = %d GROUP BY flwp_ff_form_type",
+					$this->table_name,
+					absint($form_id)
+				),
+				ARRAY_A
+			);
+		} else {
+			$total = $wpdb->get_var(
+				$wpdb->prepare(
+					'SELECT COUNT(*) FROM %i',
+				    $this->table_name
+				)
+			);
+
+			$today = $wpdb->get_var(
+				$wpdb->prepare(
+					"SELECT COUNT(*) FROM %i WHERE DATE(flwp_ff_created) = CURDATE()",
+					$this->table_name
+				)
+			);
+
+			$status_results = $wpdb->get_results(
+				$wpdb->prepare(
+					"SELECT flwp_ff_status as status, COUNT(*) as count FROM %i GROUP BY flwp_ff_status",
+					$this->table_name
+				),
+				ARRAY_A
+			);
+
+			$type_results = $wpdb->get_results(
+				$wpdb->prepare(
+					"SELECT flwp_ff_form_type as type, COUNT(*) as count FROM %i GROUP BY flwp_ff_form_type",
+					$this->table_name
+				),
+				ARRAY_A
+			);
+		}
+		// phpcs:enable WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.DirectDatabaseQuery.DirectQuery
+
         $statuses = [];
         foreach ($status_results as $row) {
             $statuses[$row['status']] = (int) $row['count'];
         }
 
-        $type_results = $this->wpdb->get_results("SELECT flwp_ff_form_type as type, COUNT(*) as count FROM $this->table_name $where GROUP BY flwp_ff_form_type", ARRAY_A);
         $types = [];
         foreach ($type_results as $row) {
             $types[$row['type']] = [

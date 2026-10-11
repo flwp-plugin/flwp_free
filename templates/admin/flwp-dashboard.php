@@ -5,7 +5,7 @@ if (!defined('ABSPATH')) {
 
 use FLWP\Helper\FormHelper;
 
-$formHelper = new FormHelper();
+$flwpFormHelper = new FormHelper();
 ?>
 
 <section id="flwp-view-start" class="flwp-view-section">
@@ -66,25 +66,25 @@ $formHelper = new FormHelper();
             <h3><?php esc_html_e('admin.page.dashboard.recent_activities', 'flwp'); ?></h3>
             <ul id="flwp-activity-list" class="flwp-list-simple">
                 <?php 
-                $form_feedback_db = new \FLWP\Database\FormFeedback();
-                $recentFeedbacks = $form_feedback_db->get_feedbacks(['limit' => 5]);
-                if (empty($recentFeedbacks)): 
+                $flwpFormFeedbackDb = new \FLWP\Database\FormFeedback();
+                $flwpRecentFeedbacks = $flwpFormFeedbackDb->get_feedbacks(['limit' => 5]);
+                if (empty($flwpRecentFeedbacks)):
                 ?>
                     <li><?php esc_html_e('admin.page.dashboard.no_activities', 'flwp'); ?></li>
                 <?php else: ?>
-                    <?php foreach ($recentFeedbacks as $feedback_entity):
-                        $item = $feedback_entity->toArray();
-                        $data = $feedback_entity->getDecodedFeedbackData();
+                    <?php foreach ($flwpRecentFeedbacks as $flwpFeedbackEntity):
+                        $flwpFeedbackItem = $flwpFeedbackEntity->toArray();
+                        $flwpFeedbackData = $flwpFeedbackEntity->getDecodedFeedbackData();
                         ?>
                         <li>
                             <div style="display: flex; flex-direction: column; width: 100%;">
                                 <span style="display: block; width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-                                    <strong><?php echo esc_html($formHelper->get_form_type_name($item['form_type'])); ?>:</strong>
-                                    <?php echo esc_html($data['title'] ?? '-'); ?>
+                                    <strong><?php echo esc_html($flwpFormHelper->get_form_type_name($flwpFeedbackItem['form_type'])); ?>:</strong>
+                                    <?php echo esc_html($flwpFeedbackData['title'] ?? '-'); ?>
                                 </span>
                                 <small style="color: var(--flwp-text-secondary); font-size: 11px;">
-                                    <?php echo esc_html(date_i18n(get_option('date_format') . ' ' . get_option('time_format'), strtotime($item['created']))); ?>
-                                    <span style="margin-left: 2px; opacity: 0.8;">| #<?php echo (int) $item['id']; ?></span>
+									<?php echo esc_html(date_i18n(get_option('date_format') . ' ' . get_option('time_format'), strtotime($flwpFeedbackItem['created']))); ?>
+                                    <span style="margin-left: 2px; opacity: 0.8;">| #<?php echo (int) $flwpFeedbackItem['id']; ?></span>
                                 </small>
                             </div>
                         </li>

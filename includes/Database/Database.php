@@ -58,6 +58,7 @@ abstract class Database {
         }
 
         // Delete database tables
+		// phpcs:disable WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.DirectDatabaseQuery.SchemaChange, WordPress.DB.DirectDatabaseQuery.DirectQuery
         $wpdb->query( "DROP TABLE IF EXISTS " . $wpdb->prefix . "flwp_form_feedback" );
         $wpdb->query( "DROP TABLE IF EXISTS " . $wpdb->prefix . "flwp_form_data" );
 
@@ -66,5 +67,6 @@ abstract class Database {
 
         // Delete transients
         $wpdb->query( "DELETE FROM `" . $wpdb->prefix . "options` WHERE `option_name` LIKE ('_transient_flwp_%')" );
+		// phpcs:enable WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.DirectDatabaseQuery.SchemaChange, WordPress.DB.DirectDatabaseQuery.DirectQuery
     }
 }

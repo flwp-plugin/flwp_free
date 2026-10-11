@@ -2,11 +2,6 @@
 if (!defined('ABSPATH')) {
 	exit;
 }
-
-$configHelper = new \FLWP\Helper\ConfigHelper();
-$formConfig = $configHelper->get_default_form_config();
-
-$notificationData = $formConfig['notification'];
 ?>
 
 <section class="flwp-builder-view flwp-config-screen-layout" id="flwp-view-notification" aria-label="<?php esc_attr_e('admin.builder.notification.title', 'flwp'); ?>">

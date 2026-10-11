@@ -36,47 +36,78 @@ class Form extends Database {
         dbDelta($sql);
     }
 
-    public function get_forms($args = []) {
-        $orderby = !empty($args['orderby']) ? sanitize_sql_orderby($args['orderby']) : 'flwp_fd_updated';
-        $order = !empty($args['order']) ? sanitize_text_field($args['order']) : 'DESC';
-        $limit = isset($args['limit']) ? (int) $args['limit'] : 20;
-        $offset = isset($args['offset']) ? (int) $args['offset'] : 0;
-        $status = isset($args['status']) ? (int) $args['status'] : null;
+	public function get_forms($args = []) {
+		$wpdb = $this->wpdb;
 
-        $allowed_orderby = ['flwp_fd_id', 'flwp_fd_name', 'flwp_fd_status', 'flwp_fd_updated', 'flwp_fd_created'];
-        if (!in_array($orderby, $allowed_orderby)) {
-            $orderby = 'flwp_fd_updated';
-        }
+		$allowed_orderby = [
+			'flwp_fd_id'      => 'flwp_fd_id',
+			'flwp_fd_name'    => 'flwp_fd_name',
+			'flwp_fd_status'  => 'flwp_fd_status',
+			'flwp_fd_updated' => 'flwp_fd_updated',
+			'flwp_fd_created' => 'flwp_fd_created',
+		];
 
-        $order = (strtoupper($order) === 'ASC') ? 'ASC' : 'DESC';
+		$requested_orderby = isset($args['orderby']) && is_string($args['orderby'])
+			? sanitize_sql_orderby(wp_unslash($args['orderby']))
+			: 'flwp_fd_updated';
 
-        $query = "SELECT * FROM $this->table_name";
-        $prepared_args = [];
+		$orderby = $allowed_orderby[$requested_orderby] ?? 'flwp_fd_updated';
 
-        if ($status !== null) {
-            $query .= " WHERE flwp_fd_status = %d";
-            $prepared_args[] = $status;
-        }
+		$order = isset($args['order']) && strtoupper($args['order']) === 'ASC'
+			? 'ASC'
+			: 'DESC';
 
-        $query .= " ORDER BY $orderby $order 
-            LIMIT %d OFFSET %d";
-        $prepared_args[] = $limit;
-        $prepared_args[] = $offset;
+		$limit = max(1, absint($args['limit'] ?? 20));
+		$offset = absint($args['offset'] ?? 0);
 
-        $results = $this->wpdb->get_results($this->wpdb->prepare($query, ...$prepared_args), ARRAY_A);
-        
-        $forms = [];
-        if ($results) {
-            foreach ($results as $row) {
-                $forms[] = new \FLWP\Database\Entity\Form($row);
-            }
-        }
-        
-        return $forms;
-    }
+		$status = isset($args['status'])
+			? (int) $args['status']
+			: null;
+
+		if (null !== $status) {
+			// phpcs:ignore WordPress.DB.DirectDatabaseQuery.NoCaching, PluginCheck.Security.DirectDB.UnescapedDBParameter, WordPress.DB.DirectDatabaseQuery.DirectQuery
+			$results = $wpdb->get_results(
+				$wpdb->prepare(
+					// phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+					"SELECT * FROM %i WHERE flwp_fd_status = %d ORDER BY {$orderby} {$order} LIMIT %d OFFSET %d",
+					$this->table_name,
+					$status,
+					$limit,
+					$offset
+				),
+				ARRAY_A
+			);
+		} else {
+			// phpcs:ignore WordPress.DB.DirectDatabaseQuery.NoCaching, PluginCheck.Security.DirectDB.UnescapedDBParameter, WordPress.DB.DirectDatabaseQuery.DirectQuery
+			$results = $wpdb->get_results(
+				$wpdb->prepare(
+					// phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+					"SELECT * FROM %i ORDER BY {$orderby} {$order} LIMIT %d OFFSET %d",
+					$this->table_name,
+					$limit,
+					$offset
+				),
+				ARRAY_A
+			);
+		}
+
+		$forms = [];
+		foreach ($results ?: [] as $row) {
+			$forms[] = new \FLWP\Database\Entity\Form($row);
+		}
+
+		return $forms;
+	}
 
     public function get_form_count() {
-        return (int) $this->wpdb->get_var("SELECT COUNT(*) FROM $this->table_name");
+		$wpdb = $this->wpdb;
+
+		// phpcs:ignore WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.DirectDatabaseQuery.DirectQuery
+        return (int) $wpdb->get_var(
+			$wpdb->prepare("SELECT COUNT(*) FROM %i", [
+				$this->table_name
+			])
+		);
     }
 
     public function get_form($id) {
@@ -84,14 +115,18 @@ class Form extends Database {
             return null;
         }
 
+		$wpdb = $this->wpdb;
+
         $id = (int) $id;
 
         if (isset(self::$cache[$id])) {
             return self::$cache[$id];
         }
 
-        $row = $this->wpdb->get_row($this->wpdb->prepare(
-            "SELECT * FROM $this->table_name WHERE flwp_fd_id = %d",
+		// phpcs:ignore WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.DirectDatabaseQuery.DirectQuery
+        $row = $wpdb->get_row($wpdb->prepare(
+            "SELECT * FROM %i WHERE flwp_fd_id = %d",
+            $this->table_name,
             $id
         ), ARRAY_A);
 
@@ -112,7 +147,7 @@ class Form extends Database {
         $formats = [];
 
         // Extrahiere den Namen aus den JSON-Daten, falls vorhanden
-        $decoded_data = json_decode($data, true);
+        $decoded_data = json_decode(stripslashes($data), true);
 
         if (is_array($decoded_data)) {
             $form_helper = new FormHelper();
@@ -282,8 +317,12 @@ class Form extends Database {
             return false;
         }
 
-        $row = $this->wpdb->get_row($this->wpdb->prepare(
-            "SELECT flwp_fd_preview_data, flwp_fd_live_data FROM $this->table_name WHERE flwp_fd_id = %d",
+		$wpdb = $this->wpdb;
+
+		// phpcs:ignore WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.DirectDatabaseQuery.DirectQuery
+        $row = $wpdb->get_row($wpdb->prepare(
+            "SELECT flwp_fd_preview_data, flwp_fd_live_data FROM %i WHERE flwp_fd_id = %d",
+            $this->table_name,
             $id
         ), ARRAY_A);
 
@@ -307,7 +346,8 @@ class Form extends Database {
         }
 
         if (!empty($update_data)) {
-            $this->wpdb->update(
+			// phpcs:ignore WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.DirectDatabaseQuery.DirectQuery
+            $wpdb->update(
                 $this->table_name,
                 $update_data,
                 ['flwp_fd_id' => $id],

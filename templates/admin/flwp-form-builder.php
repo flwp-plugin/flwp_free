@@ -7,26 +7,22 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-$configHelper = new \FLWP\Helper\ConfigHelper();
-$formConfig = $configHelper->get_default_form_config();
-
-$statusText = esc_html__('admin.page.builder.status.paused', 'flwp');
-$statusClass = 'flwp-status-paused';
-$status = $formData['status'] ?? 1;
-switch ($status) {
+$flwpStatusText = esc_html__('admin.page.builder.status.paused', 'flwp');
+$flwpStatusClass = 'flwp-status-paused';
+$flwpStatus = $formData['status'] ?? 1;
+switch ($flwpStatus) {
     case 2:
-        $statusText = esc_html__('admin.page.builder.status.live', 'flwp');
-        $statusClass = 'flwp-status-live';
+        $flwpStatusText = esc_html__('admin.page.builder.status.live', 'flwp');
+        $flwpStatusClass = 'flwp-status-live';
         break;
     case 3:
-        $statusText = esc_html__('admin.page.builder.status.admin_only', 'flwp');
-        $statusClass = 'flwp-status-admin-only';
+        $flwpStatusText = esc_html__('admin.page.builder.status.admin_only', 'flwp');
+        $flwpStatusClass = 'flwp-status-admin-only';
         break;
 }
-$notificationData = $formConfig['notification'];
-$displayedFormId = '-';
+$flwpDisplayedFormId = '-';
 if (!empty($formId) && is_numeric($formId)) {
-	$displayedFormId = (int) $formId;
+	$flwpDisplayedFormId = (int) $formId;
 }
 ?>
 
@@ -46,7 +42,7 @@ if (!empty($formId) && is_numeric($formId)) {
                             <input type="text" id="flwp-form-title" class="flwp-form-title-input" value="<?php echo (esc_html($formData['settings']['main']['title'] ?? '') ?? esc_html__('admin.page.builder.form_title.default', 'flwp'))?>" title="<?php echo esc_html__('admin.page.builder.form_title.edit_title', 'flwp') ?>" />
                             <i class="fas fa-pen text-xs" style="color: #94a3b8; cursor: pointer;"></i>
                         </div>
-	                    <span style="font-size: 11px; color: var(--flwp-text-secondary);"><?php esc_html_e('admin.page.builder.form_id', 'flwp'); ?>: <span id="flwp-active-form-id-display"><?php echo esc_html($displayedFormId) ?></span>
+	                    <span style="font-size: 11px; color: var(--flwp-text-secondary);"><?php esc_html_e('admin.page.builder.form_id', 'flwp'); ?>: <span id="flwp-active-form-id-display"><?php echo esc_html($flwpDisplayedFormId) ?></span>
 	                        <span style="margin-left: 12px; border-left: 1px solid rgba(255, 255, 255, 0.2); padding-left: 12px;"><?php esc_html_e('admin.page.builder.last_saved', 'flwp'); ?>: <span id="flwp-last-updated-display"><?php echo '-' ?></span></span>
 	                        <span style="margin-left: 12px; border-left: 1px solid rgba(255, 255, 255, 0.2); padding-left: 12px;"><?php esc_html_e('admin.page.builder.last_published', 'flwp'); ?>: <span id="flwp-last-published-display"><?php echo '-' ?></span></span>
 	                    </span>
@@ -68,9 +64,9 @@ if (!empty($formId) && is_numeric($formId)) {
                     <!-- Combined Status Dropdown Indicator -->
                     <div class="flwp-status-dropdown-container">
                         <button class="flwp-status-wrapper-btn" id="flwp-btn-change-status" title="<?php echo esc_html__('admin.page.builder.change_status', 'flwp') ?>">
-                            <div class="flwp-status-indicator <?php echo esc_html($statusClass) ?>" id="flwp-form-status-badge">
+                            <div class="flwp-status-indicator <?php echo esc_html($flwpStatusClass) ?>" id="flwp-form-status-badge">
                                 <span class="flwp-status-dot"></span>
-                                <span id="flwp-form-status-text"><?php echo esc_html($statusText) ?></span>
+                                <span id="flwp-form-status-text"><?php echo esc_html($flwpStatusText) ?></span>
                                 <i class="fas fa-chevron-down" style="font-size: 8px; opacity: 0.7; margin-left: 2px;"></i>
                             </div>
                         </button>
