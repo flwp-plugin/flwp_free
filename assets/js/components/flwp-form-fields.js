@@ -381,6 +381,173 @@ export const fields = {
                 }
             }
 
+            case 'thumbs': {
+                // Interactive Thumbs element with CSS variables
+                const container = document.createElement("div");
+                container.className = `flwp-fd-group-thumbs flwp-fd-align-${align}`;
+                container.appendChild(fields.createLabel(item));
+
+                const thumbsRow = document.createElement("div");
+                thumbsRow.className = `flwp-fd-thumbs-row flwp-fd-justify-${align}`;
+
+                const createThumbBtn = (text, iconClass) => {
+                    const btn = document.createElement("button");
+                    btn.className = "flwp-btn flwp-fd-thumb-btn";
+                    btn.innerHTML = `<i class="${iconClass}" style="pointer-events: none;"></i> <span style="pointer-events: none;">${text}</span>`;
+
+                  btn.addEventListener("click", () => {
+                    Array.from(thumbsRow.children).forEach(cb => cb.classList.remove("active"));
+                    btn.classList.add("active");
+                    options.onAnswerChange(item.id, text);
+                    if (options.markFieldValid) options.markFieldValid();
+
+                    if (options.enableAutoAdvance) {
+                      setTimeout(() => {
+                        if (item.settings.step2Enabled && options.isStep2AcType) {
+                          options.goToStep(2, item.id);
+                        } else {
+                          options.goToStep("confirmed");
+                        }
+                      }, 200);
+                    }
+                  });
+
+                    return btn;
+                };
+
+                thumbsRow.appendChild(createThumbBtn(__("fields.thumbs.yes"), "fas fa-thumbs-up"));
+                thumbsRow.appendChild(createThumbBtn(__("fields.thumbs.no"), "fas fa-thumbs-down"));
+                container.appendChild(thumbsRow);
+                return container;
+            }
+
+            case 'smileys': {
+                const hasLegend = item.settings.smileyLegend !== false;
+                let color = '#cbd5e1';
+                let activeColor = '#555555';
+
+                // Interactive Smileys Scale
+                const container = document.createElement("div");
+                container.className = `flwp-fd-group-smileys flwp-fd-align-${align}`;
+                container.appendChild(fields.createLabel(item));
+
+                const smileysRow = document.createElement("div");
+                smileysRow.className = `flwp-fd-smileys-row${hasLegend ? ' flwp-fd-smileys-row-legend' : ''} flwp-fd-justify-${align}`;
+
+                let clickedSmileyIdx = (options.answers && options.answers[item.id] !== undefined)
+                    ? parseInt(options.answers[item.id]) - 1
+                    : -1;
+
+                const updateSmileysUI = (hoveredIndex = -1) => {
+                    config.SMILEY_DEFINITIONS.forEach((ico, idx) => {
+                        const node = smileysRow.children[idx];
+                        if (!node) return;
+                        const iconNode = node.querySelector("i");
+                        if (!iconNode) return;
+                        const smileyNode = node.querySelector(".flwp-fd-smiley-node");
+                        const legendNode = node.querySelector(".flwp-fd-smiley-legend");
+
+                        const activeIdx = hoveredIndex !== -1 ? hoveredIndex : clickedSmileyIdx;
+                        if (idx === activeIdx) {
+                            node.style.color = activeColor;
+                            if (smileyNode) smileyNode.style.color = activeColor;
+                            iconNode.className = ico.solidCls;
+                            node.classList.add("active");
+                            if (legendNode) legendNode.classList.add("flwp-fd-smiley-legend-active");
+                        } else {
+                            node.style.color = color;
+                            if (smileyNode) smileyNode.style.color = color;
+                            iconNode.className = ico.cls;
+                            node.classList.remove("active");
+                            if (legendNode) legendNode.classList.remove("flwp-fd-smiley-legend-active");
+                        }
+                    });
+                };
+
+                config.SMILEY_DEFINITIONS.forEach((ico, idx) => {
+                    const wrapper = document.createElement("div");
+                    wrapper.className = "flwp-fd-smiley-container";
+                    wrapper.style.color = color;
+
+                    const iconSpan = document.createElement("span");
+                    iconSpan.className = "flwp-fd-smiley-node";
+                    iconSpan.innerHTML = `<i class="${ico.cls}"></i>`;
+                    iconSpan.style.color = color;
+                    wrapper.appendChild(iconSpan);
+
+                    if (hasLegend) {
+                        const textSpan = document.createElement("span");
+                        textSpan.className = "flwp-fd-smiley-legend";
+                        textSpan.innerHTML = ico.legend;
+                        wrapper.appendChild(textSpan);
+                    }
+
+                  wrapper.addEventListener("mouseenter", () => updateSmileysUI(idx));
+                  wrapper.addEventListener("mouseleave", () => updateSmileysUI(-1));
+
+                  wrapper.addEventListener("click", () => {
+                    clickedSmileyIdx = idx;
+                    options.onAnswerChange(item.id, idx + 1);
+                    updateSmileysUI(-1);
+                    if (options.markFieldValid) options.markFieldValid();
+
+                    if (options.enableAutoAdvance) {
+                      setTimeout(() => {
+                        if (item.settings.step2Enabled && options.isStep2AcType) {
+                          options.goToStep(2, item.id);
+                        } else {
+                          options.goToStep("confirmed");
+                        }
+                      }, 200);
+                    }
+                  });
+
+                    smileysRow.appendChild(wrapper);
+                });
+
+                container.appendChild(smileysRow);
+                if (clickedSmileyIdx !== -1) {
+                    setTimeout(() => updateSmileysUI(-1), 0);
+                }
+                return container;
+            }
+
+            case 'nps': {
+                const container = document.createElement("div");
+                container.className = `flwp-fd-group-nps flwp-fd-align-${align}`;
+                container.appendChild(fields.createLabel(item));
+
+                const npsRow = document.createElement("div");
+                npsRow.className = `flwp-fd-nps-row flwp-fd-justify-${align}`;
+
+                for (let i = 0; i <= 10; i++) {
+                    const box = document.createElement("span");
+                    box.className = "flwp-fd-nps-box";
+                    box.innerText = i;
+
+                  box.addEventListener("click", () => {
+                    Array.from(npsRow.children).forEach(b => b.classList.remove("active"));
+                    box.classList.add("active");
+                    options.onAnswerChange(item.id, i);
+                    if (options.markFieldValid) options.markFieldValid();
+
+                    if (options.enableAutoAdvance) {
+                      setTimeout(() => {
+                        if (item.settings.step2Enabled && options.isStep2AcType) {
+                          options.goToStep(2, item.id);
+                        } else {
+                          options.goToStep("confirmed");
+                        }
+                      }, 200);
+                    }
+                  });
+
+                    npsRow.appendChild(box);
+                }
+
+                container.appendChild(npsRow);
+                return container;
+            }
 
             case 'textarea': {
                 const placeholder = item.settings.placeholder || '';
