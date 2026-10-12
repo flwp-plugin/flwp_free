@@ -634,6 +634,10 @@ class FormDataSanitizer
 			} elseif ('steps' === $key) {
 				$out['steps'] = $this->sanitize_steps($value, 'steps');
 			} elseif ('activeStep2TriggerId' === $key) {
+				if ($out['activeStep2TriggerId'] === null) {
+					$value = '';
+				}
+
 				$out[$key] = '' === $value ? '' : $this->scalar($value, 'id', $key);
 
 				if (!empty($out[$key])) {

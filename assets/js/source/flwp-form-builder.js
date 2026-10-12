@@ -1560,7 +1560,7 @@ const FLWPFormBuilder = (function() {
                         }
                     }
                     if (state.activeStep2TriggerId === id) {
-                        state.activeStep2TriggerId = null;
+                        state.activeStep2TriggerId = '';
                         engine.getActiveStep2TriggerId();
                     }
                 }
