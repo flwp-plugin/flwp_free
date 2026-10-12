@@ -113,9 +113,6 @@ class Admin {
             return;
         }
 
-//		$formHelper = new \FLWP\Database\Form();
-//		$formHelper->create_initial_forms();
-
 		$languageHelper = new \FLWP\Helper\LanguageHelper();
         $currentLocale = $languageHelper->get_current_locale();
 

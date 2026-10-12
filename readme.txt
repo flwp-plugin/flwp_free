@@ -306,6 +306,7 @@ No. FLWP's frontend functionality is built with native JavaScript (ES Modules) a
 * Features: https://flwp.de/funktionen/
 * Documentation: https://flwp.de/docs/
 * Support forum: https://flwp.de/support-forum/
+* GitHub repository: https://github.com/flwp-plugin/flwp_free
 
 == Translations ==
 

@@ -88,7 +88,7 @@ After completing the setup, activate **FLWP – User Feedback & Surveys** in the
 
 This GitHub repository contains the development source code.
 
-For a regular WordPress installation, use the packaged plugin release or install FLWP through the WordPress Plugin Directory once available.
+For a regular WordPress installation, use the packaged plugin release or install FLWP through our website or the WordPress Plugin Directory once available.
 
 A source checkout may require Composer dependencies and compiled assets before the plugin can be used.
 
