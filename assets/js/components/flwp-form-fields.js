@@ -28,12 +28,6 @@ export const fields = {
             newField.settings.required = true;
             newField.settings.alignment = 'left';
             newField.settings.step2Enabled = false;
-        } else if (type === 'thumbs' || type === 'smileys' || type === 'nps') {
-            newField.settings.required = true;
-            newField.settings.alignment = 'left';
-            newField.settings.step2Enabled = false;
-            if (type === 'smileys') newField.settings.smileyLegend = true;
-            if (type === 'nps') newField.settings.stars = 10;
         } else if (type === 'textarea') {
             newField.settings.placeholder = __("admin.builder.default_feedback_placeholder");
             newField.settings.required = true;
@@ -43,6 +37,27 @@ export const fields = {
             newField.settings.iconPosition = "right";
             newField.settings.alignment = 'left';
             newField.settings.step2Enabled = false;
+        } else if (type === 'dropdown') {
+            newField.settings.required = false;
+            newField.settings.choices = [
+                { text: __("fields.choices_list.general"), icon: "" },
+                { text: __("fields.choices_list.pre_purchase"), icon: "" },
+                { text: __("fields.choices_list.technical_support"), icon: "" }
+            ];
+            newField.settings.defaultChoice = __("fields.choices_list.general");
+        } else if (type === 'chips') {
+            newField.settings.required = true;
+            newField.settings.alignment = 'left';
+            newField.settings.iconPosition = 'left';
+            newField.settings.borderRadius = '20px';
+            newField.settings.fontSize = 'inherit';
+            newField.settings.lineHeight = '1.4';
+            newField.settings.choices = [
+                { text: __("fields.choices_list.general"), icon: "fa-question" },
+                { text: __("fields.choices_list.pre_purchase"), icon: "fa-shopping-cart" },
+                { text: __("fields.choices_list.technical_support"), icon: "fa-bug" },
+            ];
+            newField.settings.defaultChoice = __("fields.choices_list.general");
         }
 
         return newField;
@@ -381,174 +396,6 @@ export const fields = {
                 }
             }
 
-            case 'thumbs': {
-                // Interactive Thumbs element with CSS variables
-                const container = document.createElement("div");
-                container.className = `flwp-fd-group-thumbs flwp-fd-align-${align}`;
-                container.appendChild(fields.createLabel(item));
-
-                const thumbsRow = document.createElement("div");
-                thumbsRow.className = `flwp-fd-thumbs-row flwp-fd-justify-${align}`;
-
-                const createThumbBtn = (text, iconClass) => {
-                    const btn = document.createElement("button");
-                    btn.className = "flwp-btn flwp-fd-thumb-btn";
-                    btn.innerHTML = `<i class="${iconClass}" style="pointer-events: none;"></i> <span style="pointer-events: none;">${text}</span>`;
-
-                  btn.addEventListener("click", () => {
-                    Array.from(thumbsRow.children).forEach(cb => cb.classList.remove("active"));
-                    btn.classList.add("active");
-                    options.onAnswerChange(item.id, text);
-                    if (options.markFieldValid) options.markFieldValid();
-
-                    if (options.enableAutoAdvance) {
-                      setTimeout(() => {
-                        if (item.settings.step2Enabled && options.isStep2AcType) {
-                          options.goToStep(2, item.id);
-                        } else {
-                          options.goToStep("confirmed");
-                        }
-                      }, 200);
-                    }
-                  });
-
-                    return btn;
-                };
-
-                thumbsRow.appendChild(createThumbBtn(__("fields.thumbs.yes"), "fas fa-thumbs-up"));
-                thumbsRow.appendChild(createThumbBtn(__("fields.thumbs.no"), "fas fa-thumbs-down"));
-                container.appendChild(thumbsRow);
-                return container;
-            }
-
-            case 'smileys': {
-                const hasLegend = item.settings.smileyLegend !== false;
-                let color = '#cbd5e1';
-                let activeColor = '#555555';
-
-                // Interactive Smileys Scale
-                const container = document.createElement("div");
-                container.className = `flwp-fd-group-smileys flwp-fd-align-${align}`;
-                container.appendChild(fields.createLabel(item));
-
-                const smileysRow = document.createElement("div");
-                smileysRow.className = `flwp-fd-smileys-row${hasLegend ? ' flwp-fd-smileys-row-legend' : ''} flwp-fd-justify-${align}`;
-
-                let clickedSmileyIdx = (options.answers && options.answers[item.id] !== undefined)
-                    ? parseInt(options.answers[item.id]) - 1
-                    : -1;
-
-                const updateSmileysUI = (hoveredIndex = -1) => {
-                    config.SMILEY_DEFINITIONS.forEach((ico, idx) => {
-                        const node = smileysRow.children[idx];
-                        if (!node) return;
-                        const iconNode = node.querySelector("i");
-                        if (!iconNode) return;
-                        const smileyNode = node.querySelector(".flwp-fd-smiley-node");
-                        const legendNode = node.querySelector(".flwp-fd-smiley-legend");
-
-                        const activeIdx = hoveredIndex !== -1 ? hoveredIndex : clickedSmileyIdx;
-                        if (idx === activeIdx) {
-                            node.style.color = activeColor;
-                            if (smileyNode) smileyNode.style.color = activeColor;
-                            iconNode.className = ico.solidCls;
-                            node.classList.add("active");
-                            if (legendNode) legendNode.classList.add("flwp-fd-smiley-legend-active");
-                        } else {
-                            node.style.color = color;
-                            if (smileyNode) smileyNode.style.color = color;
-                            iconNode.className = ico.cls;
-                            node.classList.remove("active");
-                            if (legendNode) legendNode.classList.remove("flwp-fd-smiley-legend-active");
-                        }
-                    });
-                };
-
-                config.SMILEY_DEFINITIONS.forEach((ico, idx) => {
-                    const wrapper = document.createElement("div");
-                    wrapper.className = "flwp-fd-smiley-container";
-                    wrapper.style.color = color;
-
-                    const iconSpan = document.createElement("span");
-                    iconSpan.className = "flwp-fd-smiley-node";
-                    iconSpan.innerHTML = `<i class="${ico.cls}"></i>`;
-                    iconSpan.style.color = color;
-                    wrapper.appendChild(iconSpan);
-
-                    if (hasLegend) {
-                        const textSpan = document.createElement("span");
-                        textSpan.className = "flwp-fd-smiley-legend";
-                        textSpan.innerHTML = ico.legend;
-                        wrapper.appendChild(textSpan);
-                    }
-
-                  wrapper.addEventListener("mouseenter", () => updateSmileysUI(idx));
-                  wrapper.addEventListener("mouseleave", () => updateSmileysUI(-1));
-
-                  wrapper.addEventListener("click", () => {
-                    clickedSmileyIdx = idx;
-                    options.onAnswerChange(item.id, idx + 1);
-                    updateSmileysUI(-1);
-                    if (options.markFieldValid) options.markFieldValid();
-
-                    if (options.enableAutoAdvance) {
-                      setTimeout(() => {
-                        if (item.settings.step2Enabled && options.isStep2AcType) {
-                          options.goToStep(2, item.id);
-                        } else {
-                          options.goToStep("confirmed");
-                        }
-                      }, 200);
-                    }
-                  });
-
-                    smileysRow.appendChild(wrapper);
-                });
-
-                container.appendChild(smileysRow);
-                if (clickedSmileyIdx !== -1) {
-                    setTimeout(() => updateSmileysUI(-1), 0);
-                }
-                return container;
-            }
-
-            case 'nps': {
-                const container = document.createElement("div");
-                container.className = `flwp-fd-group-nps flwp-fd-align-${align}`;
-                container.appendChild(fields.createLabel(item));
-
-                const npsRow = document.createElement("div");
-                npsRow.className = `flwp-fd-nps-row flwp-fd-justify-${align}`;
-
-                for (let i = 0; i <= 10; i++) {
-                    const box = document.createElement("span");
-                    box.className = "flwp-fd-nps-box";
-                    box.innerText = i;
-
-                  box.addEventListener("click", () => {
-                    Array.from(npsRow.children).forEach(b => b.classList.remove("active"));
-                    box.classList.add("active");
-                    options.onAnswerChange(item.id, i);
-                    if (options.markFieldValid) options.markFieldValid();
-
-                    if (options.enableAutoAdvance) {
-                      setTimeout(() => {
-                        if (item.settings.step2Enabled && options.isStep2AcType) {
-                          options.goToStep(2, item.id);
-                        } else {
-                          options.goToStep("confirmed");
-                        }
-                      }, 200);
-                    }
-                  });
-
-                    npsRow.appendChild(box);
-                }
-
-                container.appendChild(npsRow);
-                return container;
-            }
-
             case 'textarea': {
                 const placeholder = item.settings.placeholder || '';
                 let txStyle = '';
@@ -562,9 +409,9 @@ export const fields = {
                 if (isBuilder) {
                     const txStyleAttr = txStyle ? `style="${txStyle}"` : '';
                     return `
-            <label class="flwp-el-label" ${txStyle ? `style="${txStyle}"` : ''}>${utils.escapeHtml(label)}${requiredStar}</label>
-            <div class="flwp-visual-mock-textarea" ${txStyleAttr}>${utils.escapeHtml(placeholder)}</div>
-          `;
+                    <label class="flwp-el-label" ${txStyle ? `style="${txStyle}"` : ''}>${utils.escapeHtml(label)}${requiredStar}</label>
+                    <div class="flwp-visual-mock-textarea" ${txStyleAttr}>${utils.escapeHtml(placeholder)}</div>
+                  `;
                 } else {
                     // Interactive textarea box
                     const container = document.createElement("div");
@@ -600,6 +447,519 @@ export const fields = {
                     return container;
                 }
             }
+
+            case 'dropdown': {
+                const rawChoices = (item.settings && Array.isArray(item.settings.choices)) ? item.settings.choices : [];
+                const choices = rawChoices.map(c => typeof c === 'object' && c !== null ? (c.text || '') : String(c));
+                const defaultChoice = (item.settings && item.settings.defaultChoice) ? item.settings.defaultChoice : '';
+                const selectedVal = (options.answers && options.answers[item.id] !== undefined)
+                    ? options.answers[item.id]
+                    : defaultChoice;
+
+                if (isBuilder) {
+                    const displayVal = selectedVal || choices[0] || __("fields.choices_list.placeholder");
+                    return `
+                        <label class="flwp-el-label" style="${labelStyle}">${utils.escapeHtml(label)}${requiredStar}</label>
+                        <div class="flwp-visual-mock-dropdown">
+                            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${utils.escapeHtml(displayVal)}</span>
+                            <i class="fas fa-chevron-down" style="color: #64748b; font-size: 11px; margin-left: 8px; flex-shrink: 0;"></i>
+                        </div>
+                    `;
+                } else {
+                    const container = document.createElement("div");
+                    container.className = "flwp-fd-group-dropdown";
+                    container.appendChild(fields.createLabel(item));
+
+                    const selectWrapper = document.createElement("div");
+                    selectWrapper.className = "flwp-fd-select-wrapper";
+
+                    const select = document.createElement("select");
+                    select.className = "flwp-form-select flwp-fd-select";
+
+                    if (!item.settings.required && !defaultChoice) {
+                        const emptyOpt = document.createElement("option");
+                        emptyOpt.value = "";
+                        emptyOpt.textContent = `— ${__("fields.choices_list.placeholder")} —`;
+                        if (!selectedVal) emptyOpt.selected = true;
+                        select.appendChild(emptyOpt);
+                    }
+
+                    choices.forEach(choiceText => {
+                        const opt = document.createElement("option");
+                        opt.value = choiceText;
+                        opt.textContent = choiceText;
+                        if (choiceText === selectedVal) {
+                            opt.selected = true;
+                        }
+                        select.appendChild(opt);
+                    });
+
+                    if (options.isReadOnly) {
+                        select.disabled = true;
+                        select.style.cursor = "default";
+                    } else {
+                        if (selectedVal && options.onAnswerChange) {
+                            options.onAnswerChange(item.id, selectedVal);
+                        }
+
+                        select.addEventListener("change", () => {
+                            options.onAnswerChange(item.id, select.value);
+                            if (options.markFieldValid) {
+                                if (select.value.trim().length > 0 || !(item.settings && item.settings.required)) {
+                                    options.markFieldValid();
+                                }
+                            }
+                        });
+                    }
+
+                    selectWrapper.appendChild(select);
+                    container.appendChild(selectWrapper);
+                    return container;
+                }
+            }
+
+            case 'chips': {
+                const rawChoices = (item.settings && Array.isArray(item.settings.choices)) ? item.settings.choices : [];
+                const choices = rawChoices.map(c => {
+                    if (typeof c === 'object' && c !== null) {
+                        return { text: c.text || '', icon: c.icon || '' };
+                    }
+                    return { text: String(c), icon: '' };
+                });
+                const defaultChoice = (item.settings && item.settings.defaultChoice) ? item.settings.defaultChoice : (choices[0] ? choices[0].text : '');
+                const selectedVal = (options.answers && options.answers[item.id] !== undefined)
+                    ? options.answers[item.id]
+                    : defaultChoice;
+
+                const iconPos = item.settings.iconPosition || 'left';
+                const accentColor = (stateObj && stateObj.settings && stateObj.settings.styles && stateObj.settings.styles.secondaryColor) || '#104689';
+
+                const standardBg = (item.settings.customColorsEnabled && item.settings.bgColor) ? item.settings.bgColor : '#f1f5f9';
+                const standardColor = (item.settings.customColorsEnabled && item.settings.textColor) ? item.settings.textColor : '#334155';
+                const standardBorder = (item.settings.customColorsEnabled && item.settings.borderColor) ? item.settings.borderColor : '#e2e8f0';
+
+                const activeBg = (item.settings.customColorsEnabled && item.settings.hoverBgColor) ? item.settings.hoverBgColor : accentColor;
+                const activeColor = (item.settings.customColorsEnabled && item.settings.hoverTextColor) ? item.settings.hoverTextColor : '#ffffff';
+                const activeBorder = (item.settings.customColorsEnabled && item.settings.hoverBorderColor) ? item.settings.hoverBorderColor : activeBg;
+
+                const bRadius = item.settings.borderRadius || '20px';
+                let extraFont = '';
+                if (item.settings.fontSize && item.settings.fontSize !== 'inherit') extraFont += `font-size: ${item.settings.fontSize}; `;
+                if (item.settings.lineHeight && item.settings.lineHeight !== 'inherit') extraFont += `line-height: ${item.settings.lineHeight}; `;
+
+                const justifyMap = { left: 'flex-start', center: 'center', right: 'flex-end' };
+                const justifyVal = justifyMap[align] || 'flex-start';
+
+                if (isBuilder) {
+                    const chipsHtml = choices.map(choice => {
+                        const isSelected = (choice.text === selectedVal && choice.text !== '');
+                        const bg = isSelected ? activeBg : standardBg;
+                        const fg = isSelected ? activeColor : standardColor;
+                        const bd = isSelected ? activeBorder : standardBorder;
+
+                        let iconHtml = '';
+                        if (choice.icon && choice.icon !== 'fa-times' && choice.icon !== 'none') {
+                            iconHtml = `<i class="fas ${choice.icon} flwp-chip-icon"></i>`;
+                        }
+
+                        const styleStr = `background-color: ${bg}; color: ${fg}; border: 1px solid ${bd}; border-radius: ${bRadius}; ${extraFont}`;
+
+                        const iconLeftHtml = (iconPos === 'left' && iconHtml) ? iconHtml : '';
+                        const iconRightHtml = (iconPos === 'right' && iconHtml) ? iconHtml : '';
+
+                        return `<div class="flwp-chip ${isSelected ? 'is-active' : ''}" style="${styleStr}">${iconLeftHtml}<span class="flwp-chip-text">${utils.escapeHtml(choice.text)}</span>${iconRightHtml}</div>`;
+                    }).join('');
+
+                    return `
+                        <label class="flwp-el-label" style="${labelStyle}">${utils.escapeHtml(label)}${requiredStar}</label>
+                        <div class="flwp-visual-mock-chips" style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: ${justifyVal}; align-items: center;">
+                            ${chipsHtml}
+                        </div>
+                    `;
+                } else {
+                    const container = document.createElement("div");
+                    container.className = "flwp-fd-group-chips";
+                    container.appendChild(fields.createLabel(item));
+
+                    const chipsWrapper = document.createElement("div");
+                    chipsWrapper.className = "flwp-chips-container";
+                    chipsWrapper.style.display = "flex";
+                    chipsWrapper.style.flexWrap = "wrap";
+                    chipsWrapper.style.gap = "8px";
+                    chipsWrapper.style.justifyContent = justifyVal;
+                    chipsWrapper.style.alignItems = "center";
+
+                    if (selectedVal && options.onAnswerChange) {
+                        options.onAnswerChange(item.id, selectedVal);
+                    }
+
+                    const chipButtons = [];
+
+                    choices.forEach(choice => {
+                        const btn = document.createElement("button");
+                        btn.type = "button";
+                        btn.className = "flwp-chip";
+                        btn.dataset.value = choice.text;
+                        btn.style.borderRadius = bRadius;
+                        if (item.settings.fontSize && item.settings.fontSize !== 'inherit') btn.style.fontSize = item.settings.fontSize;
+                        if (item.settings.lineHeight && item.settings.lineHeight !== 'inherit') btn.style.lineHeight = item.settings.lineHeight;
+
+                        let iconEl = null;
+                        if (choice.icon && choice.icon !== 'fa-times' && choice.icon !== 'none') {
+                            iconEl = document.createElement("i");
+                            iconEl.className = `fas ${choice.icon} flwp-chip-icon`;
+                        }
+
+                        const textSpan = document.createElement("span");
+                        textSpan.className = "flwp-chip-text";
+                        textSpan.textContent = choice.text;
+
+                        if (iconPos === 'left' && iconEl) btn.appendChild(iconEl);
+                        btn.appendChild(textSpan);
+                        if (iconPos === 'right' && iconEl) btn.appendChild(iconEl);
+
+                        const applyState = (active) => {
+                            if (active) {
+                                btn.classList.add("is-active");
+                                btn.style.backgroundColor = activeBg;
+                                btn.style.color = activeColor;
+                                btn.style.borderColor = activeBorder;
+                            } else {
+                                btn.classList.remove("is-active");
+                                btn.style.backgroundColor = standardBg;
+                                btn.style.color = standardColor;
+                                btn.style.borderColor = standardBorder;
+                            }
+                        };
+
+                        const isInitialSelected = (choice.text === selectedVal && choice.text !== '');
+                        applyState(isInitialSelected);
+
+                        if (options.isReadOnly) {
+                            btn.disabled = true;
+                            btn.style.cursor = "default";
+                        } else {
+                            btn.addEventListener("click", () => {
+                                chipButtons.forEach(b => b._applyState(b._choiceText === choice.text));
+                                if (options.onAnswerChange) {
+                                    options.onAnswerChange(item.id, choice.text);
+                                }
+                                if (options.markFieldValid) {
+                                    if (choice.text.trim().length > 0 || !(item.settings && item.settings.required)) {
+                                        options.markFieldValid();
+                                    }
+                                }
+                            });
+                        }
+
+                        btn._applyState = applyState;
+                        btn._choiceText = choice.text;
+                        chipButtons.push(btn);
+                        chipsWrapper.appendChild(btn);
+                    });
+
+                    container.appendChild(chipsWrapper);
+                    return container;
+                }
+            }
         }
+    },
+
+    /**
+     * Sets up the interactive Choices List editor for Dropdown options (supportedSetting: choicesList)
+     */
+    setupChoicesListControl: function(containerEl, element, applyChange, SortableLib = null) {
+        if (!containerEl || !element) return;
+
+        if (!element.settings) element.settings = {};
+        if (!Array.isArray(element.settings.choices) || element.settings.choices.length === 0) {
+            if (element.type === 'chips') {
+                element.settings.choices = [
+                    { text: __("fields.choices_list.general"), icon: "fa-lightbulb" },
+                    { text: __("fields.choices_list.pre_purchase"), icon: "fa-rocket" },
+                    { text: __("fields.choices_list.technical_support"), icon: "fa-palette" },
+                ];
+                element.settings.defaultChoice = __("fields.choices_list.general");
+            } else {
+                element.settings.choices = [
+                    { text: __("fields.choices_list.general"), icon: "" },
+                    { text: __("fields.choices_list.pre_purchase"), icon: "" },
+                    { text: __("fields.choices_list.technical_support"), icon: "" }
+                ];
+                element.settings.defaultChoice = __("fields.choices_list.general");
+            }
+        } else {
+            element.settings.choices = element.settings.choices.map(c => {
+                if (typeof c === 'string') return { text: c, icon: '' };
+                return { text: c.text || '', icon: c.icon || '' };
+            });
+        }
+
+        const fieldConfig = config.FIELD_TYPES_CONFIG[element.type];
+        const supportsChoiceIcons = fieldConfig && fieldConfig.supportedSettings && fieldConfig.supportedSettings.includes('icon');
+
+        const renderRows = () => {
+            containerEl.innerHTML = "";
+
+            const currentChoices = element.settings.choices || [];
+            const currentDefault = element.settings.defaultChoice || "";
+
+            currentChoices.forEach((choiceObj, index) => {
+                const choiceText = choiceObj.text || "";
+                const choiceIcon = choiceObj.icon || "";
+                const row = document.createElement("div");
+                row.className = "flwp-choice-row";
+                row.dataset.index = String(index);
+
+                // Drag handle
+                const dragHandle = document.createElement("span");
+                dragHandle.className = "flwp-choice-drag-handle";
+                dragHandle.title = __("fields.choices_list.drag_to_sort");
+                dragHandle.innerHTML = '<i class="fas fa-grip-lines"></i>';
+
+                // Radio button for default choice
+                const radioWrap = document.createElement("label");
+                radioWrap.className = "flwp-choice-radio-wrap";
+                radioWrap.title = __("fields.choices_list.set_as_default");
+
+                const radio = document.createElement("input");
+                radio.type = "radio";
+                radio.name = `flwp-choice-default-${element.id}`;
+                radio.className = "flwp-choice-radio";
+                radio.checked = (choiceText === currentDefault && choiceText !== "");
+
+                radio.addEventListener("change", () => {
+                    applyChange(el => {
+                        el.settings.defaultChoice = choiceText;
+                    });
+                    renderRows();
+                });
+                radioWrap.appendChild(radio);
+
+
+                // Icon button (if supported by field)
+                let btnIcon = null;
+                if (supportsChoiceIcons) {
+                    btnIcon = document.createElement("button");
+                    btnIcon.type = "button";
+                    btnIcon.className = "flwp-choice-icon-btn";
+                    btnIcon.title = "Icon auswählen";
+                    btnIcon.innerHTML = choiceIcon ? `<i class="fas ${choiceIcon}"></i>` : `<i class="fas fa-icons" style="opacity: 0.35;"></i>`;
+
+                    btnIcon.addEventListener("click", (e) => {
+                        e.stopPropagation();
+                        const existingPopover = document.querySelector(".flwp-choice-icon-popover");
+                        if (existingPopover) existingPopover.remove();
+
+                        const popover = document.createElement("div");
+                        popover.className = "flwp-choice-icon-popover";
+
+                        const iconList = [
+                            "fa-lightbulb", "fa-rocket", "fa-palette", "fa-comment",
+                            "fa-bug", "fa-star", "fa-heart", "fa-question",
+                            "fa-gear", "fa-bullhorn", "fa-shopping-cart", "fa-box",
+                            "fa-lock", "fa-bolt", "fa-thumbs-up", "fa-thumbs-down",
+                            "fa-tag", "fa-check", "fa-circle-info", "fa-paper-plane",
+                            "fa-smile", "fa-times"
+                        ];
+
+                        const searchInput = document.createElement("input");
+                        searchInput.type = "text";
+                        searchInput.className = "flwp-choice-icon-search";
+                        searchInput.placeholder = "Icon suchen (z.B. fa-rocket)...";
+                        searchInput.value = choiceIcon;
+
+                        const grid = document.createElement("div");
+                        grid.className = "flwp-choice-icon-grid";
+
+                        const renderGrid = (filter = "") => {
+                            grid.innerHTML = "";
+                            const filtered = iconList.filter(ic => !filter || ic.toLowerCase().includes(filter.toLowerCase()));
+                            filtered.forEach(ic => {
+                                const opt = document.createElement("div");
+                                opt.className = `flwp-choice-icon-opt ${ic === choiceIcon ? 'is-selected' : ''}`;
+                                opt.title = ic === 'fa-times' ? 'Kein Icon' : ic;
+                                opt.innerHTML = ic === 'fa-times' ? '<i class="fas fa-ban"></i>' : `<i class="fas ${ic}"></i>`;
+                                opt.addEventListener("click", () => {
+                                    const newIcon = ic === 'fa-times' ? '' : ic;
+                                    applyChange(el => {
+                                        el.settings.choices[index].icon = newIcon;
+                                    });
+                                    renderRows();
+                                    popover.remove();
+                                });
+                                grid.appendChild(opt);
+                            });
+                        };
+
+                        renderGrid();
+
+                        searchInput.addEventListener("input", () => {
+                            renderGrid(searchInput.value.trim());
+                        });
+
+                        searchInput.addEventListener("keydown", (evt) => {
+                            if (evt.key === "Enter") {
+                                evt.preventDefault();
+                                const val = searchInput.value.trim();
+                                applyChange(el => {
+                                    el.settings.choices[index].icon = val === 'fa-times' ? '' : val;
+                                });
+                                renderRows();
+                                popover.remove();
+                            }
+                        });
+
+                        popover.appendChild(searchInput);
+                        popover.appendChild(grid);
+
+                        document.body.appendChild(popover);
+
+                        const rect = btnIcon.getBoundingClientRect();
+                        popover.style.top = `${rect.bottom + window.scrollY + 4}px`;
+                        popover.style.left = `${Math.min(rect.left + window.scrollX, window.innerWidth - 240)}px`;
+
+                        const handleOutsideClick = (evt) => {
+                            if (!popover.contains(evt.target) && evt.target !== btnIcon) {
+                                popover.remove();
+                                document.removeEventListener("click", handleOutsideClick);
+                            }
+                        };
+                        setTimeout(() => {
+                            document.addEventListener("click", handleOutsideClick);
+                            searchInput.focus();
+                        }, 10);
+                    });
+                }
+
+                // Text input
+                const textInput = document.createElement("input");
+                textInput.type = "text";
+                textInput.className = "flwp-choice-input";
+                textInput.value = choiceText;
+                textInput.placeholder = `Option ${index + 1}`;
+
+                textInput.addEventListener("input", (e) => {
+                    const target = e.target;
+                    const newVal = target ? target.value : "";
+                    const oldVal = element.settings.choices[index].text;
+                    const isDefault = (element.settings.defaultChoice === oldVal);
+
+                    element.settings.choices[index].text = newVal;
+                    if (isDefault) {
+                        element.settings.defaultChoice = newVal;
+                    }
+
+                    applyChange(el => {
+                        el.settings.choices[index].text = newVal;
+                        if (isDefault) {
+                            el.settings.defaultChoice = newVal;
+                        }
+                    });
+                });
+
+                // Plus button
+                const btnAdd = document.createElement("button");
+                btnAdd.type = "button";
+                btnAdd.className = "flwp-choice-btn flwp-choice-btn-add";
+                btnAdd.title = __("fields.choices_list.add_option");
+                btnAdd.innerHTML = '<i class="fas fa-plus"></i>';
+
+                btnAdd.addEventListener("click", () => {
+                    const newChoice = {
+                        text: `Option ${element.settings.choices.length + 1}`,
+                        icon: supportsChoiceIcons ? "fa-tag" : ""
+                    };
+                    applyChange(el => {
+                        if (!Array.isArray(el.settings.choices)) el.settings.choices = [];
+                        el.settings.choices.splice(index + 1, 0, newChoice);
+                    });
+                    renderRows();
+                    const allInputs = containerEl.querySelectorAll(".flwp-choice-input");
+                    const nextInput = allInputs[index + 1];
+                    if (nextInput) {
+                        nextInput.focus();
+                        nextInput.select();
+                    }
+                });
+
+                // Minus button
+                const btnRemove = document.createElement("button");
+                btnRemove.type = "button";
+                btnRemove.className = "flwp-choice-btn flwp-choice-btn-remove";
+                btnRemove.title = __("fields.choices_list.remove_option");
+                btnRemove.innerHTML = '<i class="fas fa-minus"></i>';
+
+                btnRemove.addEventListener("click", () => {
+                    if (element.settings.choices.length <= 1) {
+                        utils.showToast(__("fields.choices_list.at_least_one_option"), "warning");
+                        return;
+                    }
+                    const removedVal = element.settings.choices[index].text;
+                    applyChange(el => {
+                        el.settings.choices.splice(index, 1);
+                        if (el.settings.defaultChoice === removedVal) {
+                            el.settings.defaultChoice = el.settings.choices[0] ? el.settings.choices[0].text : "";
+                        }
+                    });
+                    renderRows();
+                });
+
+                row.appendChild(dragHandle);
+                row.appendChild(radioWrap);
+                if (supportsChoiceIcons && btnIcon) {
+                    row.appendChild(btnIcon);
+                }
+                row.appendChild(textInput);
+                row.appendChild(btnAdd);
+                row.appendChild(btnRemove);
+
+                containerEl.appendChild(row);
+            });
+
+            // Initialize Sortable
+            const SortableConstructor = SortableLib || (typeof window !== "undefined" ? window.Sortable : null);
+            if (SortableConstructor) {
+                if (containerEl._sortableInstance) {
+                    try {
+                        containerEl._sortableInstance.destroy();
+                    } catch (_) {
+                    }
+                }
+                containerEl._sortableInstance = new SortableConstructor(containerEl, {
+                    handle: ".flwp-choice-drag-handle",
+                    animation: 150,
+                    ghostClass: "flwp-choice-ghost",
+                    onEnd: () => {
+                        const rows = containerEl.querySelectorAll(".flwp-choice-row");
+                        const updatedChoices = [];
+                        let updatedDefault = "";
+
+                        rows.forEach(r => {
+                            const originalIdx = parseInt(r.dataset.index, 10);
+                            const inp = r.querySelector(".flwp-choice-input");
+                            const rad = r.querySelector(".flwp-choice-radio");
+                            const existingIcon = (element.settings.choices[originalIdx] && element.settings.choices[originalIdx].icon) || "";
+                            const textVal = inp ? inp.value : "";
+                            updatedChoices.push({
+                                text: textVal,
+                                icon: existingIcon
+                            });
+                            if (rad && rad.checked) {
+                                updatedDefault = textVal;
+                            }
+                        });
+
+                        applyChange(el => {
+                            el.settings.choices = updatedChoices;
+                            if (updatedDefault) el.settings.defaultChoice = updatedDefault;
+                        });
+                        renderRows();
+                    }
+                });
+            }
+        };
+
+        renderRows();
     }
 };

@@ -10,36 +10,11 @@ export const FormBuilderTemplates = {
 
         container.innerHTML = "";
 
-        // Helper to check if a template contains any PRO fields
-        const hasProFields = (tmpl) => {
-            if (!tmpl || !tmpl.steps) return false;
-
-            const step1List = tmpl.steps.step1 || [];
-            for (const item of step1List) {
-                const fieldCfg = config.FIELD_TYPES_CONFIG[item.type];
-                if (fieldCfg && fieldCfg.isPro) return true;
-            }
-
-            const step2Groups = tmpl.steps.step2 || {};
-            for (const key in step2Groups) {
-                const groupList = step2Groups[key] || [];
-                for (const item of groupList) {
-                    const fieldCfg = config.FIELD_TYPES_CONFIG[item.type];
-                    if (fieldCfg && fieldCfg.isPro) return true;
-                }
-            }
-
-            return false;
-        };
-
         // Render each template dynamically
         Object.entries(config.FORM_TEMPLATES).forEach(([key, tmpl]) => {
-            const isProTemplate = hasProFields(tmpl);
-            const isLocked = isProTemplate && !config.isPro;
-
             // Create card element
             const card = document.createElement("div");
-            card.className = `flwp-template-card-new ${isLocked ? 'flwp-template-card-locked' : ''}`;
+            card.className = 'flwp-template-card-new';
             card.dataset.template = key;
 
             // Card Header
@@ -50,13 +25,6 @@ export const FormBuilderTemplates = {
             title.className = "flwp-template-card-title";
             title.textContent = tmpl.title;
             header.appendChild(title);
-
-            if (isProTemplate && !config.isPro) {
-                const badge = document.createElement("span");
-                badge.className = "flwp-pro-inline-badge";
-                badge.textContent = "PRO";
-                header.appendChild(badge);
-            }
 
             // Refresh Button for Resetting the Preview
             const refreshBtn = document.createElement("button");
@@ -119,14 +87,9 @@ export const FormBuilderTemplates = {
             footer.className = "flwp-template-card-footer";
 
             const footerBtn = document.createElement("button");
-            footerBtn.className = `flwp-template-card-btn ${isLocked ? 'flwp-template-card-btn-locked' : ''}`;
+            footerBtn.className = 'flwp-template-card-btn';
             footerBtn.type = "button";
-
-            if (isLocked) {
-                footerBtn.innerHTML = '<i class="fas fa-lock"></i> ' + __("admin.builder.unlock_pro");
-            } else {
-                footerBtn.innerHTML = '<i class="fas fa-plus"></i> ' + __("admin.builder.use_template");
-            }
+            footerBtn.innerHTML = '<i class="fas fa-plus"></i> ' + __("admin.builder.use_template");
 
             footer.appendChild(footerBtn);
             card.appendChild(footer);
@@ -142,17 +105,11 @@ export const FormBuilderTemplates = {
                 const formBuilder = window.FLWPFormBuilder;
                 if (!formBuilder) return;
 
-                if (isLocked) {
-                    formBuilder.engine.openProUpgradeModal();
-                    return;
-                }
-
                 if (confirm(__("admin.confirm.load_template"))) {
                     formBuilder.state.settings.main.title = tmpl.title;
                     formBuilder.state.steps = JSON.parse(JSON.stringify(tmpl.steps));
 
                     if (key === 'blank') formBuilder.state.activeStep2TriggerId = "";
-                    else if (key === 'nps') formBuilder.state.activeStep2TriggerId = "nps-3";
                     else if (key === 'website') formBuilder.state.activeStep2TriggerId = "web-2";
                     else formBuilder.state.activeStep2TriggerId = "";
 

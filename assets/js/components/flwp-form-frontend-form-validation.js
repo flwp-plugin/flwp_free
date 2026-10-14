@@ -39,50 +39,6 @@ export const FLWPFormValidator = {
                 logger.log(`[FormValidator] Evaluating device rule: currentDevice="${context.currentDevice}" ${operator} ${JSON.stringify(value)} => ${result}`);
                 return result;
 
-            case 'url':
-                switch (operator) {
-                    case 'contains':
-                        result = typeof context.currentUrl === 'string' && context.currentUrl.includes(value);
-                        break;
-                    case 'not_contains':
-                        result = typeof context.currentUrl === 'string' && !context.currentUrl.includes(value);
-                        break;
-                    case 'exact':
-                        result = context.currentUrl === value;
-                        break;
-                    case 'not_exact':
-                        result = context.currentUrl !== value;
-                        break;
-                }
-                logger.log(`[FormValidator] Evaluating url rule: currentUrl="${context.currentUrl}" ${operator} "${value}" => ${result}`);
-                return result;
-
-            case 'cookie':
-                const cookieName = rule.cookieName || rule.cookie_name;
-                const cookieValue = utils.getCookie(cookieName) || '';
-                switch (operator) {
-                    case 'exact':
-                        result = cookieValue === String(value);
-                        break;
-                    case 'not_exact':
-                        result = cookieValue !== String(value);
-                        break;
-                    case 'contains':
-                        result = cookieValue.includes(String(value));
-                        break;
-                    case 'not_contains':
-                        result = !cookieValue.includes(String(value));
-                        break;
-                    case 'exists':
-                        result = utils.getCookie(cookieName) !== null;
-                        break;
-                    case 'not_exists':
-                        result = utils.getCookie(cookieName) === null;
-                        break;
-                }
-                logger.log(`[FormValidator] Evaluating cookie rule: "${cookieName}" (value="${cookieValue}") ${operator} "${value ?? ''}" => ${result}`);
-                return result;
-
             default:
                 logger.warn(`[FormValidator] Unknown rule type "${type}"`, rule);
                 return false;

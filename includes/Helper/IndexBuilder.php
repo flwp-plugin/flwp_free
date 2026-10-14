@@ -174,45 +174,6 @@ class IndexBuilder {
 
             case 'device': // eher frontendseitig prüfen
                 return true;
-//                if ($operator === 'in' && is_array($value)) {
-//                    return in_array($currentDevice, $value);
-//                }
-//                return $currentDevice === $value;
-
-            case 'url':
-                switch ($operator) {
-                    case 'contains':
-                        return strpos($currentUrl, (string)$value) !== false;
-                    case 'not_contains':
-                        return strpos($currentUrl, (string)$value) === false;
-                    case 'exact':
-                        return $currentUrl === $value;
-                    case 'not_exact':
-                        return $currentUrl !== $value;
-                }
-                break;
-
-            case 'cookie':
-                $cookieName = $rule['cookieName'] ?? $rule['cookie_name'] ?? '';
-                if (empty($cookieName)) {
-                    return false;
-                }
-                $cookieValue = sanitize_text_field(wp_unslash($_COOKIE[$cookieName] ?? ''));
-                switch ($operator) {
-                    case 'exact':
-                        return $cookieValue === (string)$value;
-                    case 'not_exact':
-                        return $cookieValue !== (string)$value;
-                    case 'contains':
-                        return strpos($cookieValue, (string)$value) !== false;
-                    case 'not_contains':
-                        return strpos($cookieValue, (string)$value) === false;
-                    case 'exists':
-                        return isset($_COOKIE[$cookieName]);
-                    case 'not_exists':
-                        return !isset($_COOKIE[$cookieName]);
-                }
-                break;
         }
 
         return false;

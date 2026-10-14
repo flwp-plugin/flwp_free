@@ -18,17 +18,6 @@ class FormFeedback extends Database {
             flwp_ff_feedback_data LONGTEXT NULL DEFAULT NULL,
             flwp_ff_tracking_data LONGTEXT NULL DEFAULT NULL,
             flwp_ff_tracking_page_url TEXT NULL DEFAULT NULL,
-            flwp_ff_tracking_language VARCHAR(50) NOT NULL DEFAULT '',
-            flwp_ff_tracking_screen_res_w SMALLINT(5) UNSIGNED NULL DEFAULT NULL,
-            flwp_ff_tracking_screen_res_h SMALLINT(5) UNSIGNED NULL DEFAULT NULL,
-            flwp_ff_tracking_viewport_w SMALLINT(5) UNSIGNED NULL DEFAULT NULL,
-            flwp_ff_tracking_viewport_h SMALLINT(5) UNSIGNED NULL DEFAULT NULL,
-            flwp_ff_tracking_timezone VARCHAR(255) NOT NULL DEFAULT '',
-            flwp_ff_tracking_conn_type VARCHAR(50) NOT NULL DEFAULT '',
-            flwp_ff_tracking_device_type VARCHAR(50) NOT NULL DEFAULT '',
-            flwp_ff_tracking_session_id VARCHAR(255) NOT NULL DEFAULT '',
-            flwp_ff_tracking_time_on_page INT(10) UNSIGNED NULL DEFAULT NULL,
-            flwp_ff_tracking_color_scheme VARCHAR(50) NOT NULL DEFAULT '',
             flwp_ff_identifier VARCHAR(50) NOT NULL DEFAULT '',
             flwp_ff_status ENUM('unread','read','archived') NOT NULL DEFAULT 'unread',
             flwp_ff_created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(),
@@ -207,37 +196,9 @@ class FormFeedback extends Database {
     }
 
     private function getPreparedTrackingData($tracking_data) {
-        // Tracking-Daten aufbereiten
-        $screen_res_w = null;
-        $screen_res_h = null;
-        if (!empty($tracking_data['screenResolution']) && strpos($tracking_data['screenResolution'], 'x') !== false) {
-            $parts = explode('x', $tracking_data['screenResolution']);
-            $screen_res_w = (int) $parts[0];
-            $screen_res_h = (int) $parts[1];
-        }
-
-        $viewport_w = null;
-        $viewport_h = null;
-        if (!empty($tracking_data['viewportSize']) && strpos($tracking_data['viewportSize'], 'x') !== false) {
-            $parts = explode('x', $tracking_data['viewportSize']);
-            $viewport_w = (int) $parts[0];
-            $viewport_h = (int) $parts[1];
-        }
-
-        return [
-            'tracking_page_url'     => $tracking_data['url'] ?? '',
-            'tracking_language'     => $tracking_data['language'] ?? '',
-            'tracking_screen_res_w' => $screen_res_w,
-            'tracking_screen_res_h' => $screen_res_h,
-            'tracking_viewport_w'   => $viewport_w,
-            'tracking_viewport_h'   => $viewport_h,
-            'tracking_timezone'     => $tracking_data['timezone'] ?? '',
-            'tracking_conn_type'    => $tracking_data['connectionType'] ?? ($tracking_data['conn_type'] ?? ''),
-            'tracking_device_type'  => $tracking_data['deviceType'] ?? ($tracking_data['device_type'] ?? ''),
-            'tracking_session_id'   => $tracking_data['anonymizedSessionId'] ?? ($tracking_data['session_id'] ?? ''),
-            'tracking_time_on_page' => isset($tracking_data['timeOnPageSeconds']) ? (int) $tracking_data['timeOnPageSeconds'] : (isset($tracking_data['time_on_page']) ? (int) $tracking_data['time_on_page'] : null),
-            'tracking_color_scheme' => $tracking_data['colorScheme'] ?? ($tracking_data['color_scheme'] ?? ''),
-        ];
+		return [
+			'tracking_page_url' => $tracking_data['url'] ?? '',
+		];
     }
 
     public function add_feedback($data) {
@@ -260,17 +221,6 @@ class FormFeedback extends Database {
             'flwp_ff_feedback_data'         => $feedback_data,
             'flwp_ff_tracking_data'         => $tracking_data_encoded,
             'flwp_ff_tracking_page_url'     => $prepared_tracking['tracking_page_url'],
-            'flwp_ff_tracking_language'     => $prepared_tracking['tracking_language'],
-            'flwp_ff_tracking_screen_res_w' => $prepared_tracking['tracking_screen_res_w'],
-            'flwp_ff_tracking_screen_res_h' => $prepared_tracking['tracking_screen_res_h'],
-            'flwp_ff_tracking_viewport_w'   => $prepared_tracking['tracking_viewport_w'],
-            'flwp_ff_tracking_viewport_h'   => $prepared_tracking['tracking_viewport_h'],
-            'flwp_ff_tracking_timezone'     => $prepared_tracking['tracking_timezone'],
-            'flwp_ff_tracking_conn_type'    => $prepared_tracking['tracking_conn_type'],
-            'flwp_ff_tracking_device_type'  => $prepared_tracking['tracking_device_type'],
-            'flwp_ff_tracking_session_id'   => $prepared_tracking['tracking_session_id'],
-            'flwp_ff_tracking_time_on_page' => $prepared_tracking['tracking_time_on_page'],
-            'flwp_ff_tracking_color_scheme' => $prepared_tracking['tracking_color_scheme'],
             'flwp_ff_identifier'            => !empty($data['identifier']) ? $data['identifier'] : (!empty($data['flwp_ff_identifier']) ? $data['flwp_ff_identifier'] : uniqid('', true)),
             'flwp_ff_status'                => $data['status'] ?? 'unread'
         ];
@@ -283,52 +233,6 @@ class FormFeedback extends Database {
         }
 
         return $this->wpdb->insert($this->table_name, $insert_data, $formats);
-    }
-
-    public function update_feedback_by_identifier($identifier, $data) {
-        $feedback_data = $data['feedback_data'] ?? [];
-        if (is_array($feedback_data)) {
-            $feedback_data = json_encode($feedback_data, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
-        }
-
-        $tracking_data = $data['tracking_data'] ?? [];
-        $tracking_data_encoded = $tracking_data;
-        if (is_array($tracking_data)) {
-            $tracking_data_encoded = json_encode($tracking_data, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
-        }
-
-        $prepared_tracking = $this->getPreparedTrackingData($tracking_data);
-
-        $update_data = [
-            'flwp_ff_fd_id'                 => (int) $data['form_id'],
-            'flwp_ff_form_type'             => $data['form_type'] ?? 'shortcode',
-            'flwp_ff_feedback_data'         => $feedback_data,
-            'flwp_ff_tracking_data'         => $tracking_data_encoded,
-            'flwp_ff_tracking_page_url'     => $prepared_tracking['tracking_page_url'],
-            'flwp_ff_tracking_language'     => $prepared_tracking['tracking_language'],
-            'flwp_ff_tracking_screen_res_w' => $prepared_tracking['tracking_screen_res_w'],
-            'flwp_ff_tracking_screen_res_h' => $prepared_tracking['tracking_screen_res_h'],
-            'flwp_ff_tracking_viewport_w'   => $prepared_tracking['tracking_viewport_w'],
-            'flwp_ff_tracking_viewport_h'   => $prepared_tracking['tracking_viewport_h'],
-            'flwp_ff_tracking_timezone'     => $prepared_tracking['tracking_timezone'],
-            'flwp_ff_tracking_conn_type'    => $prepared_tracking['tracking_conn_type'],
-            'flwp_ff_tracking_device_type'  => $prepared_tracking['tracking_device_type'],
-            'flwp_ff_tracking_session_id'   => $prepared_tracking['tracking_session_id'],
-            'flwp_ff_tracking_time_on_page' => $prepared_tracking['tracking_time_on_page'],
-            'flwp_ff_tracking_color_scheme' => $prepared_tracking['tracking_color_scheme'],
-            'flwp_ff_status'                => $data['status'] ?? 'unread'
-        ];
-
-        $formats = ['%d', '%s', '%s', '%s', '%s', '%s', '%d', '%d', '%d', '%d', '%s', '%s', '%s', '%s', '%d', '%s', '%s'];
-
-        if (!empty($data['created'])) {
-            $update_data['flwp_ff_created'] = $data['created'];
-            $formats[] = '%s';
-        }
-
-		$preparedIdentifier = wp_strip_tags($identifier);
-
-        return $this->wpdb->update($this->table_name, $update_data, ['flwp_ff_identifier' => $preparedIdentifier], $formats, ['%s']);
     }
 
     public function update_status($id, $status) {
@@ -361,19 +265,6 @@ class FormFeedback extends Database {
 			]),
 			ARRAY_A
 		);
-
-        return $row ? new \FLWP\Database\Entity\FormFeedback($row) : null;
-    }
-
-    public function get_feedback_by_identifier($identifier) {
-		$wpdb = $this->wpdb;
-
-		// phpcs:ignore WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.DirectDatabaseQuery.DirectQuery
-        $row = $wpdb->get_row($wpdb->prepare(
-            "SELECT * FROM %i WHERE flwp_ff_identifier = %s",
-			$this->table_name,
-            $identifier
-        ), ARRAY_A);
 
         return $row ? new \FLWP\Database\Entity\FormFeedback($row) : null;
     }

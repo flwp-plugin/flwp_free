@@ -40,7 +40,7 @@ if (!defined('ABSPATH')) {
                 </div>
 
                 <!-- Draggable elements container -->
-                <div id="flwp-draggable-store-grid" style="display: flex; flex-direction: column; gap: 16px;">
+                <div id="flwp-draggable-store-grid" style="display: flex; flex-direction: column; gap: 16px;margin-bottom: 15px;">
 
                     <!-- Grid 1: Standard elements -->
                     <div class="flwp-fields-grid">
@@ -63,6 +63,16 @@ if (!defined('ABSPATH')) {
                             <i class="fas fa-keyboard"></i>
                             <span><?php esc_html_e('admin.builder.fields.textarea', 'flwp'); ?></span>
                         </div>
+
+	                    <div class="flwp-draggable-field-item" draggable="true" data-type="dropdown" id="flwp-field-drag-dropdown">
+		                    <i class="fas fa-chevron-down"></i>
+		                    <span><?php esc_html_e('fields.dropdown.name', 'flwp'); ?></span>
+	                    </div>
+
+	                    <div class="flwp-draggable-field-item" draggable="true" data-type="chips" id="flwp-field-drag-chips">
+		                    <i class="fas fa-tags"></i>
+		                    <span><?php esc_html_e('fields.chips.name', 'flwp'); ?></span>
+	                    </div>
                     </div>
 
                     <div class="flwp-sidebar-section-title" id="flwp-sec-title-reviews" style="margin-top: 8px; margin-bottom: 0;">
@@ -76,22 +86,30 @@ if (!defined('ABSPATH')) {
                             <i class="fas fa-star"></i>
                             <span><?php esc_html_e('admin.builder.fields.rating', 'flwp'); ?></span>
                         </div>
-
-                        <div class="flwp-draggable-field-item flwp-draggable-pro-item" draggable="true" data-type="thumbs" id="flwp-field-drag-thumbs">
-                            <i class="fas fa-thumbs-up"></i>
-                            <span><?php esc_html_e('admin.builder.fields.thumbs', 'flwp'); ?></span>
-                        </div>
-
-                        <div class="flwp-draggable-field-item flwp-draggable-pro-item" draggable="true" data-type="smileys" id="flwp-field-drag-smileys">
-                            <i class="fas fa-smile"></i>
-                            <span><?php esc_html_e('admin.builder.fields.smileys', 'flwp'); ?></span>
-                        </div>
-
-                        <div class="flwp-draggable-field-item flwp-draggable-pro-item" draggable="true" data-type="nps" id="flwp-field-drag-nps">
-                            <i class="fas fa-chart-bar"></i>
-                            <span><?php esc_html_e('admin.builder.fields.nps', 'flwp'); ?></span>
-                        </div>
                     </div>
+
+	                <div class="flwp-sidebar-section-title" id="flwp-sec-title-reviews" style="margin-top: 8px; margin-bottom: 0;">
+		                <span><?php esc_html_e('admin.builder.fields.pro_section.headline', 'flwp'); ?></span>
+		                <i class="fas fa-chevron-down text-xs"></i>
+	                </div>
+
+	                <div class="flwp-fields-grid">
+		                <div class="flwp-draggable-field-item flwp-draggable-pro-item flwp-pro-feature-hint">
+			                <i class="fas fa-thumbs-up"></i>
+			                <span><?php esc_html_e('admin.builder.fields.thumbs', 'flwp'); ?></span>
+		                </div>
+
+		                <div class="flwp-draggable-field-item flwp-draggable-pro-item flwp-pro-feature-hint">
+			                <i class="fas fa-smile"></i>
+			                <span><?php esc_html_e('admin.builder.fields.smileys', 'flwp'); ?></span>
+		                </div>
+
+		                <div class="flwp-draggable-field-item flwp-draggable-pro-item flwp-pro-feature-hint">
+			                <i class="fas fa-chart-bar"></i>
+			                <span><?php esc_html_e('admin.builder.fields.nps', 'flwp'); ?></span>
+		                </div>
+	                </div>
+
 
                 </div>
 
@@ -321,6 +339,16 @@ if (!defined('ABSPATH')) {
                             <span class="flwp-switch-slider"></span>
                         </label>
                     </div>
+
+	                <!-- Option: ChoicesList (Auswahlmöglichkeiten) -->
+	                <div class="flwp-form-group" id="flwp-opt-group-choicesList" style="display: none; margin-top: 14px; margin-bottom: 14px;">
+		                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+			                <label style="margin-bottom: 0; font-size: 13px; font-weight: 600; color: var(--flwp-text-main); display: flex; align-items: center; gap: 6px;">
+								<?php echo esc_html__('fields.dropdown.choices_title', 'flwp'); ?> <i class="far fa-question-circle flwp-help-tip" title="<?php echo esc_attr__('fields.dropdown.choices_tooltip', 'flwp'); ?>"></i>
+			                </label>
+		                </div>
+		                <div id="flwp-opt-choices-list-container" class="flwp-choices-list-container"></div>
+	                </div>
 
                     <!-- Option: Full Width -->
                     <div class="flwp-switch-group" id="flwp-opt-group-full-width">

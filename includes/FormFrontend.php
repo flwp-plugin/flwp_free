@@ -471,7 +471,6 @@ class FormFrontend {
         if (isset($decodedFormVersionData['settings']['main']['honeypot']) && $decodedFormVersionData['settings']['main']['honeypot'] !== false) {
             if (!empty($_POST['flwp_hp_field'])) {
                 wp_send_json_success('Feedback saved (hp)');
-                exit;
             }
         }
 

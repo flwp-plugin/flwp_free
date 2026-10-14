@@ -2,11 +2,8 @@
  * Config definitions, options, and templates for FLWP FormBuilder
  */
 
-import { __ } from './flwp-i18n.js';
-
 let fieldTypesConfig = '';
 let formTemplates = '';
-let isPro = false;
 let upgradeUrl = 'https://flwp.de';
 let locale = 'en_GB';
 if (typeof flwpFormBuilder !== "undefined") {
@@ -20,7 +17,6 @@ if (typeof flwpAdmin !== "undefined") {
 }
 
 export const config = {
-    isPro: isPro,
     upgradeUrl: upgradeUrl,
     locale: locale,
     localeV2: locale.replace('_', '-'),
@@ -30,15 +26,6 @@ export const config = {
         get currentDevice() { return window.matchMedia("(max-width: 767px)").matches ? 'mobile' : 'desktop'; },
         get isFrontpage() { return !!(typeof flwpFormFrontend !== "undefined" && flwpFormFrontend.isFrontpage); }
     },
-    SMILEY_DEFINITIONS: [
-        { cls: "far fa-face-angry", solidCls: "fa-regular fa-face-angry", color: "#104689", legend: __("fields.smileys.legend.very_unsatisfied") },
-        { cls: "far fa-face-frown", solidCls: "fa-regular fa-face-frown", color: "#fb923c", legend: __("fields.smileys.legend.unsatisfied") },
-        { cls: "far fa-face-meh", solidCls: "fa-regular fa-face-meh", color: "#facc15", legend: __("fields.smileys.legend.neutral") },
-        { cls: "far fa-face-smile", solidCls: "fa-regular fa-face-smile", color: "#a3e635", legend: __("fields.smileys.legend.satisfied") },
-        { cls: "far fa-face-laugh-beam", solidCls: "fa-regular fa-face-laugh-beam", color: "#4ade80", legend: __("fields.smileys.legend.very_satisfied") }
-    ],
-
     FIELD_TYPES_CONFIG: fieldTypesConfig,
-
     FORM_TEMPLATES: formTemplates
 };

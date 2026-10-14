@@ -6,6 +6,32 @@ class ConfigHelper {
 
     protected int $tmpElementIdNumber = 1;
 
+	public function get_form_fields_data() {
+		$data['valid'] = [
+			'headline',
+			'description',
+			'textarea',
+			'button',
+			'dropdown',
+			'chips',
+			'rating',
+		];
+
+		$data['userInput'] = [
+			'button',
+			'dropdown',
+			'chips',
+			'rating',
+		];
+
+		$data['userInputWithTextarea'] = array_merge(
+			$data['userInput'],
+			['textarea']
+		);
+
+		return $data;
+	}
+
     public function get_field_types_config() {
         return [
             'headline' => [
@@ -44,6 +70,25 @@ class ConfigHelper {
                 'baseHeight' => 150,
                 'labelHeight' => 18,
             ],
+            'dropdown' => [
+				'name' =>  esc_html__('fields.dropdown.name', 'flwp'),
+	            'icon' => 'fa-chevron-down',
+	            'defaultLabel' => esc_html__('fields.choices_list.default_label', 'flwp'),
+	            'supportedSettings' => ['label', 'hideLabel', 'required', 'choicesList', 'alignment'],
+	            'userinput' => true,
+	            'baseHeight' => 43,
+	            'labelHeight' => 19
+			],
+            'chips' => [
+				'name' => esc_html__('fields.chips.name', 'flwp'),
+	            'icon' => 'fa-tags',
+	            'defaultLabel' => esc_html__('fields.choices_list.default_label', 'flwp'),
+	            'supportedSettings' => ['label', 'hideLabel', 'alignment', 'icon', 'iconPosition', 'fontSize', 'lineHeight', 'borderRadius', 'customColors', 'choicesList', 'required'],
+	            'customColorTypes' => ['bgColor', 'textColor', 'borderColor', 'hoverBgColor', 'hoverTextColor', 'hoverBorderColor'],
+	            'userinput' => true,
+	            'baseHeight' => 46,
+	            'labelHeight' => 24
+			],
             'rating' => [
                 'name' => esc_html__('fields.rating.name', 'flwp'),
                 'icon' => 'fa-star',
@@ -53,41 +98,7 @@ class ConfigHelper {
                 'userinput' => true,
                 'baseHeight' => 30,
                 'labelHeight' => 18
-            ],
-            'thumbs' => [
-                'name' => esc_html__('fields.thumbs.name', 'flwp'),
-                'icon' => 'fa-thumbs-up',
-                'defaultLabel' => esc_html__('fields.thumbs.default_label', 'flwp'),
-                'supportedSettings' => ['label', 'hideLabel', 'required', 'alignment', 'customColors', 'step2Enabled'],
-                'customColorTypes' => ['bgColor', 'textColor', 'borderColor', 'hoverBgColor', 'hoverTextColor', 'hoverBorderColor'],
-                'userinput' => true,
-                'baseHeight' => 38,
-                'labelHeight' => 24,
-                'isPro' => true
-            ],
-            'smileys' => [
-                'name' => esc_html__('fields.smileys.name', 'flwp'),
-                'icon' => 'fa-smile',
-                'defaultLabel' => esc_html__('fields.smileys.default_label', 'flwp'),
-                'supportedSettings' => ['label', 'hideLabel', 'required', 'alignment', 'smileyLegend', 'customColors', 'step2Enabled'],
-                'customColorTypes' => ['textColor', 'hoverTextColor'],
-                'userinput' => true,
-                'baseHeight' => 34,
-                'labelHeight' => 18,
-                'legendHeight' => 34,
-                'isPro' => true
-            ],
-            'nps' => [
-                'name' => esc_html__('fields.nps.name', 'flwp'),
-                'icon' => 'fa-chart-bar',
-                'defaultLabel' => esc_html__('fields.nps.default_label', 'flwp'),
-                'supportedSettings' => ['label', 'hideLabel', 'required', 'alignment', 'customColors', 'step2Enabled'],
-                'customColorTypes' => ['bgColor', 'textColor', 'borderColor', 'hoverBgColor', 'hoverTextColor', 'hoverBorderColor'],
-                'userinput' => true,
-                'baseHeight' => 28,
-                'labelHeight' => 18,
-                'isPro' => true
-            ],
+            ]
         ];
     }
 
@@ -269,16 +280,7 @@ class ConfigHelper {
                     'url' => true,
                     'pageTitle' => true,
                     'referrer' => true,
-                    'userAgent' => true,
-                    'language' => false,
-                    'screenResolution' => false,
-                    'viewportSize' => false,
-                    'timezone' => false,
-                    'connectionType' => false,
-                    'deviceType' => false,
-                    'anonymizedSessionId' => false,
-                    'timeOnPageSeconds' => false,
-                    'colorScheme' => false
+                    'userAgent' => true
                 ]
             ],
             'confirmation' => [
@@ -393,10 +395,6 @@ class ConfigHelper {
             'template-4' => [
                 'title' => esc_html__('admin.form_template.template-4.title', 'flwp'),
                 'steps' => $this->generate_form_step_data('template-4')['steps'] ?? []
-            ],
-            'nps' => [
-                'title' => esc_html__('admin.form_template.nps.title', 'flwp'),
-                'steps' => $this->generate_form_step_data('template-1')['steps'] ?? []
             ],
             'article-feedback' => [
 				'title' => esc_html__('admin.initial_form.in_content.title', 'flwp'),
@@ -647,39 +645,6 @@ class ConfigHelper {
                     ],
                     'activeStep2TriggerId' => $ratingField['id']
                 ];
-                break;
-            case 'template-1':
-                $npsRating = $this->create_field_definition('nps',
-                     [
-                         'label'    => esc_html__('admin.template1.nps.label', 'flwp'),
-                         'settings' => [
-                             'stars'        => 10,
-                             'required'     => true,
-                             'step2Enabled' => true,
-                             'hideLabel' => true,
-                             'alignment' => 'center',
-                             'customColorsEnabled' => false
-                         ]
-                     ]
-                );
-
-                $formStepData = [
-                    'steps' => [
-                        'step1' => [
-                            $this->create_field_definition('headline', ['label' => esc_html__('admin.template1.headline.label', 'flwp'), 'settings' => ['fontSize' => '13px', 'alignment' => 'left', 'bold' => true]]),
-                            $npsRating
-                        ],
-                        'step2' => [
-                            $npsRating['id'] => [
-                                $this->create_field_definition('headline', ['label' => esc_html__('admin.template1.step2.headline.label', 'flwp'), 'settings' => ['fontSize' => '18px']]),
-                                $this->create_field_definition('textarea', ['label' => esc_html__('admin.template1.step2.textarea.label', 'flwp'), 'settings' => ['placeholder' => esc_html__('admin.template1.step2.textarea.placeholder', 'flwp'), 'required' => true, 'fontSize' => 'inherit']]),
-                                $this->create_field_definition('button', ['label' => esc_html__('admin.template1.step2.button.label', 'flwp'), 'settings' => ['icon' => 'fa-paper-plane', 'buttonType' => 'submit', 'fontSize' => 'inherit']])
-                            ]
-                        ]
-                    ],
-                    'activeStep2TriggerId' => $npsRating['id']
-                ];
-
                 break;
             case 'template-2':
                 $formStepData = [

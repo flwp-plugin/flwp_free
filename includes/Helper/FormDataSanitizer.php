@@ -83,6 +83,56 @@ class FormDataSanitizer
 
 	private function scalar($value, string $rule, string $path)
 	{
+		if ('array|choices' === $rule) {
+			if (!is_array($value) || !array_is_list_compat($value)) {
+				$this->report($path, 'Expected choices list', true);
+				return [];
+			}
+
+			$choices = [];
+			foreach ($value as $index => $choice) {
+				$choice_path = $path . '[' . $index . ']';
+				if (!is_array($choice) || array_is_list_compat($choice)) {
+					$this->report($choice_path, 'Expected choice object', true);
+					continue;
+				}
+
+				if (!array_key_exists('text', $choice) || !is_string($choice['text'])) {
+					$this->report($choice_path . '.text', 'Missing or invalid choice text', true);
+					continue;
+				}
+				if (!array_key_exists('icon', $choice) || !is_string($choice['icon'])) {
+					$this->report($choice_path . '.icon', 'Missing or invalid choice icon', true);
+					continue;
+				}
+
+				$clean = $this->apply(
+					$choice,
+					['text' => 'text', 'icon' => 'optional_icon'],
+					$choice_path
+				);
+				if ('' === trim($clean['text'])) {
+					$this->report($choice_path . '.text', 'Empty choice text', true);
+					continue;
+				}
+				$choices[] = $clean;
+			}
+			return $choices;
+		}
+
+		if ($rule === 'array|text') {
+			if (!is_array($value)) {
+				$this->report($path, 'Invalid array', true);
+				return '';
+			}
+
+			foreach ($value as $key => $val) {
+				$value[$key] = $this->scalar($val, 'text', $path);
+			}
+
+			return $value;
+		}
+
 		if ('bool' === $rule) {
 			if (!is_bool($value)) {
 				$this->report($path, 'Expected boolean', true);
@@ -156,6 +206,12 @@ class FormDataSanitizer
 			}
 
 			return $value;
+		}
+		if ('optional_icon' === $rule && '' === $value) {
+			return '';
+		}
+		if ('optional_icon' === $rule) {
+			return $this->scalar($value, 'icon', $path);
 		}
 		if ('icon' === $rule) {
 			if (!preg_match('/^fa-[a-z0-9-]{1,80}$/D', $value)) {
@@ -473,34 +529,39 @@ class FormDataSanitizer
 			'hoverTextColor'      => 'color',
 			'hoverBorderColor'    => 'color',
 			'icon'                => 'icon',
-			'iconPosition' => 'enum:left|right',
+			'iconPosition'        => 'enum:left|right',
 			'width'               => 'enum:100%|50%|33%|25%',
 			'clearBefore'         => 'bool',
+			'choices'             => 'array|choices',
+			'defaultChoice'       => 'text',
+			'required'            => 'bool'
 		];
 		if ('button' === $type) {
-			return $common + [
-					'buttonType'   => 'enum:next|back|submit',
-					'width'        => 'csslength',
-					'fullWidth'    => 'bool',
-					'step2Enabled' => 'bool',
-					'borderRadius' => 'csslength',
-				];
+			return array_merge($common, [
+				'buttonType'   => 'enum:next|back|submit',
+				'width'        => 'csslength',
+				'fullWidth'    => 'bool',
+				'step2Enabled' => 'bool',
+				'borderRadius' => 'csslength',
+			]);
 		}
 		if ('textarea' === $type) {
-			return $common + ['placeholder' => 'text', 'required' => 'bool'];
+			return array_merge($common, ['placeholder' => 'text']);
 		}
 		if ('headline' === $type) {
-			return $common + [
-					'hType' => 'enum:h1|h2|h3|h4|h5|h6|div',
-				];
+			return array_merge($common, [
+				'hType' => 'enum:h1|h2|h3|h4|h5|h6|div',
+			]);
+		}
+		if ('chips' === $type) {
+			return array_merge($common, ['borderRadius' => 'csslength']);
 		}
 		if (in_array($type, ['rating', 'thumbs', 'smileys', 'nps'], true)) {
-			return $common + [
-					'required'     => 'bool',
-					'step2Enabled' => 'bool',
-					'stars'        => 'positive',
-					'smileyLegend' => 'bool'
-				];
+			return array_merge($common, [
+				'step2Enabled' => 'bool',
+				'stars'        => 'positive',
+				'smileyLegend' => 'bool'
+			]);
 		}
 
 		return $common;
@@ -534,6 +595,14 @@ class FormDataSanitizer
 			}
 			$ids[$clean['id']] = true;
 			$clean['settings'] = $this->apply($field['settings'] ?? [], $this->field_schema($type), $p . '.settings');
+			if (isset($clean['settings']['choices'], $clean['settings']['defaultChoice'])) {
+				$default_choice = $clean['settings']['defaultChoice'];
+				$choice_texts = array_column($clean['settings']['choices'], 'text');
+				if ('' !== $default_choice && !in_array($default_choice, $choice_texts, true)) {
+					$this->report($p . '.settings.defaultChoice', 'Default choice does not exist in choices', true);
+				}
+			}
+
 			$out[] = $clean;
 		}
 
@@ -592,16 +661,7 @@ class FormDataSanitizer
 						'url',
 						'pageTitle',
 						'referrer',
-						'userAgent',
-						'language',
-						'screenResolution',
-						'viewportSize',
-						'timezone',
-						'connectionType',
-						'deviceType',
-						'anonymizedSessionId',
-						'timeOnPageSeconds',
-						'colorScheme'
+						'userAgent'
 					],
 					'bool'
 				),
@@ -634,7 +694,7 @@ class FormDataSanitizer
 			} elseif ('steps' === $key) {
 				$out['steps'] = $this->sanitize_steps($value, 'steps');
 			} elseif ('activeStep2TriggerId' === $key) {
-				if ($out['activeStep2TriggerId'] === null) {
+				if ($value === null) {
 					$value = '';
 				}
 

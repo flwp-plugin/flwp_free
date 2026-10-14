@@ -1,27 +1,9 @@
 import { __ } from './flwp-i18n.js';
 
 export const CONDITION_TYPES_CONFIG = {
-    url: {
-        type: "url",
-        label: __('admin.conditions.url.label'),
-        isPro: true,
-        unique: false,
-        defaultOperator: "contains",
-        defaultValue: "",
-        operators: [
-            { value: "contains", label: __('admin.conditions.operators.contains') },
-            { value: "not_contains", label: __('admin.conditions.operators.not_contains') },
-            { value: "exact", label: __('admin.conditions.operators.exact') },
-            { value: "not_exact", label: __('admin.conditions.operators.not_exact') }
-        ],
-        controlType: "text",
-        placeholder: __('admin.conditions.placeholder.url'),
-        autoFormatUrl: true
-    },
     page_type: {
         type: "page_type",
         label: __('admin.conditions.page_type.label'),
-        isPro: false,
         unique: true,
         defaultOperator: "in",
         defaultValue: ["page", "post"],
@@ -37,7 +19,6 @@ export const CONDITION_TYPES_CONFIG = {
     device: {
         type: "device",
         label: __('admin.conditions.device.label'),
-        isPro: false,
         unique: true,
         defaultOperator: "in",
         defaultValue: ["desktop", "mobile"],
@@ -49,23 +30,6 @@ export const CONDITION_TYPES_CONFIG = {
             { value: "desktop", label: __('admin.conditions.options.desktop'), icon: "fas fa-desktop" },
             { value: "mobile", label: __('admin.conditions.options.mobile'), icon: "fas fa-mobile-alt" }
         ]
-    },
-    cookie: {
-        type: "cookie",
-        label: __('admin.conditions.cookie.label'),
-        isPro: true,
-        unique: false,
-        defaultOperator: "exact",
-        defaultValue: "",
-        operators: [
-            { value: "contains", label: __('admin.conditions.operators.contains') },
-            { value: "not_contains", label: __('admin.conditions.operators.not_contains') },
-            { value: "exact", label: __('admin.conditions.operators.exact') },
-            { value: "not_exact", label: __('admin.conditions.operators.not_exact') }
-        ],
-        controlType: "dual-text",
-        placeholderName: __('admin.conditions.placeholder.cookie_name'),
-        placeholderValue: __('admin.conditions.placeholder.cookie_value')
     }
 };
 
@@ -74,9 +38,6 @@ export class FLWPConditionBuilder {
         if (!container) throw new Error("Container element is required for FLWPConditionBuilder");
         this.container = container;
         this.onChange = onChange || (() => {});
-
-        this.isPro = options.isPro !== false;
-        this.openProUpgradeModal = options.openProUpgradeModal || (() => {});
 
         this.config = this.migrateOldData(targetingConfig);
         this.render();
@@ -113,20 +74,14 @@ export class FLWPConditionBuilder {
             // Find the first available type that is not unique or not already in use
             const availableType = Object.keys(CONDITION_TYPES_CONFIG).find(key => {
                 const cfg = CONDITION_TYPES_CONFIG[key];
-                if (!this.isPro && cfg.isPro) return false;
                 if (cfg.unique && allRules.some(r => r.type === key)) return false;
                 return true;
             });
-            type = availableType || (this.isPro ? "url" : "frontpage");
+            type = availableType || "frontpage";
         }
 
         const cfg = CONDITION_TYPES_CONFIG[type];
         if (!cfg) return;
-
-        if (!this.isPro && cfg.isPro) {
-            this.openProUpgradeModal();
-            return;
-        }
 
         const id = "rule-" + Math.random().toString(36).substr(2, 9);
         let rule = {
@@ -158,12 +113,6 @@ export class FLWPConditionBuilder {
     handleTypeChange(groupType, rule, newType) {
         const cfg = CONDITION_TYPES_CONFIG[newType];
         if (!cfg) return;
-
-        if (!this.isPro && cfg.isPro) {
-            this.openProUpgradeModal();
-            this.render();
-            return;
-        }
 
         const allRules = [...this.config.andRules, ...this.config.orRules];
         if (cfg.unique && allRules.some(r => r.id !== rule.id && r.type === newType)) {
@@ -327,7 +276,6 @@ export class FLWPConditionBuilder {
         const allRules = [...this.config.andRules, ...this.config.orRules];
         const canAddMore = Object.keys(CONDITION_TYPES_CONFIG).some(key => {
             const cfg = CONDITION_TYPES_CONFIG[key];
-            if (!this.isPro && cfg.isPro) return false;
             if (cfg.unique && allRules.some(r => r.type === key)) return false;
             return true;
         });
@@ -370,8 +318,7 @@ export class FLWPConditionBuilder {
             const isSelected = rule.type === key ? "selected" : "";
             const isUniqueAndUsed = cfg.unique && key !== rule.type && allRules.some(r => r.type === key);
             const disabledAttr = isUniqueAndUsed ? "disabled" : "";
-            const proSuffix = !this.isPro && cfg.isPro ? " [PRO]" : "";
-            optionsHtml += `<option value="${key}" ${isSelected} ${disabledAttr}>${cfg.label}${proSuffix}</option>`;
+            optionsHtml += `<option value="${key}" ${isSelected} ${disabledAttr}>${cfg.label}</option>`;
         });
         typeSelect.innerHTML = optionsHtml;
         typeSelect.addEventListener("change", (e) => {

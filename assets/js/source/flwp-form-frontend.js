@@ -947,7 +947,7 @@ const engine = {
 
         // Create Step 2 Wrappers for each trigger element with step2Enabled = true
         const itemsWithStep2 = step1List.filter(item => {
-            return (['rating', 'thumbs', 'smileys', 'nps', 'button'].includes(item.type)) && item.settings && item.settings.step2Enabled === true;
+            return (['rating', 'button'].includes(item.type)) && item.settings && item.settings.step2Enabled === true;
         });
 
         const uniqueStep2TriggerIds = new Set(itemsWithStep2.map(i => i.id));
@@ -1192,7 +1192,7 @@ const engine = {
 
         const processedItemsList = [...itemsList];
 
-        const interactiveElements = processedItemsList.filter(i => ['nps', 'thumbs', 'rating', 'smileys', 'textarea'].includes(i.type));
+        const interactiveElements = processedItemsList.filter(i => ['rating', 'textarea'].includes(i.type));
         const hasSubmitButton = processedItemsList.some(i => i.type === 'button' && i.settings && i.settings.buttonType === 'submit');
         const enableAutoAdvance = (interactiveElements.length === 1) && !hasSubmitButton;
 
@@ -1268,9 +1268,6 @@ const engine = {
     },
 
     initAutoRender: function() {
-        // Initialize anonymizedSessionId early on load (before rendering or interaction)
-        utils.initSessionId();
-
         // Perform cleanup
         utils.cleanupExpiredLocalStorage();
 

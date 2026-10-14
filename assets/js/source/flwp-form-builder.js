@@ -56,7 +56,6 @@ const FLWPFormBuilder = (function() {
         elOptLineHeight,
         elOptBorderRadius,
         elOptRequired,
-        elOptSmileyLegend,
         elOptHideLabel,
         elOptFullWidth,
         elOptWidth,
@@ -129,7 +128,6 @@ const FLWPFormBuilder = (function() {
         elOptLineHeight = document.getElementById("flwp-opt-line-height");
         elOptBorderRadius = document.getElementById("flwp-opt-border-radius");
         elOptRequired = document.getElementById("flwp-opt-required");
-        elOptSmileyLegend = document.getElementById("flwp-opt-smiley-legend");
         elOptHideLabel = document.getElementById("flwp-opt-hide-label");
         elOptFullWidth = document.getElementById("flwp-opt-full-width");
         elOptWidth = document.getElementById("flwp-opt-width");
@@ -212,7 +210,6 @@ const FLWPFormBuilder = (function() {
             { element: elOptFullWidth, key: "settings.fullWidth", type: "bool", event: "change", defaultValue: true },
             { element: elOptWidth, key: "settings.width", type: "text", event: "change", defaultValue: "100%" },
             { element: elOptClearBefore, key: "settings.clearBefore", type: "bool", event: "change", defaultValue: false },
-            { element: elOptSmileyLegend, key: "settings.smileyLegend", type: "bool", event: "change", defaultValue: false },
             {
                 element: elOptStep2Enabled, key: "settings.step2Enabled", type: "bool", event: "change", defaultValue: false,
                 onAfterChange: (el, checked) => {
@@ -425,9 +422,6 @@ const FLWPFormBuilder = (function() {
                     let elementHeight = fieldConfig.baseHeight || 0;
                     if (fieldConfig.labelHeight && settings.hideLabel !== true) {
                         elementHeight += fieldConfig.labelHeight;
-                    }
-                    if (fieldConfig.legendHeight && settings.smileyLegend !== false) {
-                        elementHeight += fieldConfig.legendHeight;
                     }
 
                     totalHeight += elementHeight;
@@ -668,15 +662,6 @@ const FLWPFormBuilder = (function() {
             if (tr.pageTitle === undefined) tr.pageTitle = true;
             if (tr.referrer === undefined) tr.referrer = true;
             if (tr.userAgent === undefined) tr.userAgent = true;
-            if (tr.language === undefined) tr.language = false;
-            if (tr.screenResolution === undefined) tr.screenResolution = false;
-            if (tr.viewportSize === undefined) tr.viewportSize = false;
-            if (tr.timezone === undefined) tr.timezone = false;
-            if (tr.connectionType === undefined) tr.connectionType = false;
-            if (tr.deviceType === undefined) tr.deviceType = false;
-            if (tr.anonymizedSessionId === undefined) tr.anonymizedSessionId = false;
-            if (tr.timeOnPageSeconds === undefined) tr.timeOnPageSeconds = false;
-            if (tr.colorScheme === undefined) tr.colorScheme = false;
 
             if (!data.targeting) data.targeting = {};
             if (!data.targeting["in-content"]) {
@@ -778,7 +763,7 @@ const FLWPFormBuilder = (function() {
                 upgradeCtaBtn.setAttribute("href", config.upgradeUrl);
             }
 
-            const lockedFeatures = document.querySelectorAll(".flwp-pro-feature-locked");
+            const lockedFeatures = document.querySelectorAll(".flwp-pro-feature-hint");
             lockedFeatures.forEach(feat => {
                 feat.addEventListener("click", (e) => {
                     e.preventDefault();
@@ -799,12 +784,12 @@ const FLWPFormBuilder = (function() {
         getActiveStep2TriggerId: function() {
             if (state.activeStep2TriggerId) {
                 const triggerExists = state.steps.step1.find(
-                    (it) => it.id === state.activeStep2TriggerId && (['rating', 'thumbs', 'smileys', 'nps', 'button'].includes(it.type)) && it.settings.step2Enabled
+                    (it) => it.id === state.activeStep2TriggerId && (['rating', 'button'].includes(it.type)) && it.settings.step2Enabled
                 );
                 if (triggerExists) return state.activeStep2TriggerId;
             }
             const firstTrigger = state.steps.step1.find(
-                (it) => (['rating', 'thumbs', 'smileys', 'nps', 'button'].includes(it.type)) && it.settings.step2Enabled
+                (it) => (['rating', 'button'].includes(it.type)) && it.settings.step2Enabled
             );
             if (firstTrigger) {
                 state.activeStep2TriggerId = firstTrigger.id;
@@ -861,7 +846,7 @@ const FLWPFormBuilder = (function() {
                 } else {
                     const activeTriggerId = engine.getActiveStep2TriggerId();
                     const activeTrigger = state.steps.step1.find(it => it.id === activeTriggerId);
-                    const step2Triggers = state.steps.step1.filter(it => (['rating', 'thumbs', 'smileys', 'nps', 'button'].includes(it.type)) && it.settings.step2Enabled);
+                    const step2Triggers = state.steps.step1.filter(it => (['rating', 'button'].includes(it.type)) && it.settings.step2Enabled);
 
                     let html = list.length === 1
                         ? __("admin.builder.element_count_singular", { count: 1 })
@@ -1014,7 +999,7 @@ const FLWPFormBuilder = (function() {
 
             if (stepNum === 1) {
                 const item = state.steps.step1.find(it => it.id === id);
-                if (item && ['rating', 'thumbs', 'smileys', 'nps', 'button'].includes(item.type) && item.settings.step2Enabled) {
+                if (item && ['rating', 'button'].includes(item.type) && item.settings.step2Enabled) {
                     if (state.activeStep2TriggerId !== id) {
                         state.activeStep2TriggerId = id;
                         engine.renderStepCanvas(2);
@@ -1076,6 +1061,10 @@ const FLWPFormBuilder = (function() {
             toggleFieldGroup(document.getElementById("flwp-opt-group-placeholder"), "placeholder");
             toggleFieldGroup(document.getElementById("flwp-opt-group-button-type"), "buttonType");
             toggleFieldGroup(document.getElementById("flwp-opt-group-icon"), "icon");
+            if (element.type === "chips") {
+                const groupIcon = document.getElementById("flwp-opt-group-icon");
+                if (groupIcon) groupIcon.style.display = "none";
+            }
             toggleFieldGroup(document.getElementById("flwp-opt-group-icon-position"), "iconPosition");
             toggleFieldGroup(document.getElementById("flwp-opt-group-rating-stars"), "stars");
             toggleFieldGroup(document.getElementById("flwp-opt-group-font-size"), "fontSize");
@@ -1087,10 +1076,17 @@ const FLWPFormBuilder = (function() {
             toggleFieldGroup(document.getElementById("flwp-opt-group-full-width"), "fullWidth");
             toggleFieldGroup(document.getElementById("flwp-opt-group-width"), "width");
             toggleFieldGroup(document.getElementById("flwp-opt-group-clear-before"), "clearBefore");
-            toggleFieldGroup(document.getElementById("flwp-opt-group-smiley-legend"), "smileyLegend");
             toggleFieldGroup(document.getElementById("flwp-opt-group-textColor"), "textColor");
             toggleFieldGroup(document.getElementById("flwp-opt-group-button-colors"), "buttonColors");
             toggleFieldGroup(document.getElementById("flwp-opt-group-border-radius"), "borderRadius");
+            toggleFieldGroup(document.getElementById("flwp-opt-group-choicesList"), "choicesList");
+
+            if (supported.includes("choicesList")) {
+                const choicesContainer = document.getElementById("flwp-opt-choices-list-container");
+                if (choicesContainer) {
+                    fields.setupChoicesListControl(choicesContainer, element, (cb) => engine.applyElementChange(cb), Sortable);
+                }
+            }
 
             const elGroupStep2 = document.getElementById("flwp-opt-group-step2");
             if (elGroupStep2) {
@@ -1253,7 +1249,15 @@ const FLWPFormBuilder = (function() {
                     defaultHoverBg = (element.settings.buttonType === 'back' ? '#cbd5e1' : (state.settings.styles.secondaryColor || '#0b3363'));
                     defaultHoverText = element.settings.buttonType === 'back' ? '#334155' : '#ffffff';
                     defaultHoverBorder = (element.settings.buttonType === 'back' ? '#94a3b8' : (state.settings.styles.secondaryColor || '#0b3363'));
-                } else if (element.type === 'rating' || element.type === 'smileys') {
+                } else if (element.type === 'chips') {
+                    defaultBg = "#f1f5f9";
+                    defaultText = "#334155";
+                    defaultBorder = "#e2e8f0";
+
+                    defaultHoverBg = state.settings.styles.secondaryColor || '#0b3363';
+                    defaultHoverText = '#ffffff';
+                    defaultHoverBorder = state.settings.styles.secondaryColor || '#0b3363';
+                } else if (element.type === 'rating') {
                     defaultBg = "#ffffff";
                     defaultText = '#cbd5e1';
                     defaultBorder = "#e2e8f0";
@@ -1261,22 +1265,6 @@ const FLWPFormBuilder = (function() {
                     defaultHoverBg = "#f8fafc";
                     defaultHoverText = state.settings.styles.secondaryColor || '#0b3363';
                     defaultHoverBorder = "#cbd5e1";
-                } else if (element.type === 'thumbs') {
-                    defaultBg = '#ffffff';
-                    defaultText = "#000000";
-                    defaultBorder = '#000000';
-                    
-                    defaultHoverBg = state.settings.styles.secondaryColor || '#0b3363';
-                    defaultHoverText = "#ffffff";
-                    defaultHoverBorder = state.settings.styles.secondaryColor || '#0b3363';
-                } else if (element.type === 'nps') {
-                    defaultBg = '#ffffff';
-                    defaultText = "#475569";
-                    defaultBorder = '#cbd5e1';
-
-                    defaultHoverBg = state.settings.styles.secondaryColor || '#0b3363';
-                    defaultHoverText = "#ffffff";
-                    defaultHoverBorder = state.settings.styles.secondaryColor || '#0b3363';
                 } else {
                     // For headline or description, standard defaults
                     defaultBg = "#ffffff";
@@ -1452,7 +1440,7 @@ const FLWPFormBuilder = (function() {
                 let targetTriggerId = engine.getActiveStep2TriggerId();
 
                 if (!targetTriggerId) {
-                    const candidate = state.steps.step1.find(it => (['rating', 'thumbs', 'smileys', 'nps', 'button'].includes(it.type)));
+                    const candidate = state.steps.step1.find(it => (['rating', 'button'].includes(it.type)));
                     if (candidate) {
                         candidate.settings.step2Enabled = true;
                         state.activeStep2TriggerId = candidate.id;
@@ -1590,11 +1578,6 @@ const FLWPFormBuilder = (function() {
             const fieldConfig = config.FIELD_TYPES_CONFIG[type];
             if (!fieldConfig) return;
 
-            if (fieldConfig.isPro && !config.isPro) {
-                engine.openProUpgradeModal();
-                return;
-            }
-
             const newField = fields.createDefaultElement(type, fieldConfig.defaultLabel);
             const newId = newField.id;
 
@@ -1640,11 +1623,6 @@ const FLWPFormBuilder = (function() {
                 item.addEventListener("dragstart", (e) => {
                     const type = item.dataset.type;
                     const fieldConfig = config.FIELD_TYPES_CONFIG[type];
-                    if (fieldConfig && fieldConfig.isPro && !config.isPro) {
-                        e.preventDefault();
-                        engine.openProUpgradeModal();
-                        return;
-                    }
 
                     e.dataTransfer.setData("new-field-type", item.dataset.type);
                     e.dataTransfer.effectAllowed = "copy";
@@ -1953,9 +1931,7 @@ const FLWPFormBuilder = (function() {
                     if (groupEl) groupEl.style.opacity = e.target.checked ? "1" : "0.5";
 
                     const trackingFields = [
-                        "url", "pageTitle", "referrer", "userAgent", "language",
-                        "screenResolution", "viewportSize", "timezone", "connectionType",
-                        "deviceType", "anonymizedSessionId", "timeOnPageSeconds", "colorScheme"
+                        "url", "pageTitle", "referrer", "userAgent"
                     ];
                     trackingFields.forEach(field => {
                         const el = document.getElementById(`flwp-setting-tracking-${field}`);
@@ -1968,9 +1944,7 @@ const FLWPFormBuilder = (function() {
             }
 
             const trackingFieldsElementsList = [
-                "url", "pageTitle", "referrer", "userAgent", "language",
-                "screenResolution", "viewportSize", "timezone", "connectionType",
-                "deviceType", "anonymizedSessionId", "timeOnPageSeconds", "colorScheme"
+                "url", "pageTitle", "referrer", "userAgent"
             ];
             trackingFieldsElementsList.forEach(field => {
                 const el = document.getElementById(`flwp-setting-tracking-${field}`);
@@ -2009,7 +1983,7 @@ const FLWPFormBuilder = (function() {
                 if (element) {
                     callback(element);
                     engine.renderStepCanvas(stepNum);
-                    if (['rating', 'thumbs', 'smileys', 'nps', 'button'].includes(element.type)) {
+                    if (['rating', 'button'].includes(element.type)) {
                         engine.renderStepCanvas(2);
                     }
                     api.saveStateToLocalStorage();
@@ -2339,7 +2313,6 @@ const FLWPFormBuilder = (function() {
                             api.saveStateToLocalStorage();
                         },
                         {
-                            isPro: globalConfig.isPro,
                             openProUpgradeModal: () => engine.openProUpgradeModal()
                         }
                     );
@@ -2412,16 +2385,7 @@ const FLWPFormBuilder = (function() {
                     url: true,
                     pageTitle: true,
                     referrer: true,
-                    userAgent: true,
-                    language: true,
-                    screenResolution: true,
-                    viewportSize: true,
-                    timezone: true,
-                    connectionType: true,
-                    deviceType: true,
-                    anonymizedSessionId: true,
-                    timeOnPageSeconds: true,
-                    colorScheme: true
+                    userAgent: true
                 };
             }
 
@@ -2438,9 +2402,7 @@ const FLWPFormBuilder = (function() {
             }
 
             const trackingFields = [
-                "url", "pageTitle", "referrer", "userAgent", "language",
-                "screenResolution", "viewportSize", "timezone", "connectionType",
-                "deviceType", "anonymizedSessionId", "timeOnPageSeconds", "colorScheme"
+                "url", "pageTitle", "referrer", "userAgent"
             ];
 
             trackingFields.forEach(field => {

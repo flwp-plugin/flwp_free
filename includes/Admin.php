@@ -4,6 +4,7 @@ namespace FLWP;
 
 use FLWP\Database\Form;
 use FLWP\Database\FormFeedback;
+use FLWP\Helper\ConfigHelper;
 use FLWP\Helper\FormFeedbackHelper;
 use FLWP\Helper\IndexBuilder;
 use FLWP\Page\About;
@@ -152,7 +153,6 @@ class Admin {
                 break;
             case ($hook === 'toplevel_page_flwp-dashboard'):
                 wp_enqueue_script('flwp-chart-js', FLWP_PLUGIN_URL . 'assets/js/external/chart.min.js', [], '4.0.0');
-                wp_enqueue_script('flwp-sortable-js', FLWP_PLUGIN_URL . 'assets/js/external/sortable.min.js', [], '1.15.0');
 
                 $this->enqueue_flwp_admin_script('flwp-admin-script', FLWP_PLUGIN_URL . 'assets/js/dist/flwp-admin.js', [], FLWP_VERSION);
 
@@ -240,13 +240,8 @@ class Admin {
 			wp_send_json_error(esc_html__('Invalid data', 'flwp'), 400);
 		}
 
-		$valid_form_fields = [
-			'headline',
-			'description',
-			'textarea',
-			'button',
-			'rating',
-		];
+		$configHelper = new ConfigHelper();
+		$valid_form_fields = $configHelper->get_form_fields_data()['valid'];
 
 		$sanitizer = new \FLWP\Helper\FormDataSanitizer(
 			$valid_form_fields
@@ -452,76 +447,6 @@ class Admin {
             'user_values' => $prepared_data['userValues'],
 			'accent_color' => $accentColor,
         ]);
-    }
-
-    public function handle_export_csv__premium_only() {
-        check_ajax_referer('flwp_admin_nonce', 'nonce');
-
-        $args = [
-            'form_id'    => !empty($_POST['form_id']) ? sanitize_text_field(wp_unslash($_POST['form_id'])) : 'all',
-            'range'      => !empty($_POST['range']) ? sanitize_text_field(wp_unslash($_POST['range'])) : '',
-            'status'     => !empty($_POST['status']) ? sanitize_text_field(wp_unslash($_POST['status'])) : 'all',
-            'start_date' => !empty($_POST['start_date']) ? sanitize_text_field(wp_unslash($_POST['start_date'])) : '',
-            'end_date'   => !empty($_POST['end_date']) ? sanitize_text_field(wp_unslash(['end_date'])) : '',
-        ];
-
-        Csv::exportFeedback($args);
-    }
-
-    public function handle_export_json__premium_only() {
-        check_ajax_referer('flwp_admin_nonce', 'nonce');
-
-        $type = !empty($_POST['export_type']) ? sanitize_text_field(wp_unslash($_POST['export_type'])) : '';
-
-        switch ($type) {
-            case 'forms':
-                $form_id = !empty($_POST['form_id']) ? sanitize_text_field(wp_unslash($_POST['form_id'])) : '';
-                $json_exporter = new Json();
-                $json_exporter->exportAllForms($form_id);
-                break;
-            case 'feedback':
-                $form_id = !empty($_POST['form_id']) ? sanitize_text_field(wp_unslash($_POST['form_id'])) : '';
-                $filters = [
-                    'range'      => !empty($_POST['range']) ? sanitize_text_field(wp_unslash($_POST['range'])) : '',
-                    'status'     => !empty($_POST['status']) ? sanitize_text_field(wp_unslash($_POST['status'])) : 'all',
-                    'start_date' => !empty($_POST['start_date']) ? sanitize_text_field(wp_unslash(['start_date'])) : '',
-                    'end_date'   => !empty($_POST['end_date']) ? sanitize_text_field(wp_unslash($_POST['end_date'])) : '',
-                ];
-                $json_exporter = new Json();
-                $json_exporter->exportAllFeedback($form_id, $filters);
-                break;
-        }
-    }
-
-    public function handle_import_json__premium_only() {
-        check_ajax_referer('flwp_admin_nonce', 'nonce');
-
-        if (!current_user_can('manage_options')) {
-            wp_send_json_error(esc_html__('Permission denied', 'flwp'));
-        }
-
-        $config = Json::import();
-        $type = sanitize_text_field(wp_unslash($_POST['type'] ?? 'forms'));
-
-        if (!empty($config)) {
-            $json_exporter = new Json();
-
-            if ($type === 'forms') {
-                $import_result = $json_exporter->importForms($config);
-            } elseif ($type === 'feedback') {
-                $import_result = $json_exporter->importFeedbacks($config);
-            } else {
-                wp_send_json_error(esc_html__('Wrong import-type.', 'flwp'));
-            }
-
-            if ($import_result['success']) {
-                wp_send_json_success($import_result['message']);
-            } else {
-                wp_send_json_error($import_result['message']);
-            }
-        } else {
-            wp_send_json_error(esc_html__('Error during importing the file or wrong file format.', 'flwp'));
-        }
     }
 
     /**

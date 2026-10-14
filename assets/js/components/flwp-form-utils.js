@@ -102,7 +102,7 @@ export const utils = {
      */
     hasSubmitProblem: function(step1Items) {
         if (!Array.isArray(step1Items)) return false;
-        const interactiveElements = step1Items.filter(i => ['nps', 'thumbs', 'rating', 'smileys', 'textarea'].includes(i.type));
+        const interactiveElements = step1Items.filter(i => ['rating', 'textarea'].includes(i.type));
         const hasSubmitButton = step1Items.some(i => i.type === 'button' && i.settings && (i.settings.buttonType === 'submit' || i.settings.step2Enabled === true));
         const hasTextarea = step1Items.some(i => i.type === 'textarea');
 
@@ -118,7 +118,7 @@ export const utils = {
         if (!stateObj || !stateObj.steps || !Array.isArray(stateObj.steps.step1)) return false;
 
         const triggers = stateObj.steps.step1.filter(item =>
-            ['rating', 'thumbs', 'smileys', 'nps', 'button'].includes(item.type) &&
+            ['rating', 'button'].includes(item.type) &&
             item.settings && item.settings.step2Enabled === true
         );
 
@@ -148,7 +148,7 @@ export const utils = {
         if (!stateObj || !stateObj.steps || !Array.isArray(stateObj.steps.step1)) return false;
 
         const triggers = stateObj.steps.step1.filter(item =>
-            ['rating', 'thumbs', 'smileys', 'nps', 'button'].includes(item.type) &&
+            ['rating', 'button'].includes(item.type) &&
             item.settings && item.settings.step2Enabled === true
         );
 
@@ -161,7 +161,7 @@ export const utils = {
             }
 
             if (list && Array.isArray(list) && list.length > 0) {
-                const interactiveElements = list.filter(i => ['nps', 'thumbs', 'rating', 'smileys'].includes(i.type));
+                const interactiveElements = list.filter(i => ['rating'].includes(i.type));
                 const hasSubmitButton = list.some(i => i.type === 'button' && i.settings && i.settings.buttonType === 'submit');
 
                 if (interactiveElements.length === 0 && !hasSubmitButton) {
@@ -407,22 +407,6 @@ export const utils = {
     },
 
     /**
-     * Initializes or retrieves an anonymized session ID
-     */
-    initSessionId: function() {
-        try {
-            let anonymizedSessionId = sessionStorage.getItem("flwp_anon_sid");
-            if (!anonymizedSessionId) {
-                anonymizedSessionId = "sid_" + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
-                sessionStorage.setItem("flwp_anon_sid", anonymizedSessionId);
-            }
-            return anonymizedSessionId;
-        } catch (e) {
-            return "";
-        }
-    },
-
-    /**
      * Collects tracking data based on form configuration
      */
     getTrackingData: function(stateObj = null) {
@@ -432,15 +416,6 @@ export const utils = {
             pageTitle: true,
             referrer: true,
             userAgent: true,
-            language: false,
-            screenResolution: false,
-            viewportSize: false,
-            timezone: false,
-            connectionType: false,
-            deviceType: false,
-            anonymizedSessionId: false,
-            timeOnPageSeconds: false,
-            colorScheme: false
         };
 
         if (stateObj && stateObj.settings && stateObj.settings.tracking) {
@@ -467,67 +442,6 @@ export const utils = {
 
         if (trackingConfig.userAgent !== false) {
             data.userAgent = window.navigator.userAgent;
-        }
-
-        if (trackingConfig.language !== false) {
-            data.language = window.navigator.language || window.navigator.userLanguage || "";
-        }
-
-        if (trackingConfig.screenResolution !== false) {
-            data.screenResolution = `${window.screen.width}x${window.screen.height}`;
-        }
-
-        if (trackingConfig.viewportSize !== false) {
-            data.viewportSize = `${window.innerWidth}x${window.innerHeight}`;
-        }
-
-        if (trackingConfig.timezone !== false) {
-            let timezone = "";
-            try {
-                timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-            } catch (e) {}
-            data.timezone = timezone;
-        }
-
-        if (trackingConfig.connectionType !== false) {
-            const conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
-            data.connectionType = conn ? conn.effectiveType || conn.type || "unknown" : "unknown";
-        }
-
-        if (trackingConfig.deviceType !== false) {
-            let deviceType = "desktop";
-            if (utils.isMobile()) {
-                deviceType = "mobile";
-            } else if (window.innerWidth <= 1024) {
-                deviceType = "tablet";
-            }
-            data.deviceType = deviceType;
-        }
-
-        if (trackingConfig.anonymizedSessionId !== false) {
-            data.anonymizedSessionId = utils.initSessionId();
-        }
-
-        if (trackingConfig.timeOnPageSeconds !== false) {
-            let timeOnPageSeconds = 0;
-            try {
-                timeOnPageSeconds = Math.round(performance.now() / 1000);
-            } catch (e) {}
-            data.timeOnPageSeconds = timeOnPageSeconds;
-        }
-
-        if (trackingConfig.colorScheme !== false) {
-            let colorScheme = "unknown";
-            try {
-                if (window.matchMedia) {
-                    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-                        colorScheme = "dark";
-                    } else if (window.matchMedia("(prefers-color-scheme: light)").matches) {
-                        colorScheme = "light";
-                    }
-                }
-            } catch (e) {}
-            data.colorScheme = colorScheme;
         }
 
         return data;
@@ -593,7 +507,7 @@ export const utils = {
     isOptionStep2ActiveOnStep1: function(stateObj) {
         if (!stateObj || !stateObj.steps || !stateObj.steps.step1) return false;
         return stateObj.steps.step1.some(item => {
-            return (['rating', 'thumbs', 'smileys', 'nps', 'button'].includes(item.type)) && item.settings.step2Enabled === true;
+            return (['rating', 'button'].includes(item.type)) && item.settings.step2Enabled === true;
         });
     },
 

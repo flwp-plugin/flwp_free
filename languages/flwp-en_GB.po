@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2026-09-18T09:20:05+02:00\n"
-"PO-Revision-Date: 2026-10-12T13:27:38+00:00\n"
+"PO-Revision-Date: 2026-10-14T10:46:39+00:00\n"
 "Language: en_GB\n"
 "X-Generator: Poedit 3.9\n"
 
@@ -32,50 +32,49 @@ msgstr ""
 msgid "Kai Steudten"
 msgstr ""
 
-#: includes/Admin.php:54
 #: includes/Admin.php:55
+#: includes/Admin.php:56
 msgid "admin.menu.dashboard"
 msgstr "Dashboard"
 
-#: includes/Admin.php:63
 #: includes/Admin.php:64
+#: includes/Admin.php:65
 msgid "admin.menu.all_forms"
 msgstr "All Forms"
 
-#: includes/Admin.php:72
 #: includes/Admin.php:73
+#: includes/Admin.php:74
 msgid "admin.menu.add_form"
 msgstr "Add Form"
 
-#: includes/Admin.php:81
 #: includes/Admin.php:82
+#: includes/Admin.php:83
 msgid "admin.menu.feedback_list"
 msgstr "Feedback List"
 
-#: includes/Admin.php:90
 #: includes/Admin.php:91
+#: includes/Admin.php:92
 msgid "admin.menu.export"
 msgstr "Export"
 
-#: includes/Admin.php:99
 #: includes/Admin.php:100
+#: includes/Admin.php:101
 msgid "admin.menu.about"
 msgstr "About FLWP"
 
 #: includes/Admin.php:218
-#: includes/Admin.php:289
-#: includes/Admin.php:317
-#: includes/Admin.php:341
-#: includes/Admin.php:357
-#: includes/Admin.php:396
-#: includes/Admin.php:419
-#: includes/Admin.php:500
+#: includes/Admin.php:284
+#: includes/Admin.php:312
+#: includes/Admin.php:336
+#: includes/Admin.php:352
+#: includes/Admin.php:391
+#: includes/Admin.php:414
 msgid "Permission denied"
 msgstr ""
 
 #: includes/Admin.php:231
-#: includes/Admin.php:296
-#: includes/Admin.php:324
+#: includes/Admin.php:291
+#: includes/Admin.php:319
 msgid "Missing data"
 msgstr ""
 
@@ -83,62 +82,54 @@ msgstr ""
 msgid "Invalid data"
 msgstr ""
 
-#: includes/Admin.php:258
+#: includes/Admin.php:253
 msgid "Invalid form configuration. Please check your form settings."
 msgstr ""
 
-#: includes/Admin.php:265
+#: includes/Admin.php:260
 #: includes/Database/Form.php:144
 msgid "admin.db.default_new_form_name"
 msgstr "New Form"
 
-#: includes/Admin.php:275
+#: includes/Admin.php:270
 msgid "Form data saved successfully"
 msgstr ""
 
-#: includes/Admin.php:281
+#: includes/Admin.php:276
 msgid "Failed to save form data"
 msgstr ""
 
-#: includes/Admin.php:307
+#: includes/Admin.php:302
 msgid "Status updated successfully"
 msgstr ""
 
-#: includes/Admin.php:309
+#: includes/Admin.php:304
 msgid "Failed to update status"
 msgstr ""
 
-#: includes/Admin.php:331
+#: includes/Admin.php:326
 msgid "Feedback status updated successfully"
 msgstr ""
 
-#: includes/Admin.php:333
+#: includes/Admin.php:328
 msgid "Failed to update feedback status"
 msgstr ""
 
-#: includes/Admin.php:424
+#: includes/Admin.php:419
 msgid "ID missing"
 msgstr ""
 
-#: includes/Admin.php:430
+#: includes/Admin.php:425
 msgid "Feedback not found"
 msgstr ""
 
-#: includes/Admin.php:514
-msgid "Wrong import-type."
-msgstr ""
-
-#: includes/Admin.php:523
-msgid "Error during importing the file or wrong file format."
-msgstr ""
-
-#: includes/Admin.php:545
+#: includes/Admin.php:470
 msgid "admin.notice.thank_you"
 msgstr "Thank you for using %s."
 
 #: includes/Database/Form.php:18
 #: includes/FormFrontend.php:178
-#: includes/Helper/ConfigHelper.php:127
+#: includes/Helper/ConfigHelper.php:138
 msgid "admin.db.default_form_name"
 msgstr "Feedback form"
 
@@ -162,7 +153,7 @@ msgstr "Please <a href=\"%1$s\">update your WordPress installation</a> to at lea
 
 #: includes/EnvironmentChecks.php:108
 msgid "admin.env_check.wp.update_core.txt"
-msgstr ""
+msgstr "update your WordPress installation"
 
 #: includes/EnvironmentChecks.php:115
 msgid "admin.env_check.wp.ask_admin"
@@ -178,408 +169,371 @@ msgstr "<a href=\"%s\">Learn more about updating PHP</a> or contact your server 
 
 #: includes/EnvironmentChecks.php:142
 msgid "admin.env_check.php.update_link.txt"
-msgstr ""
+msgstr "Learn more about updating PHP"
 
 #: includes/FormFrontend.php:211
-#: includes/Helper/ConfigHelper.php:191
-#: includes/Helper/ConfigHelper.php:227
-#: includes/Helper/ConfigHelper.php:261
+#: includes/Helper/ConfigHelper.php:202
+#: includes/Helper/ConfigHelper.php:238
+#: includes/Helper/ConfigHelper.php:272
 #: templates/frontend/flwp-form-footer.php:39
-#: assets/js/dist/flwp-form-builder.js:3962
-#: assets/js/dist/flwp-form-builder.js:3979
-#: assets/js/dist/flwp-form-frontend.js:1933
-#: assets/js/dist/flwp-form-frontend.js:2006
+#: assets/js/dist/flwp-form-builder.js:4109
+#: assets/js/dist/flwp-form-builder.js:4126
+#: assets/js/dist/flwp-form-frontend.js:2128
+#: assets/js/dist/flwp-form-frontend.js:2201
 msgid "admin.frontend.default_footer_text"
 msgstr "We appreciate your honest feedback!"
 
-#: includes/FormFrontend.php:531
+#: includes/FormFrontend.php:530
 msgid "admin.notification.feedback_saved"
 msgstr "Feedback saved"
 
-#: includes/FormFrontend.php:533
+#: includes/FormFrontend.php:532
 msgid "admin.notification.database_error"
 msgstr "Database error"
 
-#: includes/FormFrontend.php:552
+#: includes/FormFrontend.php:551
 msgid "admin.notification.subject"
 msgstr "New form entry"
 
-#: includes/FormFrontend.php:566
+#: includes/FormFrontend.php:565
 msgid "admin.notification.email_body"
 msgstr "<p>Here are the submitted form data:</p><p>{feedback_values}</p><p>Sent on: {date} at {time}</p><p>Via page: {page_url}</p>"
 
-#: includes/FormFrontend.php:585
+#: includes/FormFrontend.php:584
 msgid "admin.notification.default_form_name"
 msgstr "Feedback form"
 
-#: includes/FormFrontend.php:589
+#: includes/FormFrontend.php:588
 msgid "admin.notification.time_suffix"
 msgstr "&nbsp;"
 
-#: includes/Helper/ConfigHelper.php:12
+#: includes/Helper/ConfigHelper.php:38
 msgid "fields.headline.name"
 msgstr "Headline"
 
-#: includes/Helper/ConfigHelper.php:14
+#: includes/Helper/ConfigHelper.php:40
 msgid "fields.headline.default_label"
 msgstr "Your opinion counts!"
 
-#: includes/Helper/ConfigHelper.php:21
+#: includes/Helper/ConfigHelper.php:47
 msgid "fields.description.name"
 msgstr "Description"
 
-#: includes/Helper/ConfigHelper.php:23
+#: includes/Helper/ConfigHelper.php:49
 msgid "fields.description.default_label"
 msgstr "Please take a minute to fill out this short feedback."
 
-#: includes/Helper/ConfigHelper.php:30
+#: includes/Helper/ConfigHelper.php:56
 msgid "fields.button.name"
 msgstr "Button"
 
-#: includes/Helper/ConfigHelper.php:32
+#: includes/Helper/ConfigHelper.php:58
 msgid "fields.button.default_label"
 msgstr "Send feedback"
 
-#: includes/Helper/ConfigHelper.php:39
+#: includes/Helper/ConfigHelper.php:65
 msgid "fields.textarea.name"
 msgstr "Textarea (Multi-line)"
 
-#: includes/Helper/ConfigHelper.php:41
+#: includes/Helper/ConfigHelper.php:67
 msgid "fields.textarea.default_label"
 msgstr "Your message"
 
-#: includes/Helper/ConfigHelper.php:48
+#: includes/Helper/ConfigHelper.php:74
+#: templates/admin/form-builder/fields.php:69
+msgid "fields.dropdown.name"
+msgstr "Dropdown"
+
+#: includes/Helper/ConfigHelper.php:76
+#: includes/Helper/ConfigHelper.php:85
+msgid "fields.choices_list.default_label"
+msgstr "What can we help you with?"
+
+#: includes/Helper/ConfigHelper.php:83
+#: templates/admin/form-builder/fields.php:74
+msgid "fields.chips.name"
+msgstr "Chips"
+
+#: includes/Helper/ConfigHelper.php:93
 msgid "fields.rating.name"
 msgstr "Star rating"
 
-#: includes/Helper/ConfigHelper.php:50
+#: includes/Helper/ConfigHelper.php:95
 msgid "fields.rating.default_label"
 msgstr "How do you rate our site?"
 
-#: includes/Helper/ConfigHelper.php:58
-msgid "fields.thumbs.name"
-msgstr "Thumbs feedback"
-
-#: includes/Helper/ConfigHelper.php:60
-msgid "fields.thumbs.default_label"
-msgstr "Would you recommend us?"
-
-#: includes/Helper/ConfigHelper.php:69
-msgid "fields.smileys.name"
-msgstr "Smiley rating"
-
-#: includes/Helper/ConfigHelper.php:71
-msgid "fields.smileys.default_label"
-msgstr "How satisfied are you with us?"
-
-#: includes/Helper/ConfigHelper.php:81
-msgid "fields.nps.name"
-msgstr "Recommendation (NPS)"
-
-#: includes/Helper/ConfigHelper.php:83
-msgid "fields.nps.default_label"
-msgstr "How likely is it that you would recommend us?"
-
-#: includes/Helper/ConfigHelper.php:118
+#: includes/Helper/ConfigHelper.php:129
 msgid "admin.config.default_email"
 msgstr "Email address"
 
-#: includes/Helper/ConfigHelper.php:286
-#: assets/js/dist/flwp-form-frontend.js:2425
-#: assets/js/dist/flwp-form-frontend.js:2560
-#: assets/js/dist/flwp-form-frontend.js:2576
+#: includes/Helper/ConfigHelper.php:288
+#: assets/js/dist/flwp-form-frontend.js:2620
+#: assets/js/dist/flwp-form-frontend.js:2755
+#: assets/js/dist/flwp-form-frontend.js:2771
 msgid "confirmation.message.default"
 msgstr "<p>Thank you for your feedback! It helps us to improve continuously.</p>"
 
-#: includes/Helper/ConfigHelper.php:292
+#: includes/Helper/ConfigHelper.php:294
 msgid "notification.subject.default"
 msgstr "New feedback received"
 
-#: includes/Helper/ConfigHelper.php:386
+#: includes/Helper/ConfigHelper.php:388
 msgid "admin.form_template.bug.title"
 msgstr "Report bug"
 
-#: includes/Helper/ConfigHelper.php:390
+#: includes/Helper/ConfigHelper.php:392
 msgid "admin.form_template.website.title"
 msgstr "Article satisfaction (with step 2)"
 
-#: includes/Helper/ConfigHelper.php:394
+#: includes/Helper/ConfigHelper.php:396
 msgid "admin.form_template.template-4.title"
 msgstr "Article satisfaction (without step 2)"
 
-#: includes/Helper/ConfigHelper.php:398
-msgid "admin.form_template.nps.title"
-msgstr "Net Promoter Score (NPS)"
-
-#: includes/Helper/ConfigHelper.php:402
+#: includes/Helper/ConfigHelper.php:400
 #: includes/Helper/FormHelper.php:122
 msgid "admin.initial_form.in_content.title"
 msgstr "Content feedback"
 
-#: includes/Helper/ConfigHelper.php:406
+#: includes/Helper/ConfigHelper.php:404
 #: includes/Helper/FormHelper.php:134
 msgid "admin.initial_form.feedback_button.title"
 msgstr "Feedback button form"
 
-#: includes/Helper/ConfigHelper.php:410
+#: includes/Helper/ConfigHelper.php:408
 #: includes/Helper/FormHelper.php:155
 msgid "admin.initial_form.exit_intent.title"
 msgstr "Exit-intent form"
 
-#: includes/Helper/ConfigHelper.php:414
+#: includes/Helper/ConfigHelper.php:412
 msgid "admin.form_template.blank.title"
 msgstr "Empty form"
 
-#: includes/Helper/ConfigHelper.php:432
-#: includes/Helper/ConfigHelper.php:556
+#: includes/Helper/ConfigHelper.php:430
+#: includes/Helper/ConfigHelper.php:554
 msgid "admin.default.rating.label"
 msgstr "How satisfied are you with our service?"
 
-#: includes/Helper/ConfigHelper.php:439
+#: includes/Helper/ConfigHelper.php:437
 msgid "admin.default.step1.headline.label"
 msgstr "How satisfied are you with the content?"
 
-#: includes/Helper/ConfigHelper.php:440
+#: includes/Helper/ConfigHelper.php:438
 msgid "admin.default.step1.description.label"
 msgstr "Help us to become better."
 
-#: includes/Helper/ConfigHelper.php:445
+#: includes/Helper/ConfigHelper.php:443
 msgid "admin.default.step2.headline.label"
 msgstr "Tell us more?"
 
-#: includes/Helper/ConfigHelper.php:446
+#: includes/Helper/ConfigHelper.php:444
 msgid "admin.default.step2.description.label"
 msgstr "What did you particularly like, or what can we optimize?"
 
-#: includes/Helper/ConfigHelper.php:447
+#: includes/Helper/ConfigHelper.php:445
 msgid "admin.default.step2.textarea.label"
 msgstr "What can we do better?"
 
-#: includes/Helper/ConfigHelper.php:447
+#: includes/Helper/ConfigHelper.php:445
 msgid "admin.default.step2.textarea.placeholder"
 msgstr "Write your feedback here..."
 
-#: includes/Helper/ConfigHelper.php:448
+#: includes/Helper/ConfigHelper.php:446
 msgid "admin.default.step2.button.back.label"
 msgstr "Back"
 
-#: includes/Helper/ConfigHelper.php:449
+#: includes/Helper/ConfigHelper.php:447
 msgid "admin.default.step2.button.submit.label"
 msgstr "Submit"
 
-#: includes/Helper/ConfigHelper.php:459
+#: includes/Helper/ConfigHelper.php:457
 msgid "admin.feedback_button.btn_improve.label"
 msgstr "Rate your experience"
 
-#: includes/Helper/ConfigHelper.php:476
+#: includes/Helper/ConfigHelper.php:474
 msgid "admin.feedback_button.btn_missing.label"
 msgstr "What are you missing on the page?"
 
-#: includes/Helper/ConfigHelper.php:493
+#: includes/Helper/ConfigHelper.php:491
 msgid "admin.feedback_button.btn_idea.label"
 msgstr "Do you have an idea?"
 
-#: includes/Helper/ConfigHelper.php:510
+#: includes/Helper/ConfigHelper.php:508
 msgid "admin.feedback_button.btn_problem.label"
 msgstr "Report a problem"
 
-#: includes/Helper/ConfigHelper.php:527
+#: includes/Helper/ConfigHelper.php:525
 msgid "admin.feedback_button.btn_other.label"
 msgstr "Other feedback"
 
-#: includes/Helper/ConfigHelper.php:546
+#: includes/Helper/ConfigHelper.php:544
 msgid "admin.feedback_button.step1.headline.label"
 msgstr "How can we improve?"
 
-#: includes/Helper/ConfigHelper.php:555
+#: includes/Helper/ConfigHelper.php:553
 msgid "admin.feedback_button.step2.improve.headline.label"
 msgstr "How satisfied are you with us?"
 
-#: includes/Helper/ConfigHelper.php:559
+#: includes/Helper/ConfigHelper.php:557
 msgid "admin.feedback_button.step2.missing.headline.label"
 msgstr "Which feature are you missing?"
 
-#: includes/Helper/ConfigHelper.php:560
+#: includes/Helper/ConfigHelper.php:558
 msgid "admin.feedback_button.step2.missing.description.label"
 msgstr "Tell us which feature or functionality you are missing on our page."
 
-#: includes/Helper/ConfigHelper.php:561
+#: includes/Helper/ConfigHelper.php:559
 msgid "admin.feedback_button.step2.missing.textarea.label"
 msgstr "What can we do better?"
 
-#: includes/Helper/ConfigHelper.php:561
+#: includes/Helper/ConfigHelper.php:559
 msgid "admin.feedback_button.step2.missing.textarea.placeholder"
 msgstr "e.g. a special table or notifications..."
 
-#: includes/Helper/ConfigHelper.php:562
+#: includes/Helper/ConfigHelper.php:560
 msgid "admin.feedback_button.step2.missing.button.label"
 msgstr "Submit"
 
-#: includes/Helper/ConfigHelper.php:565
+#: includes/Helper/ConfigHelper.php:563
 msgid "admin.feedback_button.step2.idea.headline.label"
 msgstr "Which feature would you wish for?"
 
-#: includes/Helper/ConfigHelper.php:566
+#: includes/Helper/ConfigHelper.php:564
 msgid "admin.feedback_button.step2.idea.description.label"
 msgstr "Describe your idea to us as precisely as possible."
 
-#: includes/Helper/ConfigHelper.php:567
+#: includes/Helper/ConfigHelper.php:565
 msgid "admin.feedback_button.step2.idea.textarea.label"
 msgstr "What can we do better?"
 
-#: includes/Helper/ConfigHelper.php:567
+#: includes/Helper/ConfigHelper.php:565
 msgid "admin.feedback_button.step2.idea.textarea.placeholder"
 msgstr "I would wish that..."
 
-#: includes/Helper/ConfigHelper.php:568
+#: includes/Helper/ConfigHelper.php:566
 msgid "admin.feedback_button.step2.idea.button.label"
 msgstr "Submit"
 
-#: includes/Helper/ConfigHelper.php:571
+#: includes/Helper/ConfigHelper.php:569
 msgid "admin.feedback_button.step2.problem.headline.label"
 msgstr "What is the problem?"
 
-#: includes/Helper/ConfigHelper.php:572
+#: includes/Helper/ConfigHelper.php:570
 msgid "admin.feedback_button.step2.problem.description.label"
 msgstr "Please give us as many details about the problem as possible."
 
-#: includes/Helper/ConfigHelper.php:573
+#: includes/Helper/ConfigHelper.php:571
 msgid "admin.feedback_button.step2.problem.textarea.label"
 msgstr "What can we do better?"
 
-#: includes/Helper/ConfigHelper.php:573
+#: includes/Helper/ConfigHelper.php:571
 msgid "admin.feedback_button.step2.problem.textarea.placeholder"
 msgstr "I tried... and then this happened..."
 
-#: includes/Helper/ConfigHelper.php:574
+#: includes/Helper/ConfigHelper.php:572
 msgid "admin.feedback_button.step2.problem.button.label"
 msgstr "Submit"
 
-#: includes/Helper/ConfigHelper.php:577
+#: includes/Helper/ConfigHelper.php:575
 msgid "admin.feedback_button.step2.other.headline.label"
 msgstr "What would you like to share with us?"
 
-#: includes/Helper/ConfigHelper.php:578
+#: includes/Helper/ConfigHelper.php:576
 msgid "admin.feedback_button.step2.other.description.label"
 msgstr "We appreciate any feedback you give us."
 
-#: includes/Helper/ConfigHelper.php:579
+#: includes/Helper/ConfigHelper.php:577
 msgid "admin.feedback_button.step2.other.textarea.label"
 msgstr "What can we do better?"
 
-#: includes/Helper/ConfigHelper.php:579
+#: includes/Helper/ConfigHelper.php:577
 msgid "admin.feedback_button.step2.other.textarea.placeholder"
 msgstr "Share your thoughts with us here..."
 
-#: includes/Helper/ConfigHelper.php:580
+#: includes/Helper/ConfigHelper.php:578
 msgid "admin.feedback_button.step2.other.button.label"
 msgstr "Submit"
 
-#: includes/Helper/ConfigHelper.php:589
+#: includes/Helper/ConfigHelper.php:587
 msgid "admin.exit_intent.rating.label"
 msgstr "How satisfied are you with our service?"
 
-#: includes/Helper/ConfigHelper.php:604
+#: includes/Helper/ConfigHelper.php:602
 msgid "admin.exit_intent.headline.label"
 msgstr "Wait! Before you go..."
 
-#: includes/Helper/ConfigHelper.php:611
+#: includes/Helper/ConfigHelper.php:609
 msgid "admin.exit_intent.description.label"
 msgstr "How satisfied were you with the content of our page?"
 
-#: includes/Helper/ConfigHelper.php:622
+#: includes/Helper/ConfigHelper.php:620
 msgid "admin.exit_intent.step2.headline.label"
 msgstr "Tell us more"
 
-#: includes/Helper/ConfigHelper.php:628
+#: includes/Helper/ConfigHelper.php:626
 msgid "admin.exit_intent.step2.textarea.label"
 msgstr "What can we do better? (Optional)"
 
-#: includes/Helper/ConfigHelper.php:630
+#: includes/Helper/ConfigHelper.php:628
 msgid "admin.exit_intent.step2.textarea.placeholder"
 msgstr "Your feedback helps us a lot..."
 
-#: includes/Helper/ConfigHelper.php:636
+#: includes/Helper/ConfigHelper.php:634
 msgid "admin.exit_intent.step2.button.label"
 msgstr "Submit feedback"
 
-#: includes/Helper/ConfigHelper.php:654
-msgid "admin.template1.nps.label"
-msgstr "Submit rating:"
-
-#: includes/Helper/ConfigHelper.php:669
-msgid "admin.template1.headline.label"
-msgstr "On a scale of 0 to 10, how likely are you to recommend our company to a friend or colleague?"
-
-#: includes/Helper/ConfigHelper.php:674
-msgid "admin.template1.step2.headline.label"
-msgstr "Thank you!"
-
-#: includes/Helper/ConfigHelper.php:675
-msgid "admin.template1.step2.textarea.label"
-msgstr "What is the main reason for your rating?"
-
-#: includes/Helper/ConfigHelper.php:675
-msgid "admin.template1.step2.textarea.placeholder"
-msgstr "Help us understand what we can improve..."
-
-#: includes/Helper/ConfigHelper.php:676
-msgid "admin.template1.step2.button.label"
-msgstr "Submit feedback"
-
-#: includes/Helper/ConfigHelper.php:688
+#: includes/Helper/ConfigHelper.php:653
 msgid "admin.template2.headline.label"
 msgstr "Report bug"
 
-#: includes/Helper/ConfigHelper.php:689
+#: includes/Helper/ConfigHelper.php:654
 msgid "admin.template2.description.label"
 msgstr "Please describe the problem in as much detail as possible."
 
-#: includes/Helper/ConfigHelper.php:690
+#: includes/Helper/ConfigHelper.php:655
 msgid "admin.template2.textarea.label"
 msgstr "Error description:"
 
-#: includes/Helper/ConfigHelper.php:690
+#: includes/Helper/ConfigHelper.php:655
 msgid "admin.template2.textarea.placeholder"
 msgstr "What error occurred and on which page?"
 
-#: includes/Helper/ConfigHelper.php:691
+#: includes/Helper/ConfigHelper.php:656
 msgid "admin.template2.button.label"
 msgstr "Send error report"
 
-#: includes/Helper/ConfigHelper.php:700
+#: includes/Helper/ConfigHelper.php:665
 msgid "admin.template3.rating.label"
 msgstr "How do you rate the article?"
 
-#: includes/Helper/ConfigHelper.php:715
+#: includes/Helper/ConfigHelper.php:680
 msgid "admin.template3.step1.headline.label"
 msgstr "Article rating"
 
-#: includes/Helper/ConfigHelper.php:720
+#: includes/Helper/ConfigHelper.php:685
 msgid "admin.template3.step2.headline.label"
 msgstr "What information was missing?"
 
-#: includes/Helper/ConfigHelper.php:721
+#: includes/Helper/ConfigHelper.php:686
 msgid "admin.template3.step2.textarea.label"
 msgstr "What information are you looking for?"
 
-#: includes/Helper/ConfigHelper.php:721
+#: includes/Helper/ConfigHelper.php:686
 msgid "admin.template3.step2.textarea.placeholder"
 msgstr "What information are you looking for?"
 
-#: includes/Helper/ConfigHelper.php:722
+#: includes/Helper/ConfigHelper.php:687
 msgid "admin.template3.step2.button.label"
 msgstr "Submit"
 
-#: includes/Helper/ConfigHelper.php:732
+#: includes/Helper/ConfigHelper.php:697
 msgid "admin.template4.rating.label"
 msgstr "How do you rate the article?"
 
-#: includes/Helper/ConfigHelper.php:747
+#: includes/Helper/ConfigHelper.php:712
 msgid "admin.template4.step1.headline.label"
 msgstr "Article rating"
 
-#: includes/Helper/FormDataSanitizer.php:668
+#: includes/Helper/FormDataSanitizer.php:732
 msgid "Invalid form configuration."
 msgstr ""
 
@@ -645,20 +599,20 @@ msgstr "Updated"
 
 #: includes/Lists/FormFeedbackListTable.php:79
 #: includes/Lists/FormFeedbackListTable.php:165
-#: assets/js/dist/flwp-admin.js:396
-#: assets/js/dist/flwp-admin.js:400
+#: assets/js/dist/flwp-admin.js:387
+#: assets/js/dist/flwp-admin.js:391
 msgid "admin.form_list.filter.status.read"
 msgstr "Read"
 
 #: includes/Lists/FormFeedbackListTable.php:82
 #: includes/Lists/FormFeedbackListTable.php:166
-#: assets/js/dist/flwp-admin.js:403
+#: assets/js/dist/flwp-admin.js:394
 msgid "admin.form_list.filter.status.archived"
 msgstr "Archived"
 
 #: includes/Lists/FormFeedbackListTable.php:86
 #: includes/Lists/FormFeedbackListTable.php:164
-#: assets/js/dist/flwp-admin.js:407
+#: assets/js/dist/flwp-admin.js:398
 msgid "admin.form_list.filter.status.unread"
 msgstr "Unread"
 
@@ -1918,399 +1872,411 @@ msgstr "Button"
 msgid "admin.builder.fields.textarea"
 msgstr "Text paragraph"
 
-#: templates/admin/form-builder/fields.php:69
+#: templates/admin/form-builder/fields.php:79
 msgid "admin.builder.fields.reviews"
 msgstr "Reviews"
 
-#: templates/admin/form-builder/fields.php:77
+#: templates/admin/form-builder/fields.php:87
 msgid "admin.builder.fields.rating"
 msgstr "Star rating"
 
-#: templates/admin/form-builder/fields.php:82
+#: templates/admin/form-builder/fields.php:92
+msgid "admin.builder.fields.pro_section.headline"
+msgstr "Pro Fields"
+
+#: templates/admin/form-builder/fields.php:99
 msgid "admin.builder.fields.thumbs"
 msgstr "Thumbs feedback"
 
-#: templates/admin/form-builder/fields.php:87
+#: templates/admin/form-builder/fields.php:104
 msgid "admin.builder.fields.smileys"
 msgstr "Smiley rating"
 
-#: templates/admin/form-builder/fields.php:92
+#: templates/admin/form-builder/fields.php:109
 msgid "admin.builder.fields.nps"
 msgstr "Recommendation (NPS)"
 
-#: templates/admin/form-builder/fields.php:99
+#: templates/admin/form-builder/fields.php:117
 msgid "admin.builder.fields.search_no_results"
 msgstr "No fields match your search."
 
-#: templates/admin/form-builder/fields.php:104
+#: templates/admin/form-builder/fields.php:122
 msgid "admin.builder.fields.tip"
 msgstr "Tip"
 
-#: templates/admin/form-builder/fields.php:104
+#: templates/admin/form-builder/fields.php:122
 msgid "admin.builder.fields.tip_text"
 msgstr "Drag elements onto the canvas in step 1/step 2 or simply click them to add them."
 
-#: templates/admin/form-builder/fields.php:115
+#: templates/admin/form-builder/fields.php:133
 msgid "admin.builder.fields.no_field_selected"
 msgstr "Click on an element in the editor to view and edit its settings."
 
-#: templates/admin/form-builder/fields.php:123
+#: templates/admin/form-builder/fields.php:141
 msgid "admin.builder.fields.options.field_type"
 msgstr "FIELD"
 
-#: templates/admin/form-builder/fields.php:124
+#: templates/admin/form-builder/fields.php:142
 msgid "admin.builder.fields.options.id"
 msgstr "ID"
 
-#: templates/admin/form-builder/fields.php:129
+#: templates/admin/form-builder/fields.php:147
 msgid "admin.builder.fields.options.label.title"
 msgstr "Label"
 
-#: templates/admin/form-builder/fields.php:129
+#: templates/admin/form-builder/fields.php:147
 msgid "admin.builder.fields.options.label.hint"
 msgstr "The text displayed for this element."
 
-#: templates/admin/form-builder/fields.php:137
+#: templates/admin/form-builder/fields.php:155
 msgid "admin.builder.fields.options.description.title"
 msgstr "Supplementary text / description"
 
-#: templates/admin/form-builder/fields.php:138
+#: templates/admin/form-builder/fields.php:156
 msgid "admin.builder.fields.options.description.placeholder"
 msgstr "Enter optional description..."
 
-#: templates/admin/form-builder/fields.php:143
+#: templates/admin/form-builder/fields.php:161
 msgid "admin.builder.fields.options.placeholder.title"
 msgstr "Placeholder text"
 
-#: templates/admin/form-builder/fields.php:144
+#: templates/admin/form-builder/fields.php:162
 msgid "admin.builder.fields.options.placeholder.placeholder"
 msgstr "E.g. Write here..."
 
-#: templates/admin/form-builder/fields.php:149
+#: templates/admin/form-builder/fields.php:167
 msgid "admin.builder.fields.options.button_type.title"
 msgstr "Button type / action"
 
-#: templates/admin/form-builder/fields.php:151
+#: templates/admin/form-builder/fields.php:169
 msgid "admin.builder.fields.options.button_type.next"
 msgstr "Default button with icon (Continue / Submit)"
 
-#: templates/admin/form-builder/fields.php:152
+#: templates/admin/form-builder/fields.php:170
 msgid "admin.builder.fields.options.button_type.submit"
 msgstr "Submit button"
 
-#: templates/admin/form-builder/fields.php:153
+#: templates/admin/form-builder/fields.php:171
 msgid "admin.builder.fields.options.button_type.back"
 msgstr "Back button (Optional for step 2 -> 1)"
 
-#: templates/admin/form-builder/fields.php:159
+#: templates/admin/form-builder/fields.php:177
 msgid "admin.builder.fields.options.icon.title"
 msgstr "Symbol / icon"
 
-#: templates/admin/form-builder/fields.php:159
+#: templates/admin/form-builder/fields.php:177
 msgid "admin.builder.fields.options.icon.hint"
 msgstr "Select the icon to be displayed."
 
-#: templates/admin/form-builder/fields.php:161
+#: templates/admin/form-builder/fields.php:179
 msgid "admin.builder.fields.options.icon.option.arrow_right"
 msgstr "Arrow right (➜)"
 
-#: templates/admin/form-builder/fields.php:162
+#: templates/admin/form-builder/fields.php:180
 msgid "admin.builder.fields.options.icon.option.arrow_circle_right"
 msgstr "Arrow circle right"
 
-#: templates/admin/form-builder/fields.php:163
+#: templates/admin/form-builder/fields.php:181
 msgid "admin.builder.fields.options.icon.option.arrow_left"
 msgstr "Arrow left (⬅)"
 
-#: templates/admin/form-builder/fields.php:164
+#: templates/admin/form-builder/fields.php:182
 msgid "admin.builder.fields.options.icon.option.arrow_circle_left"
 msgstr "Arrow circle left"
 
-#: templates/admin/form-builder/fields.php:165
+#: templates/admin/form-builder/fields.php:183
 msgid "admin.builder.fields.options.icon.option.paper_plane"
 msgstr "Paper plane (submit)"
 
-#: templates/admin/form-builder/fields.php:166
+#: templates/admin/form-builder/fields.php:184
 msgid "admin.builder.fields.options.icon.option.check"
 msgstr "Tick"
 
-#: templates/admin/form-builder/fields.php:167
+#: templates/admin/form-builder/fields.php:185
 msgid "admin.builder.fields.options.icon.option.heart"
 msgstr "Heart"
 
-#: templates/admin/form-builder/fields.php:168
+#: templates/admin/form-builder/fields.php:186
 msgid "admin.builder.fields.options.icon.option.comment"
 msgstr "Speech bubble"
 
-#: templates/admin/form-builder/fields.php:169
+#: templates/admin/form-builder/fields.php:187
 msgid "admin.builder.fields.options.icon.option.laugh_beam"
 msgstr "Laughing face"
 
-#: templates/admin/form-builder/fields.php:170
+#: templates/admin/form-builder/fields.php:188
 msgid "admin.builder.fields.options.icon.option.futbol"
 msgstr "Football"
 
-#: templates/admin/form-builder/fields.php:171
+#: templates/admin/form-builder/fields.php:189
 msgid "admin.builder.fields.options.icon.option.lightbulb"
 msgstr "Lightbulb"
 
-#: templates/admin/form-builder/fields.php:172
+#: templates/admin/form-builder/fields.php:190
 msgid "admin.builder.fields.options.icon.option.bug"
 msgstr "Bug"
 
-#: templates/admin/form-builder/fields.php:173
+#: templates/admin/form-builder/fields.php:191
 msgid "admin.builder.fields.options.icon.option.comment_dots"
 msgstr "Speech bubble with dots"
 
-#: templates/admin/form-builder/fields.php:174
+#: templates/admin/form-builder/fields.php:192
 msgid "admin.builder.fields.options.icon.option.none"
 msgstr "No icon"
 
-#: templates/admin/form-builder/fields.php:180
+#: templates/admin/form-builder/fields.php:198
 msgid "admin.builder.fields.options.icon_position.title"
 msgstr "Icon position"
 
-#: templates/admin/form-builder/fields.php:182
+#: templates/admin/form-builder/fields.php:200
 msgid "admin.builder.fields.options.icon_position.right"
 msgstr "Right of the text"
 
-#: templates/admin/form-builder/fields.php:183
+#: templates/admin/form-builder/fields.php:201
 msgid "admin.builder.fields.options.icon_position.left"
 msgstr "Left of the text"
 
-#: templates/admin/form-builder/fields.php:189
+#: templates/admin/form-builder/fields.php:207
 msgid "admin.builder.fields.options.rating_stars.title"
 msgstr "Number of stars"
 
-#: templates/admin/form-builder/fields.php:189
+#: templates/admin/form-builder/fields.php:207
 msgid "admin.builder.fields.options.rating_stars.hint"
 msgstr "Use a 3 or 5-point rating scale."
 
-#: templates/admin/form-builder/fields.php:191
+#: templates/admin/form-builder/fields.php:209
 msgid "admin.builder.fields.options.rating_stars.3"
 msgstr "3 stars"
 
-#: templates/admin/form-builder/fields.php:192
+#: templates/admin/form-builder/fields.php:210
 msgid "admin.builder.fields.options.rating_stars.5"
 msgstr "5 stars"
 
-#: templates/admin/form-builder/fields.php:198
+#: templates/admin/form-builder/fields.php:216
 msgid "admin.builder.fields.options.alignment.title"
 msgstr "Alignment"
 
-#: templates/admin/form-builder/fields.php:198
+#: templates/admin/form-builder/fields.php:216
 msgid "admin.builder.fields.options.alignment.hint"
 msgstr "Choose the alignment for this element: Left, Center, Right."
 
-#: templates/admin/form-builder/fields.php:200
+#: templates/admin/form-builder/fields.php:218
 msgid "admin.builder.fields.options.alignment.left"
 msgstr "Left"
 
-#: templates/admin/form-builder/fields.php:201
+#: templates/admin/form-builder/fields.php:219
 msgid "admin.builder.fields.options.alignment.center"
 msgstr "Center"
 
-#: templates/admin/form-builder/fields.php:202
+#: templates/admin/form-builder/fields.php:220
 msgid "admin.builder.fields.options.alignment.right"
 msgstr "Right"
 
-#: templates/admin/form-builder/fields.php:208
+#: templates/admin/form-builder/fields.php:226
 msgid "admin.builder.fields.h_type.title"
 msgstr "HTML tag type"
 
-#: templates/admin/form-builder/fields.php:208
+#: templates/admin/form-builder/fields.php:226
 msgid "admin.builder.fields.h_type.hint"
 msgstr "Select the HTML tag for this element."
 
-#: templates/admin/form-builder/fields.php:210
+#: templates/admin/form-builder/fields.php:228
 msgid "admin.builder.fields.h_type.h1"
 msgstr "Heading 1 (H1)"
 
-#: templates/admin/form-builder/fields.php:211
+#: templates/admin/form-builder/fields.php:229
 msgid "admin.builder.fields.h_type.h2"
 msgstr "Heading 2 (H2)"
 
-#: templates/admin/form-builder/fields.php:212
+#: templates/admin/form-builder/fields.php:230
 msgid "admin.builder.fields.h_type.h3"
 msgstr "Heading 3 (H3)"
 
-#: templates/admin/form-builder/fields.php:213
+#: templates/admin/form-builder/fields.php:231
 msgid "admin.builder.fields.h_type.h4"
 msgstr "Heading 4 (H4)"
 
-#: templates/admin/form-builder/fields.php:214
+#: templates/admin/form-builder/fields.php:232
 msgid "admin.builder.fields.h_type.h5"
 msgstr "Heading 5 (H5)"
 
-#: templates/admin/form-builder/fields.php:215
+#: templates/admin/form-builder/fields.php:233
 msgid "admin.builder.fields.h_type.h6"
 msgstr "Heading 6 (H6)"
 
-#: templates/admin/form-builder/fields.php:216
+#: templates/admin/form-builder/fields.php:234
 msgid "admin.builder.fields.h_type.div"
 msgstr "Container (DIV)"
 
-#: templates/admin/form-builder/fields.php:222
+#: templates/admin/form-builder/fields.php:240
 msgid "admin.builder.fields.text_formatting.title"
 msgstr "Text formatting"
 
-#: templates/admin/form-builder/fields.php:222
+#: templates/admin/form-builder/fields.php:240
 msgid "admin.builder.fields.text_formatting.hint"
 msgstr "Format the text bold, italic or underlined."
 
-#: templates/admin/form-builder/fields.php:247
+#: templates/admin/form-builder/fields.php:265
 msgid "admin.builder.fields.font_size.title"
 msgstr "Font size"
 
-#: templates/admin/form-builder/fields.php:248
+#: templates/admin/form-builder/fields.php:266
 msgid "admin.builder.fields.font_size.reset"
 msgstr "Default"
 
-#: templates/admin/form-builder/fields.php:263
+#: templates/admin/form-builder/fields.php:281
 msgid "admin.builder.fields.line_height.title"
 msgstr "Line height"
 
-#: templates/admin/form-builder/fields.php:264
+#: templates/admin/form-builder/fields.php:282
 msgid "admin.builder.fields.line_height.reset"
 msgstr "Default"
 
-#: templates/admin/form-builder/fields.php:282
+#: templates/admin/form-builder/fields.php:300
 msgid "admin.builder.fields.border_radius.title"
 msgstr "Border radius"
 
-#: templates/admin/form-builder/fields.php:283
+#: templates/admin/form-builder/fields.php:301
 msgid "admin.builder.fields.border_radius.reset"
 msgstr "Default"
 
-#: templates/admin/form-builder/fields.php:299
+#: templates/admin/form-builder/fields.php:317
 msgid "admin.builder.fields.text_color.title"
 msgstr "Text colour"
 
-#: templates/admin/form-builder/fields.php:309
+#: templates/admin/form-builder/fields.php:327
 msgid "admin.builder.fields.required.title"
 msgstr "Required (mandatory field)"
 
-#: templates/admin/form-builder/fields.php:318
+#: templates/admin/form-builder/fields.php:336
 msgid "admin.builder.fields.hide_label.title"
 msgstr "Hide label"
 
-#: templates/admin/form-builder/fields.php:327
+#: templates/admin/form-builder/fields.php:347
+msgid "fields.dropdown.choices_title"
+msgstr "Choices"
+
+#: templates/admin/form-builder/fields.php:347
+msgid "fields.dropdown.choices_tooltip"
+msgstr "Configure the choices for the dropdown field. Use the radio button to select the default choice. Drag and drop the options to change their order."
+
+#: templates/admin/form-builder/fields.php:355
 msgid "admin.builder.fields.full_width.title"
 msgstr "Full width"
 
-#: templates/admin/form-builder/fields.php:337
+#: templates/admin/form-builder/fields.php:365
 msgid "admin.builder.fields.width.title"
 msgstr "Element width"
 
-#: templates/admin/form-builder/fields.php:340
+#: templates/admin/form-builder/fields.php:368
 msgid "admin.builder.fields.width.100"
 msgstr "100% (Full row)"
 
-#: templates/admin/form-builder/fields.php:341
+#: templates/admin/form-builder/fields.php:369
 msgid "admin.builder.fields.width.50"
 msgstr "50% (Half row)"
 
-#: templates/admin/form-builder/fields.php:342
+#: templates/admin/form-builder/fields.php:370
 msgid "admin.builder.fields.width.33"
 msgstr "33% (Third of a row)"
 
-#: templates/admin/form-builder/fields.php:343
+#: templates/admin/form-builder/fields.php:371
 msgid "admin.builder.fields.width.25"
 msgstr "25% (Quarter of a row)"
 
-#: templates/admin/form-builder/fields.php:349
+#: templates/admin/form-builder/fields.php:377
 msgid "admin.builder.fields.clear_before.title"
 msgstr "Start in a new row"
 
-#: templates/admin/form-builder/fields.php:358
+#: templates/admin/form-builder/fields.php:386
 msgid "admin.builder.fields.smiley_legend.title"
 msgstr "Show smiley legend"
 
-#: templates/admin/form-builder/fields.php:368
+#: templates/admin/form-builder/fields.php:396
 msgid "admin.builder.fields.custom_colors.title"
 msgstr "Customise colours"
 
-#: templates/admin/form-builder/fields.php:373
+#: templates/admin/form-builder/fields.php:401
 msgid "admin.builder.fields.custom_colors.enabled_label"
 msgstr "Activate individual colours"
 
-#: templates/admin/form-builder/fields.php:382
+#: templates/admin/form-builder/fields.php:410
 msgid "admin.builder.fields.custom_colors.standard_state"
 msgstr "Standard state"
 
-#: templates/admin/form-builder/fields.php:385
+#: templates/admin/form-builder/fields.php:413
 msgid "admin.builder.fields.custom_colors.bg_color"
 msgstr "Background colour"
 
-#: templates/admin/form-builder/fields.php:393
+#: templates/admin/form-builder/fields.php:421
 msgid "admin.builder.fields.custom_colors.text_color"
 msgstr "Text colour"
 
-#: templates/admin/form-builder/fields.php:401
+#: templates/admin/form-builder/fields.php:429
 msgid "admin.builder.fields.custom_colors.border_color"
 msgstr "Border colour"
 
-#: templates/admin/form-builder/fields.php:409
+#: templates/admin/form-builder/fields.php:437
 msgid "admin.builder.fields.custom_colors.hover_state"
 msgstr "Hover state"
 
-#: templates/admin/form-builder/fields.php:412
+#: templates/admin/form-builder/fields.php:440
 msgid "admin.builder.fields.custom_colors.bg_color_hover"
 msgstr "Background colour (hover)"
 
-#: templates/admin/form-builder/fields.php:420
+#: templates/admin/form-builder/fields.php:448
 msgid "admin.builder.fields.custom_colors.text_color_hover"
 msgstr "Text colour (hover)"
 
-#: templates/admin/form-builder/fields.php:428
+#: templates/admin/form-builder/fields.php:456
 msgid "admin.builder.fields.custom_colors.border_color_hover"
 msgstr "Border colour (hover)"
 
-#: templates/admin/form-builder/fields.php:436
+#: templates/admin/form-builder/fields.php:464
 msgid "admin.builder.fields.custom_colors.reset"
 msgstr "Restore default values"
 
-#: templates/admin/form-builder/fields.php:445
+#: templates/admin/form-builder/fields.php:473
 msgid "admin.builder.fields.step2.title_activate"
 msgstr "Activate step 2"
 
-#: templates/admin/form-builder/fields.php:453
+#: templates/admin/form-builder/fields.php:481
 msgid "admin.builder.fields.step2.description"
 msgstr "If activated, the form jumps to step 2 upon interaction with this element. A separate area in the editor is unlocked for this."
 
-#: templates/admin/form-builder/fields.php:477
+#: templates/admin/form-builder/fields.php:505
 msgid "admin.builder.fields.step1.title"
 msgstr "Step 1"
 
-#: templates/admin/form-builder/fields.php:478
+#: templates/admin/form-builder/fields.php:506
 msgid "admin.builder.fields.step1.subtitle"
 msgstr "Initial view of the popup / widget"
 
-#: templates/admin/form-builder/fields.php:482
+#: templates/admin/form-builder/fields.php:510
 msgid "admin.builder.fields.nav.back"
 msgstr "Back to overview"
 
-#: templates/admin/form-builder/fields.php:491
+#: templates/admin/form-builder/fields.php:519
 msgid "admin.builder.fields.step1.empty_notifier"
 msgstr "Drag elements here to start creating."
 
-#: templates/admin/form-builder/fields.php:512
+#: templates/admin/form-builder/fields.php:540
 msgid "admin.builder.fields.step2.title"
 msgstr "Step 2"
 
-#: templates/admin/form-builder/fields.php:513
+#: templates/admin/form-builder/fields.php:541
 msgid "admin.builder.fields.step2.subtitle"
 msgstr "Additional detailed feedback upon rating/button click"
 
-#: templates/admin/form-builder/fields.php:517
+#: templates/admin/form-builder/fields.php:545
 msgid "admin.builder.fields.nav.maximize"
 msgstr "Maximise edit focus"
 
-#: templates/admin/form-builder/fields.php:526
+#: templates/admin/form-builder/fields.php:554
 msgid "admin.builder.fields.step2.disabled_notifier"
 msgstr "Activate \"Step 2\" in the field options of an element on step 1 to unlock this step."
 
-#: templates/admin/form-builder/fields.php:531
+#: templates/admin/form-builder/fields.php:559
 msgid "admin.builder.fields.step2.enabled_notifier"
 msgstr "This step is unlocked. Drag elements inside for follow-up feedback."
 
@@ -2482,35 +2448,35 @@ msgstr "User agent (browser & system version)"
 msgid "admin.builder.tracking.language.label"
 msgstr "Browser language"
 
-#: templates/admin/form-builder/tracking.php:95
+#: templates/admin/form-builder/tracking.php:94
 msgid "admin.builder.tracking.screen_resolution.label"
 msgstr "Screen resolution"
 
-#: templates/admin/form-builder/tracking.php:106
+#: templates/admin/form-builder/tracking.php:104
 msgid "admin.builder.tracking.viewport_size.label"
 msgstr "Viewport size (browser window pixels)"
 
-#: templates/admin/form-builder/tracking.php:117
+#: templates/admin/form-builder/tracking.php:114
 msgid "admin.builder.tracking.timezone.label"
 msgstr "Local timezone"
 
-#: templates/admin/form-builder/tracking.php:128
+#: templates/admin/form-builder/tracking.php:124
 msgid "admin.builder.tracking.connection_type.label"
 msgstr "Network connection type (4g/wifi/etc.)"
 
-#: templates/admin/form-builder/tracking.php:139
+#: templates/admin/form-builder/tracking.php:134
 msgid "admin.builder.tracking.device_type.label"
 msgstr "Device type (desktop, tablet, mobile device)"
 
-#: templates/admin/form-builder/tracking.php:150
+#: templates/admin/form-builder/tracking.php:144
 msgid "admin.builder.tracking.session_id.label"
 msgstr "Anonymised session ID"
 
-#: templates/admin/form-builder/tracking.php:161
+#: templates/admin/form-builder/tracking.php:154
 msgid "admin.builder.tracking.time_on_page.label"
 msgstr "Time spent (in seconds)"
 
-#: templates/admin/form-builder/tracking.php:172
+#: templates/admin/form-builder/tracking.php:164
 msgid "admin.builder.tracking.color_scheme.label"
 msgstr "Colour scheme (system light/dark mode)"
 
@@ -2744,666 +2710,655 @@ msgstr ""
 msgid "%1$d of %2$d"
 msgstr ""
 
-#: assets/js/dist/flwp-admin.js:47
-#: assets/js/dist/flwp-form-builder.js:896
-#: assets/js/dist/flwp-form-frontend.js:900
-msgid "fields.smileys.legend.very_unsatisfied"
-msgstr "Very unsatisfied"
-
-#: assets/js/dist/flwp-admin.js:48
-#: assets/js/dist/flwp-form-builder.js:897
-#: assets/js/dist/flwp-form-frontend.js:901
-msgid "fields.smileys.legend.unsatisfied"
-msgstr "Unsatisfied"
-
-#: assets/js/dist/flwp-admin.js:49
-#: assets/js/dist/flwp-form-builder.js:898
-#: assets/js/dist/flwp-form-frontend.js:902
-msgid "fields.smileys.legend.neutral"
-msgstr "Neutral"
-
-#: assets/js/dist/flwp-admin.js:50
-#: assets/js/dist/flwp-form-builder.js:899
-#: assets/js/dist/flwp-form-frontend.js:903
-msgid "fields.smileys.legend.satisfied"
-msgstr "Satisfied"
-
-#: assets/js/dist/flwp-admin.js:51
-#: assets/js/dist/flwp-form-builder.js:900
-#: assets/js/dist/flwp-form-frontend.js:904
-msgid "fields.smileys.legend.very_satisfied"
-msgstr "Very satisfied"
-
-#: assets/js/dist/flwp-admin.js:94
+#: assets/js/dist/flwp-admin.js:85
 msgid "admin.feedback.load_error"
 msgstr "Error loading feedback details"
 
-#: assets/js/dist/flwp-admin.js:98
+#: assets/js/dist/flwp-admin.js:89
 msgid "admin.feedback.load_network_error"
 msgstr "Network error loading feedback details"
 
-#: assets/js/dist/flwp-admin.js:119
-#: assets/js/dist/flwp-admin.js:244
+#: assets/js/dist/flwp-admin.js:110
+#: assets/js/dist/flwp-admin.js:235
 msgid "admin.feedback.delete_error"
 msgstr "Error deleting feedback"
 
-#: assets/js/dist/flwp-admin.js:123
+#: assets/js/dist/flwp-admin.js:114
 msgid "admin.feedback.delete_network_error"
 msgstr "Network error deleting feedback"
 
-#: assets/js/dist/flwp-admin.js:223
-#: assets/js/dist/flwp-form-builder.js:970
-#: assets/js/dist/flwp-form-builder.js:3903
-#: assets/js/dist/flwp-form-frontend.js:1095
+#: assets/js/dist/flwp-admin.js:214
+#: assets/js/dist/flwp-form-builder.js:897
+#: assets/js/dist/flwp-form-builder.js:4050
+#: assets/js/dist/flwp-form-frontend.js:980
 msgid "fields.unnamed"
 msgstr "Unnamed"
 
-#: assets/js/dist/flwp-admin.js:224
+#: assets/js/dist/flwp-admin.js:215
 msgid "admin.feedback.delete_form_confirm"
 msgstr "Do you really want to permanently delete the form \"{name}\"? This will also delete all associated feedback."
 
-#: assets/js/dist/flwp-admin.js:236
+#: assets/js/dist/flwp-admin.js:227
 msgid "admin.feedback.delete_confirm"
 msgstr "Do you really want to permanently delete feedback #{id}?"
 
-#: assets/js/dist/flwp-admin.js:249
+#: assets/js/dist/flwp-admin.js:240
 msgid "admin.feedback.saving"
 msgstr "Saving..."
 
-#: assets/js/dist/flwp-admin.js:329
+#: assets/js/dist/flwp-admin.js:320
 msgid "admin.feedback.url_open_error"
 msgstr "Could not open URL:"
 
-#: assets/js/dist/flwp-admin.js:415
+#: assets/js/dist/flwp-admin.js:406
 msgid "admin.feedback.status_update_error"
 msgstr "Error updating status"
 
-#: assets/js/dist/flwp-form-builder.js:555
-#: assets/js/dist/flwp-form-frontend.js:559
+#: assets/js/dist/flwp-form-builder.js:476
+#: assets/js/dist/flwp-form-frontend.js:480
 msgid "admin.builder.default_step2.headline"
 msgstr "Tell us more"
 
-#: assets/js/dist/flwp-form-builder.js:556
-#: assets/js/dist/flwp-form-frontend.js:560
+#: assets/js/dist/flwp-form-builder.js:477
+#: assets/js/dist/flwp-form-frontend.js:481
 msgid "admin.builder.default_step2.textarea_label"
 msgstr "What can we do better?"
 
-#: assets/js/dist/flwp-form-builder.js:556
-#: assets/js/dist/flwp-form-frontend.js:560
+#: assets/js/dist/flwp-form-builder.js:477
+#: assets/js/dist/flwp-form-frontend.js:481
 msgid "admin.builder.default_step2.textarea_placeholder"
 msgstr "Write your feedback here..."
 
-#: assets/js/dist/flwp-form-builder.js:557
-#: assets/js/dist/flwp-form-frontend.js:561
+#: assets/js/dist/flwp-form-builder.js:478
+#: assets/js/dist/flwp-form-frontend.js:482
 msgid "admin.builder.default_step2.button_label"
 msgstr "Send feedback"
 
-#: assets/js/dist/flwp-form-builder.js:768
-#: assets/js/dist/flwp-form-builder.js:851
-#: assets/js/dist/flwp-form-frontend.js:772
-#: assets/js/dist/flwp-form-frontend.js:855
+#: assets/js/dist/flwp-form-builder.js:689
+#: assets/js/dist/flwp-form-builder.js:772
+#: assets/js/dist/flwp-form-frontend.js:693
+#: assets/js/dist/flwp-form-frontend.js:776
 msgid "admin.builder.unlink_values"
 msgstr "Unlink values"
 
-#: assets/js/dist/flwp-form-builder.js:779
-#: assets/js/dist/flwp-form-builder.js:854
-#: assets/js/dist/flwp-form-frontend.js:783
-#: assets/js/dist/flwp-form-frontend.js:858
+#: assets/js/dist/flwp-form-builder.js:700
+#: assets/js/dist/flwp-form-builder.js:775
+#: assets/js/dist/flwp-form-frontend.js:704
+#: assets/js/dist/flwp-form-frontend.js:779
 msgid "admin.builder.link_values"
 msgstr "Link values"
 
-#: assets/js/dist/flwp-form-builder.js:935
-#: assets/js/dist/flwp-form-frontend.js:1060
+#: assets/js/dist/flwp-form-builder.js:841
+#: assets/js/dist/flwp-form-frontend.js:924
 msgid "admin.builder.default_feedback_placeholder"
 msgstr "Enter your feedback here..."
 
-#: assets/js/dist/flwp-form-builder.js:1073
-#: assets/js/dist/flwp-form-frontend.js:1198
+#: assets/js/dist/flwp-form-builder.js:852
+#: assets/js/dist/flwp-form-builder.js:856
+#: assets/js/dist/flwp-form-builder.js:865
+#: assets/js/dist/flwp-form-builder.js:869
+#: assets/js/dist/flwp-form-builder.js:1394
+#: assets/js/dist/flwp-form-builder.js:1398
+#: assets/js/dist/flwp-form-builder.js:1401
+#: assets/js/dist/flwp-form-builder.js:1405
+#: assets/js/dist/flwp-form-frontend.js:935
+#: assets/js/dist/flwp-form-frontend.js:939
+#: assets/js/dist/flwp-form-frontend.js:948
+#: assets/js/dist/flwp-form-frontend.js:952
+#: assets/js/dist/flwp-form-frontend.js:1477
+#: assets/js/dist/flwp-form-frontend.js:1481
+#: assets/js/dist/flwp-form-frontend.js:1484
+#: assets/js/dist/flwp-form-frontend.js:1488
+msgid "fields.choices_list.general"
+msgstr "General questions"
+
+#: assets/js/dist/flwp-form-builder.js:853
+#: assets/js/dist/flwp-form-builder.js:866
+#: assets/js/dist/flwp-form-builder.js:1395
+#: assets/js/dist/flwp-form-builder.js:1402
+#: assets/js/dist/flwp-form-frontend.js:936
+#: assets/js/dist/flwp-form-frontend.js:949
+#: assets/js/dist/flwp-form-frontend.js:1478
+#: assets/js/dist/flwp-form-frontend.js:1485
+msgid "fields.choices_list.pre_purchase"
+msgstr "Pre-purchase questions"
+
+#: assets/js/dist/flwp-form-builder.js:854
+#: assets/js/dist/flwp-form-builder.js:867
+#: assets/js/dist/flwp-form-builder.js:1396
+#: assets/js/dist/flwp-form-builder.js:1403
+#: assets/js/dist/flwp-form-frontend.js:937
+#: assets/js/dist/flwp-form-frontend.js:950
+#: assets/js/dist/flwp-form-frontend.js:1479
+#: assets/js/dist/flwp-form-frontend.js:1486
+msgid "fields.choices_list.technical_support"
+msgstr "Technical support"
+
+#: assets/js/dist/flwp-form-builder.js:1000
+#: assets/js/dist/flwp-form-frontend.js:1083
 msgid "admin.builder.submit_action"
 msgstr "Submit action"
 
-#: assets/js/dist/flwp-form-builder.js:1073
-#: assets/js/dist/flwp-form-frontend.js:1198
+#: assets/js/dist/flwp-form-builder.js:1000
+#: assets/js/dist/flwp-form-frontend.js:1083
 msgid "admin.builder.back_action"
 msgstr "Back to step 1"
 
-#: assets/js/dist/flwp-form-builder.js:1082
-#: assets/js/dist/flwp-form-builder.js:1169
-#: assets/js/dist/flwp-form-frontend.js:1207
-#: assets/js/dist/flwp-form-frontend.js:1294
+#: assets/js/dist/flwp-form-builder.js:1009
+#: assets/js/dist/flwp-form-builder.js:1096
+#: assets/js/dist/flwp-form-frontend.js:1092
+#: assets/js/dist/flwp-form-frontend.js:1179
 msgid "admin.builder.step2_connected"
 msgstr "Linked to step 2"
 
-#: assets/js/dist/flwp-form-builder.js:1260
-#: assets/js/dist/flwp-form-frontend.js:1385
-msgid "fields.thumbs.yes"
-msgstr "Yes"
+#: assets/js/dist/flwp-form-builder.js:1211
+#: assets/js/dist/flwp-form-builder.js:1230
+#: assets/js/dist/flwp-form-frontend.js:1294
+#: assets/js/dist/flwp-form-frontend.js:1313
+msgid "fields.choices_list.placeholder"
+msgstr "Please select..."
 
-#: assets/js/dist/flwp-form-builder.js:1261
-#: assets/js/dist/flwp-form-frontend.js:1386
-msgid "fields.thumbs.no"
-msgstr "No"
+#: assets/js/dist/flwp-form-builder.js:1427
+#: assets/js/dist/flwp-form-frontend.js:1510
+msgid "fields.choices_list.drag_to_sort"
+msgstr "Drag to sort"
 
-#: assets/js/dist/flwp-form-builder.js:1462
+#: assets/js/dist/flwp-form-builder.js:1431
+#: assets/js/dist/flwp-form-frontend.js:1514
+msgid "fields.choices_list.set_as_default"
+msgstr "Set option as default"
+
+#: assets/js/dist/flwp-form-builder.js:1564
+#: assets/js/dist/flwp-form-frontend.js:1647
+msgid "fields.choices_list.add_option"
+msgstr "Add option"
+
+#: assets/js/dist/flwp-form-builder.js:1586
+#: assets/js/dist/flwp-form-frontend.js:1669
+msgid "fields.choices_list.remove_option"
+msgstr "Remove option"
+
+#: assets/js/dist/flwp-form-builder.js:1590
+#: assets/js/dist/flwp-form-frontend.js:1673
+msgid "fields.choices_list.at_least_one_option"
+msgstr "At least one option must be present."
+
+#: assets/js/dist/flwp-form-builder.js:1674
 msgid "admin.builder.reset_preview"
 msgstr "Reset preview"
 
-#: assets/js/dist/flwp-form-builder.js:1508
-msgid "admin.builder.unlock_pro"
-msgstr "Unlock PRO"
-
-#: assets/js/dist/flwp-form-builder.js:1510
+#: assets/js/dist/flwp-form-builder.js:1719
 msgid "admin.builder.use_template"
 msgstr "Use template"
 
-#: assets/js/dist/flwp-form-builder.js:1524
+#: assets/js/dist/flwp-form-builder.js:1728
 msgid "admin.confirm.load_template"
 msgstr "Do you really want to load this template? This will overwrite your current draft."
 
-#: assets/js/dist/flwp-form-builder.js:1537
+#: assets/js/dist/flwp-form-builder.js:1740
 msgid "admin.toast.template_loaded"
 msgstr "Template \"{title}\" loaded!"
 
-#: assets/js/dist/flwp-form-builder.js:1578
-msgid "admin.conditions.url.label"
-msgstr "URL filter"
-
-#: assets/js/dist/flwp-form-builder.js:1584
-#: assets/js/dist/flwp-form-builder.js:1633
-msgid "admin.conditions.operators.contains"
-msgstr "contains"
-
-#: assets/js/dist/flwp-form-builder.js:1585
-#: assets/js/dist/flwp-form-builder.js:1634
-msgid "admin.conditions.operators.not_contains"
-msgstr "does not contain"
-
-#: assets/js/dist/flwp-form-builder.js:1586
-#: assets/js/dist/flwp-form-builder.js:1635
-msgid "admin.conditions.operators.exact"
-msgstr "matches exactly"
-
-#: assets/js/dist/flwp-form-builder.js:1587
-#: assets/js/dist/flwp-form-builder.js:1636
-msgid "admin.conditions.operators.not_exact"
-msgstr "does not match exactly"
-
-#: assets/js/dist/flwp-form-builder.js:1590
-msgid "admin.conditions.placeholder.url"
-msgstr "e.g. /contact/ or shop"
-
-#: assets/js/dist/flwp-form-builder.js:1595
+#: assets/js/dist/flwp-form-builder.js:1781
 msgid "admin.conditions.page_type.label"
 msgstr "Page type"
 
-#: assets/js/dist/flwp-form-builder.js:1601
-#: assets/js/dist/flwp-form-builder.js:1617
+#: assets/js/dist/flwp-form-builder.js:1786
+#: assets/js/dist/flwp-form-builder.js:1801
 msgid "admin.conditions.operators.in"
 msgstr "is one of"
 
-#: assets/js/dist/flwp-form-builder.js:1605
+#: assets/js/dist/flwp-form-builder.js:1790
 msgid "admin.conditions.options.pages"
 msgstr "Pages"
 
-#: assets/js/dist/flwp-form-builder.js:1606
+#: assets/js/dist/flwp-form-builder.js:1791
 msgid "admin.conditions.options.posts"
 msgstr "Posts"
 
-#: assets/js/dist/flwp-form-builder.js:1611
+#: assets/js/dist/flwp-form-builder.js:1796
 msgid "admin.conditions.device.label"
 msgstr "Device type"
 
-#: assets/js/dist/flwp-form-builder.js:1621
+#: assets/js/dist/flwp-form-builder.js:1805
 msgid "admin.conditions.options.desktop"
 msgstr "Desktop"
 
-#: assets/js/dist/flwp-form-builder.js:1622
+#: assets/js/dist/flwp-form-builder.js:1806
 msgid "admin.conditions.options.mobile"
 msgstr "Mobile"
 
-#: assets/js/dist/flwp-form-builder.js:1627
-msgid "admin.conditions.cookie.label"
-msgstr "Cookie value"
-
-#: assets/js/dist/flwp-form-builder.js:1639
-msgid "admin.conditions.placeholder.cookie_name"
-msgstr "Cookie name (e.g. logged_in)"
-
-#: assets/js/dist/flwp-form-builder.js:1640
-msgid "admin.conditions.placeholder.cookie_value"
-msgstr "Value (optional)"
-
-#: assets/js/dist/flwp-form-builder.js:1746
+#: assets/js/dist/flwp-form-builder.js:1900
 msgid "admin.conditions.title"
 msgstr "Rule conditions"
 
-#: assets/js/dist/flwp-form-builder.js:1754
+#: assets/js/dist/flwp-form-builder.js:1908
 msgid "admin.conditions.show_on_frontpage"
 msgstr "Show on front page"
 
-#: assets/js/dist/flwp-form-builder.js:1755
+#: assets/js/dist/flwp-form-builder.js:1909
 msgid "admin.conditions.show_on_frontpage_desc"
 msgstr "Should this form appear on your website's front page?"
 
-#: assets/js/dist/flwp-form-builder.js:1775
+#: assets/js/dist/flwp-form-builder.js:1929
 msgid "admin.conditions.and_group"
 msgstr "AND group (All conditions must be met)"
 
-#: assets/js/dist/flwp-form-builder.js:1781
+#: assets/js/dist/flwp-form-builder.js:1935
 msgid "admin.conditions.connector"
 msgstr "CONNECTOR"
 
-#: assets/js/dist/flwp-form-builder.js:1785
+#: assets/js/dist/flwp-form-builder.js:1939
 msgid "admin.conditions.or_group"
 msgstr "OR group (At least one condition must be met)"
 
-#: assets/js/dist/flwp-form-builder.js:1791
+#: assets/js/dist/flwp-form-builder.js:1945
 msgid "admin.conditions.hint.title"
 msgstr "Why can't I add any more conditions?"
 
-#: assets/js/dist/flwp-form-builder.js:1793
+#: assets/js/dist/flwp-form-builder.js:1947
 msgid "admin.conditions.hint.text"
 msgstr "Some conditions (like <em>Device type</em> or <em>Page type</em>) are <strong>unique</strong> and can only be used once. Other conditions (like <em>URL filter</em> or <em>Cookie value</em>) require the <strong>PRO version</strong>. Once all conditions available to you have been added, the add button will be disabled."
 
-#: assets/js/dist/flwp-form-builder.js:1806
+#: assets/js/dist/flwp-form-builder.js:1960
 msgid "admin.conditions.type.and"
 msgstr "AND"
 
-#: assets/js/dist/flwp-form-builder.js:1806
+#: assets/js/dist/flwp-form-builder.js:1960
 msgid "admin.conditions.type.or"
 msgstr "OR"
 
-#: assets/js/dist/flwp-form-builder.js:1822
-#: assets/js/dist/flwp-form-builder.js:1827
+#: assets/js/dist/flwp-form-builder.js:1976
+#: assets/js/dist/flwp-form-builder.js:1981
 msgid "admin.conditions.empty_state"
 msgstr "No {type} conditions defined. These conditions will be ignored."
 
-#: assets/js/dist/flwp-form-builder.js:1843
+#: assets/js/dist/flwp-form-builder.js:1997
 msgid "admin.conditions.add_button"
 msgstr "Add condition"
 
-#: assets/js/dist/flwp-form-builder.js:1855
+#: assets/js/dist/flwp-form-builder.js:2008
 msgid "admin.conditions.add_button_disabled_title"
 msgstr "All available conditions have already been added."
 
-#: assets/js/dist/flwp-form-builder.js:2000
+#: assets/js/dist/flwp-form-builder.js:2152
 msgid "admin.conditions.delete_condition"
 msgstr "Remove condition"
 
-#: assets/js/dist/flwp-form-builder.js:2016
+#: assets/js/dist/flwp-form-builder.js:2168
 msgid "admin.warning.submit_button"
 msgstr "Warning: This form contains multiple input fields, but no submit button or next button with activated step 2. Add a button so users can submit the form."
 
-#: assets/js/dist/flwp-form-builder.js:2024
+#: assets/js/dist/flwp-form-builder.js:2176
 msgid "admin.warning.step2_empty"
 msgstr "Warning: Step 2 is enabled for at least one element in Step 1, but no elements were defined in Step 2. Add elements to Step 2 or disable Step 2."
 
-#: assets/js/dist/flwp-form-builder.js:2032
+#: assets/js/dist/flwp-form-builder.js:2184
 msgid "admin.warning.step2_missing_submit"
 msgstr "Attention: Step 2 contains input fields, but no submit button."
 
-#: assets/js/dist/flwp-form-builder.js:2039
+#: assets/js/dist/flwp-form-builder.js:2191
 msgid "admin.warning.empty_form"
 msgstr "Warning: The form does not contain any elements yet. Add at least one element."
 
-#: assets/js/dist/flwp-form-builder.js:2106
-#: assets/js/dist/flwp-form-builder.js:2118
+#: assets/js/dist/flwp-form-builder.js:2258
+#: assets/js/dist/flwp-form-builder.js:2270
 msgid "validation.error.active_warnings"
 msgstr "{count} active warnings"
 
-#: assets/js/dist/flwp-form-builder.js:2275
-#: assets/js/dist/flwp-form-builder.js:2286
+#: assets/js/dist/flwp-form-builder.js:2427
+#: assets/js/dist/flwp-form-builder.js:2438
 msgid "admin.preview.title"
 msgstr "Plugin live preview"
 
-#: assets/js/dist/flwp-form-builder.js:2290
+#: assets/js/dist/flwp-form-builder.js:2442
 msgid "admin.preview.address_placeholder"
 msgstr "https://your-website.com/blog/article"
 
-#: assets/js/dist/flwp-form-builder.js:2294
+#: assets/js/dist/flwp-form-builder.js:2446
 msgid "admin.preview.desktop_view"
 msgstr "Desktop view"
 
-#: assets/js/dist/flwp-form-builder.js:2297
+#: assets/js/dist/flwp-form-builder.js:2449
 msgid "admin.preview.mobile_view"
 msgstr "Mobile view"
 
-#: assets/js/dist/flwp-form-builder.js:2302
+#: assets/js/dist/flwp-form-builder.js:2454
 msgid "admin.preview.refresh_preview"
 msgstr "Refresh preview"
 
-#: assets/js/dist/flwp-form-builder.js:2306
+#: assets/js/dist/flwp-form-builder.js:2458
 msgid "admin.preview.close_preview"
 msgstr "Close preview"
 
-#: assets/js/dist/flwp-form-builder.js:2326
+#: assets/js/dist/flwp-form-builder.js:2478
 msgid "admin.preview.active_mode_label"
 msgstr "Active mode:"
 
-#: assets/js/dist/flwp-form-builder.js:2328
+#: assets/js/dist/flwp-form-builder.js:2480
 msgid "admin.preview.simulate_trigger"
 msgstr "Simulate trigger"
 
-#: assets/js/dist/flwp-form-builder.js:2337
+#: assets/js/dist/flwp-form-builder.js:2489
 msgid "admin.preview.modes.in_content_shortcode"
 msgstr "Shortcode"
 
-#: assets/js/dist/flwp-form-builder.js:2337
+#: assets/js/dist/flwp-form-builder.js:2489
 msgid "admin.preview.modes.in_content_inline"
 msgstr "Inline"
 
-#: assets/js/dist/flwp-form-builder.js:2338
+#: assets/js/dist/flwp-form-builder.js:2490
 msgid "admin.preview.modes.in_content"
 msgstr "In-content ({type})"
 
-#: assets/js/dist/flwp-form-builder.js:2341
+#: assets/js/dist/flwp-form-builder.js:2493
 msgid "admin.preview.modes.feedback_button"
 msgstr "Floating feedback button"
 
-#: assets/js/dist/flwp-form-builder.js:2343
+#: assets/js/dist/flwp-form-builder.js:2495
 msgid "admin.preview.modes.slide_in"
 msgstr "Slide-in widget"
 
-#: assets/js/dist/flwp-form-builder.js:2345
+#: assets/js/dist/flwp-form-builder.js:2497
 msgid "admin.preview.modes.overlay_modal"
 msgstr "Overlay modal"
 
-#: assets/js/dist/flwp-form-builder.js:2353
+#: assets/js/dist/flwp-form-builder.js:2505
 msgid "admin.preview.mock.logo"
 msgstr "My blog"
 
-#: assets/js/dist/flwp-form-builder.js:2356
+#: assets/js/dist/flwp-form-builder.js:2508
 msgid "admin.preview.mock.headline"
 msgstr "What can I use the FLWP plugin for?"
 
-#: assets/js/dist/flwp-form-builder.js:2357
+#: assets/js/dist/flwp-form-builder.js:2509
 msgid "admin.preview.mock.desc1"
 msgstr "With FLWP, you can create many different feedback forms and display them in various ways."
 
-#: assets/js/dist/flwp-form-builder.js:2359
+#: assets/js/dist/flwp-form-builder.js:2511
 msgid "admin.preview.mock.desc2"
 msgstr "Simply create a form under \"Fields\" and then select your display type for this form under \"Display\"."
 
-#: assets/js/dist/flwp-form-builder.js:2360
+#: assets/js/dist/flwp-form-builder.js:2512
 msgid "admin.preview.mock.desc3"
 msgstr "Then save and publish the form, and your form will be displayed on your site."
 
-#: assets/js/dist/flwp-form-builder.js:2361
+#: assets/js/dist/flwp-form-builder.js:2513
 msgid "admin.preview.mock.desc4"
 msgstr "If you have questions about settings, feel free to take a look at our <a href=\"https://flwp.de/docs/\" target=\"_blank\">documentation</a> or visit the <a href=\"https://flwp.de/support-forum/\" target=\"_blank\">support-forum</a>."
 
-#: assets/js/dist/flwp-form-builder.js:2475
+#: assets/js/dist/flwp-form-builder.js:2627
 msgid "admin.preview.default_footer_text"
 msgstr "We appreciate your honest feedback!"
 
-#: assets/js/dist/flwp-form-builder.js:2717
+#: assets/js/dist/flwp-form-builder.js:2869
 msgid "admin.display.group_title_in_content"
 msgstr "Maximum width &amp; height"
 
-#: assets/js/dist/flwp-form-builder.js:2719
+#: assets/js/dist/flwp-form-builder.js:2871
 msgid "admin.display.group_title_default"
 msgstr "Alignment &amp; dimensions"
 
-#: assets/js/dist/flwp-form-builder.js:2734
+#: assets/js/dist/flwp-form-builder.js:2886
 msgid "admin.display.tab_btn_in_content"
 msgstr "Spacing &amp; dimensions"
 
-#: assets/js/dist/flwp-form-builder.js:2736
+#: assets/js/dist/flwp-form-builder.js:2888
 msgid "admin.display.tab_btn_default"
 msgstr "Alignment &amp; dimensions"
 
-#: assets/js/dist/flwp-form-builder.js:2757
+#: assets/js/dist/flwp-form-builder.js:2909
 msgid "admin.display.step_label"
 msgstr "Step {step}"
 
-#: assets/js/dist/flwp-form-builder.js:3515
+#: assets/js/dist/flwp-form-builder.js:3666
 msgid "fields.button.submit.default_text"
 msgstr "Submit"
 
-#: assets/js/dist/flwp-form-builder.js:3519
+#: assets/js/dist/flwp-form-builder.js:3670
 msgid "fields.button.back.default_text"
 msgstr "Back"
 
-#: assets/js/dist/flwp-form-builder.js:3523
+#: assets/js/dist/flwp-form-builder.js:3674
 msgid "fields.button.next.default_text"
 msgstr "Next"
 
-#: assets/js/dist/flwp-form-builder.js:3585
+#: assets/js/dist/flwp-form-builder.js:3735
 msgid "admin.toast.step2_unlocked"
 msgstr "Step 2 unlocked for this element!"
 
-#: assets/js/dist/flwp-form-builder.js:3681
+#: assets/js/dist/flwp-form-builder.js:3831
 msgid "admin.toast.undo"
 msgstr "Action undone"
 
-#: assets/js/dist/flwp-form-builder.js:3716
+#: assets/js/dist/flwp-form-builder.js:3866
 msgid "admin.toast.redo"
 msgstr "Action redone"
 
-#: assets/js/dist/flwp-form-builder.js:3864
+#: assets/js/dist/flwp-form-builder.js:4011
 msgid "admin.toast.form_published"
 msgstr "Form published successfully!"
 
-#: assets/js/dist/flwp-form-builder.js:3864
+#: assets/js/dist/flwp-form-builder.js:4011
 msgid "admin.toast.draft_saved"
 msgstr "Draft saved successfully!"
 
-#: assets/js/dist/flwp-form-builder.js:3867
+#: assets/js/dist/flwp-form-builder.js:4014
 msgid "admin.toast.save_error"
 msgstr "Error saving: {error}"
 
-#: assets/js/dist/flwp-form-builder.js:3867
+#: assets/js/dist/flwp-form-builder.js:4014
 msgid "admin.toast.unknown_error"
 msgstr "Unknown error"
 
-#: assets/js/dist/flwp-form-builder.js:3872
+#: assets/js/dist/flwp-form-builder.js:4019
 msgid "admin.toast.network_error"
 msgstr "Network error saving data."
 
-#: assets/js/dist/flwp-form-builder.js:4144
-#: assets/js/dist/flwp-form-builder.js:4159
-#: assets/js/dist/flwp-form-builder.js:4164
+#: assets/js/dist/flwp-form-builder.js:4282
+#: assets/js/dist/flwp-form-builder.js:4297
+#: assets/js/dist/flwp-form-builder.js:4302
 msgid "admin.builder.element_count_plural"
 msgstr "{count} elements"
 
-#: assets/js/dist/flwp-form-builder.js:4159
-#: assets/js/dist/flwp-form-builder.js:4164
+#: assets/js/dist/flwp-form-builder.js:4297
+#: assets/js/dist/flwp-form-builder.js:4302
 msgid "admin.builder.element_count_singular"
 msgstr "{count} element"
 
-#: assets/js/dist/flwp-form-builder.js:4165
+#: assets/js/dist/flwp-form-builder.js:4303
 msgid "admin.builder.active_for"
 msgstr "Active for: {label}"
 
-#: assets/js/dist/flwp-form-builder.js:4167
+#: assets/js/dist/flwp-form-builder.js:4305
 msgid "admin.builder.switch_recipient"
 msgstr "Switch recipient"
 
-#: assets/js/dist/flwp-form-builder.js:4227
-#: assets/js/dist/flwp-form-builder.js:4633
+#: assets/js/dist/flwp-form-builder.js:4365
+#: assets/js/dist/flwp-form-builder.js:4774
 msgid "admin.builder.move_to_step2"
 msgstr "Move to step 2"
 
-#: assets/js/dist/flwp-form-builder.js:4227
-#: assets/js/dist/flwp-form-builder.js:4633
+#: assets/js/dist/flwp-form-builder.js:4365
+#: assets/js/dist/flwp-form-builder.js:4774
 msgid "admin.builder.move_to_step1"
 msgstr "Move to step 1"
 
-#: assets/js/dist/flwp-form-builder.js:4235
-#: assets/js/dist/flwp-form-builder.js:4625
+#: assets/js/dist/flwp-form-builder.js:4373
+#: assets/js/dist/flwp-form-builder.js:4766
 msgid "admin.builder.duplicate_element"
 msgstr "Duplicate element"
 
-#: assets/js/dist/flwp-form-builder.js:4243
-#: assets/js/dist/flwp-form-builder.js:4644
+#: assets/js/dist/flwp-form-builder.js:4381
+#: assets/js/dist/flwp-form-builder.js:4785
 msgid "admin.builder.delete_element"
 msgstr "Delete element"
 
-#: assets/js/dist/flwp-form-builder.js:4460
+#: assets/js/dist/flwp-form-builder.js:4608
 msgid "admin.builder.customize_colors"
 msgstr "Customise {name} colours"
 
-#: assets/js/dist/flwp-form-builder.js:4545
+#: assets/js/dist/flwp-form-builder.js:4686
 msgid "admin.preview.widget_title"
 msgstr "Widget live preview"
 
-#: assets/js/dist/flwp-form-builder.js:4573
+#: assets/js/dist/flwp-form-builder.js:4714
 msgid "admin.preview.form_preview_title"
 msgstr "Form preview"
 
-#: assets/js/dist/flwp-form-builder.js:4617
+#: assets/js/dist/flwp-form-builder.js:4758
 msgid "admin.builder.edit_element"
 msgstr "Edit element"
 
-#: assets/js/dist/flwp-form-builder.js:4670
+#: assets/js/dist/flwp-form-builder.js:4811
 msgid "admin.toast.step2_auto_activated"
 msgstr "Step 2 was automatically activated for \"{label}\"."
 
-#: assets/js/dist/flwp-form-builder.js:4674
+#: assets/js/dist/flwp-form-builder.js:4815
 msgid "admin.toast.step2_requirement_error"
 msgstr "Step 2 requires at least one rating or button element in Step 1 with an activated step 2 path."
 
-#: assets/js/dist/flwp-form-builder.js:4689
+#: assets/js/dist/flwp-form-builder.js:4830
 msgid "admin.toast.moved_to_step2"
 msgstr "\"{label}\" successfully moved to Step 2!"
 
-#: assets/js/dist/flwp-form-builder.js:4728
+#: assets/js/dist/flwp-form-builder.js:4869
 msgid "admin.toast.moved_to_step1"
 msgstr "\"{label}\" successfully moved to Step 1!"
 
-#: assets/js/dist/flwp-form-builder.js:4742
+#: assets/js/dist/flwp-form-builder.js:4883
 msgid "admin.builder.back_to_overview"
 msgstr "Back to overview"
 
-#: assets/js/dist/flwp-form-builder.js:4767
+#: assets/js/dist/flwp-form-builder.js:4908
 msgid "admin.toast.deleted"
 msgstr "Element deleted"
 
-#: assets/js/dist/flwp-form-builder.js:4782
+#: assets/js/dist/flwp-form-builder.js:4923
 msgid "admin.toast.duplicated"
 msgstr "Element duplicated"
 
-#: assets/js/dist/flwp-form-builder.js:4804
+#: assets/js/dist/flwp-form-builder.js:4941
 msgid "admin.toast.added"
 msgstr "Element \"{name}\" added"
 
-#: assets/js/dist/flwp-form-builder.js:4892
+#: assets/js/dist/flwp-form-builder.js:5024
 msgid "admin.toast.dropped"
 msgstr "Element \"{name}\" dropped"
 
-#: assets/js/dist/flwp-form-builder.js:4902
+#: assets/js/dist/flwp-form-builder.js:5034
 msgid "admin.toast.move_step_not_allowed"
 msgstr "Moving between steps is not allowed"
 
-#: assets/js/dist/flwp-form-builder.js:4976
+#: assets/js/dist/flwp-form-builder.js:5108
 msgid "admin.toast.view_loaded"
 msgstr "View \"{view}\" loaded"
 
-#: assets/js/dist/flwp-form-builder.js:5345
+#: assets/js/dist/flwp-form-builder.js:5459
 msgid "admin.toast.config_copied"
 msgstr "Configuration copied!"
 
-#: assets/js/dist/flwp-form-builder.js:5353
+#: assets/js/dist/flwp-form-builder.js:5467
 msgid "admin.toast.invalid_json"
 msgstr "Please enter a valid JSON configuration."
 
-#: assets/js/dist/flwp-form-builder.js:5366
+#: assets/js/dist/flwp-form-builder.js:5480
 msgid "admin.toast.config_loaded"
 msgstr "Configuration loaded!"
 
-#: assets/js/dist/flwp-form-builder.js:5370
+#: assets/js/dist/flwp-form-builder.js:5484
 msgid "admin.toast.import_error"
 msgstr "Error loading/importing: {error}"
 
-#: assets/js/dist/flwp-form-builder.js:5397
+#: assets/js/dist/flwp-form-builder.js:5511
 msgid "admin.builder.display_type_label"
 msgstr "Display for display type {label}"
 
-#: assets/js/dist/flwp-form-builder.js:5414
+#: assets/js/dist/flwp-form-builder.js:5528
 msgid "admin.builder.targeting_tabs.in_content"
 msgstr "Automatic placement (In-content)"
 
-#: assets/js/dist/flwp-form-builder.js:5415
+#: assets/js/dist/flwp-form-builder.js:5529
 msgid "admin.builder.targeting_tabs.shortcode"
 msgstr "Shortcode"
 
-#: assets/js/dist/flwp-form-builder.js:5419
+#: assets/js/dist/flwp-form-builder.js:5533
 msgid "admin.builder.targeting_tabs.overlay"
 msgstr "Overlay"
 
-#: assets/js/dist/flwp-form-builder.js:5567
-#: assets/js/dist/flwp-form-builder.js:5663
+#: assets/js/dist/flwp-form-builder.js:5662
+#: assets/js/dist/flwp-form-builder.js:5758
 msgid "admin.toast.status_paused"
 msgstr "Paused"
 
-#: assets/js/dist/flwp-form-builder.js:5570
-#: assets/js/dist/flwp-form-builder.js:5664
+#: assets/js/dist/flwp-form-builder.js:5665
+#: assets/js/dist/flwp-form-builder.js:5759
 msgid "admin.toast.status_live"
 msgstr "Live"
 
-#: assets/js/dist/flwp-form-builder.js:5573
-#: assets/js/dist/flwp-form-builder.js:5665
+#: assets/js/dist/flwp-form-builder.js:5668
+#: assets/js/dist/flwp-form-builder.js:5760
 msgid "admin.toast.status_admin_only"
 msgstr "Admin-only"
 
-#: assets/js/dist/flwp-form-builder.js:5666
+#: assets/js/dist/flwp-form-builder.js:5761
 msgid "admin.toast.status_changed"
 msgstr "Form status changed to \"{status}\""
 
-#: assets/js/dist/flwp-form-builder.js:5693
+#: assets/js/dist/flwp-form-builder.js:5788
 msgid "admin.builder.leave_editor_confirm"
 msgstr "Do you really want to leave the editor?"
 
-#: assets/js/dist/flwp-form-builder.js:5707
+#: assets/js/dist/flwp-form-builder.js:5802
 msgid "admin.toast.split_preview_reset"
 msgstr "Split preview test reset!"
 
-#: assets/js/dist/flwp-form-builder.js:5720
-#: assets/js/dist/flwp-form-builder.js:5729
+#: assets/js/dist/flwp-form-builder.js:5815
+#: assets/js/dist/flwp-form-builder.js:5824
 msgid "admin.toast.activate_step2_first"
 msgstr "Activate 'Step 2' in the field options first!"
 
-#: assets/js/dist/flwp-form-frontend.js:2017
+#: assets/js/dist/flwp-form-frontend.js:2212
 msgid "widget.feedback_button.hide_button"
 msgstr "Hide feedback button for a while"
 
-#: assets/js/dist/flwp-form-frontend.js:2082
+#: assets/js/dist/flwp-form-frontend.js:2277
 msgid "widget.status_completed"
 msgstr "Completed"
 
-#: assets/js/dist/flwp-form-frontend.js:2084
+#: assets/js/dist/flwp-form-frontend.js:2279
 msgid "widget.step_indicator_full"
 msgstr "Step {step} of {total}"
 
-#: assets/js/dist/flwp-form-frontend.js:2365
+#: assets/js/dist/flwp-form-frontend.js:2560
 msgid "validation.error.required"
 msgstr "This field is a required field."
 
-#: assets/js/dist/flwp-form-frontend.js:2415
-#: assets/js/dist/flwp-form-frontend.js:2480
+#: assets/js/dist/flwp-form-frontend.js:2610
+#: assets/js/dist/flwp-form-frontend.js:2675
 msgid "widget.step_indicator"
 msgstr "Step {step} / {total}"
 
-#: assets/js/dist/flwp-form-frontend.js:2442
+#: assets/js/dist/flwp-form-frontend.js:2637
 msgid "widget.status_confirmed"
 msgstr "Confirmed"
 
-#: assets/js/dist/flwp-form-frontend.js:2469
+#: assets/js/dist/flwp-form-frontend.js:2664
 msgid "admin.builder.simulation_redirect_msg"
 msgstr "[Simulation] Redirecting to:"
 
-#: assets/js/dist/flwp-form-frontend.js:2480
+#: assets/js/dist/flwp-form-frontend.js:2675
 msgid "widget.step_single"
 msgstr "Step {step}"
 
-#: assets/js/dist/flwp-form-frontend.js:2511
+#: assets/js/dist/flwp-form-frontend.js:2706
 msgid "widget.no_elements"
 msgstr "No elements selected."
 
-#: assets/js/dist/flwp-form-frontend.js:2578
+#: assets/js/dist/flwp-form-frontend.js:2773
 msgid "confirmation.message.redirecting"
 msgstr "You will be redirected in {seconds} seconds..."
 
-#: assets/js/dist/flwp-form-frontend.js:2581
+#: assets/js/dist/flwp-form-frontend.js:2776
 msgid "confirmation.message.target"
 msgstr "Target:"

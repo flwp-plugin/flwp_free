@@ -771,11 +771,13 @@
 }
 
 /* PRO-Field Styling */
-.flwp-draggable-pro-item {
+.flwp-draggable-field-item.flwp-draggable-pro-item {
+    cursor: pointer;
+    opacity: 0.5;
     position: relative;
 }
 
-.flwp-draggable-pro-item::after {
+.flwp-draggable-field-item.flwp-draggable-pro-item::after {
     content: "PRO";
     position: absolute;
     top: 6px;
@@ -793,32 +795,24 @@
     z-index: 2;
 }
 
-.flwp-draggable-pro-item:hover::after {
+.flwp-draggable-field-item.flwp-draggable-pro-item:hover::after {
     background: #ffffff;
+    opacity: 0.5;
+    cursor: pointer;
     color: var(--flwp-primary);
 }
 
-/* PRO targeting elements */
-.flwp-pro-inline-badge {
-    display: inline-block;
-    background: var(--flwp-warning, #f59e0b);
-    color: #1e293b;
-    font-size: 8px;
-    font-weight: 800;
-    padding: 1px 4px;
-    border-radius: 3px;
-    line-height: 1;
-    letter-spacing: 0.05em;
-    margin-left: 6px;
-    vertical-align: middle;
+.flwp-draggable-field-item.flwp-draggable-pro-item:active {
+    cursor: pointer;
 }
 
-.flwp-pro-feature-locked {
+/* PRO targeting elements */
+.flwp-pro-feature-hint {
     opacity: 0.65;
     position: relative;
 }
 
-.flwp-pro-feature-locked::after {
+.flwp-pro-feature-hint::after {
     content: "PRO";
     position: absolute;
     top: 4px;
@@ -966,13 +960,240 @@ input[type=email].flwp-form-input, input[type=text].flwp-form-input, select.flwp
 
 /* Specific styling fields details */
 .flwp-badge-id {
-    font-family: var(--flwp-font-mono);
     font-size: 11px;
     background-color: #f1f5f9;
     color: #475569;
     padding: 2px 6px;
     border-radius: 4px;
     font-weight: normal;
+}
+
+/* ==========================================================================
+   Dropdown Field & Choices List (Auswahlmöglichkeiten)
+   ========================================================================== */
+.flwp-choices-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+}
+
+.flwp-choice-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+    padding: 2px 0;
+    transition: background-color 0.15s;
+}
+
+.flwp-choice-drag-handle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 26px;
+    color: #64748b;
+    font-size: 14px;
+    cursor: grab;
+    user-select: none;
+    flex-shrink: 0;
+}
+
+.flwp-choice-drag-handle:active {
+    cursor: grabbing;
+}
+
+.flwp-choice-radio-wrap {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.flwp-choice-radio {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    cursor: pointer;
+    accent-color: var(--flwp-primary, #104689);
+}
+
+.flwp-choice-input {
+    flex: 1;
+    min-width: 0;
+    height: 32px;
+    padding: 0 10px;
+    font-size: 13px;
+    color: #222222;
+    background-color: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.flwp-choice-input:focus {
+    border-color: var(--flwp-primary, #104689);
+    box-shadow: 0 0 0 2px rgba(16, 70, 137, 0.15);
+}
+
+.flwp-choice-btn {
+    width: 22px;
+    height: 22px;
+    min-width: 22px;
+    border-radius: 50%;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+    transition: background-color 0.15s, transform 0.1s;
+}
+
+.flwp-choice-btn:active {
+    transform: scale(0.92);
+}
+
+.flwp-choice-btn-add {
+    background-color: #0284c7;
+}
+
+.flwp-choice-btn-add:hover {
+    background-color: #0369a1;
+}
+
+.flwp-choice-btn-remove {
+    background-color: #ef4444;
+}
+
+.flwp-choice-btn-remove:hover {
+    background-color: #dc2626;
+}
+
+.flwp-choice-ghost {
+    opacity: 0.4;
+    background-color: #e2e8f0;
+    border-radius: 4px;
+}
+
+/* Choice Row Icon Button & Popover */
+.flwp-visual-mock-chips {
+    margin-top: 8px;
+}
+
+.flwp-choice-icon-btn {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    border-radius: 4px;
+    border: 1px solid #cbd5e1;
+    background-color: #f8fafc;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    color: #334155;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: all 0.15s;
+    padding: 0;
+}
+
+.flwp-choice-icon-btn:hover {
+    background-color: #f1f5f9;
+    border-color: var(--flwp-primary, #104689);
+    color: var(--flwp-primary, #104689);
+}
+
+.flwp-choice-icon-popover {
+    position: absolute;
+    z-index: 99999;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    padding: 8px;
+    width: 230px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    box-sizing: border-box;
+}
+
+.flwp-choice-icon-search {
+    width: 100%;
+    height: 28px;
+    padding: 0 8px;
+    font-size: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.flwp-choice-icon-search:focus {
+    border-color: var(--flwp-primary, #104689);
+}
+
+.flwp-choice-icon-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 4px;
+    max-height: 140px;
+    overflow-y: auto;
+    padding-right: 2px;
+}
+
+.flwp-choice-icon-opt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    border-radius: 4px;
+    font-size: 13px;
+    color: #334155;
+    background: #f8fafc;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all 0.12s;
+}
+
+.flwp-choice-icon-opt:hover {
+    background: #e2e8f0;
+    color: var(--flwp-primary, #104689);
+    border-color: var(--flwp-primary, #104689);
+}
+
+.flwp-choice-icon-opt.is-selected {
+    background: var(--flwp-primary, #104689);
+    color: #ffffff;
+}
+
+/* Builder Mock Dropdown */
+.flwp-visual-mock-dropdown {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid var(--flwp-border, #cbd5e1);
+    background-color: #ffffff;
+    border-radius: 4px;
+    margin-top: 8px;
+    margin-bottom: 4px;
+    padding: 8px 12px;
+    font-size: 13px;
+    color: var(--flwp-text-main, #222222);
+    cursor: default;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 38px;
 }
 
 /* Canvas / Editor Column */

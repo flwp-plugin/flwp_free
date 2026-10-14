@@ -79,100 +79,91 @@ if (!defined('ABSPATH')) {
 				</div>
 
 				<!-- Language -->
-				<div class="flwp-switch-group flwp-pro-feature-locked" style="margin-bottom: 0;">
+				<div class="flwp-switch-group flwp-pro-feature-hint" style="margin-bottom: 0;">
 					<span class="flwp-switch-label">
 					<i class="fas fa-language" style="width: 16px; color: var(--flwp-primary);"></i> <?php esc_html_e('admin.builder.tracking.language.label', 'flwp'); ?>
 					</span>
 					<label class="flwp-switch-wrapper" for="flwp-setting-tracking-language">
-						<input type="checkbox" id="flwp-setting-tracking-language" checked/>
 						<span class="flwp-switch-slider"></span>
 					</label>
 				</div>
 
 				<!-- Screen Resolution -->
-				<div class="flwp-switch-group flwp-pro-feature-locked" style="margin-bottom: 0;">
+				<div class="flwp-switch-group flwp-pro-feature-hint" style="margin-bottom: 0;">
 					<span class="flwp-switch-label">
 					<i class="fas fa-desktop" style="width: 16px; color: var(--flwp-primary);"></i> <?php esc_html_e('admin.builder.tracking.screen_resolution.label', 'flwp'); ?>
 					</span>
 					<label class="flwp-switch-wrapper" for="flwp-setting-tracking-screenResolution">
-						<input type="checkbox" id="flwp-setting-tracking-screenResolution" checked/>
 						<span class="flwp-switch-slider"></span>
 					</label>
 				</div>
 
 				<!-- Viewport Size -->
-				<div class="flwp-switch-group flwp-pro-feature-locked" style="margin-bottom: 0;">
+				<div class="flwp-switch-group flwp-pro-feature-hint" style="margin-bottom: 0;">
 					<span class="flwp-switch-label">
 					<i class="fas fa-window-maximize" style="width: 16px; color: var(--flwp-primary);"></i> <?php esc_html_e('admin.builder.tracking.viewport_size.label', 'flwp'); ?>
 					</span>
 					<label class="flwp-switch-wrapper" for="flwp-setting-tracking-viewportSize">
-						<input type="checkbox" id="flwp-setting-tracking-viewportSize" checked/>
 						<span class="flwp-switch-slider"></span>
 					</label>
 				</div>
 
 				<!-- Timezone -->
-				<div class="flwp-switch-group flwp-pro-feature-locked" style="margin-bottom: 0;">
+				<div class="flwp-switch-group flwp-pro-feature-hint" style="margin-bottom: 0;">
 					<span class="flwp-switch-label">
 					<i class="fas fa-globe" style="width: 16px; color: var(--flwp-primary);"></i> <?php esc_html_e('admin.builder.tracking.timezone.label', 'flwp'); ?>
 					</span>
 					<label class="flwp-switch-wrapper" for="flwp-setting-tracking-timezone">
-						<input type="checkbox" id="flwp-setting-tracking-timezone" checked/>
 						<span class="flwp-switch-slider"></span>
 					</label>
 				</div>
 
 				<!-- Connection Type -->
-				<div class="flwp-switch-group flwp-pro-feature-locked" style="margin-bottom: 0;">
+				<div class="flwp-switch-group flwp-pro-feature-hint" style="margin-bottom: 0;">
 				<span class="flwp-switch-label">
 				<i class="fas fa-wifi" style="width: 16px; color: var(--flwp-primary);"></i> <?php esc_html_e('admin.builder.tracking.connection_type.label', 'flwp'); ?>
 				</span>
 					<label class="flwp-switch-wrapper" for="flwp-setting-tracking-connectionType">
-						<input type="checkbox" id="flwp-setting-tracking-connectionType" checked/>
 						<span class="flwp-switch-slider"></span>
 					</label>
 				</div>
 
 				<!-- Device Type -->
-				<div class="flwp-switch-group flwp-pro-feature-locked" style="margin-bottom: 0;">
+				<div class="flwp-switch-group flwp-pro-feature-hint" style="margin-bottom: 0;">
 				<span class="flwp-switch-label">
 				<i class="fas fa-mobile-alt" style="width: 16px; color: var(--flwp-primary);"></i> <?php esc_html_e('admin.builder.tracking.device_type.label', 'flwp'); ?>
 				</span>
 					<label class="flwp-switch-wrapper" for="flwp-setting-tracking-deviceType">
-						<input type="checkbox" id="flwp-setting-tracking-deviceType" checked/>
 						<span class="flwp-switch-slider"></span>
 					</label>
 				</div>
 
 				<!-- Session ID -->
-				<div class="flwp-switch-group flwp-pro-feature-locked" style="margin-bottom: 0;">
+				<div class="flwp-switch-group flwp-pro-feature-hint" style="margin-bottom: 0;">
 				<span class="flwp-switch-label">
 				<i class="fas fa-id-badge" style="width: 16px; color: var(--flwp-primary);"></i> <?php esc_html_e('admin.builder.tracking.session_id.label', 'flwp'); ?>
 				</span>
 					<label class="flwp-switch-wrapper" for="flwp-setting-tracking-anonymizedSessionId">
-						<input type="checkbox" id="flwp-setting-tracking-anonymizedSessionId" checked/>
 						<span class="flwp-switch-slider"></span>
 					</label>
 				</div>
 
 				<!-- Time on Page -->
-				<div class="flwp-switch-group flwp-pro-feature-locked" style="margin-bottom: 0;">
+				<div class="flwp-switch-group flwp-pro-feature-hint" style="margin-bottom: 0;">
 				<span class="flwp-switch-label">
 				<i class="fas fa-hourglass-half" style="width: 16px; color: var(--flwp-primary);"></i> <?php esc_html_e('admin.builder.tracking.time_on_page.label', 'flwp'); ?>
 				</span>
 					<label class="flwp-switch-wrapper" for="flwp-setting-tracking-timeOnPageSeconds">
-						<input type="checkbox" id="flwp-setting-tracking-timeOnPageSeconds" checked/>
 						<span class="flwp-switch-slider"></span>
 					</label>
 				</div>
 
 				<!-- Color Scheme -->
-				<div class="flwp-switch-group flwp-pro-feature-locked" style="margin-bottom: 0;">
+				<div class="flwp-switch-group flwp-pro-feature-hint" style="margin-bottom: 0;">
 				<span class="flwp-switch-label">
 				<i class="fas fa-adjust" style="width: 16px; color: var(--flwp-primary);"></i> <?php esc_html_e('admin.builder.tracking.color_scheme.label', 'flwp'); ?>
 				</span>
 					<label class="flwp-switch-wrapper" for="flwp-setting-tracking-colorScheme">
-						<input type="checkbox" id="flwp-setting-tracking-colorScheme" checked/>
 						<span class="flwp-switch-slider"></span>
 					</label>
 				</div>
