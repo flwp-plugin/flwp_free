@@ -1196,6 +1196,67 @@ input[type=email].flwp-form-input, input[type=text].flwp-form-input, select.flwp
     min-height: 38px;
 }
 
+/* Radio-Buttons Builder & Frontend Styling */
+.flwp-rendered-field-details-wrap .flwp-mockup-radio-list {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.flwp-rendered-field-details-wrap .flwp-mockup-radio-item {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px;
+    position: relative;
+    margin: 0 !important;
+    padding: 2px 0 !important;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.flwp-rendered-field-details-wrap .flwp-mockup-radio-input {
+    appearance: auto;
+    -webkit-appearance: auto;
+    width: 18px !important;
+    height: 18px !important;
+    min-width: 18px;
+    min-height: 18px;
+    cursor: pointer;
+    margin: 0 !important;
+    padding: 0 !important;
+    flex-shrink: 0;
+    transition: transform 0.1s ease;
+    accent-color: rgb(0, 0, 0);
+}
+
+.flwp-rendered-field-details-wrap .flwp-mockup-radio-input:focus {
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+
+/* Reset WordPress core radio button admin style overrides */
+.flwp-rendered-field-details-wrap .flwp-mockup-radio-input:checked::before {
+    content: none !important;
+}
+
+.flwp-rendered-field-details-wrap .flwp-mockup-radio-label {
+    cursor: pointer;
+    user-select: none;
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--flwp-text, #222222);
+    margin: 0 !important;
+    padding: 0 !important;
+    display: inline-block;
+    transition: color 0.15s ease;
+}
+
 /* Canvas / Editor Column */
 .flwp-editor-canvas-column {
     flex-grow: 1;

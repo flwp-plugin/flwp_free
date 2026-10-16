@@ -73,6 +73,11 @@ if (!defined('ABSPATH')) {
 		                    <i class="fas fa-tags"></i>
 		                    <span><?php esc_html_e('fields.chips.name', 'flwp'); ?></span>
 	                    </div>
+
+	                    <div class="flwp-draggable-field-item" draggable="true" data-type="radio" id="flwp-field-drag-radio">
+		                    <i class="fas fa-circle-dot"></i>
+		                    <span><?php esc_html_e('fields.radio.name', 'flwp'); ?></span>
+	                    </div>
                     </div>
 
                     <div class="flwp-sidebar-section-title" id="flwp-sec-title-reviews" style="margin-top: 8px; margin-bottom: 0;">
@@ -377,15 +382,6 @@ if (!defined('ABSPATH')) {
                         <span class="flwp-switch-label"><i class="fas fa-level-down-alt" style="color: var(--flwp-text-secondary); font-size: 11px; transform: rotate(90deg);"></i> <?php esc_html_e('admin.builder.fields.clear_before.title', 'flwp'); ?></span>
                         <label class="flwp-switch-wrapper" for="flwp-opt-clear-before">
                             <input type="checkbox" id="flwp-opt-clear-before" />
-                            <span class="flwp-switch-slider"></span>
-                        </label>
-                    </div>
-
-                    <!-- Smiley Legend Switch -->
-                    <div class="flwp-switch-group" id="flwp-opt-group-smiley-legend">
-                        <span class="flwp-switch-label"><i class="fas fa-comment-dots" style="color: var(--flwp-primary); font-size: 11px;"></i> <?php esc_html_e('admin.builder.fields.smiley_legend.title', 'flwp'); ?></span>
-                        <label class="flwp-switch-wrapper" for="flwp-opt-smiley-legend">
-                            <input type="checkbox" id="flwp-opt-smiley-legend" />
                             <span class="flwp-switch-slider"></span>
                         </label>
                     </div>

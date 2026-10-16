@@ -102,7 +102,7 @@ export const utils = {
      */
     hasSubmitProblem: function(step1Items) {
         if (!Array.isArray(step1Items)) return false;
-        const interactiveElements = step1Items.filter(i => ['rating', 'textarea'].includes(i.type));
+        const interactiveElements = step1Items.filter(i => ['rating'].includes(i.type));
         const hasSubmitButton = step1Items.some(i => i.type === 'button' && i.settings && (i.settings.buttonType === 'submit' || i.settings.step2Enabled === true));
         const hasTextarea = step1Items.some(i => i.type === 'textarea');
 

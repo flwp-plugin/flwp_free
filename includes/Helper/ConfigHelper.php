@@ -14,6 +14,7 @@ class ConfigHelper {
 			'button',
 			'dropdown',
 			'chips',
+			'radio',
 			'rating',
 		];
 
@@ -21,6 +22,7 @@ class ConfigHelper {
 			'button',
 			'dropdown',
 			'chips',
+			'radio',
 			'rating',
 		];
 
@@ -87,6 +89,16 @@ class ConfigHelper {
 	            'customColorTypes' => ['bgColor', 'textColor', 'borderColor', 'hoverBgColor', 'hoverTextColor', 'hoverBorderColor'],
 	            'userinput' => true,
 	            'baseHeight' => 46,
+	            'labelHeight' => 24
+			],
+            'radio' => [
+				'name' => esc_html__('fields.radio.name', 'flwp'),
+	            'icon' => 'fa-circle-dot',
+	            'defaultLabel' => esc_html__('fields.choices_list.default_label', 'flwp'),
+	            'supportedSettings' => ['label', 'hideLabel', 'required', 'choicesList', 'fontSize', 'lineHeight', 'customColors'],
+	            'customColorTypes' => ['bgColor', 'textColor'],
+	            'userinput' => true,
+	            'baseHeight' => 80,
 	            'labelHeight' => 24
 			],
             'rating' => [

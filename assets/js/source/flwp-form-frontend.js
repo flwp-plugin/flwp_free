@@ -1192,7 +1192,7 @@ const engine = {
 
         const processedItemsList = [...itemsList];
 
-        const interactiveElements = processedItemsList.filter(i => ['rating', 'textarea'].includes(i.type));
+        const interactiveElements = processedItemsList.filter(i => ['rating'].includes(i.type));
         const hasSubmitButton = processedItemsList.some(i => i.type === 'button' && i.settings && i.settings.buttonType === 'submit');
         const enableAutoAdvance = (interactiveElements.length === 1) && !hasSubmitButton;
 

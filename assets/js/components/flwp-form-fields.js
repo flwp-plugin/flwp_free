@@ -58,6 +58,16 @@ export const fields = {
                 { text: __("fields.choices_list.technical_support"), icon: "fa-bug" },
             ];
             newField.settings.defaultChoice = __("fields.choices_list.general");
+        } else if (type === 'radio') {
+            newField.settings.required = false;
+            newField.settings.fontSize = 'inherit';
+            newField.settings.lineHeight = '1.4';
+            newField.settings.choices = [
+                { text: __("fields.choices_list.general"), icon: "" },
+                { text: __("fields.choices_list.pre_purchase"), icon: "" },
+                { text: __("fields.choices_list.technical_support"), icon: "" }
+            ];
+            newField.settings.defaultChoice = __("fields.choices_list.general");
         }
 
         return newField;
@@ -553,16 +563,15 @@ export const fields = {
                 if (isBuilder) {
                     const chipsHtml = choices.map(choice => {
                         const isSelected = (choice.text === selectedVal && choice.text !== '');
-                        const bg = isSelected ? activeBg : standardBg;
-                        const fg = isSelected ? activeColor : standardColor;
-                        const bd = isSelected ? activeBorder : standardBorder;
+                        const bg = isSelected ? '#000000' : standardBg;
+                        const fg = isSelected ? '#ffffff' : standardColor;
 
                         let iconHtml = '';
                         if (choice.icon && choice.icon !== 'fa-times' && choice.icon !== 'none') {
                             iconHtml = `<i class="fas ${choice.icon} flwp-chip-icon"></i>`;
                         }
 
-                        const styleStr = `background-color: ${bg}; color: ${fg}; border: 1px solid ${bd}; border-radius: ${bRadius}; ${extraFont}`;
+                        const styleStr = `background-color: ${bg}; color: ${fg}`;
 
                         const iconLeftHtml = (iconPos === 'left' && iconHtml) ? iconHtml : '';
                         const iconRightHtml = (iconPos === 'right' && iconHtml) ? iconHtml : '';
@@ -662,6 +671,127 @@ export const fields = {
                     return container;
                 }
             }
+
+            case 'radio': {
+                const rawChoices = (item.settings && Array.isArray(item.settings.choices)) ? item.settings.choices : [];
+                const choices = rawChoices.map(c => {
+                    if (typeof c === 'object' && c !== null) {
+                        return {text: c.text || '', icon: c.icon || ''};
+                    }
+                    return {text: String(c), icon: ''};
+                });
+                const defaultChoice = (item.settings && item.settings.defaultChoice) ? item.settings.defaultChoice : '';
+                const selectedVal = (options.answers && options.answers[item.id] !== undefined)
+                    ? options.answers[item.id]
+                    : defaultChoice;
+
+                const formAccentColor = (stateObj && stateObj.settings && stateObj.settings.styles && stateObj.settings.styles.accentColor) || '#104689';
+                const accentColor = (item.settings.customColorsEnabled && item.settings.bgColor)
+                    ? item.settings.bgColor
+                    : formAccentColor;
+                const textColor = (item.settings.customColorsEnabled && item.settings.textColor)
+                    ? item.settings.textColor
+                    : '';
+
+                let extraFont = '';
+                if (item.settings.fontSize && item.settings.fontSize !== 'inherit') extraFont += `font-size: ${item.settings.fontSize}; `;
+                if (item.settings.lineHeight && item.settings.lineHeight !== 'inherit') extraFont += `line-height: ${item.settings.lineHeight}; `;
+
+                if (isBuilder) {
+                    const radioItemsHtml = choices.map((choice, idx) => {
+                        const isChecked = (choice.text === selectedVal && choice.text !== '') ? 'checked' : '';
+
+                        return `
+                          <li class="flwp-mockup-radio-item">
+                            <input type="radio" name="flwp-mockup-radio-${item.id}" readonly tabindex="-1" class="flwp-mockup-radio-input" ${isChecked} />
+                            <label class="flwp-mockup-radio-label">${utils.escapeHtml(choice.text)}</label>
+                          </li>
+                        `;
+                    }).join('');
+
+                    return `
+                        <label class="flwp-el-label" style="${labelStyle}">${utils.escapeHtml(label)}${requiredStar}</label>
+                        <ul class="flwp-mockup-radio-list">
+                          ${radioItemsHtml}
+                        </ul>
+                    `;
+                } else {
+                    const container = document.createElement("div");
+                    container.className = "flwp-fd-group-radio";
+                    if (!item.settings.hideLabel) {
+                        container.appendChild(fields.createLabel(item));
+                    }
+
+                    const ul = document.createElement("ul");
+                    ul.className = "flwp-radio-list";
+                    if (extraFont) {
+                        if (item.settings.fontSize && item.settings.fontSize !== 'inherit') ul.style.fontSize = item.settings.fontSize;
+                        if (item.settings.lineHeight && item.settings.lineHeight !== 'inherit') ul.style.lineHeight = item.settings.lineHeight;
+                    }
+
+                    if (selectedVal && options.onAnswerChange) {
+                        options.onAnswerChange(item.id, selectedVal);
+                    }
+
+                    choices.forEach((choice, idx) => {
+                        const li = document.createElement("li");
+                        li.className = "flwp-radio-item";
+
+                        const inputId = `flwp-radio-${item.id}-${idx}`;
+                        const groupName = `flwp-radio-${item.id}`;
+
+                        const input = document.createElement("input");
+                        input.type = "radio";
+                        input.id = inputId;
+                        input.name = groupName;
+                        input.value = choice.text;
+                        input.className = "flwp-radio-input";
+                        input.style.setProperty('--flwp-radio-accent', accentColor);
+
+                        if (choice.text === selectedVal && choice.text !== "") {
+                            input.checked = true;
+                        }
+
+                        const lbl = document.createElement("label");
+                        lbl.htmlFor = inputId;
+                        lbl.className = "flwp-radio-label";
+                        lbl.textContent = choice.text;
+                        if (textColor) {
+                            lbl.style.color = textColor;
+                        }
+                        if (item.settings.fontSize && item.settings.fontSize !== 'inherit') {
+                            lbl.style.fontSize = item.settings.fontSize;
+                        }
+                        if (item.settings.lineHeight && item.settings.lineHeight !== 'inherit') {
+                            lbl.style.lineHeight = item.settings.lineHeight;
+                        }
+
+                        if (options.isReadOnly) {
+                            input.disabled = true;
+                            input.style.cursor = "default";
+                            lbl.style.cursor = "default";
+                        } else {
+                            input.addEventListener("change", () => {
+                                if (input.checked) {
+                                    if (options.onAnswerChange) {
+                                        options.onAnswerChange(item.id, choice.text);
+                                    }
+                                    if (options.markFieldValid) {
+                                        options.markFieldValid();
+                                    }
+                                }
+                            });
+                        }
+
+                        li.appendChild(input);
+                        li.appendChild(lbl);
+                        ul.appendChild(li);
+                    });
+
+                    container.appendChild(ul);
+                    return container;
+                }
+            }
         }
     },
 
@@ -678,6 +808,13 @@ export const fields = {
                     { text: __("fields.choices_list.general"), icon: "fa-lightbulb" },
                     { text: __("fields.choices_list.pre_purchase"), icon: "fa-rocket" },
                     { text: __("fields.choices_list.technical_support"), icon: "fa-palette" },
+                ];
+                element.settings.defaultChoice = __("fields.choices_list.general");
+            } else if (element.type === 'radio') {
+                element.settings.choices = [
+                    { text: __("fields.choices_list.general"), icon: "" },
+                    { text: __("fields.choices_list.pre_purchase"), icon: "" },
+                    { text: __("fields.choices_list.technical_support"), icon: "" }
                 ];
                 element.settings.defaultChoice = __("fields.choices_list.general");
             } else {
@@ -707,6 +844,7 @@ export const fields = {
             currentChoices.forEach((choiceObj, index) => {
                 const choiceText = choiceObj.text || "";
                 const choiceIcon = choiceObj.icon || "";
+
                 const row = document.createElement("div");
                 row.className = "flwp-choice-row";
                 row.dataset.index = String(index);
@@ -728,14 +866,14 @@ export const fields = {
                 radio.className = "flwp-choice-radio";
                 radio.checked = (choiceText === currentDefault && choiceText !== "");
 
-                radio.addEventListener("change", () => {
+                radio.addEventListener("click", () => {
+                    const isAlreadyDefault = (choiceText === currentDefault && choiceText !== "");
                     applyChange(el => {
-                        el.settings.defaultChoice = choiceText;
+                        el.settings.defaultChoice = isAlreadyDefault ? "" : choiceText;
                     });
                     renderRows();
                 });
                 radioWrap.appendChild(radio);
-
 
                 // Icon button (if supported by field)
                 let btnIcon = null;
@@ -921,10 +1059,7 @@ export const fields = {
             const SortableConstructor = SortableLib || (typeof window !== "undefined" ? window.Sortable : null);
             if (SortableConstructor) {
                 if (containerEl._sortableInstance) {
-                    try {
-                        containerEl._sortableInstance.destroy();
-                    } catch (_) {
-                    }
+                    try { containerEl._sortableInstance.destroy(); } catch (_) {}
                 }
                 containerEl._sortableInstance = new SortableConstructor(containerEl, {
                     handle: ".flwp-choice-drag-handle",

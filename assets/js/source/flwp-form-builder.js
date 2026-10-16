@@ -738,6 +738,37 @@ const FLWPFormBuilder = (function() {
 
     // 7. RENDERING & CANVAS ENGINE
     const engine = {
+        applyElementChange: function(callback) {
+            if (!uiState.selectedElementId) return;
+
+            let element = state.steps.step1.find(it => it.id === uiState.selectedElementId);
+            let stepNum = 1;
+            if (!element) {
+                if (state.steps.step2 && !Array.isArray(state.steps.step2)) {
+                    for (const triggerId in state.steps.step2) {
+                        const found = state.steps.step2[triggerId].find(it => it.id === uiState.selectedElementId);
+                        if (found) {
+                            element = found;
+                            stepNum = 2;
+                            break;
+                        }
+                    }
+                } else {
+                    element = engine.getStep2List().find(it => it.id === uiState.selectedElementId);
+                    stepNum = 2;
+                }
+            }
+
+            if (element) {
+                callback(element);
+                engine.renderStepCanvas(stepNum);
+                if (['rating', 'thumbs', 'smileys', 'nps', 'button', 'dropdown'].includes(element.type)) {
+                    engine.renderStepCanvas(stepNum);
+                }
+                api.saveStateToLocalStorage();
+                engine.renderSplitPreview();
+            }
+        },
         openProUpgradeModal: function() {
             const modal = document.getElementById("flwp-modal-pro-upgrade");
             if (modal) {
@@ -1220,7 +1251,11 @@ const FLWPFormBuilder = (function() {
                 const headerStandard = document.getElementById("flwp-opt-colors-standard-header");
                 const headerHover = document.getElementById("flwp-opt-colors-hover-header");
 
-                if (rowBg) rowBg.style.display = supportedTypes.includes("bgColor") ? "block" : "none";
+                if (rowBg) {
+                    rowBg.style.display = supportedTypes.includes("bgColor") ? "block" : "none";
+                    const lblBg = rowBg.querySelector("label");
+                    if (lblBg) lblBg.textContent = element.type === 'radio' ? __( 'admin.builder.accent_color' ) : __( 'admin.builder.background_color' );
+                }
                 if (rowText) rowText.style.display = supportedTypes.includes("textColor") ? "block" : "none";
                 if (rowBorder) rowBorder.style.display = supportedTypes.includes("borderColor") ? "block" : "none";
                 if (rowHoverBg) rowHoverBg.style.display = supportedTypes.includes("hoverBgColor") ? "block" : "none";
@@ -1230,7 +1265,10 @@ const FLWPFormBuilder = (function() {
                 const hasStandard = supportedTypes.includes("bgColor") || supportedTypes.includes("textColor") || supportedTypes.includes("borderColor");
                 const hasHover = supportedTypes.includes("hoverBgColor") || supportedTypes.includes("hoverTextColor") || supportedTypes.includes("hoverBorderColor");
 
-                if (headerStandard) headerStandard.style.display = hasStandard ? "block" : "none";
+                if (headerStandard) {
+                    headerStandard.style.display = hasStandard ? "block" : "none";
+                    headerStandard.textContent = element.type === 'radio' ? __( 'admin.builder.colors' ) : __( 'admin.builder.standard_state' );
+                }
                 if (headerHover) headerHover.style.display = hasHover ? "block" : "none";
 
                 // Determine default values based on element type
@@ -1257,6 +1295,10 @@ const FLWPFormBuilder = (function() {
                     defaultHoverBg = state.settings.styles.secondaryColor || '#0b3363';
                     defaultHoverText = '#ffffff';
                     defaultHoverBorder = state.settings.styles.secondaryColor || '#0b3363';
+                } else if (element.type === 'radio') {
+                    defaultBg = state.settings.styles.accentColor || '#104689';
+                    defaultText = "#222222";
+                    defaultBorder = state.settings.styles.accentColor || '#104689';
                 } else if (element.type === 'rating') {
                     defaultBg = "#ffffff";
                     defaultText = '#cbd5e1';
@@ -1959,37 +2001,7 @@ const FLWPFormBuilder = (function() {
             });
         },
         bindOptionsLiveEditing: function() {
-            const applyChange = (callback) => {
-                if (!uiState.selectedElementId) return;
-
-                let element = state.steps.step1.find(it => it.id === uiState.selectedElementId);
-                let stepNum = 1;
-                if (!element) {
-                    if (state.steps.step2 && !Array.isArray(state.steps.step2)) {
-                        for (const triggerId in state.steps.step2) {
-                            const found = state.steps.step2[triggerId].find(it => it.id === uiState.selectedElementId);
-                            if (found) {
-                                element = found;
-                                stepNum = 2;
-                                break;
-                            }
-                        }
-                    } else {
-                        element = engine.getStep2List().find(it => it.id === uiState.selectedElementId);
-                        stepNum = 2;
-                    }
-                }
-
-                if (element) {
-                    callback(element);
-                    engine.renderStepCanvas(stepNum);
-                    if (['rating', 'button'].includes(element.type)) {
-                        engine.renderStepCanvas(2);
-                    }
-                    api.saveStateToLocalStorage();
-                    engine.renderSplitPreview();
-                }
-            };
+            const applyChange = (callback) => engine.applyElementChange(callback);
 
             config.DECLARATIVE_OPTION_BINDINGS.forEach(binding => {
                 if (!binding.element) return;
