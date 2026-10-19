@@ -1199,7 +1199,7 @@ input[type=email].flwp-form-input, input[type=text].flwp-form-input, select.flwp
 /* Radio-Buttons Builder & Frontend Styling */
 .flwp-rendered-field-details-wrap .flwp-mockup-radio-list {
     list-style: none !important;
-    margin: 0 !important;
+    margin-top: 8px;
     padding: 0 !important;
     display: flex;
     flex-direction: column;
@@ -1255,6 +1255,22 @@ input[type=email].flwp-form-input, input[type=text].flwp-form-input, select.flwp
     padding: 0 !important;
     display: inline-block;
     transition: color 0.15s ease;
+}
+
+.flwp-visual-mock-name {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.flwp-visual-mock-email {
+    display: flex;
+    gap: 4%;
+    width: 100%;
+    margin-top: 8px;
 }
 
 /* Canvas / Editor Column */
@@ -1564,7 +1580,7 @@ input[type=email].flwp-form-input, input[type=text].flwp-form-input, select.flwp
 
 /* Element visual layout elements */
 .flwp-el-label {
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 600;
     color: #1e293b;
     display: flex;
@@ -2232,7 +2248,7 @@ input[type=email].flwp-form-input, input[type=text].flwp-form-input, select.flwp
 
 /* Split-View Live-Vorschau Layouts */
 .flwp-split-preview-column {
-    width: 380px;
+    width: 500px;
     background-color: #036aaa;
     padding: 0 16px;
     display: flex;

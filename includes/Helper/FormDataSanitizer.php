@@ -556,6 +556,17 @@ class FormDataSanitizer
 		if ('chips' === $type) {
 			return array_merge($common, ['borderRadius' => 'csslength']);
 		}
+		if ('name' === $type) {
+			return array_merge($common, [
+				'nameType' => 'enum:full|first_last|first_middle_last',
+				'placeholders' => 'array|text',
+			]);
+		}
+		if ('email' === $type) {
+			return array_merge($common, [
+				'placeholders' => 'array|text',
+			]);
+		}
 		if (in_array($type, ['rating', 'thumbs', 'smileys', 'nps'], true)) {
 			return array_merge($common, [
 				'step2Enabled' => 'bool',

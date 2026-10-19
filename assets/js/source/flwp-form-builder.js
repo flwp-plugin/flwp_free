@@ -1111,7 +1111,50 @@ const FLWPFormBuilder = (function() {
             toggleFieldGroup(document.getElementById("flwp-opt-group-button-colors"), "buttonColors");
             toggleFieldGroup(document.getElementById("flwp-opt-group-border-radius"), "borderRadius");
             toggleFieldGroup(document.getElementById("flwp-opt-group-choicesList"), "choicesList");
+            toggleFieldGroup(document.getElementById("flwp-opt-group-name-type"), "nameType");
+            toggleFieldGroup(document.getElementById("flwp-opt-group-name-placeholders"), "nameType");
+            toggleFieldGroup(document.getElementById("flwp-opt-group-email-confirmation"), "emailConfirmation");
+            toggleFieldGroup(document.getElementById("flwp-opt-group-email-placeholders"), "emailConfirmation");
 
+            if (element.type === "name") {
+                const phMiddle = document.getElementById("flwp-opt-group-name-placeholders").querySelector("#flwp-opt-name-ph-middle");
+                if (phMiddle) {
+                    phMiddle.style.display = element.settings.nameType === 'first_middle_last' ? "block" : "none";
+                    phMiddle.parentElement.parentElement.style.display = "block"; // Ensure parent group is visible
+                }
+                const phLast = document.getElementById("flwp-opt-group-name-placeholders").querySelector("#flwp-opt-name-ph-last");
+                if (phLast) phLast.style.display = element.settings.nameType === 'full' ? "none" : "block";
+
+                // Sync values
+                const phs = element.settings.placeholders || {};
+
+                let phsFirst = phs.first || '';
+                if (element.settings.nameType === 'full' && phsFirst === '') {
+                    phsFirst = __("fields.name.name");
+                }
+
+                document.getElementById("flwp-opt-name-ph-first").value = phsFirst;
+                document.getElementById("flwp-opt-name-ph-middle").value = phs.middle || '';
+                document.getElementById("flwp-opt-name-ph-last").value = phs.last || '';
+            }
+            // Ensure placeholder group visibility is correct if it is a name type field
+            const phGroupName = document.getElementById("flwp-opt-group-name-placeholders");
+            if (phGroupName) {
+                phGroupName.style.display = element.type === "name" ? "block" : "none";
+            }
+
+            if (element.type === "email") {
+                // Sync values
+                const phs = element.settings.placeholders || {};
+                document.getElementById("flwp-opt-email-ph-main").value = phs.main || '';
+                document.getElementById("flwp-opt-email-ph-confirm").value = phs.confirm || '';
+                document.getElementById("flwp-opt-email-confirmation").checked = element.settings.emailConfirmation || false;
+            }
+            // Ensure placeholder group visibility is correct if it is an email type field
+            const phGroupEmail = document.getElementById("flwp-opt-group-email-placeholders");
+            if (phGroupEmail) {
+                phGroupEmail.style.display = element.type === "email" ? "block" : "none";
+            }
             if (supported.includes("choicesList")) {
                 const choicesContainer = document.getElementById("flwp-opt-choices-list-container");
                 if (choicesContainer) {
@@ -1166,9 +1209,9 @@ const FLWPFormBuilder = (function() {
                 let fsValue = element.settings.fontSize;
                 if (fsValue === undefined || fsValue === "") fsValue = "inherit";
 
-                let defSize = 14;
+                let defSize = 16;
                 if (element.type === 'headline') defSize = 20;
-                else if (element.type === 'description') defSize = 13;
+                else if (element.type === 'description') defSize = 14;
 
                 syncSliderNode(
                     fsValue,
@@ -1886,6 +1929,37 @@ const FLWPFormBuilder = (function() {
                 api.saveStateToLocalStorage();
             });
 
+            // Name Field Placeholder Handlers
+            const phFields = ['first', 'middle', 'last'];
+            phFields.forEach(part => {
+                const el = document.getElementById(`flwp-opt-name-ph-${part}`);
+                if (el) {
+                    el.addEventListener('input', (e) => {
+                        const element = state.steps.step1.find(it => it.id === uiState.selectedElementId) ||
+                            engine.getStep2List().find(it => it.id === uiState.selectedElementId);
+                        if (element && element.type === 'name') {
+                            if (!element.settings.placeholders) element.settings.placeholders = {};
+                            element.settings.placeholders[part] = e.target.value;
+                            api.saveStateToLocalStorage();
+                        }
+                    });
+                }
+            });
+
+            // Bind Name Type Selector
+            const elNameType = document.getElementById("flwp-opt-name-type");
+            if (elNameType) {
+                elNameType.addEventListener('change', (e) => {
+                    const element = state.steps.step1.find(it => it.id === uiState.selectedElementId) ||
+                        engine.getStep2List().find(it => it.id === uiState.selectedElementId);
+                    if (element && element.type === 'name') {
+                        element.settings.nameType = e.target.value;
+                        api.saveStateToLocalStorage();
+                        engine.updateOptionsPanel();
+                    }
+                });
+            }
+
             utils.registerColorPickerPair("flwp-style-accent-color", "flwp-style-accent-hex", (val) => {
                 state.settings.styles.accentColor = val;
                 api.saveStateToLocalStorage();
@@ -2042,6 +2116,60 @@ const FLWPFormBuilder = (function() {
                 });
             }
 
+            // Name Field Placeholders & Type binding
+            const elOptNameType = document.getElementById("flwp-opt-name-type");
+            const elOptNamePhFull = document.getElementById("flwp-opt-name-ph-first");
+            const elOptNamePhMiddle = document.getElementById("flwp-opt-name-ph-middle");
+            const elOptNamePhLast = document.getElementById("flwp-opt-name-ph-last");
+
+            if (elOptNameType) {
+                elOptNameType.addEventListener("change", (e) => {
+                    applyChange(el => {
+                        el.settings.nameType = e.target.value;
+                    });
+                    engine.updateOptionsPanel();
+                });
+            }
+
+            const updateNamePlaceholders = () => {
+                applyChange(el => {
+                    if (!el.settings.placeholders) el.settings.placeholders = {};
+                    el.settings.placeholders.full = elOptNamePhFull.value;
+                    el.settings.placeholders.middle = elOptNamePhMiddle.value;
+                    el.settings.placeholders.last = elOptNamePhLast.value;
+                });
+            };
+
+            [elOptNamePhFull, elOptNamePhMiddle, elOptNamePhLast].forEach(el => {
+                if (el) el.addEventListener("input", updateNamePlaceholders);
+            });
+
+            // Email Field Placeholders & Confirmation binding
+            const elOptEmailConfirmation = document.getElementById("flwp-opt-email-confirmation");
+            const elOptEmailPhMain = document.getElementById("flwp-opt-email-ph-main");
+            const elOptEmailPhConfirm = document.getElementById("flwp-opt-email-ph-confirm");
+
+            if (elOptEmailConfirmation) {
+                elOptEmailConfirmation.addEventListener("change", (e) => {
+                    applyChange(el => {
+                        el.settings.emailConfirmation = e.target.checked;
+                    });
+                    engine.updateOptionsPanel();
+                });
+            }
+
+            const updateEmailPlaceholders = () => {
+                applyChange(el => {
+                    if (!el.settings.placeholders) el.settings.placeholders = {};
+                    el.settings.placeholders.main = elOptEmailPhMain.value;
+                    el.settings.placeholders.confirm = elOptEmailPhConfirm.value;
+                });
+            };
+
+            [elOptEmailPhMain, elOptEmailPhConfirm].forEach(el => {
+                if (el) el.addEventListener("input", updateEmailPlaceholders);
+            });
+
             // Custom Sliders & Numeric Input Syncing Helper
             const setupCustomSlider = (configObj) => {
                 if (!configObj.hiddenInput || !configObj.sliderInput || !configObj.numericInput || !configObj.resetBtn) return;
@@ -2128,10 +2256,10 @@ const FLWPFormBuilder = (function() {
                 step: 1,
                 unit: "px",
                 getDefaultValue: (el) => {
-                    if (!el) return 14;
+                    if (!el) return 16;
                     if (el.type === 'headline') return 20;
-                    if (el.type === 'description') return 13;
-                    return 14;
+                    if (el.type === 'description') return 14;
+                    return 16;
                 }
             });
 

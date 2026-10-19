@@ -50,7 +50,7 @@ export const fields = {
             newField.settings.alignment = 'left';
             newField.settings.iconPosition = 'left';
             newField.settings.borderRadius = '20px';
-            newField.settings.fontSize = 'inherit';
+            newField.settings.fontSize = '16px';
             newField.settings.lineHeight = '1.4';
             newField.settings.choices = [
                 { text: __("fields.choices_list.general"), icon: "fa-question" },
@@ -60,7 +60,7 @@ export const fields = {
             newField.settings.defaultChoice = __("fields.choices_list.general");
         } else if (type === 'radio') {
             newField.settings.required = false;
-            newField.settings.fontSize = 'inherit';
+            newField.settings.fontSize = '16px';
             newField.settings.lineHeight = '1.4';
             newField.settings.choices = [
                 { text: __("fields.choices_list.general"), icon: "" },
@@ -68,6 +68,23 @@ export const fields = {
                 { text: __("fields.choices_list.technical_support"), icon: "" }
             ];
             newField.settings.defaultChoice = __("fields.choices_list.general");
+        } else if (type === 'name') {
+            newField.settings.required = false;
+            newField.settings.nameType = 'full';
+            newField.settings.fontSize = '16px';
+            newField.settings.placeholders = {
+                first: '',
+                middle: '',
+                last: ''
+            };
+        } else if (type === 'email') {
+            newField.settings.required = true;
+            newField.settings.fontSize = '16px';
+            newField.settings.emailConfirmation = false;
+            newField.settings.placeholders = {
+                main: __("fields.email.placeholder"),
+                confirm: __("fields.email.confirmation_placeholder")
+            };
         }
 
         return newField;
@@ -789,6 +806,137 @@ export const fields = {
                     });
 
                     container.appendChild(ul);
+                    return container;
+                }
+            }
+
+            case 'name': {
+                const nameType = item.settings.nameType || 'full';
+                const placeholders = item.settings.placeholders || {};
+
+                if (isBuilder) {
+                    let inputsHtml = '';
+                    if (nameType === 'full') {
+                        inputsHtml = `<input type="text" placeholder="${utils.escapeHtml(__("fields.name.name"))}" disabled class="flwp-form-input" style="pointer-events: none;" />`;
+                    } else if (nameType === 'first_last') {
+                        inputsHtml = `
+                            <input type="text" placeholder="${utils.escapeHtml(__("fields.name.first_name"))}" disabled class="flwp-form-input" style="width: 48%;pointer-events: none;" />
+                            <input type="text" placeholder="${utils.escapeHtml(__("fields.name.last_name"))}" disabled class="flwp-form-input" style="width: 48%;pointer-events: none;" />
+                        `;
+                    } else if (nameType === 'first_middle_last') {
+                        inputsHtml = `
+                            <input type="text" placeholder="${utils.escapeHtml(__("fields.name.first_name"))}" disabled class="flwp-form-input" style="width: 32%;pointer-events: none;" />
+                            <input type="text" placeholder="${utils.escapeHtml(__("fields.name.middle_name"))}" disabled class="flwp-form-input" style="width: 32%;pointer-events: none;" />
+                            <input type="text" placeholder="${utils.escapeHtml(__("fields.name.last_name"))}" disabled class="flwp-form-input" style="width: 32%;pointer-events: none;" />
+                        `;
+                    }
+                    return `
+                        <label class="flwp-el-label" style="${labelStyle}">${utils.escapeHtml(label)}${requiredStar}</label>
+                        <div class="flwp-visual-mock-name" style="display: flex; gap: 4%; width: 100%;">${inputsHtml}</div>
+                    `;
+                } else {
+                    const container = document.createElement("div");
+                    container.className = "flwp-fd-group-name";
+                    container.appendChild(fields.createLabel(item));
+
+                    const wrapper = document.createElement("div");
+                    wrapper.style.display = "flex";
+                    wrapper.style.gap = "8px";
+                    wrapper.style.width = "100%";
+
+                    const fieldsToRender = [];
+                    if (nameType === 'full') fieldsToRender.push('first');
+                    else if (nameType === 'first_last') fieldsToRender.push('first', 'last');
+                    else if (nameType === 'first_middle_last') fieldsToRender.push('first', 'middle', 'last');
+
+                    fieldsToRender.forEach(f => {
+                        const input = document.createElement("input");
+                        input.type = "text";
+                        input.className = "flwp-form-input";
+                        input.placeholder = placeholders[f] || '';
+
+                        if (input.placeholder === '') {
+                            switch (f) {
+                                case 'first':
+                                    input.placeholder = __("fields.name.first_name");
+                                    if (nameType === 'full') {
+                                        input.placeholder = __("fields.name.name");
+                                    }
+                                    break;
+                                case 'middle':
+                                    input.placeholder = __("fields.name.middle_name");
+                                    break;
+                                case 'last':
+                                    input.placeholder = __("fields.name.last_name");
+                                    break;
+                            }
+                        }
+
+                        input.style.flex = "1";
+                        input.dataset.namePart = f;
+                        const answers = options.answers && options.answers[item.id] ? options.answers[item.id] : {};
+                        input.value = answers[f] || "";
+
+                        input.addEventListener("input", () => {
+                            if (!options.answers[item.id]) options.answers[item.id] = {};
+                            options.answers[item.id][f] = input.value;
+                            options.onAnswerChange(item.id, options.answers[item.id]);
+                            if (options.markFieldValid) options.markFieldValid();
+                        });
+
+                        wrapper.appendChild(input);
+                    });
+                    container.appendChild(wrapper);
+                    return container;
+                }
+            }
+
+            case 'email': {
+                const emailConfirmation = item.settings.emailConfirmation || false;
+                const placeholders = item.settings.placeholders || {};
+
+                if (isBuilder) {
+                    let inputsHtml = `<input type="email" placeholder="${utils.escapeHtml(placeholders.main || __("fields.email.placeholder"))}" disabled class="flwp-form-input" style="pointer-events: none; width: ${emailConfirmation ? '48%' : '100%'};" />`;
+                    if (emailConfirmation) {
+                        inputsHtml += `<input type="email" placeholder="${utils.escapeHtml(placeholders.confirm || __("fields.email.confirmation_placeholder"))}" disabled class="flwp-form-input" style="pointer-events: none; width: 48%;" />`;
+                    }
+                    return `
+                        <label class="flwp-el-label" style="${labelStyle}">${utils.escapeHtml(label)}${requiredStar}</label>
+                        <div class="flwp-visual-mock-email">${inputsHtml}</div>
+                    `;
+                } else {
+                    const container = document.createElement("div");
+                    container.className = "flwp-fd-group-email";
+                    container.appendChild(fields.createLabel(item));
+
+                    const wrapper = document.createElement("div");
+                    wrapper.style.display = "flex";
+                    wrapper.style.gap = "8px";
+                    wrapper.style.width = "100%";
+
+                    const createInput = (placeholder, key) => {
+                        const input = document.createElement("input");
+                        input.type = "email";
+                        input.className = "flwp-form-input";
+                        input.placeholder = placeholder;
+                        input.style.flex = "1";
+                        const answers = options.answers && options.answers[item.id] ? options.answers[item.id] : {};
+                        input.value = answers[key] || "";
+
+                        input.addEventListener("input", () => {
+                            if (!options.answers[item.id]) options.answers[item.id] = {};
+                            options.answers[item.id][key] = input.value;
+                            options.onAnswerChange(item.id, options.answers[item.id]);
+                            if (options.markFieldValid) options.markFieldValid();
+                        });
+                        return input;
+                    };
+
+                    wrapper.appendChild(createInput(placeholders.main || '', 'main'));
+                    if (emailConfirmation) {
+                        wrapper.appendChild(createInput(placeholders.confirm || '', 'confirm'));
+                    }
+                    container.appendChild(wrapper);
                     return container;
                 }
             }

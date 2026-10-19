@@ -15,6 +15,8 @@ class ConfigHelper {
 			'dropdown',
 			'chips',
 			'radio',
+			'name',
+			'email',
 			'rating',
 		];
 
@@ -23,6 +25,8 @@ class ConfigHelper {
 			'dropdown',
 			'chips',
 			'radio',
+			'name',
+			'email',
 			'rating',
 		];
 
@@ -74,12 +78,12 @@ class ConfigHelper {
             ],
             'dropdown' => [
 				'name' =>  esc_html__('fields.dropdown.name', 'flwp'),
-	            'icon' => 'fa-chevron-down',
-	            'defaultLabel' => esc_html__('fields.choices_list.default_label', 'flwp'),
-	            'supportedSettings' => ['label', 'hideLabel', 'required', 'choicesList', 'alignment'],
-	            'userinput' => true,
-	            'baseHeight' => 43,
-	            'labelHeight' => 19
+			  	'icon' => 'fa-chevron-down',
+			  	'defaultLabel' => esc_html__('fields.choices_list.default_label', 'flwp'),
+			  	'supportedSettings' => ['label', 'hideLabel', 'required', 'alignment', 'choicesList', 'alignment'],
+			  	'userinput' => true,
+			  	'baseHeight' => 43,
+			  	'labelHeight' => 19
 			],
             'chips' => [
 				'name' => esc_html__('fields.chips.name', 'flwp'),
@@ -100,6 +104,24 @@ class ConfigHelper {
 	            'userinput' => true,
 	            'baseHeight' => 80,
 	            'labelHeight' => 24
+			],
+			'name' => [
+			  'name' => esc_html__('fields.name.name', 'flwp'),
+			  'icon' => 'fa-user',
+			  'defaultLabel' => esc_html__('fields.name.default_label', 'flwp'),
+			  'supportedSettings' => ['label', 'hideLabel', 'required', 'width', 'alignment', 'clearBefore', 'nameType'],
+			  'userinput' => true,
+			  'baseHeight' => 80,
+			  'labelHeight' => 24
+			],
+            'email' => [
+				'name'              => esc_html__('fields.email.name', 'flwp'),
+	            'icon'              => "fa-envelope",
+	            'defaultLabel'      => esc_html__("fields.email.default_label", 'flwp'),
+	            'supportedSettings' => ["label", "hideLabel", "required", "alignment", "fontSize", "lineHeight", "width", "clearBefore", "emailConfirmation"],
+	            'userinput'         => true,
+	            'baseHeight'        => 80,
+	            'labelHeight'       => 24
 			],
             'rating' => [
                 'name' => esc_html__('fields.rating.name', 'flwp'),

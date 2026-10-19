@@ -78,6 +78,16 @@ if (!defined('ABSPATH')) {
 		                    <i class="fas fa-circle-dot"></i>
 		                    <span><?php esc_html_e('fields.radio.name', 'flwp'); ?></span>
 	                    </div>
+
+	                    <div class="flwp-draggable-field-item" draggable="true" data-type="name" id="flwp-field-drag-name">
+		                    <i class="fas fa-user"></i>
+		                    <span><?php esc_html_e('fields.name.name', 'flwp'); ?></span>
+	                    </div>
+
+	                    <div class="flwp-draggable-field-item" draggable="true" data-type="email" id="flwp-field-drag-email">
+		                    <i class="fas fa-envelope"></i>
+		                    <span><?php esc_html_e('fields.email.name', 'flwp'); ?></span>
+	                    </div>
                     </div>
 
                     <div class="flwp-sidebar-section-title" id="flwp-sec-title-reviews" style="margin-top: 8px; margin-bottom: 0;">
@@ -262,6 +272,25 @@ if (!defined('ABSPATH')) {
                         </div>
                     </div>
 
+	                <!-- Name Format Settings -->
+	                <div class="flwp-form-group" id="flwp-opt-group-name-type" style="margin-bottom: 14px; display: none;">
+		                <label style="font-size: 11px; font-weight: 650; margin-bottom: 6px; display: block;"><?php esc_html_e('fields.name.format.label', 'flwp'); ?></label>
+		                <select id="flwp-opt-name-type" class="flwp-form-input" style="padding: 6px;">
+			                <option value="full" selected><?php esc_html_e('fields.name.format.full', 'flwp'); ?></option>
+			                <option value="first_last"><?php esc_html_e('fields.name.format.first_last', 'flwp'); ?></option>
+			                <option value="first_middle_last"><?php esc_html_e('fields.name.format.first_middle_last', 'flwp'); ?></option>
+		                </select>
+	                </div>
+
+	                <div class="flwp-form-group" id="flwp-opt-group-name-placeholders" style="margin-bottom: 14px; display: none;">
+		                <label style="font-size: 11px; font-weight: 650; margin-bottom: 6px; display: block;"><?php esc_html_e('admin.builder.fields.placeholder.label', 'flwp'); ?></label>
+		                <div style="display: flex; flex-direction: column; gap: 8px;">
+			                <input type="text" id="flwp-opt-name-ph-first" class="flwp-form-input" placeholder="<?php esc_html_e('fields.name.first_name', 'flwp'); ?>" />
+			                <input type="text" id="flwp-opt-name-ph-middle" class="flwp-form-input" placeholder="<?php esc_html_e('fields.name.middle_name', 'flwp'); ?>" />
+			                <input type="text" id="flwp-opt-name-ph-last" class="flwp-form-input" placeholder="<?php esc_html_e('fields.name.last_name', 'flwp'); ?>" />
+		                </div>
+	                </div>
+
                     <!-- Inline styles (Font size) -->
                     <div class="flwp-form-group" id="flwp-opt-group-font-size">
                         <div>
@@ -271,13 +300,13 @@ if (!defined('ABSPATH')) {
                                 <button type="button" id="flwp-opt-font-size-reset" class="flwp-btn" style="font-size: 10px; padding: 2px 4px; height: auto; background: none; border: none; color: var(--flwp-primary); cursor: pointer; text-decoration: underline; box-shadow: none;"><?php esc_html_e('admin.builder.fields.font_size.reset', 'flwp'); ?></button>
                             </div>
 
-                            <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%;">
-                                <input type="range" id="flwp-opt-font-size-slider" min="6" max="48" step="1" value="14" class="flwp-range-input" style="flex-grow: 1; margin: 0; min-width: 0;" />
-                                <div style="display: inline-flex; align-items: center; border: 1px solid var(--flwp-border); border-radius: 6px; padding: 4px 8px; background: #ffffff; width: 68px; min-width: 68px; justify-content: space-between; height: 28px; box-sizing: border-box;">
-                                    <input type="number" id="flwp-opt-font-size-input" min="6" max="48" value="14" style="width: 32px; border: none; font-size: 13px; text-align: right; padding: 0; outline: none; background: transparent; -webkit-appearance: none; -moz-appearance: textfield; margin: 0; font-family: inherit; font-weight: 600; color: var(--flwp-text-main);" />
-                                    <span style="font-size: 12px; color: #94a3b8; font-weight: 500; margin-left: 2px; pointer-events: none; user-select: none;">px</span>
-                                </div>
-                            </div>
+	                        <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%;">
+		                        <input type="range" id="flwp-opt-font-size-slider" min="6" max="48" step="1" value="16" class="flwp-range-input" style="flex-grow: 1; margin: 0; min-width: 0;" />
+		                        <div style="display: inline-flex; align-items: center; border: 1px solid var(--flwp-border); border-radius: 6px; padding: 4px 8px; background: #ffffff; width: 68px; min-width: 68px; justify-content: space-between; height: 28px; box-sizing: border-box;">
+			                        <input type="number" id="flwp-opt-font-size-input" min="6" max="48" value="16" style="width: 32px; border: none; font-size: 13px; text-align: right; padding: 0; outline: none; background: transparent; -webkit-appearance: none; -moz-appearance: textfield; margin: 0; font-family: inherit; font-weight: 600; color: var(--flwp-text-main);" />
+			                        <span style="font-size: 12px; color: #94a3b8; font-weight: 500; margin-left: 2px; pointer-events: none; user-select: none;">px</span>
+		                        </div>
+	                        </div>
                         </div>
 
                         <div style="margin-top: 14px;">
@@ -349,7 +378,7 @@ if (!defined('ABSPATH')) {
 	                <div class="flwp-form-group" id="flwp-opt-group-choicesList" style="display: none; margin-top: 14px; margin-bottom: 14px;">
 		                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
 			                <label style="margin-bottom: 0; font-size: 13px; font-weight: 600; color: var(--flwp-text-main); display: flex; align-items: center; gap: 6px;">
-								<?php echo esc_html__('fields.dropdown.choices_title', 'flwp'); ?> <i class="far fa-question-circle flwp-help-tip" title="<?php echo esc_attr__('fields.dropdown.choices_tooltip', 'flwp'); ?>"></i>
+				                <?php echo esc_html__('fields.dropdown.choices_title', 'flwp'); ?> <i class="far fa-question-circle flwp-help-tip" title="<?php echo esc_attr__('fields.dropdown.choices_tooltip', 'flwp'); ?>"></i>
 			                </label>
 		                </div>
 		                <div id="flwp-opt-choices-list-container" class="flwp-choices-list-container"></div>
@@ -385,6 +414,23 @@ if (!defined('ABSPATH')) {
                             <span class="flwp-switch-slider"></span>
                         </label>
                     </div>
+
+	                <!-- Email Options -->
+	                <div class="flwp-switch-group" id="flwp-opt-group-email-confirmation" style="margin-bottom: 14px; display: none;">
+		                <span class="flwp-switch-label"><i class="fas fa-envelope-open-text" style="color: var(--flwp-primary); font-size: 11px;"></i> <?php esc_html_e('fields.email.confirmation_activation', 'flwp'); ?></span>
+		                <label class="flwp-switch-wrapper" for="flwp-opt-email-confirmation">
+			                <input type="checkbox" id="flwp-opt-email-confirmation" />
+			                <span class="flwp-switch-slider"></span>
+		                </label>
+	                </div>
+
+	                <div class="flwp-form-group" id="flwp-opt-group-email-placeholders" style="margin-bottom: 14px; display: none;">
+		                <label style="font-size: 11px; font-weight: 650; margin-bottom: 6px; display: block;"><?php esc_html_e('admin.builder.fields.placeholder.label', 'flwp'); ?></label>
+		                <div style="display: flex; flex-direction: column; gap: 8px;">
+			                <input type="text" id="flwp-opt-email-ph-main" class="flwp-form-input" placeholder="<?php esc_html_e('fields.email.placeholder', 'flwp'); ?>" />
+			                <input type="text" id="flwp-opt-email-ph-confirm" class="flwp-form-input" placeholder="<?php esc_html_e('fields.email.confirmation_placeholder', 'flwp'); ?>" />
+		                </div>
+	                </div>
 
                     <!-- Button Custom Color Settings -->
                     <div id="flwp-opt-group-button-colors" style="border-top: 1px dashed var(--flwp-border); padding-top: 14px; margin-top: 14px; display: none; flex-direction: column; gap: 12px;">

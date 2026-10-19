@@ -330,7 +330,6 @@ export const utils = {
         }
         if (!forCanvas) {
             inlineStyles.push(`font-weight: 600`);
-            inlineStyles.push(`font-size: 0.95em`);
         }
         return inlineStyles.join('; ');
     },
@@ -805,7 +804,7 @@ export const utils = {
             const sanitized = sanitizeValue(e.target.value);
             e.target.value = sanitized;
 
-            const valueToSave = sanitized || "0";
+            const valueToSave = sanitized;
 
             if (elLink.classList.contains("is-linked")) {
                 elTop.value = sanitized;
